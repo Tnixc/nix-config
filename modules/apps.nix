@@ -24,9 +24,14 @@
     lazygit
     gh
 
-    bun
-
     lua
+
+    cargo
+
+    python3
+    poetry
+
+    go
   ];
 
   homebrew = {
@@ -49,6 +54,7 @@
         "switchaudio-osx"
         "sketchybar"
         "lua"
+        "macos-trash"
     ];
 
     # `brew install --cask`

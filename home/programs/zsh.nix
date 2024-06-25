@@ -4,9 +4,17 @@
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     initExtra = ''
-      gc() {
-        git commit -m "$1"
-      }
+    gc() {
+      git commit -m "$1"
+    }
+
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6E738D"
+    ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+    export BUN_INSTALL="$HOME/.bun"
+    export PATH="$BUN_INSTALL/bin:$PATH"
+
+    eval "$(zoxide init zsh)"
     '';
   };
 
@@ -24,5 +32,9 @@
     ll = "eza --icons -l";
     tree = "eza --icons --tree -a";
 
+    cd = "z";
+
+    bs = "brew services";
+    rm = "trash";
   };
 }
