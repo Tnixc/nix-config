@@ -19,7 +19,10 @@
     jq
     ripgrep
     neovim
+
     starship
+    lazygit
+    gh
 
     bun
 
