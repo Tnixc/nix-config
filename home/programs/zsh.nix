@@ -9,9 +9,6 @@
         git commit -m "$1"
       }
 
-      ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#6E738D"
-      ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-
       export BUN_INSTALL="$HOME/.bun"
       export PATH="$BUN_INSTALL/bin:$PATH"
       export PATH="/Users/tnixc/.cargo/bin:$PATH"
@@ -41,6 +38,6 @@
     rm = "trash";
     bs = "brew services";
 
-    sw = "cd ~/nix-config && gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy && cd - >> /dev/null";
+    sw = "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy ; cd - >> /dev/null";
   };
 }
