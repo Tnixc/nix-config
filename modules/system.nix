@@ -10,7 +10,7 @@
     '';
 
     defaults = {
-      menuExtraClock.Show24Hour = true;  # show 24 hour clock
+      menuExtraClock.Show24Hour = true; # show 24 hour clock
 
       dock = {
         autohide = true;
@@ -18,30 +18,30 @@
       };
 
       finder = {
-        _FXShowPosixPathInTitle = false;  # show full path in finder title
-        AppleShowAllExtensions = true;  # show all file extensions
-        FXEnableExtensionChangeWarning = false;  # disable warning when changing file extension
-        QuitMenuItem = true;  # enable quit menu item
-        ShowPathbar = true;  # show path bar
-        ShowStatusBar = false;  # show status bar
+        _FXShowPosixPathInTitle = false; # show full path in finder title
+        AppleShowAllExtensions = true; # show all file extensions
+        FXEnableExtensionChangeWarning = false; # disable warning when changing file extension
+        QuitMenuItem = true; # enable quit menu item
+        ShowPathbar = true; # show path bar
+        ShowStatusBar = false; # show status bar
       };
 
       trackpad = {
-        Clicking = true;  # enable tap to click
-        };
+        Clicking = true; # enable tap to click
+      };
 
       NSGlobalDomain = {
         # `defaults read NSGlobalDomain "xxx"`
-        "com.apple.swipescrolldirection" = true;  # enable natural scrolling(default to true)
-        "com.apple.sound.beep.feedback" = 0;  # disable beep sound when pressing volume up/down key
-        "com.apple.keyboard.fnState" = true; #fn for f1-12
-        AppleInterfaceStyle = "Dark";  # dark mode
+        "com.apple.swipescrolldirection" = true; # enable natural scrolling(default to true)
+        "com.apple.sound.beep.feedback" = 0; # disable beep sound when pressing volume up/down key
+        "com.apple.keyboard.fnState" = true; # fn for f1-12
+        AppleInterfaceStyle = "Dark"; # dark mode
 
-        ApplePressAndHoldEnabled = true;  # enable press and hold
+        ApplePressAndHoldEnabled = true; # enable press and hold
 
-        InitialKeyRepeat = 15;  # normal minimum is 15 (225 ms), maximum is 120 (1800 ms)
+        InitialKeyRepeat = 15; # normal minimum is 15 (225 ms), maximum is 120 (1800 ms)
         # sets how fast it repeats once it starts.
-        KeyRepeat = 2;  # normal minimum is 2 (30 ms), maximum is 120 (1800 ms)
+        KeyRepeat = 2; # normal minimum is 2 (30 ms), maximum is 120 (1800 ms)
       };
     };
   };

@@ -1,4 +1,5 @@
-{ pkgs, ...}: {
+{ pkgs, ... }:
+{
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     git
@@ -31,6 +32,7 @@
     gh
 
     lua
+    stylua
 
     cargo
     rustfmt
@@ -60,25 +62,25 @@
 
     # `brew install`
     brews = [
-        "nowplaying-cli"
-        "switchaudio-osx"
-        "sketchybar"
-        "lua"
-        "macos-trash"
+      "nowplaying-cli"
+      "switchaudio-osx"
+      "sketchybar"
+      "lua"
+      "macos-trash"
     ];
 
     # `brew install --cask`
     casks = [
-        "jordanbaird-ice"
-    	"nordvpn"
-        "zed"
-        "loop"
-        "motrix"
-        "alt-tab"
-        "shottr"
-        "sf-symbols"
-        "font-sf-mono"
-        "font-sf-pro"
+      "jordanbaird-ice"
+      "nordvpn"
+      "zed"
+      "loop"
+      "motrix"
+      "alt-tab"
+      "shottr"
+      "sf-symbols"
+      "font-sf-mono"
+      "font-sf-pro"
     ];
   };
 }

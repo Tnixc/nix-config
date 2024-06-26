@@ -1,8 +1,6 @@
+{ ... }:
 {
-  ...
-}:
-{
-    home.file.".config/skhd/skhdrc" = {
+  home.file.".config/skhd/skhdrc" = {
     source = ./skhdrc;
   };
 }
