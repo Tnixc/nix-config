@@ -26,6 +26,7 @@
     hyperfine
     wget
     fastfetch
+    gum
 
     starship
     lazygit
@@ -66,6 +67,7 @@
       "switchaudio-osx"
       "sketchybar"
       "lua"
+      "brightness"
       "macos-trash"
     ];
 

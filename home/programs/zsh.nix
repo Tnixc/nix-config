@@ -40,5 +40,7 @@
 
     rm = "trash";
     bs = "brew services";
+
+    sw = "cd ~/nix-config && gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy && cd - >> /dev/null";
   };
 }
