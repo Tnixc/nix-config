@@ -23,6 +23,7 @@
     a = "nvim";
     q = "exit";
 
+    cat = "bat";
     g = "git";
     ga = "git add -A";
     lz = "lazygit";

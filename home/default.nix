@@ -7,6 +7,7 @@
     ./programs/starship.nix
     ./programs/git.nix
     ./programs/sketchybar/sketchybar.nix
+    ./programs/yabai/yabai.nix
   ];
 
   # Home Manager needs a bit of information about you and the

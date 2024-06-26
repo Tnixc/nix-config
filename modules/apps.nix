@@ -13,6 +13,7 @@
     colima # docker daemon
 
     btop
+    bat
     eza
     zoxide
     stow
