@@ -23,7 +23,8 @@
     a = "nvim";
     q = "exit";
 
-    cat = "bat";
+    cat = "bat --theme base16";
+    bat = "bat --theme base16";
     g = "git";
     ga = "git add -A";
     lz = "lazygit";
