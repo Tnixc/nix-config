@@ -13,6 +13,7 @@
 
     export BUN_INSTALL="$HOME/.bun"
     export PATH="$BUN_INSTALL/bin:$PATH"
+    export PATH="/Users/tnixc/.cargo/bin:$PATH"
 
     eval "$(zoxide init zsh)"
     '';
@@ -34,7 +35,7 @@
 
     cd = "z";
 
-    bs = "brew services";
     rm = "trash";
+    bs = "brew services";
   };
 }

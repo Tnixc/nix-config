@@ -1,4 +1,5 @@
 { pkgs, ...}: {
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     git
 
@@ -19,6 +20,10 @@
     jq
     ripgrep
     neovim
+    loc
+    hyperfine
+    wget
+    fastfetch
 
     starship
     lazygit
@@ -27,6 +32,9 @@
     lua
 
     cargo
+    rustfmt
+    rustc
+    rust-analyzer
 
     python3
     poetry
@@ -46,6 +54,7 @@
     taps = [
       "homebrew/services"
       "FelixKratz/formulae"
+      "mrkai77/cask"
     ];
 
     # `brew install`
