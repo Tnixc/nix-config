@@ -6,6 +6,7 @@
     ./programs/zsh.nix
     ./programs/starship.nix
     ./programs/git.nix
+    ./programs/sketchybar/sketchybar.nix
   ];
 
   # Home Manager needs a bit of information about you and the
