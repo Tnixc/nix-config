@@ -4,6 +4,8 @@ local settings = require("settings")
 
 local battery = sbar.add("item", "widgets.battery", {
 	position = "right",
+	padding_right = 8,
+	padding_left = 8,
 	icon = {
 		font = {
 			style = settings.font.style_map["Regular"],

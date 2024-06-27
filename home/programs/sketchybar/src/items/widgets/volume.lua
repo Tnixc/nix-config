@@ -6,6 +6,7 @@ local popup_width = 250
 
 local volume_percent = sbar.add("item", "widgets.volume1", {
 	position = "right",
+	padding_right = 8,
 	icon = { drawing = false },
 	label = {
 		string = "??%",
@@ -16,6 +17,7 @@ local volume_percent = sbar.add("item", "widgets.volume1", {
 
 local volume_icon = sbar.add("item", "widgets.volume2", {
 	position = "right",
+	padding_left = 8,
 	padding_right = -1,
 	icon = {
 		string = icons.volume._100,
