@@ -35,6 +35,9 @@
     lua
     stylua
 
+    elixir
+    postgresql
+
     cargo
     rustfmt
     rustc
@@ -44,6 +47,8 @@
     poetry
 
     go
+
+    ani-cli
   ];
 
   homebrew = {
@@ -73,6 +78,7 @@
 
     # `brew install --cask`
     casks = [
+      "eloston-chromium"
       "jordanbaird-ice"
       "nordvpn"
       "zed"

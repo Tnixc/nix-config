@@ -2,7 +2,9 @@
 {
   programs.zsh = {
     enable = true;
+    enableCompletion = true;
     autosuggestion.enable = true;
+    historySubstringSearch.enable = true;
     syntaxHighlighting.enable = true;
     initExtra = ''
       gc() {
@@ -23,9 +25,9 @@
 
     cat = "bat --theme base16";
     bat = "bat --theme base16";
-    g = "git";
     ga = "git add -A";
     lz = "lazygit";
+    g = "git";
 
     ls = "eza --icons";
     l = "eza --icons -la";
