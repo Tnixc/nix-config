@@ -15,6 +15,12 @@
       export PATH="$BUN_INSTALL/bin:$PATH"
       export PATH="/Users/tnixc/.cargo/bin:$PATH"
 
+      export FZF_DEFAULT_OPTS="
+      --color=fg:7,hl:4
+      --color=fg+:15,hl+:6
+      --color=info:2,prompt:1,pointer:5
+      --color=marker:2,spinner:5,header:4"
+
       eval "$(zoxide init zsh)"
     '';
   };

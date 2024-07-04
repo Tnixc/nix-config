@@ -33,6 +33,8 @@
     gh
 
     lua
+
+    ani-cli
     stylua
 
     elixir
@@ -49,13 +51,19 @@
     go
 
     ani-cli
+    aria2
+    yt-dlp
+    ffmpeg
+    iina
+
+    zola
   ];
 
   homebrew = {
     enable = true;
 
     onActivation = {
-      autoUpdate = true;
+      autoUpdate = false;
       # 'zap': uninstalls all formulae(and related files) not listed here.
       cleanup = "zap";
     };
@@ -79,6 +87,7 @@
     # `brew install --cask`
     casks = [
       "eloston-chromium"
+      "linearmouse"
       "jordanbaird-ice"
       "nordvpn"
       "zed"
