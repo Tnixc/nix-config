@@ -70,6 +70,7 @@
 
     taps = [
       "homebrew/services"
+      "PlayCover/playcover"
       "FelixKratz/formulae"
       "mrkai77/cask"
     ];
@@ -86,6 +87,7 @@
 
     # `brew install --cask`
     casks = [
+      "playcover-community"
       "eloston-chromium"
       "linearmouse"
       "jordanbaird-ice"
