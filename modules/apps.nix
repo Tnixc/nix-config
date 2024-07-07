@@ -73,6 +73,7 @@
       "PlayCover/playcover"
       "FelixKratz/formulae"
       "mrkai77/cask"
+      "socsieng/tap"
     ];
 
     # `brew install`
@@ -83,11 +84,13 @@
       "lua"
       "brightness"
       "macos-trash"
+      "sendkeys"
     ];
 
     # `brew install --cask`
     casks = [
       "playcover-community"
+      "betterdisplay"
       "eloston-chromium"
       "linearmouse"
       "jordanbaird-ice"
