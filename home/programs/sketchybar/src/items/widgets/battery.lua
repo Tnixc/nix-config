@@ -4,15 +4,17 @@ local settings = require("settings")
 
 local battery = sbar.add("item", "widgets.battery", {
     position = "right",
+    padding_right = 8,
+    padding_left = 8,
     icon = {
         font = {
             style = settings.font.style_map["Regular"],
-            size = 19.0,
-        }
+            size = 12.0,
+        },
     },
     label = { font = { family = settings.font.numbers } },
     update_freq = 180,
-    popup = { align = "center" }
+    popup = { align = "center" },
 })
 
 local remaining_time = sbar.add("item", {
@@ -20,15 +22,14 @@ local remaining_time = sbar.add("item", {
     icon = {
         string = "Time remaining:",
         width = 100,
-        align = "left"
+        align = "left",
     },
     label = {
         string = "??:??h",
         width = 100,
-        align = "right"
+        align = "right",
     },
 })
-
 
 battery:subscribe({ "routine", "power_source_change", "system_woke" }, function()
     sbar.exec("pmset -g batt", function(batt_info)
@@ -47,15 +48,31 @@ battery:subscribe({ "routine", "power_source_change", "system_woke" }, function(
         if charging then
             icon = icons.battery.charging
         else
-            if found and charge > 80 then
-                icon = icons.battery._100
-            elseif found and charge > 60 then
-                icon = icons.battery._75
-            elseif found and charge > 40 then
-                icon = icons.battery._50
-            elseif found and charge > 20 then
-                icon = icons.battery._25
+            if found and charge == 0 then
+                icon = icons.battery._0
+                color = colors.red
+            elseif found and charge <= 10 then
+                icon = icons.battery._10
+                color = colors.red
+            elseif found and charge <= 20 then
+                icon = icons.battery._20
                 color = colors.orange
+            elseif found and charge <= 30 then
+                icon = icons.battery._30
+            elseif found and charge <= 40 then
+                icon = icons.battery._40
+            elseif found and charge <= 50 then
+                icon = icons.battery._50
+            elseif found and charge <= 60 then
+                icon = icons.battery._60
+            elseif found and charge <= 70 then
+                icon = icons.battery._70
+            elseif found and charge <= 80 then
+                icon = icons.battery._80
+            elseif found and charge <= 90 then
+                icon = icons.battery._90
+            elseif found and charge <= 100 then
+                icon = icons.battery._100
             else
                 icon = icons.battery._0
                 color = colors.red
@@ -70,7 +87,7 @@ battery:subscribe({ "routine", "power_source_change", "system_woke" }, function(
         battery:set({
             icon = {
                 string = icon,
-                color = color
+                color = color,
             },
             label = { string = lead .. label },
         })
@@ -91,10 +108,10 @@ battery:subscribe("mouse.clicked", function(env)
 end)
 
 sbar.add("bracket", "widgets.battery.bracket", { battery.name }, {
-    background = { color = colors.bg1 }
+    background = { color = colors.bg1 },
 })
 
 sbar.add("item", "widgets.battery.padding", {
     position = "right",
-    width = settings.group_paddings
+    width = settings.group_paddings,
 })

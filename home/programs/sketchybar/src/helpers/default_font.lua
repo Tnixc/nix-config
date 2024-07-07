@@ -1,7 +1,7 @@
 return {
     text = "SF Pro",    -- Used for text
     numbers = "SF Pro", -- Used for numbers
-    mono = "BerkeleyMono Nerd Font",
+    mono = "SF Mono",   -- Used for monospace text
 
     -- Unified font style map
     style_map = {
@@ -10,5 +10,5 @@ return {
         ["Bold"] = "Bold",
         ["Heavy"] = "Heavy",
         ["Black"] = "Black",
-    },
+    }
 }
