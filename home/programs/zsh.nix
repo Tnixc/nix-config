@@ -7,6 +7,9 @@
     historySubstringSearch.enable = true;
     syntaxHighlighting.enable = true;
     initExtra = ''
+    autoload -Uz compinit && compinit
+    zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
       gc() {
         git commit -m "$1"
       }

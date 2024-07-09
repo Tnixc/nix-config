@@ -11,7 +11,7 @@ ctrl + alt + cmd + shift - f : yabai -m window --toggle zoom-fullscreen
 ####### Shortcut Hotkeys #############
 
 # Launch terminal
-ctrl + alt + cmd + shift - 0x24 : kitty --single-instance -d ~
+ctrl + alt + cmd + shift - return : kitty --single-instance -d ~
 
 # restart Yabi, SpaceBar, and SKHD
 alt + shift - r : killall yabai&&yabai --start-service&&skhd --reload
