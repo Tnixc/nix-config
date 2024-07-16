@@ -41,15 +41,14 @@
     elixir
     postgresql
 
-    cargo
-    rustfmt
-    rustc
-    rust-analyzer
+    rustup
 
     python3
     poetry
 
     go
+
+    zig
 
     ani-cli
     aria2
@@ -58,7 +57,13 @@
     iina
 
     zola
+    obsidian
   ];
+
+    #cargo
+    #rustfmt
+    #rustc
+    #rust-analyzer all handled by rustup
 
   homebrew = {
     enable = true;
