@@ -42,6 +42,7 @@
     postgresql
 
     rustup
+    cargo-binstall
 
     python3
     poetry
@@ -58,6 +59,13 @@
 
     zola
     obsidian
+
+    python312Packages.fonttools
+    fontforge-fonttools
+    brotli
+    zopfli
+
+    nodejs_22
   ];
 
     #cargo
@@ -91,6 +99,7 @@
       "brightness"
       "macos-trash"
       "sendkeys"
+      "dprint"
     ];
 
     # `brew install --cask`

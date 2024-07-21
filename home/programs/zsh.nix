@@ -17,6 +17,7 @@
       export BUN_INSTALL="$HOME/.bun"
       export PATH="$BUN_INSTALL/bin:$PATH"
       export PATH="/Users/tnixc/.cargo/bin:$PATH"
+      export PATH="/Users/tnixc/.bun/bin:$PATH"
 
       export FZF_DEFAULT_OPTS="
       --color=fg:7,hl:4
