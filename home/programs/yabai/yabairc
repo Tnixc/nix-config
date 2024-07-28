@@ -4,8 +4,7 @@ sudo yabai --load-sa
 # the scripting-addition must be loaded manually if
 # you are running yabai on macOS Big Sur. Uncomment
 # the following line to have the injection performed
-# when the config is executed during startup.
-#
+# when the config is executed during startup. #
 # for this to work you must configure sudo such that
 # it will be able to run the command without password
 #
@@ -50,6 +49,6 @@ yabai -m rule --add label="System Information" app="System Information" title="S
 yabai -m rule --add label="Raycast" app="Raycast" manage=off
 yabai -m rule --add label="Kap" app="^Kap$" manage=off
 
-# borders active_color=0xffCAD3F5 inactive_color=0xbb282E44 hidpi=on width=5.0 2>/dev/null 1>&2 &
+borders active_color=0xffCAD3F5 inactive_color=0xbb282E44 hidpi=on width=5.0 2>/dev/null 1>&2 &
 
 echo "yabai configuration loaded.."

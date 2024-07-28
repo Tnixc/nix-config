@@ -7,6 +7,7 @@
 
     yabai
     skhd
+    jankyborders
     sketchybar-app-font
 
     kitty
@@ -16,6 +17,7 @@
 
     btop
     bat
+    tldr
     eza
     zoxide
     stow
@@ -111,6 +113,7 @@
       "jordanbaird-ice"
       "nordvpn"
       "zed"
+      "orion"
       "loop"
       "motrix"
       "alt-tab"

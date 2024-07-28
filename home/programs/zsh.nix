@@ -46,6 +46,7 @@
     tree = "eza --icons --tree -a";
 
     cd = "z";
+    f = "open .";
 
     rm = "trash";
     bs = "brew services";

@@ -67,6 +67,7 @@ return {
     ["Discord"] = ":discord:",
     ["Discord Canary"] = ":discord:",
     ["Discord PTB"] = ":discord:",
+    ["Vesktop"] = ":discord:",
     ["Neovide"] = ":vim:",
     ["MacVim"] = ":vim:",
     ["Vim"] = ":vim:",
