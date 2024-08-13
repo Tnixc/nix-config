@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
     pueue
     git
+    ranger
 
     yabai
     skhd
@@ -22,6 +23,7 @@
     zoxide
     stow
     fzf
+    skim
     jq
     ripgrep
     neovim
@@ -38,6 +40,7 @@
     lua
 
     ani-cli
+    mangal
     stylua
 
     elixir
@@ -47,6 +50,7 @@
     cargo-binstall
 
     python3
+    pipx
     poetry
 
     go

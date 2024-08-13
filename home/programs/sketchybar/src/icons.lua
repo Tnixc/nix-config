@@ -32,7 +32,7 @@ local icons = {
 			_20 = "■□□□□",
 			_10 = "◧□□□□",
 			_0 = "□□□□□",
-			charging = "▧ ✦ ▨",
+			charging = "􀰁 􀋦 􀄧",
 		},
 		wifi = {
 			upload = "􀄨",
