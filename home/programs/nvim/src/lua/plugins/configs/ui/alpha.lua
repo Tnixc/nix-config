@@ -2,8 +2,12 @@ local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
 
 dashboard.section.header.val = {
-    
-      "       [ ━━━━━━ ❖  ━━━━━━ ]      ",
+    "─▄▀─▄▀      ███╗   ██╗██╗   ██╗██╗███╗   ███╗",
+    "──▀──▀      ████╗  ██║██║   ██║██║████╗ ████║",
+    "█▀▀▀▀▀█▄    ██╔██╗ ██║██║   ██║██║██╔████╔██║",
+    "█░░░░░█─█   ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║",
+    "▀▄▄▄▄▄▀▀    ██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║",
+    "            ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝"
 }
 dashboard.section.header.opts.hl = "AlphaHeader"
 
@@ -13,7 +17,7 @@ local function button(sc, txt, leader_txt, keybind, keybind_opts)
 	local opts = {
 		position = "center",
 		shortcut = sc,
-		cursor = 5,
+		cursor = 0,
 		width = 50,
 		align_shortcut = "right",
 		hl = "AlphaButton",

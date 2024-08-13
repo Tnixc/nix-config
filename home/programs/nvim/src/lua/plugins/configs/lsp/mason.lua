@@ -13,7 +13,7 @@ local servers = {
 
 local settings = {
 	ui = {
-		border = "sharp",
+		border = "rounded",
 		icons = {
 			package_installed = "◍",
 			package_pending = "◍",

@@ -39,6 +39,10 @@ lazy.setup({
 		end,
 	},
 	{
+        'stevearc/oil.nvim',
+        opts = {},
+	},
+	{
 		"rose-pine/neovim",
 		name = "rose-pine",
 		lazy = false,
