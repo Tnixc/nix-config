@@ -1,12 +1,69 @@
--- ██   ██  █████  ███    ██ ███████  ██████
--- ██  ██  ██   ██ ████   ██ ██      ██    ██
--- █████   ███████ ██ ██  ██ ███████ ██    ██
--- ██  ██  ██   ██ ██  ██ ██      ██ ██    ██
--- ██   ██ ██   ██ ██   ████ ███████  ██████
+require("material").setup({
 
--- General
--- vim.cmd("hi Normal guibg=#101012")
--- vim.cmd("hi NormalNC guibg=#191919")
+	contrast = {
+		terminal = true, -- Enable contrast for the built-in terminal
+		sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+		floating_windows = true, -- Enable contrast for floating windows
+		cursor_line = false, -- Enable darker background for the cursor line
+		lsp_virtual_text = true, -- Enable contrasted background for lsp virtual text
+		non_current_windows = true, -- Enable contrasted background for non-current windows
+		filetypes = {}, -- Specify which filetypes get the contrasted (darker) background
+	},
+
+	styles = { -- Give comments style such as bold, italic, underline etc.
+		comments = { --[[ italic = true ]]
+		},
+		strings = { --[[ bold = true ]]
+		},
+		keywords = { --[[ underline = true ]]
+		},
+		functions = { --[[ bold = true, undercurl = true ]]
+		},
+		variables = {},
+		operators = {},
+		types = {},
+	},
+
+	plugins = { -- Uncomment the plugins that you use to highlight them
+		-- Available plugins:
+		"gitsigns",
+		"neogit",
+		"noice",
+		"nvim-cmp",
+		"nvim-navic",
+		"nvim-tree",
+		"nvim-web-devicons",
+		"rainbow-delimiters",
+		"telescope",
+		"trouble",
+		"which-key",
+		"nvim-notify",
+	},
+
+	disable = {
+		colored_cursor = false, -- Disable the colored cursor
+		borders = false, -- Disable borders between vertically split windows
+		background = false, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
+		term_colors = false, -- Prevent the theme from setting terminal colors
+		eob_lines = false, -- Hide the end-of-buffer lines
+	},
+
+	high_visibility = {
+		lighter = false, -- Enable higher contrast text for lighter style
+		darker = false, -- Enable higher contrast text for darker style
+	},
+
+	lualine_style = "stealth", -- Lualine style ( can be 'stealth' or 'default' )
+
+	async_loading = true, -- Load parts of the theme asynchronously for faster startup (turned on by default)
+
+	custom_colors = nil, -- If you want to override the default colors, set this to a function
+
+	custom_highlights = {}, -- Overwrite highlights with your own
+})
+vim.g.material_style = "deep ocean"
+vim.cmd("colorscheme material")
+
 vim.cmd("hi FloatBorder guifg=#0F111A")
 vim.cmd("hi NormalFloat guibg=#0F111A")
 
@@ -72,11 +129,12 @@ vim.cmd("highlight TelescopeSelection guibg=#1F2233 guifg=#6791C9")
 
 -- Line Numbers
 vim.cmd("hi CursorColumn guibg=#101317")
-vim.cmd("hi Cursor guibg=#FFFFFF guifg=#101317")
 vim.cmd("hi CursorLineFold guibg=#101317 guifg=#70C0BA")
 vim.cmd("hi CursorLine guibg=none")
-vim.cmd("hi CursorLineNr gui=bold guifg=#FFFFFF")
+vim.cmd("hi CursorLineNr gui=bold guifg=#FFBE91")
 vim.cmd("hi CursorLineSign guibg=none")
+
+vim.cmd("hi Cursor guibg=#FFBE91 guifg=#101317")
 
 -- Neo Tree Higlights
 vim.cmd("hi NvimTreeDirectoryIcon guifg=#BDCBD6")
@@ -126,3 +184,6 @@ vim.cmd("hi NotifyWARNTitle guibg=#08090E guifg=#FFE59E")
 vim.cmd("hi IndentBlanklineChar guifg=#22272C")
 vim.cmd("hi IndentBlanklineContextChar guifg=#7AB0DF")
 vim.cmd("hi IndentBlanklineContextStart guibg=#16191F")
+
+-- Barbeque
+vim.cmd("hi barbecue_normal guibg=#090B0F")

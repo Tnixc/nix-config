@@ -22,5 +22,3 @@ vim.opt.runtimepath:prepend(lazypath)
 
 -- Where you can intall and modify your plugins
 require("plugins")
--- Highlighting
-require("core.highlight")

@@ -40,9 +40,6 @@ local config = {
 		component_separators = "",
 		section_separators = "",
 		theme = {
-			-- We are going to use lualine_c an lualine_x as left and
-			-- right section. Both are highlighted by c theme .  So we
-			-- are just setting default looks o statusline
 			normal = { c = { fg = colors.fg, bg = colors.bg } },
 			inactive = { c = { fg = colors.fg, bg = colors.bg } },
 		},
@@ -79,59 +76,59 @@ local function ins_right(component)
 end
 
 ins_left({
-    -- mode component
-    function()
-        local mode_names = {
-            n = "NORMAL",
-            i = "INSERT",
-            v = "VISUAL",
-            [""] = "V-BLOCK",
-            V = "V-LINE",
-            c = "COMMAND",
-            no = "OPERATOR",
-            s = "SELECT",
-            S = "S-LINE",
-            [""] = "S-BLOCK",
-            ic = "ITALIC",
-            R = "REPLACE",
-            Rv = "V-REPLACE",
-            cv = "COMMAND",
-            ce = "NORMAL",
-            r = "PROMPT",
-            rm = "MORE",
-            ["r?"] = "CONFIRM",
-            ["!"] = "SHELL",
-            t = "TERMINAL",
-        }
-        return mode_names[vim.fn.mode()] or ""
-    end,
-    color = function()
-        -- auto change color according to neovims mode
-        local mode_color = {
-            n = colors.yellow,
-            i = colors.green,
-            v = colors.blue,
-            [""] = colors.blue,
-            V = colors.blue,
-            c = colors.magenta,
-            no = colors.red,
-            s = colors.orange,
-            S = colors.orange,
-            [""] = colors.orange,
-            ic = colors.yellow,
-            R = colors.violet,
-            Rv = colors.violet,
-            cv = colors.red,
-            ce = colors.red,
-            r = colors.cyan,
-            rm = colors.cyan,
-            ["r?"] = colors.cyan,
-            ["!"] = colors.red,
-            t = colors.red,
-        }
-        return { fg = colors.bg, bg = mode_color[vim.fn.mode()], gui = 'bold' }
-    end,
-    padding = { left = 1, right = 1 },
+	-- mode component
+	function()
+		local mode_names = {
+			n = "NORMAL",
+			i = "INSERT",
+			v = "VISUAL",
+			[""] = "V-BLOCK",
+			V = "V-LINE",
+			c = "COMMAND",
+			no = "OPERATOR",
+			s = "SELECT",
+			S = "S-LINE",
+			[""] = "S-BLOCK",
+			ic = "ITALIC",
+			R = "REPLACE",
+			Rv = "V-REPLACE",
+			cv = "COMMAND",
+			ce = "NORMAL",
+			r = "PROMPT",
+			rm = "MORE",
+			["r?"] = "CONFIRM",
+			["!"] = "SHELL",
+			t = "TERMINAL",
+		}
+		return mode_names[vim.fn.mode()] or ""
+	end,
+	color = function()
+		-- auto change color according to neovims mode
+		local mode_color = {
+			n = colors.yellow,
+			i = colors.green,
+			v = colors.blue,
+			[""] = colors.blue,
+			V = colors.blue,
+			c = colors.magenta,
+			no = colors.red,
+			s = colors.orange,
+			S = colors.orange,
+			[""] = colors.orange,
+			ic = colors.yellow,
+			R = colors.violet,
+			Rv = colors.violet,
+			cv = colors.red,
+			ce = colors.red,
+			r = colors.cyan,
+			rm = colors.cyan,
+			["r?"] = colors.cyan,
+			["!"] = colors.red,
+			t = colors.red,
+		}
+		return { fg = colors.bg, bg = mode_color[vim.fn.mode()], gui = "bold" }
+	end,
+	padding = { left = 1, right = 1 },
 })
 
 ins_left({ "location" })
@@ -167,7 +164,6 @@ ins_right({
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.magenta, gui = "bold" },
 })
-
 
 ins_right({
 	"diagnostics",

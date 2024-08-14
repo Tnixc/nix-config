@@ -37,9 +37,6 @@
     gh
 
     lua
-
-    ani-cli
-    mangal
     stylua
 
     elixir
@@ -57,6 +54,8 @@
     zig
 
     ani-cli
+            mangal
+
     aria2
     yt-dlp
     ffmpeg
