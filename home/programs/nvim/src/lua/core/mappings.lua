@@ -35,9 +35,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- -- Clear highlights
 -- keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
 
--- Close buffers
-keymap("n", "<S-w>", ":bdelete<CR>", opts)
-
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
@@ -114,7 +111,7 @@ keymap('n', '<C-w>|', '<cmd>WindowsMaximizeHorizontally')
 keymap('n', '<C-w>=', '<cmd>WindowsEqualize')
 
 -- Buffer management
-vim.keymap.set('n', '<M-w>', ':BufferKill<CR>', opts)
+vim.keymap.set('n', '<M-w>', ':bdelete<CR>', opts)
 vim.keymap.set('n', '<M-Tab>', ':BufferLineCycleNext<CR>', opts)
 
 -- Quickly switch to buffer number

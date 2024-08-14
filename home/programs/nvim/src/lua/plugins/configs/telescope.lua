@@ -10,8 +10,8 @@ require('telescope').setup {
       vertical = {
         mirror = false,
       },
-      width = 0.69,
-      height = 0.75,
+      width = 0.9,
+      height = 0.9,
       preview_cutoff = 120,
     },
     find_command = {
