@@ -70,7 +70,8 @@ keymap("n", "<leader>rw", "<CMD>SearchReplaceSingleBufferCWord<CR>", opts)
 keymap("n", "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
 keymap("n", "<leader>dc", "<cmd>lua require'dap'.continue()<cr>", opts)
 keymap("n", "<leader>di", "<cmd>lua require'dap'.step_into()<cr>", opts)
-keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts) keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
+keymap("n", "<leader>do", "<cmd>lua require'dap'.step_over()<cr>", opts)
+keymap("n", "<leader>dO", "<cmd>lua require'dap'.step_out()<cr>", opts)
 keymap("n", "<leader>dr", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>lua require'dap'.run_last()<cr>", opts)
 keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
@@ -92,29 +93,29 @@ keymap("n", "<leader>gg", "<cmd>LazyGit<cr>", opts)
 -- Control all select
 keymap("n", "<C-a>", "ggVG", opts)
 
--- Tmux Navigator 
+-- Tmux Navigator
 keymap("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", opts)
 keymap("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", opts)
 keymap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", opts)
 keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", opts)
 
--- MarkDown Text Open 
+-- MarkDown Text Open
 keymap("n", "<leader>mp", "<cmd>PeekOpen<CR>", opts)
 
 -- Open Ranger
 keymap("n", "<leader>t", "<cmd>RnvimrToggle<CR>", opts)
 
 -- Other Ultilities
-keymap('n', '<C-w>z', '<cmd>WindowsMaximize')
-keymap('n', '<C-w>_', '<cmd>WindowsMaximizeVertically')
-keymap('n', '<C-w>|', '<cmd>WindowsMaximizeHorizontally')
-keymap('n', '<C-w>=', '<cmd>WindowsEqualize')
+keymap("n", "<C-w>z", "<cmd>WindowsMaximize")
+keymap("n", "<C-w>_", "<cmd>WindowsMaximizeVertically")
+keymap("n", "<C-w>|", "<cmd>WindowsMaximizeHorizontally")
+keymap("n", "<C-w>=", "<cmd>WindowsEqualize")
 
 -- Buffer management
-vim.keymap.set('n', '<M-w>', ':bdelete<CR>', opts)
-vim.keymap.set('n', '<M-Tab>', ':BufferLineCycleNext<CR>', opts)
+vim.keymap.set("n", "<M-w>", ":bdelete<CR>", opts)
+vim.keymap.set("n", "<M-Tab>", ":BufferLineCycleNext<CR>", opts)
 
 -- Quickly switch to buffer number
 for i = 1, 9 do
-  vim.keymap.set('n', '<M-' .. i .. '>', ':BufferLineGoToBuffer ' .. i .. ' <CR>', opts)
+	vim.keymap.set("n", "<M-" .. i .. ">", ":BufferLineGoToBuffer " .. i .. " <CR>", opts)
 end

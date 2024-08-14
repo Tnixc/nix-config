@@ -6,39 +6,6 @@ end
 lazy.setup({
 	root = vim.fn.stdpath("data") .. "/lazy",
 	{
-		"neovim/nvim-lspconfig",
-		dependencies = {
-			-- LSP Stuff
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			"jose-elias-alvarez/null-ls.nvim",
-			"glepnir/lspsaga.nvim",
-			"RRethy/vim-illuminate",
-
-			-- Completions
-			"hrsh7th/nvim-cmp",
-			"hrsh7th/cmp-buffer",
-			"hrsh7th/cmp-path",
-			"dcampos/nvim-snippy",
-			"doxnit/cmp-luasnip-choice",
-			"saadparwaiz1/cmp_luasnip",
-			"hrsh7th/cmp-nvim-lsp",
-			"hrsh7th/cmp-nvim-lua",
-			"lukas-reineke/cmp-under-comparator",
-			"L3MON4D3/LuaSnip",
-			"hrsh7th/cmp-vsnip",
-			"rafamadriz/friendly-snippets",
-			"hrsh7th/cmp-nvim-lsp-signature-help",
-			"hrsh7th/cmp-copilot",
-		},
-		config = function()
-			-- Lsp Configs
-			require("plugins.configs.lsp")
-			-- Completions
-			require("plugins.configs.cmp")
-		end,
-	},
-	{
 		"stevearc/oil.nvim",
 		opts = {},
 	},
@@ -70,23 +37,12 @@ lazy.setup({
 		end,
 	},
 	{
-		"mfussenegger/nvim-dap",
-		dependencies = {
-			"rcarriga/nvim-dap-ui",
-			"ravenxrz/DAPInstall.nvim",
-		},
-		config = function()
-			require("plugins.configs.ui.dap")
-		end,
-	},
-	{
 		"utilyre/barbecue.nvim",
 		name = "barbecue",
 		version = "*",
 		dependencies = {
 			"SmiteshP/nvim-navic",
 		},
-		opts = require("plugins.configs.lsp.bbq"),
 	},
 	{
 		"nvim-tree/nvim-tree.lua",

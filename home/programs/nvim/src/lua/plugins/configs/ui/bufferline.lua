@@ -14,7 +14,7 @@ bl.setup({
 		diagnostics_update_in_insert = false,
 		diagnostics_indicator = true,
 		always_show_bufferline = true,
-        themable = true,
-        show_buffer_icons = true
+		themable = true,
+		show_buffer_icons = true,
 	},
 })

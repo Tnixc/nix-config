@@ -1,5 +1,5 @@
 vim.defer_fn(function()
-  pcall(require, "impatient")
+	pcall(require, "impatient")
 end, 0)
 
 -- For options & keymappings & coloring
@@ -20,7 +20,7 @@ end
 
 vim.opt.runtimepath:prepend(lazypath)
 
--- Where you can intall and modify your plugins 
+-- Where you can intall and modify your plugins
 require("plugins")
 -- Highlighting
-require("core.hi")
+require("core.highlight")

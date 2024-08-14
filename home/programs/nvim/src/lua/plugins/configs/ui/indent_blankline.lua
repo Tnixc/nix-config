@@ -1,5 +1,5 @@
 local dap_status_ok, ibl = pcall(require, "ibl")
 if not dap_status_ok then
-  return
+	return
 end
 ibl.setup()

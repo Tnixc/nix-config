@@ -1,4 +1,4 @@
 -- options & settings for neovim
-require('core.options')
+require("core.options")
 -- Keybindings
-require('core.mappings')
+require("core.mappings")

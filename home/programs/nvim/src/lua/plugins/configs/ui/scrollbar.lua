@@ -1,8 +1,8 @@
-local status_ok, sc = pcall(require,'scrollbar')
+local status_ok, sc = pcall(require, "scrollbar")
 
-if not status_ok then 
-  return
-end;
+if not status_ok then
+	return
+end
 
 sc.setup({
 	show = true,
