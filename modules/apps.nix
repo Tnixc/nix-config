@@ -26,7 +26,6 @@
     skim
     jq
     ripgrep
-    neovim
     loc
     hyperfine
     wget
@@ -98,6 +97,7 @@
 
     # `brew install`
     brews = [
+      "neovim"
       "nowplaying-cli"
       "switchaudio-osx"
       "sketchybar"
