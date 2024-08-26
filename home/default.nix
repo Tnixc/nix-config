@@ -10,6 +10,7 @@
     ./programs/yabai/yabai.nix
     ./programs/skhd/skhd.nix
     ./programs/nvim/nvim.nix
+    ./programs/zed/zed.nix
   ];
 
   # Home Manager needs a bit of information about you and the
