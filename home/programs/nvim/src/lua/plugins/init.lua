@@ -13,7 +13,7 @@ lazy.setup({
 	}, -- File explorer with a buffer-like interface
 	-- Appearance
 	{
-		"marko-cerovac/material.nvim",
+		"shaunsingh/moonlight.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
@@ -104,7 +104,7 @@ lazy.setup({
 	{ "windwp/nvim-ts-autotag" }, -- Auto-close and rename HTML tags
 
 	-- Navigation and Search
-	{ "akinsho/toggleterm.nvim", version = "*", opts = { open_mapping = [[<M-l>]]} }, -- Toggle terminal
+	{ "akinsho/toggleterm.nvim", version = "*", opts = { open_mapping = [[<M-l>]] } }, -- Toggle terminal
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
@@ -179,12 +179,56 @@ lazy.setup({
 		end,
 	}, -- Syntax highlighting and code parsing
 
-	-- LSP stuff
-	{ "williamboman/mason.nvim" },
-	{ "williamboman/mason-lspconfig.nvim" },
-	{ "neovim/nvim-lspconfig" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/nvim-cmp" },
-})
+	-- Main LSP Configuration and completion
+	{ -- Autocompletion
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		dependencies = {
+			-- Snippet Engine & its associated nvim-cmp source
+			{
+				"L3MON4D3/LuaSnip",
+				build = (function()
+					-- Build Step is needed for regex support in snippets.
+					-- This step is not supported in many windows environments.
+					-- Remove the below condition to re-enable on windows.
+					if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
+						return
+					end
+					return "make install_jsregexp"
+				end)(),
+				dependencies = {},
+			},
+			"saadparwaiz1/cmp_luasnip",
 
-require("plugins.configs.lsp")
+			-- Adds other completion capabilities.
+			--  nvim-cmp does not ship with all sources by default. They are split
+			--  into multiple repos for maintenance purposes.
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-path",
+		},
+		config = function()
+			require("plugins.configs.cmp")
+		end,
+		-- See `:help cmp`
+	},
+	{
+		"neovim/nvim-lspconfig",
+		dependencies = {
+			-- Automatically install LSPs and related tools to stdpath for Neovim
+			{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
+			"williamboman/mason-lspconfig.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+
+			-- Useful status updates for LSP.
+			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+			{ "j-hui/fidget.nvim", opts = {} },
+
+			-- Allows extra capabilities provided by nvim-cmp
+			"hrsh7th/cmp-nvim-lsp",
+		},
+
+		config = function()
+			require("plugins.configs.lsp")
+		end,
+	},
+})

@@ -5,7 +5,7 @@ local app_icons = require("helpers.app_icons")
 
 local spaces = {}
 
-for i = 1, 10, 1 do
+for i = 1, 20, 1 do
 	local space = sbar.add("space", "space." .. i, {
 		space = i,
 		icon = {

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     pueue
@@ -54,7 +53,7 @@
     zig
 
     ani-cli
-            mangal
+    mangal
 
     aria2
     yt-dlp
@@ -72,13 +71,13 @@
     nodejs_22
   ];
 
-    #cargo
-    #rustfmt
-    #rustc
-    #rust-analyzer all handled by rustup
+  #cargo
+  #rustfmt
+  #rustc
+  #rust-analyzer all handled by rustup
 
   homebrew = {
-    enable = true;
+    enable = false;
 
     onActivation = {
       autoUpdate = false;

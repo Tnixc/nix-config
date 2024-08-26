@@ -1,9 +1,3 @@
-local present, cmp = pcall(require, "cmp")
-
-if not present then
-	return
-end
-
 local kind_icons = {
 	Array = "  ",
 	Boolean = "  ",
@@ -41,39 +35,45 @@ local kind_icons = {
 	Variable = "  ",
 }
 
+local cmp = require("cmp")
+local luasnip = require("luasnip")
+luasnip.config.setup({})
+
 cmp.setup({
-	snippet = {
-		expand = function(args)
-			local present, luasnip = pcall(require, "luasnip")
-			if present then
-				luasnip.lsp_expand(args.body)
-			end
-		end,
-	},
 	window = {
 		completion = { border = "solid", scrollbar = false },
-		documentation = { border = "solid", scrollbar = false },
+		documentation = { border = "solid", scrollbar = true },
 	},
-	mapping = cmp.mapping.preset.insert({
-		["<C-Space>"] = cmp.mapping.complete(),
-		["<Esc>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
-		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
+	snippet = {
+		expand = function(args)
+			luasnip.lsp_expand(args.body)
+		end,
+	},
+	completion = { completeopt = "menu,menuone,noinsert" },
 
-		["<S-Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			else
-				fallback()
-			end
-		end, { "i", "s" }),
+	-- For an understanding of why these mappings were
+	-- chosen, you will need to read `:help ins-completion`
+	--
+	-- No, but seriously. Please read `:help ins-completion`, it is really good!
+	mapping = cmp.mapping.preset.insert({
+
+		-- If you prefer more traditional completion keymaps,
+		-- you can uncomment the following lines
+		['<CR>'] = cmp.mapping.confirm { select = true },
+		['<Tab>'] = cmp.mapping.select_next_item(),
+		['<S-Tab>'] = cmp.mapping.select_prev_item(),
+
 	}),
+	sources = {
+		{
+			name = "lazydev",
+			-- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
+			group_index = 0,
+		},
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "path" },
+	},
 	formatting = {
 		fields = { "abbr", "menu", "kind" },
 		format = function(entry, vim_item)
@@ -89,15 +89,4 @@ cmp.setup({
 			return vim_item
 		end,
 	},
-	sources = cmp.config.sources({
-		{ name = "path" },
-		{ name = "nvim_lsp" },
-		{ name = "copilot" },
-		{ name = "luasnip_choice" },
-		{ name = "snippy" },
-		{ name = "nvim_lua" },
-		{ name = "vsnip" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-	}),
 })

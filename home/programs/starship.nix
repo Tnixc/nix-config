@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   programs.starship = {
     enable = true;
 
@@ -8,7 +7,8 @@
     enableNushellIntegration = true;
 
     settings = {
-      format = "$hostname [✦ ](white)$shell$directory$git_branch$git_status$character";
+      format =
+        "$hostname [✦ ](white)$shell$directory$git_branch$git_status$character";
 
       directory = {
         style = "blue";
@@ -64,9 +64,7 @@
         disabled = false;
       };
 
-      line_break = {
-        disabled = false;
-      };
+      line_break = { disabled = false; };
 
       hostname = {
         ssh_only = false;
