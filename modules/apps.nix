@@ -69,6 +69,7 @@
     zopfli
 
     nodejs_22
+    yarn
   ];
 
   #cargo
