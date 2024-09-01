@@ -12,8 +12,7 @@
   "base_keymap": "VSCode",
   // Features that can be globally enabled or disabled
   "features": {
-    // Show Copilot icon in status bar
-    "copilot": true
+    "inline_completion_provider": "supermaven"
   },
   // The name of a font to use for rendering text in the editor
   "buffer_font_family": "BerkeleyMono Nerd Font",
@@ -46,7 +45,7 @@
   "ui_font_size": 17,
   // The factor to grow the active pane by. Defaults to 1.0
   // which gives the same size as all other panes.
-  "active_pane_magnification": 1.1,
+  "active_pane_magnification": 1.8,
   // Whether to enable vim modes and key bindings
   "vim_mode": true,
   // Whether to show the informational hover box when moving the mouse
@@ -54,6 +53,9 @@
   "hover_popover_enabled": true,
   // Whether to confirm before quitting Zed.
   "confirm_quit": false,
+  // whether to use the system provided dialogs for open and save as.
+  // when set to false, zed will use the built-in keyboard-first pickers.
+  "use_system_path_prompts": false,
   // Whether the cursor blinks in the editor.
   "cursor_blink": true,
   // Whether to pop the completions menu while typing in an editor without

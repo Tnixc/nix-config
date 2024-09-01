@@ -6,17 +6,17 @@ local lualine = require("lualine")
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = '#0F111A',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
-  cyan     = '#008080',
-  darkblue = '#081633',
-  green    = '#98be65',
-  orange   = '#FF8800',
-  violet   = '#a9a1e1',
-  magenta  = '#c678dd',
-  blue     = '#82AAFF',
-  red      = '#ec5f67',
+  bg       = '#131521',
+  fg       = '#BBCAFD',
+  yellow   = '#E9AD5B',
+  cyan     = '#41DDCA',
+  sapphire = '#00BCDB',
+  green    = '#90D05A',
+  orange   = '#FF9856',
+  purple   = '#C198FD',
+  magenta  = '#FCA6E0',
+  blue     = '#5DA5FF',
+  red      = '#FF5F8C',
 }
 
 local conditions = {
@@ -108,7 +108,6 @@ ins_left({
 			n = colors.yellow,
 			i = colors.green,
 			v = colors.blue,
-			[""] = colors.blue,
 			V = colors.blue,
 			c = colors.magenta,
 			no = colors.red,
@@ -116,8 +115,8 @@ ins_left({
 			S = colors.orange,
 			[""] = colors.orange,
 			ic = colors.yellow,
-			R = colors.violet,
-			Rv = colors.violet,
+			R = colors.purple,
+			Rv = colors.purple,
 			cv = colors.red,
 			ce = colors.red,
 			r = colors.cyan,
@@ -171,7 +170,7 @@ ins_right({
 	symbols = { error = " ", warn = " ", info = " " },
 	diagnostics_color = {
 		color_error = { fg = colors.red },
-		color_warn = { fg = colors.yellow },
+		color_warn = { fg = colors.orange },
 		color_info = { fg = colors.cyan },
 	},
 })
@@ -196,7 +195,7 @@ ins_right({
 		return msg
 	end,
 	icon = " LSP:",
-	color = { fg = "#ffffff", gui = "bold" },
+	color = { fg = colors.purple, gui = "bold" },
 })
 
 lualine.setup(config)

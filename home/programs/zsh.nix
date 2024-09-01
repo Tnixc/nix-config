@@ -12,6 +12,8 @@
         gc() {
           git commit -m "$1"
         }
+    
+        export EDITOR=nvim
 
         export BUN_INSTALL="$HOME/.bun"
         export PATH="$BUN_INSTALL/bin:$PATH"
@@ -30,6 +32,8 @@
 
   home.shellAliases = {
     a = "nvim";
+    vim = "nvim";
+    vi = "nvim";
     q = "exit";
 
     cat = "bat --theme base16";

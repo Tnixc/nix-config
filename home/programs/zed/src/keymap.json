@@ -76,7 +76,6 @@
       "alt-left": "editor::MoveToPreviousWordStart",
       "alt-b": "editor::MoveToPreviousWordStart",
       "alt-right": "editor::MoveToNextWordEnd",
-      "alt-f": "editor::MoveToNextWordEnd",
       "cmd-left": "editor::MoveToBeginningOfLine",
       "ctrl-a": "editor::MoveToBeginningOfLine",
       "cmd-right": "editor::MoveToEndOfLine",

@@ -20,8 +20,8 @@ alt + shift - r : killall yabai&&yabai --start-service&&skhd --reload
 ctrl + alt + cmd + shift - 0x32 : yabai -m space --rotate 90
 
 # focus windows
-ctrl + alt + cmd + shift - q : yabai -m window --focus next || yabai -m window --focus first
-ctrl + alt + cmd + shift - e : yabai -m window --focus prev || yabai -m window --focus last
+ctrl + alt + cmd + shift - q : yabai -m space --focus prev
+ctrl + alt + cmd + shift - e : yabai -m space --focus next
 
 # window resizing
 ctrl + alt + cmd + shift - w : yabai -m window --resize top:0:-20 || yabai -m window --resize bottom:0:-20

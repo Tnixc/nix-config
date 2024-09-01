@@ -54,14 +54,6 @@ dashboard.section.buttons.val = {
 			require("telescope.builtin").oldfiles()
 		end,
 	}),
-	button("space f p", "  Projects", leader, nil, {
-		noremap = true,
-		silent = true,
-		nowait = true,
-		callback = function()
-			require("telescope").extensions.projects.projects({})
-		end,
-	}),
 	button("space f n", "  New Files", leader, nil, {
 		noremap = true,
 		silent = true,

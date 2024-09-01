@@ -4,6 +4,7 @@
     pueue
     git
     ranger
+    yazi
 
     yabai
     skhd
