@@ -112,12 +112,22 @@ keymap("n", "<M-Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Switch to next 
 
 -- Trouble
 keymap("n", "<leader>xx", "<cmd>Trouble diagnostics<cr>", { desc = "Open Trouble diagnostics", silent = true })
-keymap("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", { desc = "Toggle Trouble diagnostics for current buffer", silent = true })
+keymap(
+	"n",
+	"<leader>xX",
+	"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+	{ desc = "Toggle Trouble diagnostics for current buffer", silent = true }
+)
 
 -- NvimTree
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle NvimTree file explorer", silent = true })
 
 -- Quickly switch to buffer number
 for i = 1, 9 do
-    keymap("n", "<M-" .. i .. ">", "<cmd>BufferLineGoToBuffer " .. i .. " <CR>", { desc = "Go to buffer " .. i, silent = true })
+	keymap(
+		"n",
+		"<M-" .. i .. ">",
+		"<cmd>BufferLineGoToBuffer " .. i .. " <CR>",
+		{ desc = "Go to buffer " .. i, silent = true }
+	)
 end
