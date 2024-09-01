@@ -8,7 +8,7 @@ bl.setup({
 		close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
 		right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
 		offsets = { { filetype = "NeoTree", text = "", padding = 1 } },
-		separator_style = {"|", "|"}, -- slant, padded_slant; slope, padded_slope; thick; thin
+		separator_style = { "|", "|" }, -- slant, padded_slant; slope, padded_slope; thick; thin
 		color_icons = true,
 		diagnostics = false,
 		diagnostics_update_in_insert = false,

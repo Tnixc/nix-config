@@ -12,7 +12,7 @@
         gc() {
           git commit -m "$1"
         }
-    
+
         export EDITOR=nvim
 
         export BUN_INSTALL="$HOME/.bun"

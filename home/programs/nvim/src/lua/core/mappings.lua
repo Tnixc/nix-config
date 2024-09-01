@@ -67,20 +67,19 @@ keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
 keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
 
 -- Multicursor
-keymap('v', '<leader>m', ":'<,'>MCvisual<CR>", opts)
+keymap("v", "<leader>m", ":'<,'>MCvisual<CR>", opts)
 
 -- Move lines up and down in normal mode
-keymap('n', '<A-j>', ':m .+1<CR>==', opts)
-keymap('n', '<A-k>', ':m .-2<CR>==', opts)
+keymap("n", "<A-j>", ":m .+1<CR>==", opts)
+keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Move lines up and down in insert mode
-keymap('i', '<A-j>', '<Esc>:m .+1<CR>==gi', opts)
-keymap('i', '<A-k>', '<Esc>:m .-2<CR>==gi', opts)
+keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- Move lines up and down in visual mode
-keymap('v', '<A-j>', ":m '>+1<CR>gv=gv", opts)
-keymap('v', '<A-k>', ":m '<-2<CR>gv=gv", opts)
-
+keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- LazyGit
 keymap("n", "<leader>gg", "<cmd>LazyGit<cr>", opts)
@@ -94,7 +93,7 @@ keymap("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", opts)
 keymap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", opts)
 keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", opts)
 
--- quick commands 
+-- quick commands
 keymap("n", "<leader>w", "<cmd>w<cr>", opts)
 keymap("n", "<leader>q", "<cmd>q<cr>", opts)
 keymap("n", "<leader>Q", "<cmd>q!<cr>", opts)
@@ -105,5 +104,5 @@ keymap("n", "<M-Tab>", ":BufferLineCycleNext<CR>", opts)
 
 -- Quickly switch to buffer number
 for i = 1, 9 do
-    keymap("n", "<M-" .. i .. ">", ":BufferLineGoToBuffer " .. i .. " <CR>", opts)
+	keymap("n", "<M-" .. i .. ">", ":BufferLineGoToBuffer " .. i .. " <CR>", opts)
 end
