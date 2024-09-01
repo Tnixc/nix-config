@@ -22,10 +22,10 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Up>", "<cmd>resize -2<CR>", opts)
+keymap("n", "<C-Down>", "<cmd>resize +2<CR>", opts)
+keymap("n", "<C-Left>", "<cmd>vertical resize -2<CR>", opts)
+keymap("n", "<C-Right>", "<cmd>vertical resize +2<CR>", opts)
 
 -- -- Clear highlights
 keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", opts)
@@ -46,15 +46,15 @@ keymap("v", ">", ">gv", opts)
 
 -- Telescope
 -- find
-keymap("n", "<leader>ft", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
-keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
-keymap("n", "<leader>ff", ":Telescope oldfiles<CR>", opts)
-keymap("n", "<leader>fr", ":Yazi<CR>", opts)
+keymap("n", "<leader>ft", "<cmd>Telescope find_files<CR>", opts)
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope oldfiles<CR>", opts)
+keymap("n", "<leader>fr", "<cmd>Yazi<CR>", opts)
 
 -- git
-keymap("n", "<leader>cm", ":Telescope git_commits<CR>", opts)
-keymap("n", "<leader>gt", ":Telescope git_status<CR>", opts)
+keymap("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", opts)
+keymap("n", "<leader>gt", "<cmd>Telescope git_status<CR>", opts)
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
@@ -69,23 +69,23 @@ keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
 keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
 
 -- Multicursor
-keymap("v", "<leader>m", ":'<,'>MCvisual<CR>", opts)
+keymap("v", "<leader>m", "<cmd>'<,'>MCvisual<CR>", opts)
 
 -- Comment
 keymap("v", "<leader>/", "gc", opts)
 keymap("n", "<leader>/", "Vgc<esc>", opts)
 
 -- Move lines up and down in normal mode
-keymap("n", "<A-j>", ":m .+1<CR>==", opts)
-keymap("n", "<A-k>", ":m .-2<CR>==", opts)
+keymap("n", "<A-j>", "<cmd>m .+1<CR>==", opts)
+keymap("n", "<A-k>", "<cmd>m .-2<CR>==", opts)
 
 -- Move lines up and down in insert mode
-keymap("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("i", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+keymap("i", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", opts)
+keymap("i", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", opts)
 
 -- Move lines up and down in visual mode
-keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
-keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
+keymap("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", opts)
+keymap("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", opts)
 
 -- LazyGit
 keymap("n", "<leader>gg", "<cmd>LazyGit<cr>", opts)
@@ -105,15 +105,17 @@ keymap("n", "<leader>q", "<cmd>q<cr>", opts)
 keymap("n", "<leader>Q", "<cmd>q!<cr>", opts)
 
 -- Buffer management
-keymap("n", "<M-w>", ":bdelete<CR>", opts)
-keymap("n", "<M-Tab>", ":BufferLineCycleNext<CR>", opts)
+keymap("n", "<M-w>", "<cmd>bdelete<CR>", opts)
+keymap("n", "<M-Tab>", "<cmd>BufferLineCycleNext<CR>", opts)
 
 -- Trouble
-
 keymap("n", "<leader>xx", "<cmd>Trouble diagnostics<cr>", opts)
 keymap("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", opts)
+ 
+-- NvimTree
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", opts)
 
 -- Quickly switch to buffer number
 for i = 1, 9 do
-	keymap("n", "<M-" .. i .. ">", ":BufferLineGoToBuffer " .. i .. " <CR>", opts)
+	keymap("n", "<M-" .. i .. ">", "<cmd>BufferLineGoToBuffer " .. i .. " <CR>", opts)
 end

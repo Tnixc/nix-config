@@ -61,9 +61,6 @@ lazy.setup({
         config = function()
             require("plugins.configs.ui.nvim-tree")
         end,
-        keys = {
-            { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "NeoTree" },
-        },
     }, -- File explorer tree
     {
         "goolord/alpha-nvim",
@@ -149,9 +146,6 @@ lazy.setup({
     { "lewis6991/gitsigns.nvim",       config = true, event = "BufEnter" }, -- Git signs in the gutter
     {
         "kdheepak/lazygit.nvim",
-        keys = {
-            { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-        },
     }, -- LazyGit integration
 
     -- Miscellaneous
