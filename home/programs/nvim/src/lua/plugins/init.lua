@@ -3,7 +3,6 @@ if not ok then
     return
 end
 
-vim.loader.enable()
 lazy.setup({
     root = vim.fn.stdpath("data") .. "/lazy",
     -- Appearance
@@ -86,7 +85,16 @@ lazy.setup({
             require("plugins.configs.ui.scrollbar")
         end,
     }, -- Scrollbar with diagnostics and search results
-
+    {
+        "nullishamy/autosave.nvim",
+        config = function()
+            require("autosave").setup({})
+        end
+    },
+    {
+        'willothy/moveline.nvim',
+        build = 'make',
+    },
     -- editing helpers
     {
         "kylechui/nvim-surround",
@@ -122,6 +130,15 @@ lazy.setup({
     { "windwp/nvim-ts-autotag",  opts = {} },                                          -- Auto-close and rename HTML tags
     -- Navigation and Search
     { "akinsho/toggleterm.nvim", version = "*", opts = { open_mapping = [[<M-l>]] } }, -- Toggle terminal
+    {
+        "natecraddock/workspaces.nvim",
+        config = function()
+            require("workspaces").setup({
+                hooks = {
+                    open = { "Telescope find_files" }, }
+            })
+        end
+    },
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
@@ -197,15 +214,6 @@ lazy.setup({
             delay = 1000,
             preset = "modern",
         },
-    },
-    {
-        "natecraddock/workspaces.nvim",
-        config = function()
-            require("workspaces").setup({
-                hooks = {
-                    open = { "Telescope find_files" }, }
-            })
-        end
     },
     -- Main LSP Configuration and completion
     {

@@ -1,9 +1,7 @@
-vim.defer_fn(function()
-	pcall(require, "impatient")
-end, 0)
-
+vim.loader.enable()
 -- For options & keymappings & coloring
-require("core")
+-- options & settings for neovim
+require("core.options")
 
 -- Install the Lazy Plugins Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -22,3 +20,6 @@ vim.opt.runtimepath:prepend(lazypath)
 
 -- Where you can intall and modify your plugins
 require("plugins")
+
+-- Keybindings
+require("core.mappings")

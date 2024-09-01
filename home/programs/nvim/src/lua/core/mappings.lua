@@ -57,7 +57,10 @@ keymap("n", "<leader>ff", "<cmd>Telescope oldfiles<CR>", { desc = "Find recent f
 keymap("n", "<leader>fd", "<cmd>Telescope git_files<CR>", { desc = "Find git files", silent = true })
 keymap("n", "<leader>fo", "<cmd>Telescope workspaces<CR>", { desc = "Open workspace", silent = true })
 
-keymap("n", "<leader>;", "<cmd>Telescope commands<CR>", { desc = "Find commands", silent = true })
+keymap("n", "<leader>l", "<cmd>Telescope commands<CR>", { desc = "Find commands", silent = true })
+
+-- alpha
+keymap("n", "<leader>a", "<cmd>Alpha<CR>", { desc = "Go to Alpha screen", silent = true })
 
 -- git
 keymap("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "Git commits", silent = true })
@@ -79,18 +82,15 @@ keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { desc = "Show si
 keymap("v", "<leader>m", "<cmd>'<,'>MCvisual<CR>", { desc = "Create multiple cursors", silent = true })
 
 
--- Move lines up and down in normal mode
-keymap("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "Move line down", silent = true })
-keymap("n", "<A-k>", "<cmd>m .-2<CR>==", { desc = "Move line up", silent = true })
+-- Move lines
+keymap("i", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", { silent = true })
+keymap("i", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", { silent = true })
 
--- Move lines up and down in insert mode
-keymap("i", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", { desc = "Move line down in insert mode", silent = true })
-keymap("i", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", { desc = "Move line up in insert mode", silent = true })
-
--- Move lines up and down in visual mode
-keymap("v", "<A-j>", "<cmd>m '>+1<CR>gv=gv", { desc = "Move selection down", silent = true })
-keymap("v", "<A-k>", "<cmd>m '<-2<CR>gv=gv", { desc = "Move selection up", silent = true })
-
+local moveline = require('moveline')
+keymap('n', '<A-k>', moveline.up, { silent = true })
+keymap('n', '<A-j>', moveline.down, { silent = true })
+keymap('v', '<A-k>', moveline.block_up, { silent = true })
+keymap('v', '<A-j>', moveline.block_down, { silent = true })
 -- LazyGit
 keymap("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit", silent = true })
 
@@ -115,10 +115,10 @@ keymap("n", "<M-Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Switch to next 
 -- Trouble
 keymap("n", "<leader>xx", "<cmd>Trouble diagnostics<cr>", { desc = "Open Trouble diagnostics", silent = true })
 keymap(
-	"n",
-	"<leader>xX",
-	"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-	{ desc = "Toggle Trouble diagnostics for current buffer", silent = true }
+    "n",
+    "<leader>xX",
+    "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+    { desc = "Toggle Trouble diagnostics for current buffer", silent = true }
 )
 
 -- NvimTree
@@ -126,10 +126,10 @@ keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle NvimTree fi
 
 -- Quickly switch to buffer number
 for i = 1, 9 do
-	keymap(
-		"n",
-		"<M-" .. i .. ">",
-		"<cmd>BufferLineGoToBuffer " .. i .. " <CR>",
-		{ desc = "Go to buffer " .. i, silent = true }
-	)
+    keymap(
+        "n",
+        "<M-" .. i .. ">",
+        "<cmd>BufferLineGoToBuffer " .. i .. " <CR>",
+        { desc = "Go to buffer " .. i, silent = true }
+    )
 end

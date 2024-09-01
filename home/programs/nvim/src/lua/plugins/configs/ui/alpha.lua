@@ -46,7 +46,7 @@ end
 
 local leader = " "
 dashboard.section.buttons.val = {
-    button("space f p", "  Open workspace", leader, nil, {
+    button("space f o", "  Open workspace", leader, nil, {
         noremap = true,
         silent = true,
         nowait = true,
