@@ -73,9 +73,6 @@ keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { desc = "Show si
 -- Multicursor
 keymap("v", "<leader>m", "<cmd>'<,'>MCvisual<CR>", { desc = "Create multiple cursors", silent = true })
 
--- Comment
-keymap("v", "<leader>/", "gc", { desc = "Toggle comment in visual mode", silent = true })
-keymap("n", "<leader>/", "Vgc<esc>", { desc = "Toggle comment for current line", silent = true })
 
 -- Move lines up and down in normal mode
 keymap("n", "<A-j>", "<cmd>m .+1<CR>==", { desc = "Move line down", silent = true })
