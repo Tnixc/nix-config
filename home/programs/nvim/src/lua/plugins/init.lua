@@ -95,7 +95,6 @@ lazy.setup({
         end,
     },                                                                   -- Auto-close HTML tags
     { "windwp/nvim-autopairs",   config = true, event = "InsertEnter" }, -- Auto-close brackets, quotes, etc.
-    { "numToStr/Comment.nvim",   config = true, event = "BufEnter" },    -- Easy commenting
     { "windwp/nvim-ts-autotag" },                                        -- Auto-close and rename HTML tags
 
     -- Navigation and Search
@@ -119,11 +118,19 @@ lazy.setup({
     {
         "kdheepak/lazygit.nvim",
         keys = {
-            { "<leader>gg", "<cmd>LazyGit<cr>", desc = "NeoTree" },
+            { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
         },
     }, -- LazyGit integration
 
     -- Miscellaneous
+    {
+        "smoka7/multicursors.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            'nvimtools/hydra.nvim',
+        },
+        opts = {},
+    },
     {
         "karb94/neoscroll.nvim",
         event = "BufEnter",
@@ -187,6 +194,7 @@ lazy.setup({
             --  into multiple repos for maintenance purposes.
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path",
+            "onsails/lspkind.nvim"
         },
         config = function()
             require("plugins.configs.cmp")

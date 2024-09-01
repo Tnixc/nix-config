@@ -19,6 +19,12 @@ require("catppuccin").setup {
             subtext1 = "#b5c9ff",
             subtext0 = "#aabbe3",
         },
-    }
+    },
+    custom_highlights = function(colors)
+        return {
+            MultiCursor = { fg = colors.maroon, bg = colors.crust },
+            MultiCursorMain = { fg = colors.red, bg = colors.crust },
+        }
+    end
 }
 vim.cmd("colorscheme catppuccin-macchiato")

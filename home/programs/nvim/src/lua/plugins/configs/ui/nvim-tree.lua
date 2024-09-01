@@ -1,6 +1,6 @@
 require("nvim-tree").setup({
 	renderer = {
-		root_folder_label = false,
+		root_folder_label = true,
 		indent_markers = {
 			enable = true,
 		},
@@ -46,8 +46,8 @@ require("nvim-tree").setup({
 
 	hijack_directories = { enable = true },
 	view = {
-		width = "16%",
-		side = "left",
+		width = "20%",
+		side = "right",
 	},
 })
 vim.cmd([[

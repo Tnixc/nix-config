@@ -1,8 +1,6 @@
 -- Eviline config for lualine
 -- Author: shadmansaleh
 -- Credit: glepnir
-local lualine = require("lualine")
-
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
@@ -198,4 +196,4 @@ ins_right({
 	color = { fg = colors.purple, gui = "bold" },
 })
 
-lualine.setup(config)
+require("lualine").setup(config)
