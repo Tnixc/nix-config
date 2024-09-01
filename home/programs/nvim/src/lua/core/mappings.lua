@@ -113,5 +113,5 @@ keymap("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", op
 
 -- Quickly switch to buffer number
 for i = 1, 9 do
-    keymap("n", "<M-" .. i .. ">", ":BufferLineGoToBuffer " .. i .. " <CR>", opts)
+	keymap("n", "<M-" .. i .. ">", ":BufferLineGoToBuffer " .. i .. " <CR>", opts)
 end
