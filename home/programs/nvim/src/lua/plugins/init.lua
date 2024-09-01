@@ -198,6 +198,15 @@ lazy.setup({
             preset = "modern",
         },
     },
+    {
+        "natecraddock/workspaces.nvim",
+        config = function()
+            require("workspaces").setup({
+                hooks = {
+                    open = { "Telescope find_files" }, }
+            })
+        end
+    },
     -- Main LSP Configuration and completion
     {
         "supermaven-inc/supermaven-nvim",

@@ -46,13 +46,18 @@ keymap("v", ">", ">gv", { desc = "Indent right and reselect", silent = true })
 
 -- Plugins --
 
+-- Yazi
+keymap("n", "<leader>fr", "<cmd>Yazi<CR>", { desc = "Open Yazi file manager", silent = true })
+
 -- Telescope
--- find
 keymap("n", "<leader>ft", "<cmd>Telescope find_files<CR>", { desc = "Find files", silent = true })
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Live grep", silent = true })
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find buffers", silent = true })
 keymap("n", "<leader>ff", "<cmd>Telescope oldfiles<CR>", { desc = "Find recent files", silent = true })
-keymap("n", "<leader>fr", "<cmd>Yazi<CR>", { desc = "Open Yazi file manager", silent = true })
+keymap("n", "<leader>fd", "<cmd>Telescope git_files<CR>", { desc = "Find git files", silent = true })
+keymap("n", "<leader>fo", "<cmd>Telescope workspaces<CR>", { desc = "Open workspace", silent = true })
+
+keymap("n", "<leader>;", "<cmd>Telescope commands<CR>", { desc = "Find commands", silent = true })
 
 -- git
 keymap("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "Git commits", silent = true })
