@@ -69,6 +69,10 @@ keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
 -- Multicursor
 keymap("v", "<leader>m", ":'<,'>MCvisual<CR>", opts)
 
+-- Comment
+keymap("v", "<leader>/", "gc", opts)
+keymap("n", "<leader>/", "Vgc<esc>", opts)
+
 -- Move lines up and down in normal mode
 keymap("n", "<A-j>", ":m .+1<CR>==", opts)
 keymap("n", "<A-k>", ":m .-2<CR>==", opts)
@@ -102,7 +106,12 @@ keymap("n", "<leader>Q", "<cmd>q!<cr>", opts)
 keymap("n", "<M-w>", ":bdelete<CR>", opts)
 keymap("n", "<M-Tab>", ":BufferLineCycleNext<CR>", opts)
 
+-- Trouble
+
+keymap("n", "<leader>xx", "<cmd>Trouble diagnostics<cr>", opts)
+keymap("n", "<leader>xX", "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", opts)
+
 -- Quickly switch to buffer number
 for i = 1, 9 do
-	keymap("n", "<M-" .. i .. ">", ":BufferLineGoToBuffer " .. i .. " <CR>", opts)
+    keymap("n", "<M-" .. i .. ">", ":BufferLineGoToBuffer " .. i .. " <CR>", opts)
 end
