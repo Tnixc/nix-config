@@ -4,7 +4,6 @@
     pueue
     git
     ranger
-    yazi
 
     yabai
     skhd
@@ -106,6 +105,7 @@
       "macos-trash"
       "sendkeys"
       "dprint"
+            "yazi"
     ];
 
     # `brew install --cask`

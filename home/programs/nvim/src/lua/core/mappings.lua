@@ -50,6 +50,8 @@ keymap("n", "<leader>ft", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>ff", ":Telescope oldfiles<CR>", opts)
+keymap("n", "<leader>fr", ":Yazi<CR>", opts)
+
 -- git
 keymap("n", "<leader>cm", ":Telescope git_commits<CR>", opts)
 keymap("n", "<leader>gt", ":Telescope git_status<CR>", opts)
