@@ -112,8 +112,8 @@ wk.add({
         -- Diagnostics
         {
             group = "Diagnostics",
-            { "<leader>x",  desc = "Diagnostics" },
-            { "<leader>xx", "<cmd>Trouble diagnostics<cr>",   desc = "Open Trouble diagnostics", icon = { icon = "", color = "red" } },
+            { "<leader>x", desc = "Diagnostics" },
+            { "<leader>xx", "<cmd>Trouble diagnostics<cr>", desc = "Open Trouble diagnostics", icon = { icon = "", color = "red" } },
             { "<leader>xt", "<cmd>Telescope diagnostics<cr>", desc = "Open Telescope diagnostics", icon = { icon = "", color = "cyan" } },
             {
                 "<leader>xX",
@@ -162,12 +162,18 @@ wk.add({
         { "<M-w>",   "<cmd>Bdelete<cr>",                 desc = "Close current buffer" },
         { "<M-Tab>", "<cmd>BufferLineCycleNext<cr>",     desc = "Switch to next buffer" },
 
-        -- Other
         { "K",       "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Show hover information" },
 
+        -- Other
         { "<A-k>",   "<cmd>m .-2<cr>",                   desc = "Move line up" },
         { "<A-j>",   "<cmd>m .+1<cr>",                   desc = "Move line down" },
-
+        {
+            group = "Other",
+            { "<leader>d", desc = "Other" },
+            { "<leader>df", "<cmd>enew<cr>", desc = "New file", icon = { icon = "", color = "green" } },
+            { "<leader>dc", "<cmd>HighlightColors Toggle<cr>", desc = "Toggle highlight colors", icon = { icon = "󰸱", color = "cyan" } },
+            icon = { icon = "󰛂", color = "green" },
+        }
     },
 
     -- Insert mode mappings

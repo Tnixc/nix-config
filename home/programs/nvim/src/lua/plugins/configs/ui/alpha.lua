@@ -1,15 +1,7 @@
 local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
 
-dashboard.section.header.val = {
-	"─▄▀─▄▀      ███╗   ██╗██╗   ██╗██╗███╗   ███╗",
-	"──▀──▀      ████╗  ██║██║   ██║██║████╗ ████║",
-	"█▀▀▀▀▀█▄    ██╔██╗ ██║██║   ██║██║██╔████╔██║",
-	"█░░░░░█─█   ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║",
-	"▀▄▄▄▄▄▀▀    ██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║",
-	"            ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
-}
-dashboard.section.header.opts.hl = "AlphaHeader"
+dashboard.section.header.val = require("plugins.configs.ui.alpha_header")
 
 local function button(sc, txt, leader_txt, keybind, keybind_opts)
 	local sc_after = sc:gsub("%s", ""):gsub(leader_txt, "<leader>")
@@ -17,7 +9,7 @@ local function button(sc, txt, leader_txt, keybind, keybind_opts)
 	local opts = {
 		position = "center",
 		shortcut = sc,
-		cursor = 50,
+		cursor = 2,
 		width = 50,
 		align_shortcut = "right",
 		hl = "AlphaButton",
@@ -46,7 +38,7 @@ end
 
 local leader = " "
 dashboard.section.buttons.val = {
-	button("space f o", "  Open workspace", leader, nil, {
+	button("o", "  Open workspace", leader, nil, {
 		noremap = true,
 		silent = true,
 		nowait = true,
@@ -54,7 +46,7 @@ dashboard.section.buttons.val = {
 			require("telescope").extensions.workspaces.workspaces({})
 		end,
 	}),
-	button("space f t", "  Open file", leader, nil, {
+	button("f", "  Open file", leader, nil, {
 		noremap = true,
 		silent = true,
 		nowait = true,
@@ -62,7 +54,7 @@ dashboard.section.buttons.val = {
 			require("telescope.builtin").find_files()
 		end,
 	}),
-	button("space f f", "  File history", leader, nil, {
+	button("h", "  File history", leader, nil, {
 		noremap = true,
 		silent = true,
 		nowait = true,
@@ -70,7 +62,7 @@ dashboard.section.buttons.val = {
 			require("telescope.builtin").oldfiles()
 		end,
 	}),
-	button("space f n", "  New File", leader, nil, {
+	button("n", "  New File", leader, nil, {
 		noremap = true,
 		silent = true,
 		nowait = true,
@@ -78,12 +70,20 @@ dashboard.section.buttons.val = {
 			vim.api.nvim_command("enew")
 		end,
 	}),
-	button("space f w", "󰈞  Live grep", leader, nil, {
+	button("g", "  Live grep", leader, nil, {
 		noremap = true,
 		silent = true,
 		nowait = true,
 		callback = function()
-			require("telescope.builtin").live_grep()
+            require("telescope.builtin").live_grep()
+		end,
+	}),
+	button("q", "󱎘  Quit", leader, nil, {
+		noremap = true,
+		silent = true,
+		nowait = true,
+		callback = function()
+            vim.cmd("qa")
 		end,
 	}),
 }
@@ -108,7 +108,7 @@ local function footer()
 end
 
 dashboard.section.footer.val = footer()
-dashboard.section.footer.opts.hl = "AlphaFooter"
+dashboard.section.footer.opts.hl = "Comment"
 
 local head_butt_padding = 2
 local occu_height = #dashboard.section.header.val + 2 * #dashboard.section.buttons.val + head_butt_padding
