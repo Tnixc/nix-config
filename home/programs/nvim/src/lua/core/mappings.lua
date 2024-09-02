@@ -65,6 +65,11 @@ keymap("n", "<leader>a", "<cmd>Alpha<CR>", { desc = "Go to Alpha screen", silent
 -- git
 keymap("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "Git commits", silent = true })
 keymap("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "Git status", silent = true })
+-- LazyGit
+keymap("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit", silent = true })
+-- Diffview
+keymap("n", "<leader>gv", "<cmd>DiffviewOpen<cr>", { desc = "Open diffview", silent = true })
+keymap("n", "<leader>gV", "<cmd>DiffviewClose<cr>", { desc = "Close diffview", silent = true })
 
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { desc = "Format code", silent = true })
@@ -79,8 +84,8 @@ keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "Find refere
 keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { desc = "Show signature help", silent = true })
 
 -- Multicursor
-keymap("v", "<leader>m", "<cmd>'<,'>MCvisual<CR>", { desc = "Create multiple cursors", silent = true })
-
+keymap("v", "m", "<cmd>'<,'>MCvisual<CR>", { desc = "Create multiple cursors (visual)", silent = true })
+keymap("n", "m", "<cmd>MCstart<CR>", { desc = "Create multiple cursors (normal)", silent = true })
 
 -- Move lines
 keymap("i", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", { silent = true })
@@ -91,8 +96,6 @@ keymap('n', '<A-k>', moveline.up, { silent = true })
 keymap('n', '<A-j>', moveline.down, { silent = true })
 keymap('v', '<A-k>', moveline.block_up, { silent = true })
 keymap('v', '<A-j>', moveline.block_down, { silent = true })
--- LazyGit
-keymap("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit", silent = true })
 
 -- Cmd all select
 keymap("n", "<D-a>", "ggVG", { desc = "Select all text", silent = true })
@@ -118,11 +121,18 @@ keymap(
     "n",
     "<leader>xX",
     "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-    { desc = "Toggle Trouble diagnostics for current buffer", silent = true }
+    { desc = "Trouble diagnostics for current buffer", silent = true }
 )
 
 -- NvimTree
 keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle NvimTree file explorer", silent = true })
+
+-- manage splits
+keymap("n", "<C-w>z", "<cmd>WindowsMaximize<CR>", { desc = "Maximize current window", silent = true })
+keymap("n", "<C-w>_", "<cmd>WindowsMaximizeVertically<CR>", { desc = "Maximize current window vertically", silent = true })
+keymap("n", "<C-w>|", "<cmd>WindowsMaximizeHorizontally<CR>",
+    { desc = "Maximize current window horizontally", silent = true })
+keymap("n", "<C-w>=", "<cmd>WindowsEqualize<CR>", { desc = "Equalize windows", silent = true })
 
 -- Quickly switch to buffer number
 for i = 1, 9 do

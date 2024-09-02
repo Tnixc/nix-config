@@ -63,9 +63,20 @@ lazy.setup({
         end,
     }, -- Start screen
     {
+        {
+            "folke/todo-comments.nvim",
+            opts = {},
+        },
         "folke/trouble.nvim",
         opts = {},
         cmd = "Trouble",
+    },
+    {
+        "sindrets/diffview.nvim",
+        config = function()
+            require("diffview").setup({})
+        end,
+
     },
     {
         "folke/noice.nvim",
@@ -101,7 +112,11 @@ lazy.setup({
         version = "*", -- use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",
         config = function()
-            require("nvim-surround").setup({})
+            require("nvim-surround").setup({
+                keymaps = {
+                    visual = "s",
+                },
+            })
         end,
     }, -- easy surround with {("etc")}
     {
