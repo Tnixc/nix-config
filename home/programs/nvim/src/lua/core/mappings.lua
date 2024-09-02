@@ -71,7 +71,8 @@ keymap("n", "<leader>gV", "<cmd>DiffviewClose<cr>", { desc = "Close diffview", s
 -- Lsp find
 keymap("n", "<leader>ld", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Find document symbols", silent = true })
 keymap("n", "<leader>li", "<cmd>Telescope lsp_references<cr>", { desc = "Find references", silent = true })
-keymap("n", "<leader>lh", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Find workspace symbols", silent = true })
+keymap("n", "<leader>lh", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+    { desc = "Find workspace symbols", silent = true })
 -- Lsp actions
 keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename symbol", silent = true })
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { desc = "Format code", silent = true })

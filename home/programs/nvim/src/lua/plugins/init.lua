@@ -241,7 +241,7 @@ lazy.setup({
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
-        opts = { delay = 1000, preset = "modern" },
+        opts = { delay = 1000, preset = "modern", win = { border = "single" } },
     },
 
     -- LSP and Completion
