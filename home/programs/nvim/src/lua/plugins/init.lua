@@ -194,13 +194,13 @@ lazy.setup({
 			require("neoscroll").setup({})
 		end,
 	},
-	{
-		"norcalli/nvim-colorizer.lua",
-		event = "VeryLazy",
-		config = function()
-			require("colorizer").setup({})
-		end,
-	},
+    {
+        "brenoprata10/nvim-highlight-colors",
+        opts = {
+            -- render = "virtual",
+            enable_tailwind = true
+        }
+    },
     {"nacro90/numb.nvim", opts = {} },
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
