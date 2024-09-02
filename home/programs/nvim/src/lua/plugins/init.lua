@@ -153,7 +153,7 @@ lazy.setup({
 		opts = { open_mapping = [[<M-l>]] },
 	},
 	{
-		"natecraddock/workspaces.nvim",
+		"Tnixc/workspaces.nvim",
 		config = function()
 			require("workspaces").setup({ hooks = { open = { "Telescope find_files" } } })
 		end,
@@ -196,10 +196,7 @@ lazy.setup({
 	},
     {
         "brenoprata10/nvim-highlight-colors",
-        opts = {
-            -- render = "virtual",
-            enable_tailwind = true
-        }
+        opts = { enable_tailwind = true }
     },
     {"nacro90/numb.nvim", opts = {} },
 	{

@@ -25,7 +25,7 @@ wk.add({
             icon = { icon = "", color = "orange" },
         },
         { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "toggle nvimtree ", icon = { icon = "", color = "azure" } },
-        { "<leader>a", "<cmd>alpha<cr>", desc = "go to alpha screen", icon = { icon = "󱌎", color = "purple" } },
+        { "<leader>a", "<cmd>Alpha<cr>", desc = "go to alpha screen", icon = { icon = "󱌎", color = "purple" } },
         { "<leader>w", "<cmd>w<cr>", desc = "save file", icon = { icon = "󰆓", color = "green" } },
         { "<leader>q", "<cmd>q<cr>", desc = "quit", icon = { icon = "󰈆", color = "yellow" } },
         { "<leader>q", "<cmd>q!<cr>", desc = "quit without saving", icon = { icon = "", color = "red" } },
