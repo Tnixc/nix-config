@@ -200,7 +200,19 @@ lazy.setup({
     {
         "MeanderingProgrammer/render-markdown.nvim",
         event = "VeryLazy",
-        opts = {},
+        opts = {
+            heading = {
+                width = 'block',
+                left_pad = 1,
+                right_pad = 2,
+                position = 'inline',
+            },
+            code = {
+                width = 'block',
+                left_pad = 2,
+                right_pad = 2,
+            }
+        },
         dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
     },
     {
