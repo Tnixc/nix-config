@@ -10,6 +10,7 @@ This is a [nix-darwin](https://github.com/LnL7/nix-darwin) config for a 13-inch 
 
 The color scheme is my theme [edo](https://github.com/tnixc/edo). Some fonts I use are `Basier Square Mono` and `Berkeley Mono`.
 
-<img width="710" alt="image" src="https://github.com/user-attachments/assets/39bb9b5e-f030-42a4-b8d0-d278f91a6fb4">
+<h1 align="center">
+<img width="710" alt="image" src="https://github.com/user-attachments/assets/68ecfecd-ed8c-4077-a401-e02e6f589c04">
 <img width="710" alt="image" src="https://github.com/user-attachments/assets/15520b29-3161-448e-8935-add4ac173ac1">
 <img width="710" alt="Screenshot 2024-07-21 at 23 12 20" src="https://github.com/user-attachments/assets/cd6a2378-bb60-4f61-8d84-6707f3c77a40">
