@@ -113,7 +113,7 @@ lazy.setup({
 		version = "*",
 		event = "VeryLazy",
 		config = function()
-			require("nvim-surround").setup({ keymaps = { visual = "s" } })
+			require("nvim-surround").setup({ keymaps = { visual = "s" } }) -- NOTE: Keymaps here
 		end,
 	},
 	{
@@ -253,7 +253,7 @@ lazy.setup({
 		config = function()
 			require("supermaven-nvim").setup({
 				log_level = "off",
-				keymaps = {
+				keymaps = { -- NOTE: Keymaps here
 					accept_suggestion = "<M-n>",
 					clear_suggestion = "<C-]>",
 					accept_word = "<C-j>",
