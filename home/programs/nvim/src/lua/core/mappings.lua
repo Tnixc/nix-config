@@ -1,148 +1,217 @@
--- Shorten function name
-local keymap = vim.keymap.set
+local wk = require("which-key")
 
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", { desc = "<space>", silent = true })
-vim.g.mapleader = " "
+wk.add({
+	-- Normal mode mappings
+	{
+		mode = "n",
+		-- Window navigation
+		{ "<C-h>", "<C-w>h", desc = "Move to left window" },
+		{ "<C-j>", "<C-w>j", desc = "Move to bottom window" },
+		{ "<C-k>", "<C-w>k", desc = "Move to top window" },
+		{ "<C-l>", "<C-w>l", desc = "Move to right window" },
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
+		-- Window resizing
+		{ "<c-up>", "<cmd>resize -2<cr>", desc = "decrease window height" },
+		{ "<c-down>", "<cmd>resize +2<cr>", desc = "increase window height" },
+		{ "<c-left>", "<cmd>vertical resize -2<cr>", desc = "decrease window width" },
+		{ "<c-right>", "<cmd>vertical resize +2<cr>", desc = "increase window width" },
 
--- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", { desc = "Move to left window", silent = true })
-keymap("n", "<C-j>", "<C-w>j", { desc = "Move to bottom window", silent = true })
-keymap("n", "<C-k>", "<C-w>k", { desc = "Move to top window", silent = true })
-keymap("n", "<C-l>", "<C-w>l", { desc = "Move to right window", silent = true })
+		-- leader mappings
+		{
+			"<leader>h",
+			"<cmd>nohlsearch<cr>",
+			desc = "clear search highlights",
+			icon = { icon = "", color = "orange" },
+		},
+		{ "<leader>a", "<cmd>alpha<cr>", desc = "go to alpha screen", icon = { icon = "󱌎", color = "purple" } },
+		{ "<leader>w", "<cmd>w<cr>", desc = "save file", icon = { icon = "󰆓", color = "green" } },
+		{ "<leader>q", "<cmd>q<cr>", desc = "quit", icon = { icon = "󰈆", color = "yellow" } },
+		{ "<leader>q", "<cmd>q!<cr>", desc = "quit without saving", icon = { icon = "", color = "red" } },
+		{ "<leader>e", "<cmd>nvimtreetoggle<cr>", desc = "toggle nvimtree ", icon = { icon = "", color = "azure" } },
 
--- Resize with arrows
-keymap("n", "<C-Up>", "<cmd>resize -2<CR>", { desc = "Decrease window height", silent = true })
-keymap("n", "<C-Down>", "<cmd>resize +2<CR>", { desc = "Increase window height", silent = true })
-keymap("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "Decrease window width", silent = true })
-keymap("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase window width", silent = true })
+		-- file operations
+		{
+			group = "Telescope",
+			{ "<leader>f", desc = "Telescope" },
+			{
+				"<leader>fg",
+				"<cmd>Telescope live_grep<CR>",
+				desc = "Live grep",
+				icon = { icon = "󱎸", color = "cyan" },
+			},
+			{
+				"<leader>ff",
+				"<cmd>Telescope find_files<CR>",
+				desc = "Find files",
+				icon = { icon = "", color = "green" },
+			},
+			{
+				"<leader>ft",
+				"<cmd>Telescope oldfiles<CR>",
+				desc = "Find history",
+				icon = { icon = "", color = "blue" },
+			},
+			{
+				"<leader>fd",
+				"<cmd>Telescope git_files<CR>",
+				desc = "Find git files",
+				icon = { icon = "", color = "orange" },
+			},
+			{
+				"<leader>fo",
+				"<cmd>Telescope workspaces<CR>",
+				desc = "Open workspace",
+				icon = { icon = "", color = "red" },
+			},
+			{
+				"<leader>f<Tab>",
+				"<cmd>Telescope buffers<CR>",
+				desc = "Find buffers",
+				icon = { icon = "󱦞", color = "yellow" },
+			},
+			icon = { icon = "", color = "cyan" },
+		},
 
--- Clear highlights
-keymap("n", "<leader>h", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights", silent = true })
+		-- LSP operations
+		{
+			group = "LSP",
+			{ "<leader>l", desc = "LSP" },
+			{
+				"<leader>ld",
+				"<cmd>Telescope lsp_document_symbols<cr>",
+				desc = "Find document symbols",
+				icon = { icon = "", color = "blue" },
+			},
+			{
+				"<leader>li",
+				"<cmd>Telescope lsp_references<cr>",
+				desc = "Find references",
+				icon = { icon = "", color = "orange" },
+			},
+			{
+				"<leader>lh",
+				"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+				desc = "Find workspace symbols",
+				icon = { icon = "", color = "green" },
+			},
+			{
+				"<leader>lr",
+				"<cmd>lua vim.lsp.buf.rename()<cr>",
+				desc = "Rename symbol",
+				icon = { icon = "󰑕", color = "red" },
+			},
+			{
+				"<leader>lf",
+				"<cmd>lua vim.lsp.buf.format{ async = true }<cr>",
+				desc = "Format buffer",
+				icon = { icon = "󰉶", color = "azure" },
+			},
+			icon = { icon = "󰮄", color = "yellow" },
+		},
+		-- Diagnostics
+		{
+			group = "Diagnostics",
+			{ "<leader>x", desc = "Diagnostics" },
+			{ "<leader>xx", "<cmd>Trouble diagnostics<cr>", desc = "Open Trouble diagnostics" },
+			{ "<leader>xt", "<cmd>Telescope diagnostics<cr>", desc = "Open Telescope diagnostics" },
+			{
+				"<leader>xX",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Trouble diagnostics for current buffer",
+			},
+			icon = { icon = "", color = "red" },
+		},
 
--- Better paste
-keymap("v", "p", '"_dP', { desc = "Paste without yanking", silent = true })
+		-- Git operations
+		{
+			group = "Git",
+			{ "<leader>g", desc = "Git" },
+			{
+				"<leader>gc",
+				"<cmd>Telescope git_commits<CR>",
+				desc = "Git commits",
+				icon = { icon = "", color = "green" },
+			},
+			{ "<leader>gt", "<cmd>Telescope git_status<CR>", desc = "Git status" },
+			{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "Open LazyGit", icon = { icon = "", color = "purple" } },
+			{ "<leader>gv", "<cmd>DiffviewOpen<cr>", desc = "Open diffview", icon = { icon = "", color = "blue" } },
+			{
+				"<leader>gV",
+				"<cmd>DiffviewClose<cr>",
+				desc = "Close diffview",
+				icon = { icon = "", color = "yellow" },
+			},
+		},
+		{
+			group = "Go to",
+			{ "g", desc = "Go to" },
+			{ "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", desc = "Go to definition" },
+			{ "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", desc = "Go to declaration" },
+			{ "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", desc = "Go to implementation" },
+			{ "gt", "<cmd>lua vim.lsp.buf.type_definition()<cr>", desc = "Go to type definition" },
+			{ "gr", "<cmd>lua vim.lsp.buf.references()<cr>", desc = "Go to references" },
+			{ "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", desc = "Show signature help" },
+		},
 
--- Insert --
--- Press jk fast to enter normal mode
-keymap("i", "jk", "<ESC>", { desc = "Quick escape to normal mode", silent = true })
+		-- Multicursor
+		{ "m", "<cmd>MCstart<CR>", desc = "Create multiple cursors (normal)" },
 
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", { desc = "Indent left and reselect", silent = true })
-keymap("v", ">", ">gv", { desc = "Indent right and reselect", silent = true })
+		-- Buffer management
+		{ "<M-w>", "<cmd>Bdelete<CR>", desc = "Close current buffer" },
+		{ "<M-Tab>", "<cmd>BufferLineCycleNext<CR>", desc = "Switch to next buffer" },
 
--- Plugins --
+		-- Other
+		{ "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Show hover information" },
 
--- Yazi
-keymap("n", "<leader>fr", "<cmd>Yazi<CR>", { desc = "Open Yazi file manager", silent = true })
+		{ "<A-k>", "<cmd>m .-2<CR>", desc = "Move line up" },
+		{ "<A-j>", "<cmd>m .+1<CR>", desc = "Move line down" },
+	},
 
--- Telescope
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Live grep", silent = true })
-keymap("n", "<leader>f<Tab>", "<cmd>Telescope buffers<CR>", { desc = "Find buffers", silent = true })
-keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find files", silent = true })
-keymap("n", "<leader>ft", "<cmd>Telescope oldfiles<CR>", { desc = "Find history", silent = true })
-keymap("n", "<leader>fd", "<cmd>Telescope git_files<CR>", { desc = "Find git files", silent = true })
-keymap("n", "<leader>fo", "<cmd>Telescope workspaces<CR>", { desc = "Open workspace", silent = true })
+	-- Insert mode mappings
+	{
+		mode = "i",
+		{ "jk", "<ESC>", desc = "Quick escape to normal mode" },
+		{ "<A-j>", "<Esc><cmd>m .+1<CR>==gi", desc = "Move line down" },
+		{ "<A-k>", "<Esc><cmd>m .-2<CR>==gi", desc = "Move line up" },
+	},
 
-keymap("n", "<leader>t", "<cmd>Telescope commands<CR>", { desc = "Find commands", silent = true })
+	-- Visual mode mappings
+	{
+		mode = "v",
+		{ "p", '"_dP', desc = "Paste without yanking" },
+		{ "<", "<gv", desc = "Indent left and reselect" },
+		{ ">", ">gv", desc = "Indent right and reselect" },
+		{ "m", "<cmd>'<,'>MCvisual<CR>", desc = "Create multiple cursors (visual)" },
+		{
+			"<A-k>",
+			function()
+				require("moveline").block_up()
+			end,
+			desc = "Move block up",
+		},
+		{
+			"<A-j>",
+			function()
+				require("moveline").block_down()
+			end,
+			desc = "Move block down",
+		},
+	},
 
--- alpha
-keymap("n", "<leader>a", "<cmd>Alpha<CR>", { desc = "Go to Alpha screen", silent = true })
+	-- All
+	{
+		mode = { "n", "v", "i" },
+		{ "<D-a>", "<esc>ggVG", desc = "Select all text" },
+	},
+})
 
--- git
-keymap("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Git commits", silent = true })
-keymap("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "Git status", silent = true })
--- LazyGit
-keymap("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit", silent = true })
--- Diffview
-keymap("n", "<leader>gv", "<cmd>DiffviewOpen<cr>", { desc = "Open diffview", silent = true })
-keymap("n", "<leader>gV", "<cmd>DiffviewClose<cr>", { desc = "Close diffview", silent = true })
-
--- Lsp find
-keymap("n", "<leader>ld", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Find document symbols", silent = true })
-keymap("n", "<leader>li", "<cmd>Telescope lsp_references<cr>", { desc = "Find references", silent = true })
-keymap("n", "<leader>lh", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-    { desc = "Find workspace symbols", silent = true })
--- Lsp actions
-keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename symbol", silent = true })
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { desc = "Format code", silent = true })
-
-keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Show hover information", silent = true })
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Go to definition", silent = true })
-keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", { desc = "Go to declaration", silent = true })
-keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", { desc = "Go to implementation", silent = true })
-keymap("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<cr>", { desc = "Go to type definition", silent = true })
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "Find references", silent = true })
-keymap("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { desc = "Show signature help", silent = true })
-
--- Multicursor
-keymap("v", "m", "<cmd>'<,'>MCvisual<CR>", { desc = "Create multiple cursors (visual)", silent = true })
-keymap("n", "m", "<cmd>MCstart<CR>", { desc = "Create multiple cursors (normal)", silent = true })
-
--- Move lines
-keymap("i", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", { silent = true })
-keymap("i", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", { silent = true })
-
-local moveline = require('moveline')
-keymap('n', '<A-k>', moveline.up, { silent = true })
-keymap('n', '<A-j>', moveline.down, { silent = true })
-keymap('v', '<A-k>', moveline.block_up, { silent = true })
-keymap('v', '<A-j>', moveline.block_down, { silent = true })
-
--- Cmd all select
-keymap({ "n", "v", "i" }, "<D-a>", "<esc>ggVG", { desc = "Select all text", silent = true })
-
--- Tmux Navigator
-keymap("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down in Tmux", silent = true })
-keymap("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate up in Tmux", silent = true })
-keymap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate right in Tmux", silent = true })
-keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate left in Tmux", silent = true })
-
--- quick commands
-keymap("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file", silent = true })
-keymap("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit", silent = true })
-keymap("n", "<leader>Q", "<cmd>q!<cr>", { desc = "Quit without saving", silent = true })
-
--- Trouble
-keymap("n", "<leader>xx", "<cmd>Trouble diagnostics<cr>", { desc = "Open Trouble diagnostics", silent = true })
-keymap("n", "<leader>xt", "<cmd>Telescope diagnostics<cr>", { desc = "Open Telescope diagnostics", silent = true })
-keymap(
-    "n",
-    "<leader>xX",
-    "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-    { desc = "Trouble diagnostics for current buffer", silent = true }
-)
-
--- NvimTree
-keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle NvimTree file explorer", silent = true })
-
--- manage splits
-keymap("n", "<C-w>z", "<cmd>WindowsMaximize<CR>", { desc = "Maximize current window", silent = true })
-keymap("n", "<C-w>_", "<cmd>WindowsMaximizeVertically<CR>",
-    { desc = "Maximize current window vertically", silent = true })
-keymap("n", "<C-w>|", "<cmd>WindowsMaximizeHorizontally<CR>",
-    { desc = "Maximize current window horizontally", silent = true })
-keymap("n", "<C-w>=", "<cmd>WindowsEqualize<CR>", { desc = "Equalize windows", silent = true })
-
--- Buffer management
-keymap("n", "<M-w>", "<cmd>Bdelete<CR>", { desc = "Close current buffer" })
-keymap("n", "<M-Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Switch to next buffer", silent = true })
--- Quickly switch to buffer number
+-- Buffer number mappings
 for i = 1, 9 do
-    keymap(
-        "n",
-        "<M-" .. i .. ">",
-        "<cmd>BufferLineGoToBuffer " .. i .. " <CR>",
-        { desc = "Go to buffer " .. i, silent = true }
-    )
+	wk.add({
+		{ "<M-" .. i .. ">", "<cmd>BufferLineGoToBuffer " .. i .. " <CR>", desc = "Go to buffer " .. i, mode = "n" },
+	})
 end
+
+-- Set leader key
+vim.g.mapleader = " "
+wk.add({ { "<Space>", "<Nop>", desc = "<space>" } })
