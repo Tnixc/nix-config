@@ -16,7 +16,6 @@ lazy.setup({
     },
     {
         "goolord/alpha-nvim",
-        priority = 900,
         config = function()
             require("plugins.configs.ui.alpha")
         end,
@@ -31,9 +30,6 @@ lazy.setup({
     },
 
     -- File Explorers
-    { "stevearc/oil.nvim",    opts = {} },
-    { "mikavilpas/yazi.nvim", event = "VeryLazy", opts = {} },
-
     -- UI Enhancements
     {
         "akinsho/bufferline.nvim",
