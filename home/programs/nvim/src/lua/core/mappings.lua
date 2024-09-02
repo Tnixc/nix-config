@@ -1,9 +1,6 @@
 -- Shorten function name
 local keymap = vim.keymap.set
 
--- Silent keymap option
-local opts = { silent = true }
-
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", { desc = "<space>", silent = true })
 vim.g.mapleader = " "
@@ -51,7 +48,7 @@ keymap("n", "<leader>fr", "<cmd>Yazi<CR>", { desc = "Open Yazi file manager", si
 
 -- Telescope
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Live grep", silent = true })
-keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find buffers", silent = true })
+keymap("n", "<leader>f<Tab>", "<cmd>Telescope buffers<CR>", { desc = "Find buffers", silent = true })
 keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find files", silent = true })
 keymap("n", "<leader>ft", "<cmd>Telescope oldfiles<CR>", { desc = "Find history", silent = true })
 keymap("n", "<leader>fd", "<cmd>Telescope git_files<CR>", { desc = "Find git files", silent = true })
@@ -71,13 +68,13 @@ keymap("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit", silent = 
 keymap("n", "<leader>gv", "<cmd>DiffviewOpen<cr>", { desc = "Open diffview", silent = true })
 keymap("n", "<leader>gV", "<cmd>DiffviewClose<cr>", { desc = "Close diffview", silent = true })
 
--- Lsp
-keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { desc = "Format code", silent = true })
-keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename symbol", silent = true })
+-- Lsp find
+keymap("n", "<leader>ld", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Find document symbols", silent = true })
 keymap("n", "<leader>li", "<cmd>Telescope lsp_references<cr>", { desc = "Find references", silent = true })
-keymap("n", "<leader>lf", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Find workspace symbols", silent = true })
-keymap("n", "<leader>lt", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Find document symbols", silent = true })
-
+keymap("n", "<leader>lh", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Find workspace symbols", silent = true })
+-- Lsp actions
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename symbol", silent = true })
+keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { desc = "Format code", silent = true })
 
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Show hover information", silent = true })
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Go to definition", silent = true })
