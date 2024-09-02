@@ -18,3 +18,5 @@ bl.setup({
 		show_buffer_icons = true,
 	},
 })
+
+-- Open Alpha for No name buffers

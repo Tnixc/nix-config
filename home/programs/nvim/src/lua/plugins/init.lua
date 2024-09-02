@@ -29,7 +29,6 @@ lazy.setup({
         end,
     },
 
-    -- File Explorers
     -- UI Enhancements
     {
         "akinsho/bufferline.nvim",
@@ -38,6 +37,7 @@ lazy.setup({
             require("plugins.configs.ui.bufferline")
         end,
     },
+    { "famiu/bufdelete.nvim" },
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "kyazdani42/nvim-web-devicons" },
@@ -71,6 +71,7 @@ lazy.setup({
                 "diffview").setup({})
         end
     },
+    { "HiPhish/rainbow-delimiters.nvim" },
     {
         "folke/noice.nvim",
         event = "VeryLazy",

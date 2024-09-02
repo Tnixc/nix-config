@@ -54,7 +54,15 @@ dashboard.section.buttons.val = {
             require("telescope").extensions.workspaces.workspaces {}
         end,
     }),
-    button("space f e", "  File history", leader, nil, {
+    button("space f t", "  Open file", leader, nil, {
+        noremap = true,
+        silent = true,
+        nowait = true,
+        callback = function()
+            require("telescope.builtin").find_files()
+        end,
+    }),
+    button("space f f", "  File history", leader, nil, {
         noremap = true,
         silent = true,
         nowait = true,
@@ -123,5 +131,19 @@ vim.api.nvim_create_autocmd("User", {
     callback = function()
         dashboard.section.footer.val = footer()
         pcall(vim.cmd.AlphaRedraw)
+    end,
+})
+vim.api.nvim_create_augroup("alpha_on_empty", { clear = true })
+vim.api.nvim_create_autocmd("User", {
+    pattern = "BDeletePost*",
+    group = "alpha_on_empty",
+    callback = function(event)
+        local fallback_name = vim.api.nvim_buf_get_name(event.buf)
+        local fallback_ft = vim.api.nvim_buf_get_option(event.buf, "filetype")
+        local fallback_on_empty = fallback_name == "" and fallback_ft == ""
+
+        if fallback_on_empty then
+            vim.cmd("Alpha")
+        end
     end,
 })

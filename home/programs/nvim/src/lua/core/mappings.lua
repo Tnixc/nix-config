@@ -50,10 +50,10 @@ keymap("v", ">", ">gv", { desc = "Indent right and reselect", silent = true })
 keymap("n", "<leader>fr", "<cmd>Yazi<CR>", { desc = "Open Yazi file manager", silent = true })
 
 -- Telescope
-keymap("n", "<leader>ft", "<cmd>Telescope find_files<CR>", { desc = "Find files", silent = true })
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Live grep", silent = true })
 keymap("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Find buffers", silent = true })
-keymap("n", "<leader>ff", "<cmd>Telescope oldfiles<CR>", { desc = "Find recent files", silent = true })
+keymap("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Find files", silent = true })
+keymap("n", "<leader>ft", "<cmd>Telescope oldfiles<CR>", { desc = "Find history", silent = true })
 keymap("n", "<leader>fd", "<cmd>Telescope git_files<CR>", { desc = "Find git files", silent = true })
 keymap("n", "<leader>fo", "<cmd>Telescope workspaces<CR>", { desc = "Open workspace", silent = true })
 
@@ -88,8 +88,8 @@ keymap("v", "m", "<cmd>'<,'>MCvisual<CR>", { desc = "Create multiple cursors (vi
 keymap("n", "m", "<cmd>MCstart<CR>", { desc = "Create multiple cursors (normal)", silent = true })
 
 -- Move lines
-keymap("i", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", { silent = true })
 keymap("i", "<A-j>", "<Esc><cmd>m .+1<CR>==gi", { silent = true })
+keymap("i", "<A-k>", "<Esc><cmd>m .-2<CR>==gi", { silent = true })
 
 local moveline = require('moveline')
 keymap('n', '<A-k>', moveline.up, { silent = true })
@@ -111,10 +111,6 @@ keymap("n", "<leader>w", "<cmd>w<cr>", { desc = "Save file", silent = true })
 keymap("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit", silent = true })
 keymap("n", "<leader>Q", "<cmd>q!<cr>", { desc = "Quit without saving", silent = true })
 
--- Buffer management
-keymap("n", "<M-w>", "<cmd>bdelete<CR>", { desc = "Close current buffer", silent = true })
-keymap("n", "<M-Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Switch to next buffer", silent = true })
-
 -- Trouble
 keymap("n", "<leader>xx", "<cmd>Trouble diagnostics<cr>", { desc = "Open Trouble diagnostics", silent = true })
 keymap(
@@ -134,6 +130,9 @@ keymap("n", "<C-w>|", "<cmd>WindowsMaximizeHorizontally<CR>",
     { desc = "Maximize current window horizontally", silent = true })
 keymap("n", "<C-w>=", "<cmd>WindowsEqualize<CR>", { desc = "Equalize windows", silent = true })
 
+-- Buffer management
+keymap("n", "<M-w>", "<cmd>Bdelete<CR>", { desc = "Close current buffer" })
+keymap("n", "<M-Tab>", "<cmd>BufferLineCycleNext<CR>", { desc = "Switch to next buffer", silent = true })
 -- Quickly switch to buffer number
 for i = 1, 9 do
     keymap(
