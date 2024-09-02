@@ -2,9 +2,9 @@ local ok, lazy = pcall(require, "lazy")
 if not ok then
     return
 end
-
 lazy.setup({
     root = vim.fn.stdpath("data") .. "/lazy",
+
     -- Appearance
     {
         "catppuccin/nvim",
@@ -15,26 +15,25 @@ lazy.setup({
         end,
     },
     {
+        "goolord/alpha-nvim",
+        priority = 900,
+        config = function()
+            require("plugins.configs.ui.alpha")
+        end,
+    },
+    {
         "rachartier/tiny-devicons-auto-colors.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         event = "VeryLazy",
         config = function()
-            require("tiny-devicons-auto-colors").setup()
+            require("tiny-devicons-auto-colors").setup({})
         end,
-    }, -- Icons
-
-    -- File Explorer
-    {
-        "stevearc/oil.nvim",
-        opts = {},
-    }, -- File explorer with a buffer-like interface
-    {
-        "mikavilpas/yazi.nvim",
-        event = "VeryLazy",
-        opts = {},
     },
+
+    -- File Explorers
+    { "stevearc/oil.nvim",    opts = {} },
+    { "mikavilpas/yazi.nvim", event = "VeryLazy", opts = {} },
+
     -- UI Enhancements
     {
         "akinsho/bufferline.nvim",
@@ -42,118 +41,116 @@ lazy.setup({
         config = function()
             require("plugins.configs.ui.bufferline")
         end,
-    }, -- Buffer line at the top of the editor
+    },
     {
         "nvim-lualine/lualine.nvim",
         dependencies = { "kyazdani42/nvim-web-devicons" },
         config = function()
             require("plugins.configs.ui.lualine")
         end,
-    }, -- Statusline
+    },
     {
         "nvim-tree/nvim-tree.lua",
+        event = "VeryLazy",
         config = function()
             require("plugins.configs.ui.nvim-tree")
         end,
-    }, -- File explorer tree
+    },
     {
-        "goolord/alpha-nvim",
-        config = function()
-            require("plugins.configs.ui.alpha")
-        end,
-    }, -- Start screen
+        "folke/todo-comments.nvim",
+        event = "VeryLazy",
+        opts = {}
+    },
     {
-        {
-            "folke/todo-comments.nvim",
-            opts = {},
-        },
         "folke/trouble.nvim",
+        event = "VeryLazy",
         opts = {},
-        cmd = "Trouble",
+        cmd = "Trouble"
     },
     {
         "sindrets/diffview.nvim",
+        event = "VeryLazy",
         config = function()
-            require("diffview").setup({})
-        end,
-
+            require(
+                "diffview").setup({})
+        end
     },
     {
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {},
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            -- "rcarriga/nvim-notify",
-        },
+        dependencies = { "MunifTanjim/nui.nvim" },
         config = function()
             require("plugins.configs.ui.noice")
         end,
-    }, -- UI for messages, cmdline, and popupmenu
+    },
     {
         "petertriho/nvim-scrollbar",
         config = function()
             require("plugins.configs.ui.scrollbar")
         end,
-    }, -- Scrollbar with diagnostics and search results
+    },
+
+    -- Utility
     {
         "nullishamy/autosave.nvim",
-        config = function()
-            require("autosave").setup({})
-        end
+        event = "VeryLazy",
+        config = function() require("autosave").setup({}) end
     },
     {
-        'willothy/moveline.nvim',
-        build = 'make',
+        "willothy/moveline.nvim",
+        build = 'make'
     },
-    -- editing helpers
+
+    -- Editing Helpers
     {
         "kylechui/nvim-surround",
-        version = "*", -- use for stability; omit to use `main` branch for the latest features
+        version = "*",
         event = "VeryLazy",
         config = function()
-            require("nvim-surround").setup({
-                keymaps = {
-                    visual = "s",
-                },
-            })
+            require("nvim-surround").setup({ keymaps = { visual = "s" } })
         end,
-    }, -- easy surround with {("etc")}
+    },
     {
         "numToStr/Comment.nvim",
+        event = "VeryLazy",
         config = function()
             require("Comment").setup({
-                toggler = {
-                    line = "<D-/>",
-                },
-                opleader = {
-                    line = "<D-/>",
-                },
-                mappings = {
-                    extra = false,
-                    basic = true,
-                },
+                toggler = { line = "<D-/>" },
+                opleader = { line = "<D-/>" },
+                mappings = { extra = false, basic = true },
             })
         end
     },
     {
         "alvan/vim-closetag",
+        event = "VeryLazy",
         config = function()
             vim.g.closetag_filenames = "*.vue,*.svelte,*.html,*.xhtml,*.phtml"
             vim.g.closetag_xhtml_filenames = "*.xhtml,*.jsx"
         end,
-    },                                                                                 -- Auto-close HTML tags
-    { "windwp/nvim-autopairs",   config = true, event = "InsertEnter" },               -- Auto-close brackets, quotes, etc.
-    { "windwp/nvim-ts-autotag",  opts = {} },                                          -- Auto-close and rename HTML tags
+    },
+    {
+        "windwp/nvim-autopairs",
+        config = true,
+        event = "InsertEnter"
+    },
+    {
+        "windwp/nvim-ts-autotag",
+        event = "VeryLazy",
+        opts = {}
+    },
+
     -- Navigation and Search
-    { "akinsho/toggleterm.nvim", version = "*", opts = { open_mapping = [[<M-l>]] } }, -- Toggle terminal
+    {
+        "akinsho/toggleterm.nvim",
+        version = "*",
+        opts = { open_mapping = [[<M-l>]] }
+    },
     {
         "natecraddock/workspaces.nvim",
         config = function()
-            require("workspaces").setup({
-                hooks = {
-                    open = { "Telescope find_files" }, }
-            })
+            require("workspaces").setup({ hooks = { open = { "Telescope find_files" } } })
         end
     },
     {
@@ -165,24 +162,25 @@ lazy.setup({
         config = function()
             require("plugins.configs.telescope")
         end,
-    }, -- Fuzzy finder
+    },
     {
         "nvim-telescope/telescope-file-browser.nvim",
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-    },                                                                      -- File browser extension for Telescope
+    },
+
     -- Git Integration
-    { "lewis6991/gitsigns.nvim",       config = true, event = "BufEnter" }, -- Git signs in the gutter
     {
-        "kdheepak/lazygit.nvim",
-    }, -- LazyGit integration
+        "lewis6991/gitsigns.nvim",
+        config = true,
+        event = "BufEnter"
+    },
+    { "kdheepak/lazygit.nvim" },
 
     -- Miscellaneous
     {
         "smoka7/multicursors.nvim",
         event = "VeryLazy",
-        dependencies = {
-            "nvimtools/hydra.nvim",
-        },
+        dependencies = { "nvimtools/hydra.nvim" },
         opts = {},
     },
     {
@@ -191,50 +189,50 @@ lazy.setup({
         config = function()
             require("neoscroll").setup({})
         end,
-    }, -- Smooth scrolling
+    },
     {
         "norcalli/nvim-colorizer.lua",
+        event = "VeryLazy",
         config = function()
-            require("colorizer").setup()
+            require("colorizer").setup({})
         end,
-    }, -- Color highlighter
+    },
     {
         "MeanderingProgrammer/render-markdown.nvim",
+        event = "VeryLazy",
         opts = {},
-        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
     },
     {
         "anuvyklack/windows.nvim",
-        dependencies = {
-            "anuvyklack/middleclass",
-            "anuvyklack/animation.nvim",
-        },
+        event = "VeryLazy",
+        dependencies = { "anuvyklack/middleclass", "anuvyklack/animation.nvim" },
         config = function()
             vim.o.winwidth = 10
             vim.o.winminwidth = 10
             vim.o.equalalways = false
-            require("windows").setup()
+            require("windows").setup({})
         end,
-    },                                    -- Window management
-    { "christoomey/vim-tmux-navigator" }, -- Vim splits navigation
+    },
+    { "christoomey/vim-tmux-navigator" },
+
     -- Syntax and Language Support
     {
         "nvim-treesitter/nvim-treesitter",
         config = function()
             require("plugins.configs.treesitter")
         end,
-    }, -- Syntax highlighting and code parsing
+    },
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
-        opts = {
-            delay = 1000,
-            preset = "modern",
-        },
+        opts = { delay = 1000, preset = "modern" },
     },
-    -- Main LSP Configuration and completion
+
+    -- LSP and Completion
     {
         "supermaven-inc/supermaven-nvim",
+        event = "VeryLazy",
         config = function()
             require("supermaven-nvim").setup({
                 log_level = "off",
@@ -246,29 +244,20 @@ lazy.setup({
             })
         end,
     },
-    { -- Autocompletion
+    {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         dependencies = {
-            -- Snippet Engine & its associated nvim-cmp source
             {
                 "L3MON4D3/LuaSnip",
                 build = (function()
-                    -- Build Step is needed for regex support in snippets.
-                    -- This step is not supported in many windows environments.
-                    -- Remove the below condition to re-enable on windows.
                     if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
                         return
                     end
                     return "make install_jsregexp"
                 end)(),
-                dependencies = {},
             },
             "saadparwaiz1/cmp_luasnip",
-
-            -- Adds other completion capabilities.
-            --  nvim-cmp does not ship with all sources by default. They are split
-            --  into multiple repos for maintenance purposes.
             "hrsh7th/cmp-nvim-lsp",
             "hrsh7th/cmp-path",
             "onsails/lspkind.nvim",
@@ -276,24 +265,16 @@ lazy.setup({
         config = function()
             require("plugins.configs.cmp")
         end,
-        -- See `:help cmp`
     },
     {
         "neovim/nvim-lspconfig",
         dependencies = {
-            -- Automatically install LSPs and related tools to stdpath for Neovim
-            { "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
+            { "williamboman/mason.nvim", config = true },
             "williamboman/mason-lspconfig.nvim",
             "WhoIsSethDaniel/mason-tool-installer.nvim",
-
-            -- Useful status updates for LSP.
-            -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
             { "j-hui/fidget.nvim",       opts = {} },
-
-            -- Allows extra capabilities provided by nvim-cmp
             "hrsh7th/cmp-nvim-lsp",
         },
-
         config = function()
             require("plugins.configs.lsp")
         end,
