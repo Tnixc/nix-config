@@ -12,7 +12,6 @@ sc.setup({
 	max_lines = false, -- disables if no. of lines in buffer exceeds this
 	handle = {
 		text = " ",
-		color = "#2A2C3F",
 		cterm = nil,
 		-- highlight = "CursorColumn",
 		hide_if_all_visible = false, -- Hides handle if all lines are visible
@@ -22,7 +21,6 @@ sc.setup({
 			-- text = "•",
 			text = "─",
 			priority = 0,
-			color = "#2A2C3F",
 			cterm = nil,
 			-- highlight = "Normal",
 		},

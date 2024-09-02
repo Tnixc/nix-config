@@ -57,7 +57,7 @@ keymap("n", "<leader>ft", "<cmd>Telescope oldfiles<CR>", { desc = "Find history"
 keymap("n", "<leader>fd", "<cmd>Telescope git_files<CR>", { desc = "Find git files", silent = true })
 keymap("n", "<leader>fo", "<cmd>Telescope workspaces<CR>", { desc = "Open workspace", silent = true })
 
-keymap("n", "<leader>l", "<cmd>Telescope commands<CR>", { desc = "Find commands", silent = true })
+keymap("n", "<leader>t", "<cmd>Telescope commands<CR>", { desc = "Find commands", silent = true })
 
 -- alpha
 keymap("n", "<leader>a", "<cmd>Alpha<CR>", { desc = "Go to Alpha screen", silent = true })
@@ -74,6 +74,10 @@ keymap("n", "<leader>gV", "<cmd>DiffviewClose<cr>", { desc = "Close diffview", s
 -- Lsp
 keymap("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", { desc = "Format code", silent = true })
 keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename symbol", silent = true })
+keymap("n", "<leader>li", "<cmd>Telescope lsp_references<cr>", { desc = "Find references", silent = true })
+keymap("n", "<leader>lf", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Find workspace symbols", silent = true })
+keymap("n", "<leader>lt", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Find document symbols", silent = true })
+
 
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Show hover information", silent = true })
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Go to definition", silent = true })
@@ -98,7 +102,7 @@ keymap('v', '<A-k>', moveline.block_up, { silent = true })
 keymap('v', '<A-j>', moveline.block_down, { silent = true })
 
 -- Cmd all select
-keymap({"n", "v", "i"}, "<D-a>", "<esc>ggVG", { desc = "Select all text", silent = true })
+keymap({ "n", "v", "i" }, "<D-a>", "<esc>ggVG", { desc = "Select all text", silent = true })
 
 -- Tmux Navigator
 keymap("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down in Tmux", silent = true })
@@ -113,6 +117,7 @@ keymap("n", "<leader>Q", "<cmd>q!<cr>", { desc = "Quit without saving", silent =
 
 -- Trouble
 keymap("n", "<leader>xx", "<cmd>Trouble diagnostics<cr>", { desc = "Open Trouble diagnostics", silent = true })
+keymap("n", "<leader>xt", "<cmd>Telescope diagnostics<cr>", { desc = "Open Telescope diagnostics", silent = true })
 keymap(
     "n",
     "<leader>xX",
@@ -125,7 +130,8 @@ keymap("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle NvimTree fi
 
 -- manage splits
 keymap("n", "<C-w>z", "<cmd>WindowsMaximize<CR>", { desc = "Maximize current window", silent = true })
-keymap("n", "<C-w>_", "<cmd>WindowsMaximizeVertically<CR>", { desc = "Maximize current window vertically", silent = true })
+keymap("n", "<C-w>_", "<cmd>WindowsMaximizeVertically<CR>",
+    { desc = "Maximize current window vertically", silent = true })
 keymap("n", "<C-w>|", "<cmd>WindowsMaximizeHorizontally<CR>",
     { desc = "Maximize current window horizontally", silent = true })
 keymap("n", "<C-w>=", "<cmd>WindowsEqualize<CR>", { desc = "Equalize windows", silent = true })
@@ -142,4 +148,3 @@ for i = 1, 9 do
         { desc = "Go to buffer " .. i, silent = true }
     )
 end
-

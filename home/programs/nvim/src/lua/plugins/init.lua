@@ -83,9 +83,10 @@ lazy.setup({
     },
     {
         "petertriho/nvim-scrollbar",
-        config = function()
-            require("plugins.configs.ui.scrollbar")
-        end,
+        -- config = function()
+        --     require("plugins.configs.ui.scrollbar")
+        -- end,
+        opts = {}
     },
 
     -- Utility
@@ -100,6 +101,12 @@ lazy.setup({
     },
 
     -- Editing Helpers
+    {
+        "smoka7/multicursors.nvim",
+        event = "VeryLazy",
+        dependencies = { "nvimtools/hydra.nvim" },
+        opts = {},
+    },
     {
         "kylechui/nvim-surround",
         version = "*",
@@ -175,10 +182,9 @@ lazy.setup({
 
     -- Miscellaneous
     {
-        "smoka7/multicursors.nvim",
+        "andweeb/presence.nvim",
         event = "VeryLazy",
-        dependencies = { "nvimtools/hydra.nvim" },
-        opts = {},
+        opts = {}
     },
     {
         "karb94/neoscroll.nvim",
@@ -224,12 +230,6 @@ lazy.setup({
         end,
     },
     { "christoomey/vim-tmux-navigator" },
-
-    -- Other
-    {
-        "andweeb/presence.nvim",
-        opts = {}
-    },
 
     -- Syntax and Language Support
     {
