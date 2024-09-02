@@ -225,6 +225,12 @@ lazy.setup({
     },
     { "christoomey/vim-tmux-navigator" },
 
+    -- Other
+    {
+        "andweeb/presence.nvim",
+        opts = {}
+    },
+
     -- Syntax and Language Support
     {
         "nvim-treesitter/nvim-treesitter",
