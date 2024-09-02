@@ -63,7 +63,7 @@ keymap("n", "<leader>l", "<cmd>Telescope commands<CR>", { desc = "Find commands"
 keymap("n", "<leader>a", "<cmd>Alpha<CR>", { desc = "Go to Alpha screen", silent = true })
 
 -- git
-keymap("n", "<leader>cm", "<cmd>Telescope git_commits<CR>", { desc = "Git commits", silent = true })
+keymap("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "Git commits", silent = true })
 keymap("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "Git status", silent = true })
 -- LazyGit
 keymap("n", "<leader>gg", "<cmd>LazyGit<cr>", { desc = "Open LazyGit", silent = true })
@@ -98,7 +98,7 @@ keymap('v', '<A-k>', moveline.block_up, { silent = true })
 keymap('v', '<A-j>', moveline.block_down, { silent = true })
 
 -- Cmd all select
-keymap("n", "<D-a>", "ggVG", { desc = "Select all text", silent = true })
+keymap({"n", "v", "i"}, "<D-a>", "<esc>ggVG", { desc = "Select all text", silent = true })
 
 -- Tmux Navigator
 keymap("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate down in Tmux", silent = true })
@@ -143,3 +143,4 @@ for i = 1, 9 do
         { desc = "Go to buffer " .. i, silent = true }
     )
 end
+

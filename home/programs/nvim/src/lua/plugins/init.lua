@@ -121,18 +121,20 @@ lazy.setup({
     }, -- easy surround with {("etc")}
     {
         "numToStr/Comment.nvim",
-        opts = {
-            mappings = {
-                extra = false,
-                basic = true,
-            },
-            toggler = {
-                line = "<leader>c",
-            },
-            opleader = {
-                line = "<leader>c",
-            },
-        },
+        config = function()
+            require("Comment").setup({
+                toggler = {
+                    line = "<D-/>",
+                },
+                opleader = {
+                    line = "<D-/>",
+                },
+                mappings = {
+                    extra = false,
+                    basic = true,
+                },
+            })
+        end
     },
     {
         "alvan/vim-closetag",
