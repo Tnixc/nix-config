@@ -27,7 +27,7 @@ wk.add({
 		{ "<leader>w", "<cmd>w<cr>", desc = "save file", icon = { icon = "󰆓", color = "green" } },
 		{ "<leader>q", "<cmd>q<cr>", desc = "quit", icon = { icon = "󰈆", color = "yellow" } },
 		{ "<leader>q", "<cmd>q!<cr>", desc = "quit without saving", icon = { icon = "", color = "red" } },
-		{ "<leader>e", "<cmd>nvimtreetoggle<cr>", desc = "toggle nvimtree ", icon = { icon = "", color = "azure" } },
+		{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "toggle nvimtree ", icon = { icon = "", color = "azure" } },
 
 		-- file operations
 		{

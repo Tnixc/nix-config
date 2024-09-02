@@ -201,6 +201,7 @@ lazy.setup({
 			require("colorizer").setup({})
 		end,
 	},
+    {"nacro90/numb.nvim", opts = {} },
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
 		event = "VeryLazy",
