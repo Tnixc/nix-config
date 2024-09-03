@@ -13,6 +13,7 @@
     ./programs/zed/zed.nix
     ./programs/kitty/kitty.nix
     ./programs/karabiner/karabiner.nix
+    ./programs/btop/btop.nix
   ];
 
   # Home Manager needs a bit of information about you and the
