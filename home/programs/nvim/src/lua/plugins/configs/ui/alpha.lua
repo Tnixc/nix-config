@@ -78,7 +78,7 @@ dashboard.section.buttons.val = {
             require("telescope.builtin").live_grep()
 		end,
 	}),
-	button("q", "󱎘  Quit", leader, nil, {
+	button("q", "  Quit", leader, nil, {
 		noremap = true,
 		silent = true,
 		nowait = true,

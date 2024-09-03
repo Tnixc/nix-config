@@ -1,6 +1,22 @@
 -- NOTE: Keymaps here
 local wk = require("which-key")
+local function toggle_diffview()
+    local diffview_open = false
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+        local buf = vim.api.nvim_win_get_buf(win)
+        local buf_name = vim.api.nvim_buf_get_name(buf)
+        if buf_name:match("Diffview") then
+            diffview_open = true
+            break
+        end
+    end
 
+    if diffview_open then
+        vim.cmd("DiffviewClose")
+    else
+        vim.cmd("DiffviewOpen")
+    end
+end
 wk.add({
     -- Normal mode mappings
     {
@@ -24,12 +40,12 @@ wk.add({
             desc = "clear search highlights",
             icon = { icon = "", color = "orange" },
         },
-        { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "toggle nvimtree ", icon = { icon = "", color = "azure" } },
-        { "<leader>a", "<cmd>Alpha<cr>", desc = "go to alpha screen", icon = { icon = "󱌎", color = "purple" } },
-        { "<leader>w", "<cmd>w<cr>", desc = "save file", icon = { icon = "󰆓", color = "green" } },
-        { "<leader>q", "<cmd>q<cr>", desc = "quit", icon = { icon = "󰈆", color = "yellow" } },
-        { "<leader>q", "<cmd>q!<cr>", desc = "quit without saving", icon = { icon = "", color = "red" } },
 
+        { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree", icon = { icon = "", color = "azure" } },
+        { "<leader>a", "<cmd>Alpha<cr>", desc = "Go to Alpha Screen", icon = { icon = "󱌎", color = "purple" } },
+        { "<leader>w", "<cmd>w<cr>", desc = "Save File", icon = { icon = "󰆓", color = "green" } },
+        { "<leader>q", "<cmd>q<cr>", desc = "Quit", icon = { icon = "󰈆", color = "yellow" } },
+        { "<leader>q", "<cmd>q!<cr>", desc = "Quit Without Saving", icon = { icon = "", color = "red" } },
         -- file operations
         {
             group = "Telescope",
@@ -128,21 +144,10 @@ wk.add({
         {
             group = "Git",
             { "<leader>g", desc = "Git" },
-            {
-                "<leader>gc",
-                "<cmd>Telescope git_commits<cr>",
-                desc = "Git commits",
-                icon = { icon = "", color = "green" },
-            },
-            { "<leader>gt", "<cmd>Telescope git_status<cr>", desc = "Git status" },
+            { "<leader>gc", "<cmd>Telescope git_commits<cr>", desc = "Git commits", icon = { icon = "", color = "green" }, },
+            { "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Git branches" },
             { "<leader>gg", "<cmd>LazyGit<cr>", desc = "Open LazyGit", icon = { icon = "", color = "purple" } },
-            { "<leader>gv", "<cmd>DiffviewOpen<cr>", desc = "Open diffview", icon = { icon = "", color = "blue" } },
-            {
-                "<leader>gV",
-                "<cmd>DiffviewClose<cr>",
-                desc = "Close diffview",
-                icon = { icon = "", color = "yellow" },
-            },
+            { "<leader>gv", toggle_diffview, desc = "Toggle Diffview", icon = { icon = "", color = "red" }, },
         },
         {
             group = "Go to",

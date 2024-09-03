@@ -52,6 +52,8 @@
 
     zig
 
+    qemu
+
     ani-cli
     mangal
 
@@ -105,7 +107,10 @@
       "macos-trash"
       "sendkeys"
       "dprint"
-            "yazi"
+      "gdb"
+      "aarch64-elf-gcc"
+      "aarch64-elf-gdb"
+      "yazi"
     ];
 
     # `brew install --cask`
