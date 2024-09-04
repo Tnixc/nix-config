@@ -26,6 +26,9 @@
         --color=info:2,prompt:1,pointer:5
         --color=marker:2,spinner:5,header:4"
 
+        bindkey '^[h' backward-word
+        bindkey '^[l' forward-word
+
         eval "$(zoxide init zsh)"
     '';
   };
@@ -53,9 +56,10 @@
 
     rm = "trash";
     bs = "brew services";
-
+    
     sw =
       "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy && echo 'success' ; cd - >> /dev/null";
+    swd = "cd ~/nix-config ; make deploy ; cd - >> /dev/null";
     sws =
       "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy && echo 'success' ; cd - >> /dev/null ; bs restart sketchybar >> /dev/null ; killall yabai ; killall skhd";
   };
