@@ -14,11 +14,13 @@
         }
 
         export EDITOR=nvim
+        export LLVM_PROFILE_FILE="/dev/null"
 
         export BUN_INSTALL="$HOME/.bun"
         export PATH="$BUN_INSTALL/bin:$PATH"
         export PATH="/Users/tnixc/.cargo/bin:$PATH"
         export PATH="/Users/tnixc/.bun/bin:$PATH"
+        export PATH="/Users/tnixc/.local/bin:$PATH"
 
         export FZF_DEFAULT_OPTS="
         --color=fg:7,hl:4
@@ -56,11 +58,11 @@
 
     rm = "trash";
     bs = "brew services";
-    
+
     sw =
-      "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy && echo 'success' ; cd - >> /dev/null";
-    swd = "cd ~/nix-config ; make deploy ; cd - >> /dev/null";
+      "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy && drawer --message 'nix rebuild done' --icon 'snowflake' --pos 'top-center' ; cd - >> /dev/null";
+    swd = "cd ~/nix-config ; make deploy && drawer --message 'nix rebuild done' --icon 'snowflake' --pos 'top-center' ; cd - >> /dev/null";
     sws =
-      "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy && echo 'success' ; cd - >> /dev/null ; bs restart sketchybar >> /dev/null ; killall yabai ; killall skhd";
+      "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy && drawer --message 'nix rebuild done' --icon 'snowflake' --pos 'top-center' ; cd - >> /dev/null ; bs restart sketchybar >> /dev/null ; killall yabai ; killall skhd";
   };
 }

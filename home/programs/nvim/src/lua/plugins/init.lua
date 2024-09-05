@@ -224,7 +224,6 @@ lazy.setup({
     },
     {
         "MeanderingProgrammer/render-markdown.nvim",
-        event = "VeryLazy",
         opts = {
             heading = {
                 width = "block",

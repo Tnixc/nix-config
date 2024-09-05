@@ -1,1 +1,3 @@
-{ ... }: { home.file.".config/karabiner/karabiner.json".source = ./karabiner.json; }
+{ ... }: {
+  home.file.".config/karabiner/karabiner.json".source = ./karabiner.json;
+}

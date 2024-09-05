@@ -1,20 +1,10 @@
 { pkgs, ... }: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    # Terminal and File Management
     pueue
-    git
     ranger
-
-    yabai
-    skhd
-    jankyborders
-    sketchybar-app-font
-
     kitty
-
-    docker
-    colima # docker daemon
-
     btop
     bat
     tldr
@@ -31,54 +21,64 @@
     fastfetch
     gum
 
-    starship
+    # Version Control and Development Tools
+    git
     lazygit
     gh
+    docker
+    colima # docker daemon
 
+    # Window Management (macOS)
+    yabai
+    skhd
+    jankyborders
+    sketchybar-app-font
+
+    # Shell Customization
+    starship
+
+    # Programming Languages and Runtimes
     lua
-    stylua
-
     elixir
-    postgresql
+    python3
+    go
+    zig
+    nodejs_22
 
+    # Language-specific Tools
+    stylua
     rustup
     cargo-binstall
-
-    python3
     pipx
     poetry
 
-    go
+    # Databases
+    postgresql
 
-    zig
-
+    # Virtualization
     qemu
 
+    # Media and Entertainment
     ani-cli
     mangal
-
     aria2
     yt-dlp
     ffmpeg
     iina
 
+    # Content Creation and Note-taking
     zola
     obsidian
 
+    # Font Tools
     python312Packages.fonttools
     fontforge-fonttools
     brotli
     zopfli
 
-    nodejs_22
+    # Package Managers
     yarn
   ];
-
-  #cargo
-  #rustfmt
-  #rustc
-  #rust-analyzer all handled by rustup
-
   homebrew = {
     enable = false;
 
