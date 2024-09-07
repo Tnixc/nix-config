@@ -56,6 +56,20 @@ lazy.setup({
         end,
     },
     {
+        'echasnovski/mini.files',
+        version = '*',
+        config = function()
+            require('mini.files').setup({
+                windows = {
+                    preview = true,
+                    width_focus = 45,
+                    width_nofocus = 30,
+                    width_preview = 45,
+                },
+            })
+        end
+    },
+    {
         "folke/todo-comments.nvim",
         event = "VeryLazy",
         opts = {},

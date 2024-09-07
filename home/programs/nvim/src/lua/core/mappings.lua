@@ -42,6 +42,7 @@ wk.add({
         },
 
         { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree", icon = { icon = "", color = "azure" } },
+        { "<leader>E", "<cmd>lua MiniFiles.open()<cr>", desc = "Open MiniFiles", icon = { icon = "󰺔", color = "blue" } },
         { "<leader>a", "<cmd>Alpha<cr>", desc = "Go to Alpha Screen", icon = { icon = "󱌎", color = "purple" } },
         { "<leader>w", "<cmd>w<cr>", desc = "Save File", icon = { icon = "󰆓", color = "green" } },
         { "<leader>q", "<cmd>q<cr>", desc = "Quit", icon = { icon = "󰈆", color = "yellow" } },

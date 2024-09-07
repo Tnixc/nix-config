@@ -111,6 +111,7 @@
       "aarch64-elf-gcc"
       "aarch64-elf-gdb"
       "yazi"
+      "spotify_player"
     ];
 
     # `brew install --cask`
