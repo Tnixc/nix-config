@@ -75,7 +75,7 @@ dashboard.section.buttons.val = {
 		silent = true,
 		nowait = true,
 		callback = function()
-            require("telescope.builtin").live_grep()
+			require("telescope.builtin").live_grep()
 		end,
 	}),
 	button("q", "  Quit", leader, nil, {
@@ -83,7 +83,7 @@ dashboard.section.buttons.val = {
 		silent = true,
 		nowait = true,
 		callback = function()
-            vim.cmd("qa")
+			vim.cmd("qa")
 		end,
 	}),
 }

@@ -67,7 +67,7 @@ require("telescope").setup({
 		workspaces = {
 			-- keep insert mode after selection in the picker, default is false
 			keep_insert = true,
-            path_hl = "Delimiter"
+			path_hl = "Delimiter",
 		},
 	},
 })
