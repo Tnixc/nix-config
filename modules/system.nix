@@ -40,7 +40,7 @@
         "com.apple.keyboard.fnState" = true; # fn for f1-12
         AppleInterfaceStyle = "Dark"; # dark mode
 
-        ApplePressAndHoldEnabled = true; # enable press and hold
+        ApplePressAndHoldEnabled = false; # enable press and hold
 
         InitialKeyRepeat =
           15; # normal minimum is 15 (225 ms), maximum is 120 (1800 ms)
