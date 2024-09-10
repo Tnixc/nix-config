@@ -78,6 +78,8 @@
 
     # Package Managers
     yarn
+
+    # java
   ];
   homebrew = {
     enable = false;
@@ -112,6 +114,7 @@
       "aarch64-elf-gdb"
       "yazi"
       "spotify_player"
+      "openjdk"
     ];
 
     # `brew install --cask`
@@ -131,6 +134,7 @@
       "sf-symbols"
       "font-sf-mono"
       "font-sf-pro"
+      "visual-studio-code"
     ];
   };
 }

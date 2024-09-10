@@ -21,6 +21,7 @@
         export PATH="/Users/tnixc/.cargo/bin:$PATH"
         export PATH="/Users/tnixc/.bun/bin:$PATH"
         export PATH="/Users/tnixc/.local/bin:$PATH"
+        export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
         export FZF_DEFAULT_OPTS="
         --color=fg:7,hl:4

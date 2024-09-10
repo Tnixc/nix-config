@@ -37,6 +37,12 @@ lazy.setup({
 			require("plugins.configs.ui.bufferline")
 		end,
 	},
+    {
+        'Bekaboo/dropbar.nvim',
+        dependencies = {
+          'nvim-telescope/telescope-fzf-native.nvim'
+        }
+    },
 	{
 		"famiu/bufdelete.nvim",
 		event = "VeryLazy",
