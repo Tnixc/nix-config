@@ -131,7 +131,6 @@
       "font-sf-mono"
       "font-sf-pro"
       "visual-studio-code"
-      "karabiner-elements"
     ];
   };
 }

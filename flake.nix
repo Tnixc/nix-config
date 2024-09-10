@@ -24,7 +24,7 @@
     # nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      # url = "github:nix-community/home-manager/unstale";
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with the `inputs.nixpkgs` of the current flake,
       # to avoid problems caused by different versions of nixpkgs dependencies.
@@ -44,7 +44,6 @@
   # The `@` syntax here is used to alias the attribute set of the inputs's parameter, making it convenient to use inside the function.
   outputs = inputs@{ self, nixpkgs, home-manager, darwin, ... }:
     let
-      # TODO replace with your own username, system and hostname
       username = "tnixc";
       system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
       hostname = "End";
