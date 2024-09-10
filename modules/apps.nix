@@ -82,10 +82,10 @@
     # java
   ];
   homebrew = {
-    enable = false;
+    enable = true;
 
     onActivation = {
-      autoUpdate = false;
+      autoUpdate = true;
       # 'zap': uninstalls all formulae(and related files) not listed here.
       cleanup = "zap";
     };
@@ -109,12 +109,8 @@
       "macos-trash"
       "sendkeys"
       "dprint"
-      "gdb"
-      "aarch64-elf-gcc"
-      "aarch64-elf-gdb"
       "yazi"
       "spotify_player"
-      "openjdk"
     ];
 
     # `brew install --cask`
@@ -135,6 +131,7 @@
       "font-sf-mono"
       "font-sf-pro"
       "visual-studio-code"
+      "karabiner-elements"
     ];
   };
 }
