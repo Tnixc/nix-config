@@ -12,7 +12,6 @@
     ./programs/nvim/nvim.nix
     ./programs/zed/zed.nix
     ./programs/kitty/kitty.nix
-    ./programs/karabiner/karabiner.nix
     ./programs/btop/btop.nix
   ];
 

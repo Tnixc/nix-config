@@ -57,3 +57,8 @@ ctrl + shift - 8: yabai -m window --space 8 && yabai -m space --focus 8
 ctrl + shift - 9: yabai -m window --space 9 && yabai -m space --focus 9
 ctrl + shift - 0: yabai -m window --space 10 && yabai -m space --focus 10
 
+fn - h : skhd -k "left"
+fn - j : skhd -k "down"
+fn - k : skhd -k "up"
+fn - l : skhd -k "right"
+
