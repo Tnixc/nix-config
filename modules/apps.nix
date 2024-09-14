@@ -42,7 +42,6 @@
     elixir
     python3
     go
-    zig
     nodejs_22
 
     # Language-specific Tools
@@ -66,6 +65,8 @@
     ffmpeg
     iina
 
+    # java
+
     # Content Creation and Note-taking
     zola
     obsidian
@@ -78,14 +79,12 @@
 
     # Package Managers
     yarn
-
-    # java
   ];
   homebrew = {
     enable = true;
 
     onActivation = {
-      autoUpdate = true;
+      autoUpdate = false;
       # 'zap': uninstalls all formulae(and related files) not listed here.
       cleanup = "zap";
     };
@@ -111,6 +110,7 @@
       "dprint"
       "yazi"
       "spotify_player"
+      "zig"
     ];
 
     # `brew install --cask`

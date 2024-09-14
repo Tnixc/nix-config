@@ -60,6 +60,8 @@
     rm = "trash";
     bs = "brew services";
 
+    zig = "zigc";
+
     sw =
       "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy ; cd - >> /dev/null";
     swd = "cd ~/nix-config ; make deploy ; cd - >> /dev/null";

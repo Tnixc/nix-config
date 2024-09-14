@@ -196,7 +196,7 @@ lazy.setup({
 		opts = { open_mapping = [[<M-l>]] },
 	},
 	{
-		"Tnixc/workspaces.nvim",
+		"natecraddock/workspaces.nvim",
 		event = "VeryLazy",
 		config = function()
 			require("workspaces").setup({ hooks = { open = { "Telescope find_files" } } })

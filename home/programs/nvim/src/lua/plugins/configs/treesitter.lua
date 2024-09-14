@@ -16,7 +16,6 @@ configs.setup({
 
 	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = { "css" }, -- list of language that will be disabled
 	},
 	autopairs = {
 		enable = true,
@@ -28,7 +27,7 @@ configs.setup({
 	indent = { enable = true, disable = { "python", "css" } },
 
 	context_commentstring = {
-		enable = true,
+		enable = false,
 		enable_autocmd = false,
 	},
 })
