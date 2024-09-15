@@ -60,6 +60,8 @@
     rm = "trash";
     bs = "brew services";
 
+    icat = "kitten icat --align left";
+
     zig = "zigc";
 
     sw =
