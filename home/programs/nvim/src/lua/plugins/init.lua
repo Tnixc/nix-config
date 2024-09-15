@@ -231,12 +231,13 @@ lazy.setup({
 	},
 
 	-- Miscellaneous
-	{
-		"andweeb/presence.nvim",
-		event = "VeryLazy",
-		opts = {},
-	},
-	{
+    {
+        'vyfor/cord.nvim',
+        build = './build || .\\build',
+        event = 'VeryLazy',
+        opts = {},
+    }, -- discord presence
+    {
 		"karb94/neoscroll.nvim",
 		event = "VeryLazy",
 		config = function()

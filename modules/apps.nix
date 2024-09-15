@@ -65,7 +65,7 @@
     ffmpeg
     iina
 
-    # java
+    zig
 
     # Content Creation and Note-taking
     zola
@@ -110,7 +110,6 @@
       "dprint"
       "yazi"
       "spotify_player"
-      "zig"
     ];
 
     # `brew install --cask`

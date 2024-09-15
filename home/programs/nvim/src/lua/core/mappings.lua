@@ -184,11 +184,6 @@ wk.add({
 		-- Multicursor
 		{ "m", "<cmd>MCstart<cr>", desc = "Create multiple cursors (normal)" },
 
-		-- Buffer management
-		{ "<M-w>", "<cmd>Bdelete<cr>", desc = "Close current buffer" },
-		{ "<M-S-Tab>", "<cmd>BufferLineCyclePrev<cr>", desc = "Switch to previous buffer" },
-		{ "<M-Tab>", "<cmd>BufferLineCycleNext<cr>", desc = "Switch to next buffer" },
-
 		{ "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Show hover information" },
 
 		-- Other
@@ -266,6 +261,9 @@ wk.add({
 	-- All
 	{
 		mode = { "n", "v", "i" },
+        { "<M-w>", "<cmd>Bdelete<cr>", desc = "Close current buffer" },
+		{ "<M-S-Tab>", "<cmd>BufferLineCyclePrev<cr>", desc = "Switch to previous buffer" },
+		{ "<M-Tab>", "<cmd>BufferLineCycleNext<cr>", desc = "Switch to next buffer" },
 		{ "<D-a>", "<esc>ggVG", desc = "Select all text" },
 	},
 })
@@ -273,7 +271,7 @@ wk.add({
 -- Buffer number mappings
 for i = 1, 9 do
 	wk.add({
-		{ "<M-" .. i .. ">", "<cmd>BufferLineGoToBuffer " .. i .. " <cr>", desc = "Go to buffer " .. i, mode = "n" },
+		{ "<M-" .. i .. ">", "<cmd>BufferLineGoToBuffer " .. i .. " <cr>", desc = "Go to buffer " .. i, mode = { "n", "i", "v" } },
 	})
 end
 
