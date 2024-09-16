@@ -15,6 +15,7 @@
     skim
     jq
     ripgrep
+    fd
     loc
     hyperfine
     wget
