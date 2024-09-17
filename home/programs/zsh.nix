@@ -48,11 +48,11 @@
     lz = "lazygit";
     g = "git";
 
-    ls = "eza --icons";
-    l = "eza --icons -la";
-    la = "eza --icons -a";
-    ll = "eza --icons -l";
-    tree = "eza --icons --tree -a";
+    ls = "eza --icons --group-directories-first";
+    l = "eza --icons -la --no-user --no-time --no-permissions --git --group-directories-first";
+    lr = "eza --icons -laR --git-ignore --git --no-user --no-time --no-permissions --group-directories-first";
+    tree = "eza --icons --tree --git-ignore";
+    treea = "eza --icons --tree -a";
 
     cd = "z";
     f = "open .";
