@@ -115,6 +115,7 @@
 
     # `brew install --cask`
     casks = [
+      "tableplus"
       "playcover-community"
       "betterdisplay"
       "eloston-chromium"
