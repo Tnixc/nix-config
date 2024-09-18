@@ -122,7 +122,6 @@
       "jordanbaird-ice"
       "nordvpn"
       "zed"
-      "orion"
       "loop"
       "motrix"
       "alt-tab"

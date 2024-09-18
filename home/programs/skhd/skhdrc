@@ -14,7 +14,7 @@ ctrl + alt + cmd + shift - f : yabai -m window --toggle zoom-fullscreen
 ctrl + alt + cmd + shift - return : kitty --single-instance -d ~
 
 # restart Yabi, SpaceBar, and SKHD
-alt + shift - r : killall yabai&&yabai --start-service&&skhd --reload
+alt + shift - r : yabai --restart-service ; skhd --reload ; sketchybar --reload 
 
 # Rotate workspace clockwise
 ctrl + alt + cmd + shift - 0x32 : yabai -m space --rotate 90
@@ -61,4 +61,5 @@ fn - h : skhd -k "left"
 fn - j : skhd -k "down"
 fn - k : skhd -k "up"
 fn - l : skhd -k "right"
+
 
