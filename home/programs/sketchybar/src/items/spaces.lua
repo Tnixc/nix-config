@@ -63,9 +63,6 @@ for i = 1, 20, 1 do
 			label = { highlight = selected },
 			background = { border_color = selected and colors.black or colors.bg1 },
 		})
-		space_bracket:set({
-			background = { border_color = selected and colors.black or colors.bg1 },
-		})
 	end)
 
 	space:subscribe("mouse.clicked", function(env)
@@ -91,54 +88,20 @@ local space_window_observer = sbar.add("item", {
 space_window_observer:subscribe("space_windows_change", function(env)
 	local icon_line = ""
 	local no_app = true
-	for app, count in pairs(env.INFO.apps) do
+	for app, _ in pairs(env.INFO.apps) do
 		no_app = false
 		local lookup = app_icons[app]
-		local icon = ((lookup == nil) and app_icons["default"] or lookup)
-		icon_line = icon_line .. " " .. icon
+        if lookup == nil then
+            lookup = app_icons["Default"]
+        end
+		icon_line = icon_line .. " " .. lookup
 	end
 
 	if no_app then
-		icon_line = " —"
+		icon_line = " —⠀"
 	end
 	sbar.animate("tanh", 10, function()
 		spaces[env.INFO.space]:set({ label = icon_line })
 	end)
 end)
 
--- spaces_indicator:subscribe("swap_menus_and_spaces", function(env)
---   local currently_on = spaces_indicator:query().icon.value == icons.switch.on
---   spaces_indicator:set({
---     icon = currently_on and icons.switch.off or icons.switch.on
---   })
--- end)
-
--- spaces_indicator:subscribe("mouse.entered", function(env)
---   sbar.animate("tanh", 30, function()
---     spaces_indicator:set({
---       background = {
---         color = { alpha = 1.0 },
---         border_color = { alpha = 1.0 },
---       },
---       icon = { color = colors.bg1 },
---       label = { width = "dynamic" }
---     })
---   end)
--- end)
-
--- spaces_indicator:subscribe("mouse.exited", function(env)
---   sbar.animate("tanh", 30, function()
---     spaces_indicator:set({
---       background = {
---         color = { alpha = 0.0 },
---         border_color = { alpha = 0.0 },
---       },
---       icon = { color = colors.grey },
---       label = { width = 0, }
---     })
---   end)
--- end)
-
--- spaces_indicator:subscribe("mouse.clicked", function(env)
---   sbar.trigger("swap_menus_and_spaces")
--- end)
