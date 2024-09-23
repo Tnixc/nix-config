@@ -57,7 +57,6 @@ local servers = {
 	-- But for many setups, the LSP (`tsserver`) will work just fine
 	-- tsserver = {},
 	--
-
 }
 
 -- Ensure the servers and tools above are installed
@@ -74,7 +73,7 @@ local ensure_installed = vim.tbl_keys(servers or {})
 require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 -- NOTE: this fixes the split opening with zig diagnostics
-vim.g.zig_fmt_parse_errors = 0;
+vim.g.zig_fmt_parse_errors = 0
 
 require("mason-lspconfig").setup({
 	handlers = {

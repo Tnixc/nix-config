@@ -84,4 +84,3 @@ end, opts)
 vim.keymap.set({ "n", "i" }, "<C-BS>", function()
 	ResetGuiFont()
 end, opts)
-

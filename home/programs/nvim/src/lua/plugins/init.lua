@@ -37,12 +37,12 @@ lazy.setup({
 			require("plugins.configs.ui.bufferline")
 		end,
 	},
-    {
-        'Bekaboo/dropbar.nvim',
-        dependencies = {
-          'nvim-telescope/telescope-fzf-native.nvim'
-        }
-    },
+	{
+		"Bekaboo/dropbar.nvim",
+		dependencies = {
+			"nvim-telescope/telescope-fzf-native.nvim",
+		},
+	},
 	{
 		"famiu/bufdelete.nvim",
 		event = "VeryLazy",
@@ -231,13 +231,13 @@ lazy.setup({
 	},
 
 	-- Miscellaneous
-    {
-        'vyfor/cord.nvim',
-        build = './build || .\\build',
-        event = 'VeryLazy',
-        opts = {},
-    }, -- discord presence
-    {
+	{
+		"vyfor/cord.nvim",
+		build = "./build || .\\build",
+		event = "VeryLazy",
+		opts = {},
+	}, -- discord presence
+	{
 		"karb94/neoscroll.nvim",
 		event = "VeryLazy",
 		config = function()
