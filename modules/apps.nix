@@ -21,6 +21,7 @@
     wget
     fastfetch
     gum
+    license-cli
 
     # Version Control and Development Tools
     git
