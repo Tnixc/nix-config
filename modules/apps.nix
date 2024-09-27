@@ -43,7 +43,6 @@
     elixir
     python3
     go
-    nodejs_22
 
     # Language-specific Tools
     stylua
@@ -100,6 +99,7 @@
 
     # `brew install`
     brews = [
+      "node"
       "neovim"
       "nowplaying-cli"
       "switchaudio-osx"
