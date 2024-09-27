@@ -2,7 +2,7 @@ local colors = require("colors")
 local icons = require("icons")
 local settings = require("settings")
 
-local popup_width = 250
+local popup_width = 200
 
 local volume_percent = sbar.add("item", "widgets.volume1", {
 	position = "right",
@@ -44,7 +44,7 @@ local volume_bracket = sbar.add("bracket", "widgets.volume.bracket", {
 	volume_percent.name,
 }, {
 	background = { color = colors.bg1 },
-	popup = { align = "center" },
+	popup = { align = "left" },
 })
 
 sbar.add("item", "widgets.volume.padding", {
@@ -54,6 +54,9 @@ sbar.add("item", "widgets.volume.padding", {
 
 local volume_slider = sbar.add("slider", popup_width, {
 	position = "popup." .. volume_bracket.name,
+	padding_left = 16,
+	padding_right = 16,
+	align = "left",
 	slider = {
 		highlight_color = colors.blue,
 		background = {
@@ -64,9 +67,9 @@ local volume_slider = sbar.add("slider", popup_width, {
 		knob = {
 			string = "􀀁",
 			drawing = true,
+			color = colors.white,
 		},
 	},
-	background = { color = colors.bg1, height = 2, y_offset = -20 },
 	click_script = 'osascript -e "set volume output volume $PERCENTAGE"',
 })
 
@@ -115,8 +118,7 @@ local function volume_toggle_details(env)
 		sbar.exec("SwitchAudioSource -t output -c", function(result)
 			current_audio_device = result:sub(1, -2)
 			sbar.exec("SwitchAudioSource -a -t output", function(available)
-				current = current_audio_device
-				local color = colors.grey
+				local current = current_audio_device
 				local counter = 0
 
 				for device in string.gmatch(available, "[^\r\n]+") do
@@ -127,8 +129,10 @@ local function volume_toggle_details(env)
 					sbar.add("item", "volume.device." .. counter, {
 						position = "popup." .. volume_bracket.name,
 						width = popup_width,
-						align = "center",
-						label = { string = device, color = color },
+						padding_left = 16,
+						padding_right = 16,
+						align = "left",
+						label = { string = device, color = color, y_offset = 8 },
 						click_script = 'SwitchAudioSource -s "'
 							.. device
 							.. '" && sketchybar --set /volume.device\\.*/ label.color='

@@ -14,12 +14,14 @@ return {
 		bg = 0x00FFFFFF,
 		border = 0x00FFFFFF,
 	},
+
 	popup = {
-		bg = 0xFF363A4F,
+		bg = 0x99000000,
 		border = 0xFF24273A,
 	},
+
 	bg1 = 0xFF000000,
-	bg2 = 0xFF000000,
+	bg2 = 0xFF1F1F1F,
 
 	with_alpha = function(color, alpha)
 		if alpha > 1.0 or alpha < 0.0 then

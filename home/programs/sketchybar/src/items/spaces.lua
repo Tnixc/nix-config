@@ -91,9 +91,9 @@ space_window_observer:subscribe("space_windows_change", function(env)
 	for app, _ in pairs(env.INFO.apps) do
 		no_app = false
 		local lookup = app_icons[app]
-        if lookup == nil then
-            lookup = app_icons["Default"]
-        end
+		if lookup == nil then
+			lookup = app_icons["Default"]
+		end
 		icon_line = icon_line .. " " .. lookup
 	end
 
@@ -104,4 +104,3 @@ space_window_observer:subscribe("space_windows_change", function(env)
 		spaces[env.INFO.space]:set({ label = icon_line })
 	end)
 end)
-

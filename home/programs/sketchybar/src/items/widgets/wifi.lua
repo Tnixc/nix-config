@@ -61,7 +61,6 @@ local wifi_down = sbar.add("item", "widgets.wifi2", {
 
 local wifi = sbar.add("item", "widgets.wifi.padding", {
 	position = "right",
-	padding_left = 8,
 	label = { drawing = true, string = [[􀙥]] },
 })
 
@@ -84,7 +83,13 @@ local ssid = sbar.add("item", {
 		string = icons.wifi.router,
 	},
 	width = popup_width,
-	align = "center",
+	align = "left",
+	padding_left = 16,
+	padding_right = 16,
+	background = {
+		height = 48,
+		color = colors.transparent,
+	},
 	label = {
 		font = {
 			size = 15,
@@ -93,14 +98,11 @@ local ssid = sbar.add("item", {
 		max_chars = 18,
 		string = "????????????",
 	},
-	background = {
-		height = 2,
-		color = colors.grey,
-		y_offset = -15,
-	},
 })
 
 local hostname = sbar.add("item", {
+	padding_left = 16,
+	padding_right = 16,
 	position = "popup." .. wifi_bracket.name,
 	icon = {
 		align = "left",
@@ -116,6 +118,8 @@ local hostname = sbar.add("item", {
 })
 
 local ip = sbar.add("item", {
+	padding_left = 16,
+	padding_right = 16,
 	position = "popup." .. wifi_bracket.name,
 	icon = {
 		align = "left",
@@ -130,6 +134,8 @@ local ip = sbar.add("item", {
 })
 
 local mask = sbar.add("item", {
+	padding_left = 16,
+	padding_right = 16,
 	position = "popup." .. wifi_bracket.name,
 	icon = {
 		align = "left",
@@ -144,15 +150,25 @@ local mask = sbar.add("item", {
 })
 
 local router = sbar.add("item", {
+	padding_left = 16,
+	padding_right = 16,
+	corner_radius = 0,
 	position = "popup." .. wifi_bracket.name,
+	background = {
+		height = 40,
+		corner_radius = 0,
+		color = colors.transparent,
+	},
 	icon = {
 		align = "left",
 		string = "Router:",
+		y_offset = 5,
 		width = popup_width / 2,
 	},
 	label = {
 		string = "???.???.???.???",
 		width = popup_width / 2,
+		y_offset = 5,
 		align = "right",
 	},
 })
@@ -237,7 +253,7 @@ wifi:subscribe("mouse.exited.global", hide_details)
 local function copy_label_to_clipboard(env)
 	local label = sbar.query(env.NAME).label.value
 	sbar.exec('echo "' .. label .. '" | pbcopy')
-	sbar.set(env.NAME, { label = { string = icons.clipboard, align = "center" } })
+	sbar.set(env.NAME, { label = { string = icons.clipboard, align = "right" } })
 	sbar.delay(1, function()
 		sbar.set(env.NAME, { label = { string = label, align = "right" } })
 	end)

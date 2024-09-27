@@ -9,7 +9,7 @@ local battery = sbar.add("item", "widgets.battery", {
 	icon = {
 		font = {
 			style = settings.font.style_map["Regular"],
-			size = 12.0,
+			size = 15.0,
 		},
 	},
 	label = { font = { family = settings.font.numbers } },
@@ -19,6 +19,8 @@ local battery = sbar.add("item", "widgets.battery", {
 
 local remaining_time = sbar.add("item", {
 	position = "popup." .. battery.name,
+	padding_right = 16,
+	padding_left = 16,
 	icon = {
 		string = "Time remaining:",
 		width = 100,
