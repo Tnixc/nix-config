@@ -39,6 +39,7 @@ lazy.setup({
 	},
 	{
 		"Bekaboo/dropbar.nvim",
+		event = "VeryLazy",
 		dependencies = {
 			"nvim-telescope/telescope-fzf-native.nvim",
 		},
@@ -256,6 +257,7 @@ lazy.setup({
 	},
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
+		event = "VeryLazy",
 		opts = {
 			heading = {
 				width = "block",
@@ -315,6 +317,7 @@ lazy.setup({
 	},
 	{
 		"hrsh7th/nvim-cmp",
+		event = "VeryLazy",
 		dependencies = {
 			{
 				"L3MON4D3/LuaSnip",
@@ -336,6 +339,7 @@ lazy.setup({
 	},
 	{
 		"neovim/nvim-lspconfig",
+        event = "VeryLazy",
 		dependencies = {
 			{ "williamboman/mason.nvim", config = true },
 			"williamboman/mason-lspconfig.nvim",
