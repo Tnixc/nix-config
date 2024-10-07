@@ -10,6 +10,11 @@ This is a [nix-darwin](https://github.com/LnL7/nix-darwin) config for a 13-inch 
 
 The color scheme is my theme [edo](https://github.com/tnixc/edo). Some fonts I use are `Basier Square Mono` and `Berkeley Mono`.
 
+### Some programs
+- bar: [sketchybar](https://github.com/FelixKratz/SketchyBar)
+- terminal: kitty
+- window manager: yabai
+
 <h1 align="center">
 <img width="710" alt="image" src="https://github.com/user-attachments/assets/68ecfecd-ed8c-4077-a401-e02e6f589c04">
 <img width="710" alt="image" src="https://github.com/user-attachments/assets/15520b29-3161-448e-8935-add4ac173ac1">
