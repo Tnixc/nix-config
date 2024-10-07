@@ -44,6 +44,7 @@
     elixir
     python3
     go
+    zig
 
     # Language-specific Tools
     stylua
@@ -51,12 +52,7 @@
     cargo-binstall
     pipx
     poetry
-
-    # Databases
-    postgresql
-
-    # Virtualization
-    qemu
+    uv
 
     # Media and Entertainment
     ani-cli
@@ -66,7 +62,6 @@
     ffmpeg
     iina
 
-    zig
 
     # Content Creation and Note-taking
     zola
