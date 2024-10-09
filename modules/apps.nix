@@ -62,7 +62,6 @@
     ffmpeg
     iina
 
-
     # Content Creation and Note-taking
     zola
     obsidian
