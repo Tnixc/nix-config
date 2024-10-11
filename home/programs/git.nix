@@ -12,6 +12,7 @@
     userEmail = "tnixxc@gmail.com";
 
     extraConfig = {
+      core.autocrlf = "input";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
     };
