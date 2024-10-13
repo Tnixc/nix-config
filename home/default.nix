@@ -6,6 +6,7 @@
     ./programs/zsh.nix
     ./programs/starship.nix
     ./programs/git.nix
+    ./programs/lazygit.nix
     ./programs/sketchybar/sketchybar.nix
     ./programs/yabai/yabai.nix
     ./programs/skhd/skhd.nix

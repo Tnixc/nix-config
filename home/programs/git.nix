@@ -12,7 +12,12 @@
     userEmail = "tnixxc@gmail.com";
 
     extraConfig = {
+      core.pager = "delta --dark";
       core.autocrlf = "input";
+      diff.algorithm = "histogram";
+      merge.conflictstyle = "diff3";
+
+      diff.colorMoved = "default";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
     };

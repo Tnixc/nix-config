@@ -26,6 +26,7 @@
     # Version Control and Development Tools
     git
     lazygit
+    delta
     gh
     docker
     colima # docker daemon

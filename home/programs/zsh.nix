@@ -46,6 +46,7 @@
     bat = "bat --theme base16";
     ga = "git add -A";
     lz = "lazygit";
+
     g = "git";
 
     ls = "eza --icons --group-directories-first";
