@@ -5,6 +5,7 @@
   imports = [
     ./programs/zsh.nix
     ./programs/starship.nix
+    ./programs/bat/bat.nix
     ./programs/git.nix
     ./programs/lazygit.nix
     ./programs/sketchybar/sketchybar.nix
