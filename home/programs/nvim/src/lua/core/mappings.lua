@@ -37,7 +37,7 @@ wk.add({
 		{
 			"<leader>h",
 			"<cmd>nohlsearch<cr>",
-			desc = "clear search highlights",
+			desc = "Clear Search Highlights",
 			icon = { icon = "", color = "orange" },
 		},
 
@@ -51,7 +51,7 @@ wk.add({
 		{ "<leader>a", "<cmd>Alpha<cr>", desc = "Go to Alpha Screen", icon = { icon = "󱌎", color = "purple" } },
 		{ "<leader>w", "<cmd>w<cr>", desc = "Save File", icon = { icon = "󰆓", color = "green" } },
 		{ "<leader>q", "<cmd>q<cr>", desc = "Quit", icon = { icon = "󰈆", color = "yellow" } },
-		{ "<leader>q", "<cmd>q!<cr>", desc = "Quit Without Saving", icon = { icon = "", color = "red" } },
+		{ "<leader>Q", "<cmd>qa!<cr>", desc = "Quit All", icon = { icon = "", color = "red" } },
 		-- file operations
 		{
 			group = "Telescope",
