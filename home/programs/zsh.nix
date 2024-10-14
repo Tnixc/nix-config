@@ -45,6 +45,7 @@
     cat = "bat";
     ga = "git add -A";
     lz = "lazygit";
+    gz = "nvim +DiffviewOpen";
 
     g = "git";
 

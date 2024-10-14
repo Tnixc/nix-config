@@ -93,7 +93,7 @@ lazy.setup({
 	},
 	{
 		"sindrets/diffview.nvim",
-		event = "VeryLazy",
+        event = "BufEnter",
 		config = function()
 			require("diffview").setup({
 				file_panel = {
