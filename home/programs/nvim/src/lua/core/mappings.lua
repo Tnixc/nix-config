@@ -92,6 +92,12 @@ wk.add({
 				desc = "Find buffers",
 				icon = { icon = "󱦞", color = "yellow" },
 			},
+			{
+				"<leader>fu",
+				"<cmd>Telescope undo<cr>",
+				desc = "View undo history",
+				icon = { icon = "", color = "orange" },
+			},
 			icon = { icon = "", color = "cyan" },
 		},
 
@@ -265,6 +271,7 @@ wk.add({
 		{ "<M-S-Tab>", "<cmd>BufferLineCyclePrev<cr>", desc = "Switch to previous buffer" },
 		{ "<M-Tab>", "<cmd>BufferLineCycleNext<cr>", desc = "Switch to next buffer" },
 		{ "<D-a>", "<esc>ggVG", desc = "Select all text" },
+		{ "<D-s>", "<cmd>w", desc = "Save file" },
 	},
 })
 

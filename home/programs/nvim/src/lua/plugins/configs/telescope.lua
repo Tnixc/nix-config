@@ -59,6 +59,7 @@ require("telescope").setup({
 		},
 	},
 	extensions = {
+		undo = {},
 		["ui-select"] = {
 			require("telescope.themes").get_dropdown({
 				-- even more opts
@@ -72,5 +73,6 @@ require("telescope").setup({
 	},
 })
 
+require("telescope").load_extension("undo")
 require("telescope").load_extension("ui-select")
 require("telescope").load_extension("workspaces")

@@ -93,7 +93,7 @@ lazy.setup({
 	},
 	{
 		"sindrets/diffview.nvim",
-        event = "BufEnter",
+		event = "BufEnter",
 		config = function()
 			require("diffview").setup({
 				file_panel = {
@@ -139,6 +139,19 @@ lazy.setup({
 
 	-- Editing Helpers
 	{
+		"nvim-treesitter/nvim-treesitter-context",
+		config = function()
+			require("treesitter-context").setup({ enable = true })
+		end,
+	},
+	{
+		"MagicDuck/grug-far.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("grug-far").setup({})
+		end,
+	},
+	{
 		"smoka7/multicursors.nvim",
 		event = "VeryLazy",
 		dependencies = { "nvimtools/hydra.nvim" },
@@ -168,7 +181,7 @@ lazy.setup({
 		event = "InsertEnter",
 		config = function()
 			vim.g.closetag_filenames = "*.vue,*.svelte,*.html,*.xhtml,*.phtml"
-			vim.g.closetag_xhtml_filenames = "*.xhtml,*.jsx"
+			vim.g.closetag_xhtml_filenames = "*.xhtml,*.jsx,*.tsx"
 		end,
 	},
 	{
@@ -209,6 +222,7 @@ lazy.setup({
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-ui-select.nvim",
+			"debugloop/telescope-undo.nvim",
 		},
 		config = function()
 			require("plugins.configs.telescope")
