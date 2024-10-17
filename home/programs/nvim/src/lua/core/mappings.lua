@@ -289,4 +289,5 @@ end
 
 -- Set leader key
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 wk.add({ { "<Space>", "<Nop>", desc = "<space>" } })

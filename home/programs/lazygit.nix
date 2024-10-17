@@ -18,8 +18,8 @@
           defaultFgColor = [ "#BECAF9" ];
           searchingActiveBorderColor = [ "#FAA296" ];
         };
+        authorColors = { "Tnixc" = "#41DDCA"; };
       };
-      authorColors = { "*" = "#8995FF"; };
     };
   };
 }
