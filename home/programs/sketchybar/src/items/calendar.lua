@@ -22,7 +22,7 @@ local cal = sbar.add("item", {
 	},
 	position = "right",
 	update_freq = 30,
-	padding_left = 3,
+	padding_left = 0.5,
 	padding_right = 3,
 	background = {
 		color = colors.bg1,
