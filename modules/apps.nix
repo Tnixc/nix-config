@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Terminal and File Management
@@ -22,6 +23,7 @@
     fastfetch
     gum
     license-cli
+    comma
 
     # Version Control and Development Tools
     git

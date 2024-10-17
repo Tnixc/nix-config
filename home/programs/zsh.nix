@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -50,10 +51,8 @@
     g = "git";
 
     ls = "eza --icons --group-directories-first";
-    l =
-      "eza --icons -la --no-user --no-time --no-permissions --git --group-directories-first";
-    lr =
-      "eza --icons -laR --git-ignore --git --no-user --no-time --no-permissions --group-directories-first";
+    l = "eza --icons -la --no-user --no-time --no-permissions --git --group-directories-first";
+    lr = "eza --icons -laR --git-ignore --git --no-user --no-time --no-permissions --group-directories-first";
     tree = "eza --icons --tree --git-ignore";
     treea = "eza --icons --tree -a";
 
@@ -65,10 +64,8 @@
 
     icat = "kitten icat --align left";
 
-    sw =
-      "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy ; cd - >> /dev/null";
+    sw = "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy ; cd - >> /dev/null";
     swd = "cd ~/nix-config ; make deploy ; cd - >> /dev/null";
-    sws =
-      "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy ; cd - >> /dev/null ; bs restart sketchybar >> /dev/null ; killall yabai ; killall skhd";
+    sws = "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy ; cd - >> /dev/null ; bs restart sketchybar >> /dev/null ; killall yabai ; killall skhd";
   };
 }

@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   # `programs.git` will generate the config file: ~/.config/git/config
   # to make git use this config file, `~/.gitconfig` should not exist!
   #
@@ -20,7 +21,13 @@
       delta = {
         line-numbers = true;
         syntax-theme = "edo";
-        blame-palette = [ "#24273A" "#1E2030" "#181926" "#363A4F" "#494D64" ];
+        blame-palette = [
+          "#24273A"
+          "#1E2030"
+          "#181926"
+          "#363A4F"
+          "#494D64"
+        ];
         dark = true;
         file-decoration-style = "#BECAF9";
         file-style = "#BECAF9";

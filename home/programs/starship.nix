@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.starship = {
     enable = true;
 
@@ -7,8 +8,7 @@
     enableNushellIntegration = true;
 
     settings = {
-      format =
-        "$hostname [✦ ](white)$shell$directory$git_branch$git_status$character";
+      format = "$hostname [󰫢](#454C68) $shell[ ](#454C68)$directory$git_branch$git_status$character";
 
       directory = {
         style = "blue";
@@ -20,8 +20,7 @@
 
       git_branch = {
         symbol = "󰘬";
-        style = "";
-        format = "[[$symbol $branch ](green)]($style)";
+        format = "[ $symbol $branch ](bg:#303d46 green bold)";
       };
 
       git_status = {
@@ -31,29 +30,17 @@
         behind = "[󰁆($count)](yellow)";
         deleted = "[($count)](red)";
         diverged = "[($count)](red)";
-        format = "([$all_status$ahead_behind]($style) )";
+        format = "[ $all_status$ahead_behind ]()";
         modified = "[~($count)](yellow)";
         renamed = "[/($count)](purple)";
         staged = "[+($count)](cyan)";
         stashed = "[=($count)](blue)";
-        style = "";
-      };
-
-      time = {
-        disabled = false;
-        time_format = "%R:%S";
-        format = "[ 󱑒 $time ](purple)";
       };
 
       character = {
         disabled = false;
         success_symbol = "[](bold green)";
         error_symbol = "[](bold red)";
-      };
-
-      cmd_duration = {
-        min_time = 500;
-        format = "[took](yellow) [$duration](bold yellow)";
       };
 
       shell = {
@@ -64,12 +51,14 @@
         disabled = false;
       };
 
-      line_break = { disabled = false; };
+      line_break = {
+        disabled = false;
+      };
 
       hostname = {
         ssh_only = false;
         format = "[$hostname]($style)";
-        style = "bold green";
+        style = "bold cyan";
       };
     };
   };
