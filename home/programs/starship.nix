@@ -8,7 +8,7 @@
     enableNushellIntegration = true;
 
     settings = {
-      format = "$hostname [󰫢](#454C68) $shell[ ](#454C68)$directory$git_branch$git_status$character";
+      format = " $hostname $directory$git_branch$git_status$character";
 
       directory = {
         style = "blue";
@@ -26,15 +26,15 @@
       git_status = {
         disabled = false;
         ignore_submodules = false;
-        ahead = "[󰁞($count)](blue)";
-        behind = "[󰁆($count)](yellow)";
-        deleted = "[($count)](red)";
-        diverged = "[($count)](red)";
-        format = "[ $all_status$ahead_behind ]()";
-        modified = "[~($count)](yellow)";
-        renamed = "[/($count)](purple)";
-        staged = "[+($count)](cyan)";
-        stashed = "[=($count)](blue)";
+        ahead = "[󰁞($count) ](blue)";
+        behind = "[󰁆($count) ](yellow)";
+        deleted = "[($count) ](red)";
+        diverged = "[($count) ](red)";
+        format = "[ $all_status$ahead_behind]()";
+        modified = "[~($count) ](yellow)";
+        renamed = "[/($count) ](purple)";
+        staged = "[+($count) ](cyan)";
+        stashed = "[=($count) ](blue)";
       };
 
       character = {
@@ -43,13 +43,13 @@
         error_symbol = "[](bold red)";
       };
 
-      shell = {
-        zsh_indicator = "zsh";
-        nu_indicator = "nu";
-        unknown_indicator = "<?>";
-        style = "yellow";
-        disabled = false;
-      };
+      # shell = {
+      #   zsh_indicator = "zsh";
+      #   nu_indicator = "nu";
+      #   unknown_indicator = "<?>";
+      #   style = "yellow";
+      #   disabled = false;
+      # };
 
       line_break = {
         disabled = false;
