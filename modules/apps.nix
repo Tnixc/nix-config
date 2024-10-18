@@ -24,6 +24,7 @@
     gum
     license-cli
     comma
+    fish
 
     # Version Control and Development Tools
     git

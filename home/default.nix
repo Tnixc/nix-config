@@ -4,6 +4,7 @@
   # import sub modules
   imports = [
     ./programs/zsh.nix
+    ./programs/fish.nix
     ./programs/starship.nix
     ./programs/bat/bat.nix
     ./programs/git.nix

@@ -32,7 +32,7 @@
 
         bindkey '^[h' backward-word
         bindkey '^[l' forward-word
-
+        source <(fzf --zsh)
         eval "$(zoxide init zsh)"
     '';
   };
