@@ -26,19 +26,19 @@
           "Tnixc" = "#41DDCA";
         };
         unspecifiedAuthorColors = [
-            "#FF6A7B"
-            "#FF7DAA"
-            "#FF9ED0"
-            "#FFBAE2"
-            "#FAA296"
-            "#FF9856"
-            "#E9AD5B"
-            "#90D05A"
-            "#62E4FF"
-            "#05D1EC"
-            "#6EA3FE"
-            "#8995FF"
-            "#C198FD"
+          "#FF6A7B"
+          "#FF7DAA"
+          "#FF9ED0"
+          "#FFBAE2"
+          "#FAA296"
+          "#FF9856"
+          "#E9AD5B"
+          "#90D05A"
+          "#62E4FF"
+          "#05D1EC"
+          "#6EA3FE"
+          "#8995FF"
+          "#C198FD"
         ];
       };
     };

@@ -1,7 +1,7 @@
 { ... }:
 {
   home.file.".config/sketchybar" = {
-    source = ./src;
+    source = ./sketchybar;
     recursive = true;
   };
 }

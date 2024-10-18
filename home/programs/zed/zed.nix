@@ -1,13 +1,13 @@
 { ... }:
 {
   home.file.".config/zed/themes" = {
-    source = ./src/themes;
+    source = ./zed/themes;
     recursive = true;
   };
   home.file.".config/zed/keymap.json" = {
-    source = ./src/keymap.json;
+    source = ./zed/keymap.json;
   };
   home.file.".config/zed/settings.json" = {
-    source = ./src/settings.json;
+    source = ./zed/settings.json;
   };
 }

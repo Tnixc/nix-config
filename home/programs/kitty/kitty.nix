@@ -1,7 +1,7 @@
 { ... }:
 {
   home.file.".config/kitty" = {
-    source = ./src;
+    source = ./kitty;
     recursive = true;
   };
 }
