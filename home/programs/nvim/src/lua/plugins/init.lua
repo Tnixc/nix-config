@@ -316,6 +316,31 @@ lazy.setup({
 
 	-- LSP and Completion
 	{
+		"stevearc/conform.nvim",
+		event = { "BufWritePre" },
+		cmd = { "ConformInfo" },
+		opts = {
+			formatters_by_ft = {
+				lua = { "stylua" },
+				nix = { "nixfmt" },
+				go = { "goimports", "gofmt" },
+				typescriptreact = { "prettierd" },
+				javascriptreact = { "prettierd" },
+				javascript = { "prettierd" },
+				typescript = { "prettierd" },
+				svelte = { "prettierd" },
+				astro = { "prettierd" },
+				vue = { "prettierd" },
+				markdown = { "prettierd" },
+				json = { "prettierd" },
+				yaml = { "prettierd" },
+				html = { "prettierd" },
+				css = { "prettierd" },
+				scss = { "prettierd" },
+			},
+		},
+	},
+	{
 		"supermaven-inc/supermaven-nvim",
 		event = "VeryLazy",
 		config = function()

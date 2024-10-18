@@ -1,5 +1,18 @@
 -- NOTE: Keymaps here
 local wk = require("which-key")
+
+vim.api.nvim_create_user_command("Format", function(args)
+	local range = nil
+	if args.count ~= -1 then
+		local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+		range = {
+			start = { args.line1, 0 },
+			["end"] = { args.line2, end_line:len() },
+		}
+	end
+	require("conform").format({ async = true, lsp_format = "fallback", range = range })
+end, { range = true })
+
 local function toggle_diffview()
 	local diffview_open = false
 	for _, win in ipairs(vim.api.nvim_list_wins()) do
@@ -17,6 +30,7 @@ local function toggle_diffview()
 		vim.cmd("DiffviewOpen")
 	end
 end
+
 wk.add({
 	-- Normal mode mappings
 	{
@@ -131,7 +145,7 @@ wk.add({
 			},
 			{
 				"<leader>lf",
-				"<cmd>lua vim.lsp.buf.format{ async = true }<cr>",
+				"<cmd>Format<cr>",
 				desc = "Format buffer",
 				icon = { icon = "󰉶", color = "azure" },
 			},
@@ -290,4 +304,5 @@ end
 -- Set leader key
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 wk.add({ { "<Space>", "<Nop>", desc = "<space>" } })
