@@ -20,7 +20,7 @@
 
       git_branch = {
         symbol = "󰘬";
-        format = "[ $symbol $branch ](bg:#303d46 green bold)";
+        format = "[ [$symbol](bold green bg:#303d46) $branch ](bg:#303d46 green)";
       };
 
       git_status = {
