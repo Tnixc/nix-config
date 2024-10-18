@@ -48,11 +48,12 @@
       fish_add_path $HOME/.local/bin
       fish_add_path /opt/homebrew/bin
 
-      set -x FZF_DEFAULT_OPTS "
-      --color=fg:7,hl:4
-      --color=fg+:15,hl+:6
-      --color=info:2,prompt:1,pointer:5
-      --color=marker:2,spinner:5,header:4"
+      set -Ux FZF_DEFAULT_OPTS "\
+      --color=bg+:#363A4F,spinner:#FAA296,hl:#FF6A7B \
+      --color=fg:#BECAF9,header:#FF6A7B,info:#C198FD,pointer:#FAA296 \
+      --color=marker:#8995FF,fg+:#BECAF9,prompt:#C198FD,hl+:#FF6A7B \
+      --color=selected-bg:#494D64 \
+      --multi"
 
       bind \eh backward-word
       bind \el forward-word
