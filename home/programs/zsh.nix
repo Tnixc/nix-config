@@ -65,8 +65,6 @@
 
     icat = "kitten icat --align left";
 
-    sw = "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy ; cd - >> /dev/null";
-    swd = "cd ~/nix-config ; make deploy ; cd - >> /dev/null";
-    sws = "cd ~/nix-config ; gum spin --spinner line  --spinner.foreground 12 --title='switching to configuration...' --show-error make deploy ; cd - >> /dev/null ; bs restart sketchybar >> /dev/null ; killall yabai ; killall skhd";
+    swd = "nix run github:ryanccn/morlana -- switch --flake /Users/tnixc/nix-config";
   };
 }

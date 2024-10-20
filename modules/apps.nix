@@ -11,7 +11,6 @@
     tldr
     eza
     zoxide
-    stow
     fzf
     skim
     jq
@@ -57,6 +56,7 @@
     pipx
     poetry
     uv
+    nrr
 
     # Media and Entertainment
     ani-cli
