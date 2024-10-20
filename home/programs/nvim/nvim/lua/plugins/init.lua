@@ -28,6 +28,11 @@ lazy.setup({
 			require("plugins.configs.ui.colorscheme")
 		end,
 	},
+	{ "sam4llis/nvim-tundra", opts = {}, event = "VeryLazy" },
+	{ "Everblush/nvim", name = "everblush", opts = {}, event = "VeryLazy" },
+	{ "projekt0n/github-nvim-theme", name = "github-theme", opts = {}, event = "VeryLazy" },
+	{ "tiagovla/tokyodark.nvim", opts = {}, event = "VeryLazy" },
+	{ "rose-pine/neovim", name = "rose-pine", opts = {}, event = "VeryLazy" },
 	{
 		"goolord/alpha-nvim",
 		config = function()
@@ -121,7 +126,7 @@ lazy.setup({
 			})
 		end,
 	},
-	{ "HiPhish/rainbow-delimiters.nvim", event = "VeryLazy" },
+	{ "hiphish/rainbow-delimiters.nvim", event = "VeryLazy" },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
