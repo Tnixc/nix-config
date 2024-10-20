@@ -2,6 +2,20 @@ local ok, lazy = pcall(require, "lazy")
 if not ok then
 	return
 end
+
+function Border(hl_name)
+	return {
+		{ "┌", hl_name },
+		{ "─", hl_name },
+		{ "┐", hl_name },
+		{ "│", hl_name },
+		{ "┘", hl_name },
+		{ "─", hl_name },
+		{ "└", hl_name },
+		{ "│", hl_name },
+	}
+end
+
 lazy.setup({
 	root = vim.fn.stdpath("data") .. "/lazy",
 

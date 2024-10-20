@@ -204,8 +204,15 @@ wk.add({
 		-- Multicursor
 		{ "m", "<cmd>MCstart<cr>", desc = "Create multiple cursors (normal)" },
 
-		{ "K", "<cmd>lua vim.lsp.buf.hover()<cr>", desc = "Show hover information" },
-
+		{ "K", function()
+    local diagnostics = vim.diagnostic.get(0, { lnum = vim.fn.line(".") - 1 })
+    if #diagnostics > 0 then
+        vim.diagnostic.open_float(nil, { focus = false })
+    else
+        vim.lsp.buf.hover()
+    end
+end, desc = "Show diagnostics or hover information" },
+		
 		-- Other
 		{ "<A-k>", "<cmd>m .-2<cr>", desc = "Move line up" },
 		{ "<A-j>", "<cmd>m .+1<cr>", desc = "Move line down" },

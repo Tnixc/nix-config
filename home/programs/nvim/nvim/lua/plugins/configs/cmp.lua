@@ -1,18 +1,6 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
-local function border(hl_name)
-	return {
-		{ "┌", hl_name },
-		{ "─", hl_name },
-		{ "┐", hl_name },
-		{ "│", hl_name },
-		{ "┘", hl_name },
-		{ "─", hl_name },
-		{ "└", hl_name },
-		{ "│", hl_name },
-	}
-end
 
 cmp.setup({
   sources = {
@@ -54,11 +42,11 @@ cmp.setup({
   },
   window = {
 		completion = {
-			border = border("FloatBorder"),
+			border = Border("FloatBorder"),
 			winhighlight = "Normal:Normal,CursorLine:Visual,Search:None",
 		},
 		documentation = {
-			border = border("FloatBorder"),
+			border = Border("FloatBorder"),
 			winhighlight = "Normal:Normal,CursorLine:Visual,Search:None",
 		},
 	},
