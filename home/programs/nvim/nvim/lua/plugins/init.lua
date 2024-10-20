@@ -275,7 +275,7 @@ lazy.setup({
 	},
 	{
 		"brenoprata10/nvim-highlight-colors",
-		event = "VeryLazy",
+		event = "BufEnter",
 		opts = { enable_tailwind = true },
 	},
 	{
