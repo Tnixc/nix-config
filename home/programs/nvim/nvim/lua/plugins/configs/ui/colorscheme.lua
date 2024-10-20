@@ -36,7 +36,7 @@ require("catppuccin").setup({
 	custom_highlights = function(colors)
 		return {
 			FloatBorder = { fg = colors.overlay0 },
-			RedFloatBorder = { fg = "#B35163", bg = colors.mantle },
+			BGFloatBorder = { fg = colors.surface1, bg = colors.mantle },
 			MultiCursor = { fg = colors.maroon, bg = colors.crust },
 			MultiCursorMain = { fg = colors.red, bg = colors.crust },
 		}

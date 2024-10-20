@@ -211,7 +211,7 @@ wk.add({
 				if #diagnostics > 0 then
 					vim.diagnostic.open_float(nil, {
 						focus = false,
-						border = Border("RedFloatBorder"),
+						border = Border("BGFloatBorder"),
 						source = false,
 						header = "",
 						prefix = "",
@@ -219,7 +219,7 @@ wk.add({
 						width = 120,
 					})
 				else
-					vim.lsp.buf.hover()
+					vim.lsp.buf.hover({})
 				end
 			end,
 			desc = "Show diagnostics or hover information",
