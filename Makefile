@@ -1,5 +1,5 @@
 deploy:
-	nix build .#darwinConfigurations.End.system \
-	   --extra-experimental-features 'nix-command flakes'
+	nix run github:Mic92/nix-fast-build -- --systems 'aarch64-darwin' --no-nom --eval-max-memory-size 12000 --flake '.#darwinConfigurations.End.system'
 
-	./result/sw/bin/darwin-rebuild switch --flake .#End
+	./result-/activate-user
+	sudo ./result-/activate

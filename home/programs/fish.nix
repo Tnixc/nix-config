@@ -91,6 +91,6 @@
     bs = "brew services";
     icat = "kitten icat --align left";
 
-    swd = "nix run github:ryanccn/morlana -- switch --flake /Users/tnixc/nix-config";
+    swd = "cd ~/nix-config ; make ; cd - >> /dev/null";
   };
 }
