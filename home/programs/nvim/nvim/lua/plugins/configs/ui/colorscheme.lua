@@ -39,6 +39,8 @@ require("catppuccin").setup({
 			BGFloatBorder = { fg = colors.surface1, bg = colors.mantle },
 			MultiCursor = { fg = colors.maroon, bg = colors.crust },
 			MultiCursorMain = { fg = colors.red, bg = colors.crust },
+			HighlightUndo = { fg = colors.yellow, bg = colors.mantle },
+			HighlightRedo = { fg = colors.rosewater, bg = colors.mantle },
 		}
 	end,
 })

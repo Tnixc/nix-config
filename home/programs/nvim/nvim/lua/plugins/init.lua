@@ -51,7 +51,7 @@ lazy.setup({
 	-- UI Enhancements
 	{
 		"akinsho/bufferline.nvim",
-		dependencies = { "kyazdani42/nvim-web-devicons" },
+		dependencies = { "nvim-tree/nvim-web-devicons", "rachartier/tiny-devicons-auto-colors.nvim" },
 		config = function()
 			require("plugins.configs.ui.bufferline")
 		end,
@@ -139,10 +139,11 @@ lazy.setup({
 	{
 		"petertriho/nvim-scrollbar",
 		event = "VeryLazy",
-		opts = {},
+		opts = { handlers = { gitsigns = true } },
 	},
 
 	-- Utility
+	{ "tzachar/highlight-undo.nvim", opts = {} },
 	{
 		"nullishamy/autosave.nvim",
 		event = "VeryLazy",
@@ -157,12 +158,6 @@ lazy.setup({
 	},
 
 	-- Editing Helpers
-	{
-		"nvim-treesitter/nvim-treesitter-context",
-		config = function()
-			require("treesitter-context").setup({ enable = true })
-		end,
-	},
 	{
 		"MagicDuck/grug-far.nvim",
 		event = "VeryLazy",
@@ -216,11 +211,9 @@ lazy.setup({
 
 	-- Navigation and Search
 	{
-		"folke/persistence.nvim",
-		event = "BufReadPre", -- this will only start session saving when an actual file was opened
-		opts = {
-			-- add any custom options here
-		},
+		"rmagatti/auto-session",
+		lazy = false,
+		opts = {},
 	},
 	{
 		"akinsho/toggleterm.nvim",
@@ -257,7 +250,7 @@ lazy.setup({
 	{
 		"lewis6991/gitsigns.nvim",
 		config = true,
-		event = "VeryLazy",
+		event = "BufEnter",
 	},
 	{
 		"kdheepak/lazygit.nvim",
@@ -271,13 +264,6 @@ lazy.setup({
 		event = "VeryLazy",
 		opts = {},
 	}, -- discord presence
-	{
-		"karb94/neoscroll.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("neoscroll").setup({})
-		end,
-	},
 	{
 		"brenoprata10/nvim-highlight-colors",
 		event = "BufEnter",
@@ -395,6 +381,8 @@ lazy.setup({
 			require("plugins.configs.cmp")
 		end,
 	},
+	{ "artemave/workspace-diagnostics.nvim" },
+	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" } },
 	{
 		"neovim/nvim-lspconfig",
 		event = "VeryLazy",

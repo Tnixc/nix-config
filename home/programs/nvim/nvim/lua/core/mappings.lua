@@ -239,28 +239,16 @@ wk.add({
 				icon = { icon = "󰸱", color = "cyan" },
 			},
 			{
+				"<leader>dr",
+				"<cmd>RenderMarkdown<cr>",
+				desc = "Render markdown",
+				icon = { icon = "", color = "greeen" },
+			},
+			{
 				"<leader>ds",
-				function()
-					require("persistence").load()
-				end,
-				desc = "load session for current dir",
+				"<cmd>SessionRestore<cr>",
+				desc = "load session",
 				icon = { icon = "", color = "orange" },
-			},
-			{
-				"<leader>dS",
-				function()
-					require("persistence").select()
-				end,
-				desc = "select a sesson to load",
-				icon = { icon = "", color = "red" },
-			},
-			{
-				"<leader>dl",
-				function()
-					require("persistence").load({ last = true })
-				end,
-				desc = "Load last session",
-				icon = { icon = "󰖰", color = "blue" },
 			},
 			icon = { icon = "󰛂", color = "green" },
 		},
