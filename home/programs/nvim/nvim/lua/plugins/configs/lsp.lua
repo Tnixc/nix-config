@@ -1,7 +1,7 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldcolumn = "0" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
@@ -12,7 +12,7 @@ capabilities.textDocument.foldingRange = {
 }
 local foldHandler = function(virtText, lnum, endLnum, width, truncate)
 	local newVirtText = {}
-	local suffix = (" 󰁂 %d "):format(endLnum - lnum)
+	local suffix = (" ... 󰁂 %d "):format(endLnum - lnum)
 	local sufWidth = vim.fn.strdisplaywidth(suffix)
 	local targetWidth = width - sufWidth
 	local curWidth = 0

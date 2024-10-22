@@ -179,16 +179,22 @@ wk.add({
 		-- Git operations
 		{
 			group = "Git",
-			{ "<leader>g", desc = "Git" },
+			{ "<leader>j", desc = "Git" },
 			{
-				"<leader>gc",
+				"<leader>jc",
 				"<cmd>Telescope git_commits<cr>",
 				desc = "Git commits",
 				icon = { icon = "", color = "green" },
 			},
-			{ "<leader>gb", "<cmd>Telescope git_branches<cr>", desc = "Git branches" },
-			{ "<leader>gg", "<cmd>LazyGit<cr>", desc = "Open LazyGit", icon = { icon = "", color = "purple" } },
-			{ "<leader>gv", toggle_diffview, desc = "Toggle Diffview", icon = { icon = "", color = "red" } },
+			{ "<leader>jb", "<cmd>Telescope git_branches<cr>", desc = "Git branches" },
+			{ "<leader>jj", "<cmd>LazyGit<cr>", desc = "Open LazyGit", icon = { icon = "", color = "purple" } },
+			{ "<leader>jv", toggle_diffview, desc = "Toggle Diffview", icon = { icon = "", color = "red" } },
+			{
+				"<leader>jg",
+				"<cmd>Gitsigns preview_hunk<cr>",
+				desc = "Preview hunk",
+				icon = { icon = "", color = "green" },
+			},
 		},
 		{
 			group = "Go to",

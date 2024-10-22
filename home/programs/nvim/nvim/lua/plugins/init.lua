@@ -249,8 +249,8 @@ lazy.setup({
 	-- Git Integration
 	{
 		"lewis6991/gitsigns.nvim",
-		config = true,
-		event = "BufEnter",
+		opts = { current_line_blame = true },
+		event = "VeryLazy",
 	},
 	{
 		"kdheepak/lazygit.nvim",
