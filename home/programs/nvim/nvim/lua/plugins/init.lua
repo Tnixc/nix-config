@@ -18,7 +18,6 @@ end
 
 lazy.setup({
 	root = vim.fn.stdpath("data") .. "/lazy",
-
 	-- Appearance
 	{
 		"catppuccin/nvim",
@@ -143,7 +142,6 @@ lazy.setup({
 	},
 
 	-- Utility
-	{ "tzachar/highlight-undo.nvim", opts = {} },
 	{
 		"nullishamy/autosave.nvim",
 		event = "VeryLazy",
@@ -258,6 +256,20 @@ lazy.setup({
 	},
 
 	-- Miscellaneous
+	{
+		"declancm/cinnamon.nvim",
+		version = "*", -- use latest release
+		opts = {
+			keymaps = {
+				basic = true,
+			},
+			delay = 1,
+			max_delta = {
+				column = 1,
+				time = 300,
+			},
+		},
+	},
 	{
 		"vyfor/cord.nvim",
 		build = "./build || .\\build",
