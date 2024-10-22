@@ -3,7 +3,7 @@
     <br>
         A simple nix-config for macOS
     <br>
-  <img src="https://github.com/Tnixc/nix-config/assets/85466117/2a2072e7-34b3-4dd3-8619-70d6d49506f1" height="5px" />
+    <img width="200" alt="image" src="https://github.com/user-attachments/assets/fad90f0c-8dce-4ee3-867b-b76f771215a8">
 </h1>
 
 This is a [nix-darwin](https://github.com/LnL7/nix-darwin) config for a 13-inch M3 MacBook Air. It's based on [nix-darwin-kickstarter](https://github.com/ryan4yin/nix-darwin-kickstarter). It mainly uses [home-manager](https://github.com/nix-community/home-manager), and few programs are configured in nix. This is because it is often easier to find documentation for configuring software with their original schemas. The wallpapers are modified versions of [Raycast wallpapers](https://www.raycast.com/wallpapers).
