@@ -125,7 +125,7 @@ lazy.setup({
 			})
 		end,
 	},
-	{ "hiphish/rainbow-delimiters.nvim", event = "VeryLazy" },
+	{ "hiphish/rainbow-delimiters.nvim" },
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -394,10 +394,9 @@ lazy.setup({
 		end,
 	},
 	{ "artemave/workspace-diagnostics.nvim" },
-	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" } },
+	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }, event = "BufEnter" },
 	{
 		"neovim/nvim-lspconfig",
-		event = "VeryLazy",
 		dependencies = {
 			{ "williamboman/mason.nvim", config = true },
 			"williamboman/mason-lspconfig.nvim",
