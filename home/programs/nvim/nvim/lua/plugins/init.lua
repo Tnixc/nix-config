@@ -357,20 +357,20 @@ lazy.setup({
 			},
 		},
 	},
-	{
-		"supermaven-inc/supermaven-nvim",
-		event = "VeryLazy",
-		config = function()
-			require("supermaven-nvim").setup({
-				log_level = "off",
-				keymaps = { -- NOTE: Keymaps here
-					accept_suggestion = "<M-n>",
-					clear_suggestion = "<C-]>",
-					accept_word = "<C-j>",
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"supermaven-inc/supermaven-nvim",
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		require("supermaven-nvim").setup({
+	-- 			log_level = "off",
+	-- 			keymaps = { -- NOTE: Keymaps here
+	-- 				accept_suggestion = "<M-n>",
+	-- 				clear_suggestion = "<C-]>",
+	-- 				accept_word = "<C-j>",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"hrsh7th/nvim-cmp",
 		event = "VeryLazy",
