@@ -1,10 +1,10 @@
 { pkgs, ... }: {
   programs.zsh = {
     enable = true;
-    # enableCompletion = true;
-    # autosuggestion.enable = true;
-    # historySubstringSearch.enable = true;
-    # syntaxHighlighting.enable = true;
+    enableCompletion = true;
+    autosuggestion.enable = true;
+    historySubstringSearch.enable = true;
+    syntaxHighlighting.enable = true;
     initExtra = ''
       # autoload -Uz compinit && compinit
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
