@@ -1,13 +1,12 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    historySubstringSearch.enable = true;
-    syntaxHighlighting.enable = true;
+    # enableCompletion = true;
+    # autosuggestion.enable = true;
+    # historySubstringSearch.enable = true;
+    # syntaxHighlighting.enable = true;
     initExtra = ''
-      autoload -Uz compinit && compinit
+      # autoload -Uz compinit && compinit
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
         gc() {
@@ -33,8 +32,9 @@
 
         bindkey '^[h' backward-word
         bindkey '^[l' forward-word
-        
-        
+
+        source <(fzf --zsh)
+
         eval "$(zoxide init zsh)"
     '';
   };
@@ -53,8 +53,10 @@
     g = "git";
 
     ls = "eza --icons --group-directories-first";
-    l = "eza --icons -la --no-user --no-time --no-permissions --git --group-directories-first";
-    lr = "eza --icons -laR --git-ignore --git --no-user --no-time --no-permissions --group-directories-first";
+    l =
+      "eza --icons -la --no-user --no-time --no-permissions --git --group-directories-first";
+    lr =
+      "eza --icons -laR --git-ignore --git --no-user --no-time --no-permissions --group-directories-first";
     tree = "eza --icons --tree --git-ignore";
     treea = "eza --icons --tree -a";
 

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -64,9 +63,7 @@
       fzf --fish | source
       zoxide init fish | source
     '';
-    functions = {
-      gc = "git commit -m $argv[1]";
-    };
+    functions = { gc = "git commit -m $argv[1]"; };
   };
   home.shellAliases = {
     a = "nvim";
@@ -81,8 +78,10 @@
     g = "git";
 
     ls = "eza --icons --group-directories-first";
-    l = "eza --icons -la --no-user --no-time --no-permissions --git --group-directories-first";
-    lr = "eza --icons -laR --git-ignore --git --no-user --no-time --no-permissions --group-directories-first";
+    l =
+      "eza --icons -la --no-user --no-time --no-permissions --git --group-directories-first";
+    lr =
+      "eza --icons -laR --git-ignore --git --no-user --no-time --no-permissions --group-directories-first";
     tree = "eza --icons --tree --git-ignore";
     treea = "eza --icons --tree -a";
 

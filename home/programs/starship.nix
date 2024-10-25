@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   programs.starship = {
     enable = true;
 
@@ -8,7 +7,7 @@
     enableNushellIntegration = true;
 
     settings = {
-      format = " $hostname $directory$git_branch$git_status$character";
+      format = " $hostname $shell$directory$git_branch$git_status$character";
 
       directory = {
         style = "blue";
@@ -20,7 +19,8 @@
 
       git_branch = {
         symbol = "󰘬";
-        format = "[ [$symbol](bold green bg:#303d46) $branch ](bg:#303d46 green)";
+        format =
+          "[ [$symbol](bold green bg:#303d46) $branch ](bg:#303d46 green)";
       };
 
       git_status = {
@@ -43,17 +43,16 @@
         error_symbol = "[](bold red)";
       };
 
-      # shell = {
-      #   zsh_indicator = "zsh";
-      #   nu_indicator = "nu";
-      #   unknown_indicator = "<?>";
-      #   style = "yellow";
-      #   disabled = false;
-      # };
-
-      line_break = {
+      shell = {
+        zsh_indicator = "zsh";
+        nu_indicator = "nu";
+        fish_indicator = "";
+        unknown_indicator = "";
+        style = "yellow";
         disabled = false;
       };
+
+      line_break = { disabled = false; };
 
       hostname = {
         ssh_only = false;
