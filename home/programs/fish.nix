@@ -5,16 +5,16 @@
     interactiveShellInit = ''
 
       # TokyoNight Color Palette
-      set -l foreground BECAF9  
-      set -l selection 363A4F   
-      set -l comment 6E738D     
-      set -l red FF6A7B         
-      set -l orange FF9856      
-      set -l yellow E9AD5B      
-      set -l green 90D05A       
-      set -l purple C198FD      
-      set -l cyan 62E4FF        
-      set -l pink FF9ED0        
+      set -l foreground BECAF9
+      set -l selection 363A4F
+      set -l comment 6E738D
+      set -l red FF6A7B
+      set -l orange FF9856
+      set -l yellow E9AD5B
+      set -l green 90D05A
+      set -l purple C198FD
+      set -l cyan 62E4FF
+      set -l pink FF9ED0
 
       # Syntax Highlighting Colors
       set -g fish_color_normal $foreground
@@ -47,6 +47,7 @@
       fish_add_path $HOME/.bun/bin
       fish_add_path $HOME/.local/bin
       fish_add_path /opt/homebrew/bin
+      fish_add_path /run/current-system/sw/bin
 
       set -Ux FZF_DEFAULT_OPTS "\
       --color=bg+:#363A4F,spinner:#FAA296,hl:#FF6A7B \

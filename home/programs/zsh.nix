@@ -22,7 +22,7 @@
         export PATH="/Users/tnixc/.cargo/bin:$PATH"
         export PATH="/Users/tnixc/.bun/bin:$PATH"
         export PATH="/Users/tnixc/.local/bin:$PATH"
-        export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+        export PATH="/opt/homebrew/bin:$PATH"
 
         export FZF_DEFAULT_OPTS=" \
         --color=bg+:#363A4F,spinner:#FAA296,hl:#FF6A7B \
@@ -33,7 +33,8 @@
 
         bindkey '^[h' backward-word
         bindkey '^[l' forward-word
-        source <(fzf --zsh)
+        
+        
         eval "$(zoxide init zsh)"
     '';
   };
