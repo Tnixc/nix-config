@@ -209,7 +209,19 @@ wk.add({
 				"<leader>jg",
 				"<cmd>Gitsigns preview_hunk<cr>",
 				desc = "Preview hunk",
-				icon = { icon = "", color = "green" },
+				icon = { icon = "", color = "azure" },
+			},
+			{
+				"<leader>jo",
+				"<cmd>Gitsigns next_hunk<cr>",
+				desc = "next hunk",
+				icon = { icon = "", color = "green" },
+			},
+			{
+				"<leader>ji",
+				"<cmd>Gitsigns prev_hunk<cr>",
+				desc = "Previous hunk",
+				icon = { icon = "", color = "red" },
 			},
 		},
 		{
