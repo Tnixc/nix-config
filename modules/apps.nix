@@ -47,6 +47,7 @@
     python3
     go
     zig
+    gleam
 
     # Language-specific Tools
     stylua
