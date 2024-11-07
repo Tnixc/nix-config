@@ -46,7 +46,7 @@
     elixir
     python3
     go
-    zig
+    # zig
     gleam
 
     # Language-specific Tools
