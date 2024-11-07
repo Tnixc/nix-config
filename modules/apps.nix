@@ -110,6 +110,7 @@
       "dprint"
       "yazi"
       "spotify_player"
+      "zig"
     ];
 
     # `brew install --cask`
