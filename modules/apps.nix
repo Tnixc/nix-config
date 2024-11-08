@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Terminal and File Management

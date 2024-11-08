@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.starship = {
     enable = true;
 
@@ -19,8 +20,7 @@
 
       git_branch = {
         symbol = "󰘬";
-        format =
-          "[ [$symbol](bold green bg:#303d46) $branch ](bg:#303d46 green)";
+        format = "[ [$symbol](bold green bg:#303d46) $branch ](bg:#303d46 green)";
       };
 
       git_status = {
@@ -52,7 +52,9 @@
         disabled = false;
       };
 
-      line_break = { disabled = false; };
+      line_break = {
+        disabled = false;
+      };
 
       hostname = {
         ssh_only = false;

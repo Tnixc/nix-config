@@ -42,14 +42,24 @@
   # parameters in `outputs` are defined in `inputs` and can be referenced by their names.
   # However, `self` is an exception, this special parameter points to the `outputs` itself (self-reference)
   # The `@` syntax here is used to alias the attribute set of the inputs's parameter, making it convenient to use inside the function.
-  outputs = inputs@{ self, nixpkgs, home-manager, darwin, ... }:
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      darwin,
+      ...
+    }:
     let
       username = "tnixc";
       system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
       hostname = "End";
 
-      specialArgs = inputs // { inherit username hostname; };
-    in {
+      specialArgs = inputs // {
+        inherit username hostname;
+      };
+    in
+    {
       darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
         inherit system specialArgs;
         modules = [

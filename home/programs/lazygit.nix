@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   programs.lazygit = {
     enable = true;
     settings = {
@@ -8,7 +9,10 @@
         border = "single";
         nerdFontsVersion = "3";
         theme = {
-          activeBorderColor = [ "blue" "bold" ];
+          activeBorderColor = [
+            "blue"
+            "bold"
+          ];
           inactiveBorderColor = [ "#6c7086" ];
           optionsTextColor = [ "yellow" ];
           selectedLineBgColor = [ "#494D64" ];
@@ -18,7 +22,9 @@
           defaultFgColor = [ "#BECAF9" ];
           searchingActiveBorderColor = [ "#FAA296" ];
         };
-        authorColors = { "Tnixc" = "#41DDCA"; };
+        authorColors = {
+          "Tnixc" = "#41DDCA";
+        };
         unspecifiedAuthorColors = [
           "#FF6A7B"
           "#FF7DAA"
