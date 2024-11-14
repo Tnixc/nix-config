@@ -99,6 +99,8 @@
 
     # `brew install`
     brews = [
+      "deno"
+      "jupyterlab"
       "node"
       "neovim"
       "nowplaying-cli"
