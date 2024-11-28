@@ -100,6 +100,7 @@
     # `brew install`
     brews = [
       "deno"
+      "supabase/tap/supabase"
       "jupyterlab"
       "node"
       "neovim"
