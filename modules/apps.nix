@@ -12,6 +12,7 @@
     eza
     zoxide
     fzf
+    television
     skim
     jq
     ripgrep
@@ -24,6 +25,7 @@
     license-cli
     comma
     fish
+    direnv
 
     # Version Control and Development Tools
     git
@@ -91,7 +93,6 @@
 
     taps = [
       "homebrew/services"
-      "PlayCover/playcover"
       "FelixKratz/formulae"
       "mrkai77/cask"
       "socsieng/tap"
@@ -120,8 +121,6 @@
     # `brew install --cask`
     casks = [
       "tableplus"
-      "playcover-community"
-      "betterdisplay"
       "eloston-chromium"
       "linearmouse"
       "jordanbaird-ice"
