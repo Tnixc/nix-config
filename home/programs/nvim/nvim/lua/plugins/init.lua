@@ -257,6 +257,11 @@ lazy.setup({
 
 	-- Miscellaneous
 	{
+		"rachartier/tiny-glimmer.nvim",
+		event = "TextYankPost",
+		opts = {},
+	},
+	{
 		"declancm/cinnamon.nvim",
 		version = "*", -- use latest release
 		opts = {
