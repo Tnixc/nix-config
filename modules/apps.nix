@@ -26,6 +26,7 @@
     comma
     fish
     direnv
+    helix
 
     # Version Control and Development Tools
     git
