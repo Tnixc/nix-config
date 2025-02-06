@@ -4,17 +4,17 @@
     enable = true;
     interactiveShellInit = ''
 
-      # TokyoNight Color Palette
-      set -l foreground BECAF9
-      set -l selection 363A4F
-      set -l comment 6E738D
-      set -l red FF6A7B
-      set -l orange FF9856
-      set -l yellow E9AD5B
-      set -l green 90D05A
-      set -l purple C198FD
-      set -l cyan 62E4FF
-      set -l pink FF9ED0
+      # Color Palette
+      set -l foreground C5C9C5
+      set -l selection  2A2A37
+      set -l comment    51516b
+      set -l red        E46876
+      set -l orange     E6A96D
+      set -l yellow     E6C384
+      set -l green      87A987
+      set -l purple     A292A3
+      set -l cyan       7FB4CA
+      set -l pink       D98AAD
 
       # Syntax Highlighting Colors
       set -g fish_color_normal $foreground

@@ -4,17 +4,17 @@
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = '#1E2032',
-  fg       = '#BBCAFD',
+  red      = '#E46876',
+  orange   = '#E6A96D',
   yellow   = '#E6C384',
+  green    = '#87A987',
   cyan     = '#7AA89F',
   sapphire = '#8BA4B0',
-  green    = '#87A987',
-  orange   = '#E6A96D',
+  blue     = '#7F94B4',
   purple   = '#A292A3',
-  magenta  = '#FCA6E0',
-  blue     = '#5DA5FF',
-  red      = '#FF5F8C',
+  magenta  = '#D98AAD',
+  bg       = '#0D0C0C',
+  fg       = '#C5C9C5',
 }
 
 local conditions = {
@@ -77,26 +77,26 @@ ins_left({
 	-- mode component
 	function()
 		local mode_names = {
-			n = "NORMAL",
-			i = "INSERT",
-			v = "VISUAL",
-			[""] = "V-BLOCK",
-			V = "V-LINE",
-			c = "COMMAND",
+			n = "􀬑  NORMAL",
+			i = "􀅫  INSERT",
+			v = "􀑠  VISUAL",
+			[""] = "􀑠  V-BLOCK",
+			V = "􂬁  V-LINE",
+			c = "􀆔 COMMAND",
 			no = "OPERATOR",
 			s = "SELECT",
 			S = "S-LINE",
 			[""] = "S-BLOCK",
 			ic = "ITALIC",
-			R = "REPLACE",
-			Rv = "V-REPLACE",
+			R = "􀈏  REPLACE",
+			Rv = "􀈏  V-REPLACE",
 			cv = "COMMAND",
 			ce = "NORMAL",
 			r = "PROMPT",
 			rm = "MORE",
 			["r?"] = "CONFIRM",
-			["!"] = "SHELL",
-			t = "TERMINAL",
+			["!"] = "􀩼  SHELL",
+			t = "􀩼  TERMINAL",
 		}
 		return mode_names[vim.fn.mode()] or ""
 	end,
@@ -140,8 +140,7 @@ ins_left({
 
 ins_left({
 	"diff",
-	-- Is it me or the symbol for modified us really weird
-	symbols = { added = " ", modified = "󰤌 ", removed = " " },
+	symbols = { added = "􀑍 ", modified = "􁚛 ", removed = "􀃞 " },
 	diff_color = {
 		added = { fg = colors.green },
 		modified = { fg = colors.yellow },
@@ -153,11 +152,13 @@ ins_left({
 ins_right({
 	-- filesize component
 	"filesize",
+    icon = '􀎾 ',
 	cond = conditions.buffer_not_empty,
 })
 
 ins_right({
 	"filename",
+    icon = '􀈿 ',
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.magenta, gui = "bold" },
 })
@@ -165,7 +166,7 @@ ins_right({
 ins_right({
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
-	symbols = { error = " ", warn = " ", info = " " },
+	symbols = { error = "􀻀 ", warn = "􀘰 ", info = "􀅵 " },
 	diagnostics_color = {
 		color_error = { fg = colors.red },
 		color_warn = { fg = colors.orange },
@@ -192,8 +193,9 @@ ins_right({
 		end
 		return msg
 	end,
-	icon = " LSP:",
+	icon = "􀱢  LSP:",
 	color = { fg = colors.purple, gui = "bold" },
 })
 
 require("lualine").setup(config)
+-- require("lualine").setup({})
