@@ -15,30 +15,30 @@
           ];
           inactiveBorderColor = [ "#6c7086" ];
           optionsTextColor = [ "yellow" ];
-          selectedLineBgColor = [ "#494D64" ];
-          cherryPickedCommitBgColor = [ "#494D64" ];
-          cherryPickedCommitFgColor = [ "#FF9ED0" ];
-          unstagedChangesColor = [ "#FF6A7B" ];
-          defaultFgColor = [ "#BECAF9" ];
-          searchingActiveBorderColor = [ "#FAA296" ];
+          selectedLineBgColor = [ "#3a3a4c" ];
+          cherryPickedCommitBgColor = [ "#3a3a4c" ];
+          cherryPickedCommitFgColor = [ "#D98AAD" ];
+          unstagedChangesColor = [ "#E46876" ];
+          defaultFgColor = [ "#C5C9C5" ];
+          searchingActiveBorderColor = [ "#E6A5C9" ];
         };
         authorColors = {
-          "Tnixc" = "#41DDCA";
+          "Tnixc" = "#7AA89F";
         };
         unspecifiedAuthorColors = [
-          "#FF6A7B"
-          "#FF7DAA"
-          "#FF9ED0"
-          "#FFBAE2"
-          "#FAA296"
-          "#FF9856"
-          "#E9AD5B"
-          "#90D05A"
-          "#62E4FF"
-          "#05D1EC"
-          "#6EA3FE"
-          "#8995FF"
-          "#C198FD"
+          "#E46876"
+          "#C4746E"
+          "#D98AAD"
+          "#EAAB9D"
+          "#E6A5C9"
+          "#E6A96D"
+          "#E6C384"
+          "#87A987"
+          "#7FB4CA"
+          "#8BA4B0"
+          "#7F94B4"
+          "#938AA9"
+          "#A292A3"
         ];
       };
     };
