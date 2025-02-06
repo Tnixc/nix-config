@@ -15,7 +15,7 @@ require("catppuccin").setup({
 	color_overrides = {
 		macchiato = {
 			rosewater = "#E6A5C9",
-			flamingo = "#E46876",
+			flamingo = "#EAAB9D",
 			pink = "#D98AAD",
 			mauve = "#A292A3",
 			red = "#E46876",
@@ -31,6 +31,15 @@ require("catppuccin").setup({
 			text = "#C5C9C5",
 			subtext1 = "#A6A69C",
 			subtext0 = "#99A4CC",
+			overlay2 = "#8EA4A2",
+			overlay1 = "#7AA89F",
+			overlay0 = "#51516b",
+			surface2 = "#45455b",
+			surface1 = "#3a3a4c",
+			surface0 = "#2A2A37",
+			base = "#181616",
+			mantle = "#0D0C0C",
+			crust = "#0A0909",
 		},
 	},
 	custom_highlights = function(colors)
