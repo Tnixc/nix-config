@@ -17,7 +17,7 @@
     jq
     ripgrep
     fd
-    loc
+    tokei
     hyperfine
     wget
     fastfetch
