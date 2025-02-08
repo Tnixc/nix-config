@@ -50,10 +50,10 @@
       fish_add_path /run/current-system/sw/bin
 
       set -Ux FZF_DEFAULT_OPTS "\
-      --color=bg+:#2A2A37,spinner:#E6A5C9,hl:#E46876 \
+      --color=bg+:#363834,spinner:#E6A5C9,hl:#E46876 \
       --color=fg:#C5C9C5,header:#E46876,info:#A292A3,pointer:#E6A5C9 \
       --color=marker:#938AA9,fg+:#C5C9C5,prompt:#A292A3,hl+:#E46876 \
-      --color=selected-bg:#3a3a4c \
+      --color=selected-bg:#4a4c47 \
       --multi"
 
       bind \eh backward-word

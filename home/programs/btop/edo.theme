@@ -11,7 +11,7 @@ theme[title]="#C5C9C5"
 theme[hi_fg]="#7F94B4"
 
 # Background color of selected item in processes box
-theme[selected_bg]="#3a3a4c"
+theme[selected_bg]="#4a4c47"
 
 # Foreground color of selected item in processes box
 theme[selected_fg]="#7F94B4"
@@ -23,10 +23,10 @@ theme[inactive_fg]="#7AA89F"
 theme[graph_text]="#EAAB9D"
 
 # Background color of the percentage meters
-theme[meter_bg]="#3a3a4c"
+theme[meter_bg]="#4a4c47"
 
 # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
-theme[proc_misc]="#3a3a4c"
+theme[proc_misc]="#4a4c47"
 
 # CPU, Memory, Network, Proc box outline colors
 theme[cpu_box]="#A292A3" #Mauve
@@ -35,7 +35,7 @@ theme[net_box]="#C4746E" #Maroon
 theme[proc_box]="#7F94B4" #Blue
 
 # Box divider line and small boxes line color
-theme[div_line]="#51516b"
+theme[div_line]="#686b64"
 
 # Temperature graph color (Green -> Yellow -> Red)
 theme[temp_start]="#87A987"
