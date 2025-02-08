@@ -24,7 +24,7 @@
           <key>caret</key>
           <string>#E6A5C9</string>
           <key>lineHighlight</key>
-          <string>#2A2A37</string>
+          <string>#363834</string>
           <key>misspelling</key>
           <string>#E46876</string>
           <key>accent</key>
@@ -32,7 +32,7 @@
           <key>selection</key>
           <string>#8EA4A240</string>
           <key>activeGuide</key>
-          <string>#3a3a4c</string>
+          <string>#4a4c47</string>
           <key>findHighlight</key>
           <string>#3e5767</string>
           <key>gutterForeground</key>
@@ -71,7 +71,7 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#51516b</string>
+          <string>#686b64</string>
           <key>fontStyle</key>
           <string>italic</string>
         </dict>
