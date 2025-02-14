@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   programs.lazygit = {
     enable = true;
     settings = {
@@ -13,14 +12,14 @@
             "blue"
             "bold"
           ];
-          inactiveBorderColor = [ "#6c7086" ];
-          optionsTextColor = [ "yellow" ];
-          selectedLineBgColor = [ "#4a4c47" ];
-          cherryPickedCommitBgColor = [ "#4a4c47" ];
-          cherryPickedCommitFgColor = [ "#D98AAD" ];
-          unstagedChangesColor = [ "#E46876" ];
-          defaultFgColor = [ "#C5C9C5" ];
-          searchingActiveBorderColor = [ "#E6A5C9" ];
+          inactiveBorderColor = ["#6c7086"];
+          optionsTextColor = ["yellow"];
+          selectedLineBgColor = ["#4a4c47"];
+          cherryPickedCommitBgColor = ["#4a4c47"];
+          cherryPickedCommitFgColor = ["#D98AAD"];
+          unstagedChangesColor = ["#E46876"];
+          defaultFgColor = ["#C5C9C5"];
+          searchingActiveBorderColor = ["#E6A5C9"];
         };
         authorColors = {
           "Tnixc" = "#7AA89F";

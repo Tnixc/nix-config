@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   home.file.".config/zed/themes" = {
     source = ./zed/themes;
     recursive = true;
