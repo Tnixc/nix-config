@@ -1,6 +1,4 @@
-{ username, ... }:
-
-{
+{username, ...}: {
   # import sub modules
   imports = [
     ./programs/zsh.nix
@@ -17,6 +15,7 @@
     ./programs/kitty/kitty.nix
     ./programs/btop/btop.nix
     ./programs/direnv.nix
+    ./programs/helix.nix
   ];
 
   # Home Manager needs a bit of information about you and the

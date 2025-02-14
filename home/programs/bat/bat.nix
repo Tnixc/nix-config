@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   home.file.".config/bat/themes/edo.tmTheme" = {
     source = ./edo.tmTheme;
   };
