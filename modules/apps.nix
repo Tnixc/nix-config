@@ -100,6 +100,8 @@
 
     # `brew install`
     brews = [
+      "watchman"
+            "cocoapods"
       "deno"
       "supabase/tap/supabase"
       "jupyterlab"
