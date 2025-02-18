@@ -377,6 +377,45 @@ lazy.setup({
 	-- 	end,
 	-- },
 	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+			require("copilot").setup({
+				panel = { enabled = false },
+				suggestion = {
+					enabled = true,
+					auto_trigger = true,
+					hide_during_completion = true,
+					debounce = 75,
+					keymap = {
+						accept = "<M-i>",
+						accept_word = false,
+						accept_line = false,
+						next = "<M-]>",
+						prev = "<M-[>",
+						dismiss = "<C-]>",
+					},
+				},
+			})
+		end,
+	},
+	{
+		"kawre/leetcode.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"nvim-telescope/telescope.nvim",
+			-- "ibhagwan/fzf-lua",
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+		},
+		opts = {
+			-- configuration goes here
+			lang = "typescript",
+			image_support = true,
+		},
+	},
+	{
 		"hrsh7th/nvim-cmp",
 		event = "VeryLazy",
 		dependencies = {
