@@ -7,7 +7,6 @@
     ./programs/bat/bat.nix
     ./programs/git.nix
     ./programs/lazygit.nix
-    ./programs/sketchybar/sketchybar.nix
     ./programs/yabai/yabai.nix
     ./programs/skhd/skhd.nix
     ./programs/nvim/nvim.nix
