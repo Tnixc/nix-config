@@ -37,7 +37,7 @@
 
     # Window Management (macOS)
     # yabai
-    aerospace
+    # aerospace
     # skhd
     jankyborders
     sketchybar-app-font
