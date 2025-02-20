@@ -36,8 +36,9 @@
     colima # docker daemon
 
     # Window Management (macOS)
-    yabai
-    skhd
+    # yabai
+    aerospace
+    # skhd
     jankyborders
     sketchybar-app-font
 
