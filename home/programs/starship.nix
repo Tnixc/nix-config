@@ -7,7 +7,7 @@
     enableNushellIntegration = true;
 
     settings = {
-      format = " $hostname $shell$directory$git_branch$git_status$character";
+      format = " $hostname$shell$directory$git_branch$git_status$character";
 
       directory = {
         style = "blue";
@@ -43,8 +43,8 @@
       };
 
       shell = {
-        zsh_indicator = "zsh";
-        nu_indicator = "nu";
+        zsh_indicator = " zsh";
+        nu_indicator = " nu";
         fish_indicator = "";
         unknown_indicator = "";
         style = "yellow";
