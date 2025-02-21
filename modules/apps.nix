@@ -39,7 +39,7 @@
     # yabai
     # aerospace
     # skhd
-    jankyborders
+    # jankyborders
     sketchybar-app-font
 
     # Shell Customization
