@@ -61,6 +61,7 @@
     poetry
     uv
     nrr
+    jdk23
 
     # Media and Entertainment
     ani-cli
