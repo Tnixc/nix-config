@@ -99,10 +99,10 @@ outer.right =      8
 # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-# cmd-alt-shift-ctrl-enter = 'exec-and-forget kitty --single-instance -d ~'
+# cmd-alt-ctrl-enter = 'exec-and-forget kitty --single-instance -d ~'
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-cmd-alt-shift-ctrl-enter = 'exec-and-forget /run/current-system/sw/bin/kitty --single-instance -d ~'
-cmd-alt-shift-ctrl-f = 'fullscreen'
+cmd-alt-ctrl-enter = 'exec-and-forget /run/current-system/sw/bin/kitty --single-instance -d ~'
+cmd-alt-ctrl-f = 'fullscreen'
 alt-s = 'layout floating tiling'
 alt-e = 'balance-sizes'
 
@@ -110,25 +110,25 @@ alt-e = 'balance-sizes'
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
 
-cmd-alt-shift-ctrl-q = 'workspace prev'
-cmd-alt-shift-ctrl-e = 'workspace next'
+cmd-alt-ctrl-q = 'workspace prev'
+cmd-alt-ctrl-e = 'workspace next'
 
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-cmd-alt-shift-ctrl-h = 'focus left'
-cmd-alt-shift-ctrl-j = 'focus down'
-cmd-alt-shift-ctrl-k = 'focus up'
-cmd-alt-shift-ctrl-l = 'focus right'
+cmd-alt-ctrl-h = 'focus left'
+cmd-alt-ctrl-j = 'focus down'
+cmd-alt-ctrl-k = 'focus up'
+cmd-alt-ctrl-l = 'focus right'
 
-cmd-alt-shift-ctrl-left = 'move left'
-cmd-alt-shift-ctrl-right = 'move right'
-cmd-alt-shift-ctrl-up = 'move up'
-cmd-alt-shift-ctrl-down = 'move down'
+cmd-alt-ctrl-left = 'move left'
+cmd-alt-ctrl-right = 'move right'
+cmd-alt-ctrl-up = 'move up'
+cmd-alt-ctrl-down = 'move down'
 
-cmd-alt-shift-ctrl-w = 'resize height +30'
-cmd-alt-shift-ctrl-s = 'resize height -30'
-cmd-alt-shift-ctrl-a = 'resize width +30'
-cmd-alt-shift-ctrl-d = 'resize width -30'
+cmd-alt-ctrl-w = 'resize height +30'
+cmd-alt-ctrl-s = 'resize height -30'
+cmd-alt-ctrl-a = 'resize width +30'
+cmd-alt-ctrl-d = 'resize width -30'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 ctrl-1 = 'workspace 1'
@@ -172,3 +172,10 @@ backspace = ['close-all-windows-but-current', 'mode main']
 
 
 
+
+[[on-window-detected]]
+if.app-id = "company.thebrowser.Browser"
+run = "move-node-to-workspace 1"
+[[on-window-detected]]
+if.app-id = "dev.vencord.vesktop"
+run = "move-node-to-workspace 9"
