@@ -152,13 +152,13 @@ ins_left({
 ins_right({
 	-- filesize component
 	"filesize",
-    icon = '􀎾 ',
+	icon = "􀎾 ",
 	cond = conditions.buffer_not_empty,
 })
 
 ins_right({
 	"filename",
-    icon = '􀈿 ',
+	icon = "􀈿 ",
 	cond = conditions.buffer_not_empty,
 	color = { fg = colors.magenta, gui = "bold" },
 })
