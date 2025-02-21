@@ -74,6 +74,7 @@ return {
 	["Discord"] = ":discord:",
 	["Discord Canary"] = ":discord:",
 	["Discord PTB"] = ":discord:",
+	["Vesktop"] = ":discord:",
 	["Docker"] = ":docker:",
 	["Docker Desktop"] = ":docker:",
 	["GrandTotal"] = ":dollar:",
