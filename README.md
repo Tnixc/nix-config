@@ -6,13 +6,15 @@
     <img width="200" alt="image" src="https://github.com/user-attachments/assets/fad90f0c-8dce-4ee3-867b-b76f771215a8">
 </h1>
 
+<img width="1710" alt="image" src="https://github.com/user-attachments/assets/150eb08b-373d-436a-86a1-47f2118d5f2d" />
+
 This is a [nix-darwin](https://github.com/LnL7/nix-darwin) config for a 13-inch M3 MacBook Air. It's based on [nix-darwin-kickstarter](https://github.com/ryan4yin/nix-darwin-kickstarter). It mainly uses [home-manager](https://github.com/nix-community/home-manager), and few programs are configured in nix. This is because it is often easier to find documentation for configuring software with their original schemas.
 
-The color scheme is my theme [edo](https://github.com/tnixc/edo). Some fonts I use are `Basier Square Mono` and `Berkeley Mono`.
+The color scheme is my theme [edo](https://github.com/tnixc/edo), the lush variant right now. Some fonts I use are `Basier Square Mono` and `Berkeley Mono`.
 
 ## Programs and Tools
 
-- **Window Manager**: [yabai](https://github.com/koekeishiya/yabai)
+- **Window Manager**: [aerospace](https://github.com/nikitabobko/AeroSpace)
 - **Status Bar**: [sketchybar](https://github.com/FelixKratz/SketchyBar)
 - **Terminal**: [kitty](https://github.com/kovidgoyal/kitty)
 - **Shell**: fish, zsh
@@ -23,7 +25,7 @@ The color scheme is my theme [edo](https://github.com/tnixc/edo). Some fonts I u
 
 If you're not using nix-darwin, you can still use parts of this configuration by manually copying the relevant files. Here's how:
 
-1. **Sketchybar**: Copy the contents of `nix-config/home/programs/sketchybar/sketchybar` to `~/.config/sketchybar/`
+1. **Sketchybar and Aerospace**: idk how to do this, i just followed some guy's flake.
 2. **Yabai**: Copy `nix-config/home/programs/yabai/yabairc` to `~/.config/yabai/yabairc`
 3. **Kitty**: Copy `nix-config/home/programs/kitty/kitty` to `~/.config/kitty/`
 4. **Neovim**: Copy `nix-config/home/programs/nvim/nvim` to `~/.config/nvim/`
