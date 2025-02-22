@@ -36,7 +36,7 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
 
-    aerospace-flake.url = "path:./home/programs/aerospace-sketchybar"; # Adjust the path accordingly
+    aerospace-flake.url = "path:./home/programs/aerospace-sketchybar";
   };
 
   # The `outputs` function will return all the build results of the flake.

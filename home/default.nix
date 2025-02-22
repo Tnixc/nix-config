@@ -1,7 +1,7 @@
 {
   username,
+  lib,
   aerospace-flake,
-  system,
   ...
 }: {
   # import sub modules
@@ -26,7 +26,8 @@
     enable = true;
     config = {
       ProgramArguments = [
-        "/Users/tnixc/nix-config/home/programs/aerospace-sketchybar/result/bin/pwaerospace"
+        "${lib.getExe' aerospace-flake.packages.aarch64-darwin.pwaerospace "pwaerospace"}"
+        # "${aerospace-flake.packages.aarch64-darwin.pwaerospace}/bin/pwaerospace"
       ];
       RunAtLoad = true;
       KeepAlive = false;

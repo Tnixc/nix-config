@@ -140,6 +140,7 @@
         drv = packages.pwaerospace;
         name = "pwaerospace";
         exePath = "/bin/pwaerospace";
+        mainProgram = "pwaerospace";
       };
 
       apps.default = apps.pwaerospace;

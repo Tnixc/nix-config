@@ -9,6 +9,7 @@
 
     # Terminal and File Management
     pueue
+    nix-output-monitor
     ranger
     kitty
     btop
