@@ -35,19 +35,6 @@
     stateVersion = "25.05";
   };
 
-  services.launchd.agents.aerospace = {
-    enable = true;
-    config = {
-      ProgramArguments = [ "/run/current-system/sw/bin/nix" "run" ];
-      WorkingDirectory = "./programs/aerospace-sketchybar";  # Set this to your flake repo
-      RunAtLoad = true;
-      KeepAlive = true;
-      StandardOutPath = "$HOME/.local/state/aerospace.log";
-      StandardErrorPath = "$HOME/.local/state/aerospace.log";
-    };
-  };
-
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

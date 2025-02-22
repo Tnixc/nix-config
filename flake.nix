@@ -76,6 +76,7 @@
         }
       ];
     };
+
     # nix code formatter
     formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;
   };

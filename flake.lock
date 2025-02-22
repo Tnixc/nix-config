@@ -20,24 +20,6 @@
         "type": "github"
       }
     },
-    "flake-utils": {
-      "inputs": {
-        "systems": "systems"
-      },
-      "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -85,94 +67,12 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1740019556,
-        "narHash": "sha256-vn285HxnnlHLWnv59Og7muqECNMS33mWLM14soFIv2g=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "dad564433178067be1fbdfcce23b546254b6d641",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "promise-lua": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1603853302,
-        "narHash": "sha256-LNNLTAAEPIalRSjC6z8QTkhnmwpFAHSlwxuFxb9r2OE=",
-        "owner": "pyericz",
-        "repo": "promise-lua",
-        "rev": "20d2ab1bb6aa398fe06ba597c943077a72c22451",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pyericz",
-        "repo": "promise-lua",
-        "type": "github"
-      }
-    },
-    "pwaerospace": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_2",
-        "promise-lua": "promise-lua",
-        "sbarlua": "sbarlua"
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-mMGqNygC8HpBRgR78A9k+piXHg5OtwPYUsTDIu4fCEA=",
-        "path": "./aerospace-sketchybar",
-        "type": "path"
-      },
-      "original": {
-        "path": "./aerospace-sketchybar",
-        "type": "path"
-      }
-    },
     "root": {
       "inputs": {
         "darwin": "darwin",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-darwin": "nixpkgs-darwin",
-        "pwaerospace": "pwaerospace"
-      }
-    },
-    "sbarlua": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1723484726,
-        "narHash": "sha256-F0UfNxHM389GhiPQ6/GFbeKQq5EvpiqQdvyf7ygzkPg=",
-        "owner": "FelixKratz",
-        "repo": "SbarLua",
-        "rev": "437bd2031da38ccda75827cb7548e7baa4aa9978",
-        "type": "github"
-      },
-      "original": {
-        "owner": "FelixKratz",
-        "repo": "SbarLua",
-        "type": "github"
-      }
-    },
-    "systems": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
+        "nixpkgs-darwin": "nixpkgs-darwin"
       }
     }
   },
