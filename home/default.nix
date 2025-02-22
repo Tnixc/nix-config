@@ -1,4 +1,9 @@
-{username, ...}: {
+{
+  username,
+  aerospace-flake,
+  system,
+  ...
+}: {
   # import sub modules
   imports = [
     ./programs/zsh.nix
@@ -16,6 +21,19 @@
     ./programs/direnv.nix
     ./programs/helix.nix
   ];
+
+  launchd.agents."aerospace-sketchybar" = {
+    enable = true;
+    config = {
+      ProgramArguments = [
+        "${aerospace-flake.packages.${system}.pwaerospace}/bin/pwaerospace"
+      ];
+      RunAtLoad = true;
+      KeepAlive = true;
+      StandardOutPath = "/tmp/aerospace-sketchybar.log";
+      StandardErrorPath = "/tmp/aerospace-sketchybar.error.log";
+    };
+  };
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.

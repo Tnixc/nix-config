@@ -35,6 +35,8 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+
+    aerospace-flake.url = "path:./home/programs/aerospace-sketchybar"; # Adjust the path accordingly
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -47,6 +49,7 @@
     nixpkgs,
     home-manager,
     darwin,
+    aerospace-flake,
     ...
   }: let
     username = "tnixc";
@@ -56,7 +59,7 @@
     specialArgs =
       inputs
       // {
-        inherit username hostname;
+        inherit username hostname system;
       };
   in {
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {

@@ -84,6 +84,7 @@
     # Package Managers
     yarn
   ];
+
   homebrew = {
     enable = true;
 
