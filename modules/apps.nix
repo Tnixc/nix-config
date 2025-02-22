@@ -1,6 +1,12 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  aerospace-flake,
+  ...
+}: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    aerospace-flake.packages.aarch64-darwin.pwaerospace
+
     # Terminal and File Management
     pueue
     ranger

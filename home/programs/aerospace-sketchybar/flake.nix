@@ -1,5 +1,6 @@
 {
   description = "A config for aerospace and sketchybar that's reproducible and performant";
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
@@ -8,6 +9,7 @@
     promise-lua.url = "github:pyericz/promise-lua";
     promise-lua.flake = false;
   };
+
   outputs = inputs @ {
     self,
     nixpkgs,
@@ -20,7 +22,8 @@
         config = {allowUnfree = true;};
         overlays = [];
       };
-      # This is the interface to sketchybar for lua
+
+      # Build the interface to sketchybar for Lua
       sbar = pkgs.lua54Packages.buildLuaPackage {
         name = "sbar";
         pname = "sbar";
@@ -31,17 +34,16 @@
           cp bin/sketchybar.so $out/lib/lua/5.4/
         '';
         nativeBuildInputs = with pkgs;
-          [gcc readline clang stdenv]
-          ++ lib.optionals stdenv.isDarwin
-          (with pkgs.darwin.apple_sdk.frameworks; [
-            CoreFoundation
-          ]);
+          [
+            gcc
+            readline
+            clang
+            stdenv
+          ]
+          ++ lib.optionals stdenv.isDarwin (with pkgs.darwin.apple_sdk.frameworks; [CoreFoundation]);
       };
 
-      # These sketchybar lua configs are littered with nested callbacks; I'd rather
-      # be able to sequence things or to collect values from several shell calls
-      # and then move forward using promises, but none seem to exist in stock lua
-      # or in nixpkgs. :-(
+      # Build promise-lua
       promise-lua = pkgs.lua54Packages.buildLuarocksPackage {
         pname = "promise-lua";
         src = inputs.promise-lua;
@@ -54,24 +56,29 @@
           .outPath;
       };
 
-      # TODO: Need to build dependent C programs here
+      # Build sbar-config-libs and perform text replacements using substituteInPlace.
+      # Note: If you suspect that changes are not being picked up because of caching,
+      #       try bumping the version or running with --rebuild.
       sbar-config-libs = pkgs.stdenv.mkDerivation {
         pname = "sbar-config-libs";
-        version = "1.0.0";
+        version = "1.0.1"; # bump version to force rebuild when necessary
 
         src = ./.;
 
         buildInputs = [];
 
-        # Install Lua files to the correct directory
         installPhase = ''
           mkdir -p $out/share/lua/5.4/sbar-config-libs
           cp -r sbar-config-libs $out/share/lua/5.4/
+          for luaFile in $(find $out/share/lua/5.4/ -type f -name "*.lua"); do
+            substituteInPlace "$luaFile" --replace "AEROSPACEBIN" "${pkgs.aerospace}/bin/aerospace"
+          done
         '';
       };
 
-      # I thought using the lua withPackages stuff would add those things to the path and cpath, but I must be doing something wrong :(
+      # Build a Lua runtime with the desired packages.
       l = pkgs.lua5_4.withPackages (ps: with ps; [luafilesystem sbar sbar-config-libs promise-lua]);
+
       sketchybar-config = pkgs.writeScriptBin "sketchybarrc" ''
         #!${l}/bin/lua
 
@@ -85,7 +92,17 @@
       aerospace-config = pkgs.writeTextFile {
         name = "aerospace-config";
         destination = "/share/aerospace.toml";
-        text = builtins.replaceStrings ["NIXPATHTOSKETCHYCONFIG" "NIXPATHTOBINARIES" "SKETCHYBARBIN" "AEROSPACEBIN" "BORDERSBIN"] ["${sketchybar-config}/bin/sketchybarrc" "${l}/bin:${pkgs.sketchybar}/bin:${pkgs.jankyborders}/bin:${pkgs.aerospace}/bin" "${pkgs.sketchybar}/bin/sketchybar" "${pkgs.aerospace}/bin/aerospace" "${pkgs.jankyborders}/bin/borders"] (pkgs.lib.readFile ./aerospace.toml);
+        text =
+          builtins.replaceStrings
+          ["NIXPATHTOSKETCHYCONFIG" "NIXPATHTOBINARIES" "SKETCHYBARBIN" "AEROSPACEBIN" "BORDERSBIN"]
+          [
+            "${sketchybar-config}/bin/sketchybarrc"
+            "${l}/bin:${pkgs.sketchybar}/bin:${pkgs.jankyborders}/bin:${pkgs.aerospace}/bin"
+            "${pkgs.sketchybar}/bin/sketchybar"
+            "${pkgs.aerospace}/bin/aerospace"
+            "${pkgs.jankyborders}/bin/borders"
+          ]
+          (pkgs.lib.readFile ./aerospace.toml);
       };
 
       aerospace-launcher = pkgs.writeShellApplication {
@@ -110,21 +127,23 @@
           sketchybar-config
           aerospace-config
         ];
-        # buildInputs = [ ];
         nativeBuildInputs = [pkgs.makeBinaryWrapper];
         postBuild = ''
           wrapProgramBinary $out/Applications/AeroSpace.app/Contents/MacOS/AeroSpace \
             --add-flags "--config-path ${aerospace-config}/share/aerospace.toml"
-
         '';
       };
+
       packages.default = packages.pwaerospace;
+
       apps.pwaerospace = flake-utils.lib.mkApp {
         drv = packages.pwaerospace;
         name = "pwaerospace";
         exePath = "/bin/pwaerospace";
       };
+
       apps.default = apps.pwaerospace;
+
       devShell = pkgs.mkShell {
         buildInputs = [l packages.pwaerospace pkgs.aerospace pkgs.jankyborders pkgs.sketchybar];
       };

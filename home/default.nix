@@ -26,10 +26,10 @@
     enable = true;
     config = {
       ProgramArguments = [
-        "${aerospace-flake.packages.${system}.pwaerospace}/bin/pwaerospace"
+        "/Users/tnixc/nix-config/home/programs/aerospace-sketchybar/result/bin/pwaerospace"
       ];
       RunAtLoad = true;
-      KeepAlive = true;
+      KeepAlive = false;
       StandardOutPath = "/tmp/aerospace-sketchybar.log";
       StandardErrorPath = "/tmp/aerospace-sketchybar.error.log";
     };

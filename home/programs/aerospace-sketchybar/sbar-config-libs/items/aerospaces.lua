@@ -158,19 +158,19 @@ end
 
 local function getAllWorkspaces()
 	return sbarExecPromise(
-		"aerospace list-workspaces --all --format '%{workspace}%{monitor-appkit-nsscreen-screens-id}%{monitor-id}%{monitor-name}' --json"
+		"AEROSPACEBIN list-workspaces --all --format '%{workspace}%{monitor-appkit-nsscreen-screens-id}%{monitor-id}%{monitor-name}' --json"
 	)
 end
 
 local function getAllWindows()
 	return sbarExecPromise(
-		"aerospace list-windows --all --format '%{app-name}%{window-title}%{workspace}%{monitor-id}%{monitor-appkit-nsscreen-screens-id}%{monitor-name}' --json"
+		"AEROSPACEBIN list-windows --all --format '%{app-name}%{window-title}%{workspace}%{monitor-id}%{monitor-appkit-nsscreen-screens-id}%{monitor-name}' --json"
 	)
 end
 
 local function getVisibleWorkspaces()
 	return sbarExecPromise(
-		"aerospace list-workspaces --visible --monitor all --format '%{workspace}%{monitor-appkit-nsscreen-screens-id}%{monitor-id}%{monitor-name}' --json"
+		"AEROSPACEBIN list-workspaces --visible --monitor all --format '%{workspace}%{monitor-appkit-nsscreen-screens-id}%{monitor-id}%{monitor-name}' --json"
 	)
 end
 
