@@ -1,12 +1,10 @@
 {lib, ...}: let
   color-mix = import ../../modules/utils/colors-mix.nix {inherit lib;};
 
-  # Define your base colors
-  primary = "#00ff00";
-  secondary = "#ff0000";
+  bg = "#181616";
+  fg = "#87A987";
 
-  # Mix the colors (70% of primary, 30% of secondary)
-  mixedColor = color-mix.mixColors primary secondary 0.7;
+  mixedColor = color-mix.mixColors bg fg 0.8;
 in {
   programs.starship = {
     enable = true;
