@@ -36,7 +36,8 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
 
-    aerospace-flake.url = "path:./home/programs/aerospace-sketchybar";
+    pwaerospace.url = "path:./home/programs/aerospace-sketchybar";
+    darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -49,7 +50,8 @@
     nixpkgs,
     home-manager,
     darwin,
-    aerospace-flake,
+    pwaerospace, # aerospace, sketchybar, borders
+    darwin-custom-icons,
     ...
   }: let
     username = "tnixc";
@@ -69,6 +71,9 @@
         ./modules/system.nix
         ./modules/apps.nix
         ./modules/host-users.nix
+
+        darwin-custom-icons.darwinModules.default
+        ./modules/app-icons.nix
 
         home-manager.darwinModules.home-manager
         {

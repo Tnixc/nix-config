@@ -1,23 +1,5 @@
 {
   "nodes": {
-    "aerospace-flake": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs",
-        "promise-lua": "promise-lua",
-        "sbarlua": "sbarlua"
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-3L8uUTD59/FTjGY0SOs79LCZU3Y7DaJsjGRIiiA1qtk=",
-        "path": "./home/programs/aerospace-sketchybar",
-        "type": "path"
-      },
-      "original": {
-        "path": "./home/programs/aerospace-sketchybar",
-        "type": "path"
-      }
-    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -35,6 +17,21 @@
       "original": {
         "owner": "lnl7",
         "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
+    "darwin-custom-icons": {
+      "locked": {
+        "lastModified": 1719071371,
+        "narHash": "sha256-SPazmoL3Pls4QTiZ2CRtavecNJgzpL4GeiwafTmtdJ8=",
+        "owner": "ryanccn",
+        "repo": "nix-darwin-custom-icons",
+        "rev": "ad3e8cf49ef0b276ccf67410f544ff33d965d821",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ryanccn",
+        "repo": "nix-darwin-custom-icons",
         "type": "github"
       }
     },
@@ -77,18 +74,14 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1740019556,
+        "lastModified": 0,
         "narHash": "sha256-vn285HxnnlHLWnv59Og7muqECNMS33mWLM14soFIv2g=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "dad564433178067be1fbdfcce23b546254b6d641",
-        "type": "github"
+        "path": "/nix/store/97hxap05brgklr57xh7qaab6s833rfg0-source",
+        "type": "path"
       },
       "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
+        "id": "nixpkgs",
+        "type": "indirect"
       }
     },
     "nixpkgs-darwin": {
@@ -109,14 +102,18 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 0,
+        "lastModified": 1740019556,
         "narHash": "sha256-vn285HxnnlHLWnv59Og7muqECNMS33mWLM14soFIv2g=",
-        "path": "/nix/store/97hxap05brgklr57xh7qaab6s833rfg0-source",
-        "type": "path"
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "dad564433178067be1fbdfcce23b546254b6d641",
+        "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "promise-lua": {
@@ -135,13 +132,32 @@
         "type": "github"
       }
     },
+    "pwaerospace": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs_2",
+        "promise-lua": "promise-lua",
+        "sbarlua": "sbarlua"
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-lnj6dEH/ooUD5AP/A/IcpH4AFWcnmLspVZ/E+6lSMxk=",
+        "path": "./home/programs/aerospace-sketchybar",
+        "type": "path"
+      },
+      "original": {
+        "path": "./home/programs/aerospace-sketchybar",
+        "type": "path"
+      }
+    },
     "root": {
       "inputs": {
-        "aerospace-flake": "aerospace-flake",
         "darwin": "darwin",
+        "darwin-custom-icons": "darwin-custom-icons",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2",
-        "nixpkgs-darwin": "nixpkgs-darwin"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs-darwin": "nixpkgs-darwin",
+        "pwaerospace": "pwaerospace"
       }
     },
     "sbarlua": {

@@ -1,7 +1,7 @@
 {
   username,
   lib,
-  aerospace-flake,
+  pwaerospace,
   ...
 }: {
   # import sub modules
@@ -26,7 +26,7 @@
     enable = true;
     config = {
       ProgramArguments = [
-        "${lib.getExe' aerospace-flake.packages.aarch64-darwin.pwaerospace "pwaerospace"}"
+        "${lib.getExe' pwaerospace.packages.aarch64-darwin.pwaerospace "pwaerospace"}"
         # "${aerospace-flake.packages.aarch64-darwin.pwaerospace}/bin/pwaerospace"
       ];
       RunAtLoad = true;
