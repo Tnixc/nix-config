@@ -160,7 +160,6 @@ local function getAllWorkspaces()
 	return sbarExecPromise(
 		"AEROSPACEBIN list-workspaces --all --format '%{workspace}%{monitor-appkit-nsscreen-screens-id}%{monitor-id}%{monitor-name}' --json"
 	)
-    -- hello
 end
 
 local function getAllWindows()
