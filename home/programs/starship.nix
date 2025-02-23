@@ -1,4 +1,13 @@
-{...}: {
+{lib, ...}: let
+  color-mix = import ../../modules/utils/colors-mix.nix {inherit lib;};
+
+  # Define your base colors
+  primary = "#00ff00";
+  secondary = "#ff0000";
+
+  # Mix the colors (70% of primary, 30% of secondary)
+  mixedColor = color-mix.mixColors primary secondary 0.7;
+in {
   programs.starship = {
     enable = true;
 
@@ -19,7 +28,7 @@
 
       git_branch = {
         symbol = "󰘬";
-        format = "[ [$symbol](bold green bg:#303d46) $branch ](bg:#303d46 green)";
+        format = "[ [$symbol](bold green bg:${mixedColor}) $branch ](bg:${mixedColor} green)";
       };
 
       git_status = {
