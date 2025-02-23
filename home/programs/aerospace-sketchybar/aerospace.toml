@@ -106,8 +106,8 @@ alt-s = 'layout floating tiling'
 alt-e = 'balance-sizes'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-alt-slash = 'layout tiles horizontal vertical'
-alt-comma = 'layout accordion horizontal vertical'
+cmd-ctrl-alt-slash = 'layout tiles horizontal vertical'
+cmd-ctrl-alt-alt-comma = 'layout accordion horizontal vertical'
 
 cmd-alt-ctrl-q = 'workspace prev'
 cmd-alt-ctrl-e = 'workspace next'
@@ -152,7 +152,7 @@ ctrl-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 ctrl-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'mode service'
+ctrl-alt-cmd-semicolon = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes

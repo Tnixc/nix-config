@@ -7,15 +7,15 @@
   environment.systemPackages = with pkgs; [
     pwaerospace.packages.aarch64-darwin.pwaerospace
 
-    # Terminal and File Management
+    # dev tools
     pueue
     nix-output-monitor
-    ranger
     kitty
     btop
     bat
     tldr
     eza
+    starship
     zoxide
     fzf
     television
@@ -33,8 +33,6 @@
     fish
     direnv
     helix
-
-    # Version Control and Development Tools
     git
     lazygit
     delta
@@ -42,25 +40,14 @@
     docker
     colima # docker daemon
 
-    # Window Management (macOS)
-    # yabai
-    # aerospace
-    # skhd
-    # jankyborders
     sketchybar-app-font
 
-    # Shell Customization
-    starship
-
-    # Programming Languages and Runtimes
+    # Languages
     lua
     elixir
     python3
     go
-    # zig
     gleam
-
-    # Language-specific Tools
     stylua
     rustup
     cargo-binstall
@@ -68,28 +55,23 @@
     poetry
     uv
     nrr
+    yarn
     jdk23
 
-    # Media and Entertainment
+    # media / others
     ani-cli
     mangal
     aria2
     yt-dlp
     ffmpeg
     iina
+    vesktop
 
-    # Content Creation and Note-taking
-    zola
-    obsidian
-
-    # Font Tools
+    # Font things
     python312Packages.fonttools
     fontforge-fonttools
     brotli
     zopfli
-
-    # Package Managers
-    yarn
   ];
 
   homebrew = {
@@ -117,7 +99,6 @@
       "neovim"
       "nowplaying-cli"
       "switchaudio-osx"
-      # "sketchybar"
       "lua"
       "brightness"
       "macos-trash"

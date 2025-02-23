@@ -13,5 +13,5 @@
 # @raycast.authorURL https://raycast.com/tnixc
 
 export USER='tnixc'
-sketchybar --reload
+/run/current-system/sw/bin/sketchybar --reload
 

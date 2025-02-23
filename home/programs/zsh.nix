@@ -41,8 +41,6 @@
 
   home.shellAliases = {
     a = "nvim";
-    vim = "nvim";
-    vi = "nvim";
     q = "exit";
 
     cat = "bat";
