@@ -149,6 +149,12 @@ ins_left({
 	cond = conditions.hide_in_width,
 })
 
+ins_left({
+	require("noice").api.statusline.mode.get,
+	cond = require("noice").api.statusline.mode.has,
+	color = { fg = colors.orange },
+})
+
 ins_right({
 	-- filesize component
 	"filesize",

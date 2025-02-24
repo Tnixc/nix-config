@@ -9,6 +9,12 @@ require("noice").setup({
 		view_history = "messages", -- view for :messages
 		view_search = "virtualtext", -- view for search count messages. Set to `false` to disable
 	},
+	routes = {
+		{
+			view = "notify",
+			filter = { event = "msg_showmode" },
+		},
+	},
 	presets = { inc_rename = true },
 	cmdline = {
 		view = "cmdline",
