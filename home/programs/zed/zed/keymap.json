@@ -13,7 +13,6 @@
       "cmd-up": "menu::SelectFirst",
       "cmd-down": "menu::SelectLast",
       "enter": "menu::Confirm",
-      "ctrl-enter": "menu::ShowContextMenu",
       "cmd-enter": "menu::SecondaryConfirm",
       "escape": "menu::Cancel",
       "ctrl-c": "menu::Cancel",
@@ -210,7 +209,6 @@
       "enter": "search::SelectNextMatch",
       "shift-enter": "search::SelectPrevMatch",
       "alt-enter": "search::SelectAllMatches",
-      "alt-tab": "search::CycleMode"
     }
   },
   {
@@ -231,11 +229,7 @@
     "context": "ProjectSearchBar",
     "bindings": {
       "escape": "project_search::ToggleFocus",
-      "alt-tab": "search::CycleMode",
       "cmd-shift-h": "search::ToggleReplace",
-      "alt-cmd-g": "search::ActivateRegexMode",
-      "alt-cmd-s": "search::ActivateSemanticMode",
-      "alt-cmd-x": "search::ActivateTextMode"
     }
   },
   {
@@ -256,11 +250,7 @@
     "context": "ProjectSearchView",
     "bindings": {
       "escape": "project_search::ToggleFocus",
-      "alt-tab": "search::CycleMode",
       "cmd-shift-h": "search::ToggleReplace",
-      "alt-cmd-g": "search::ActivateRegexMode",
-      "alt-cmd-s": "search::ActivateSemanticMode",
-      "alt-cmd-x": "search::ActivateTextMode"
     }
   },
   {
@@ -282,11 +272,6 @@
       "alt-enter": "search::SelectAllMatches",
       "alt-cmd-c": "search::ToggleCaseSensitive",
       "alt-cmd-w": "search::ToggleWholeWord",
-      "alt-tab": "search::CycleMode",
-      "alt-cmd-f": "project_search::ToggleFilters",
-      "alt-cmd-g": "search::ActivateRegexMode",
-      "alt-cmd-s": "search::ActivateSemanticMode",
-      "alt-cmd-x": "search::ActivateTextMode"
     }
   },
   // Bindings from VS Code
@@ -347,7 +332,6 @@
       "alt-cmd-]": "editor::UnfoldLines",
       "ctrl-space": "editor::ShowCompletions",
       "cmd-.": "editor::ToggleCodeActions",
-      "alt-cmd-r": "editor::RevealInFinder"
     }
   },
   {
@@ -380,7 +364,6 @@
     "context": "Workspace",
     "bindings": {
       "alt-cmd-o": "projects::OpenRecent",
-      "alt-cmd-b": "branches::OpenRecent",
       "ctrl-~": "workspace::NewTerminal",
       "cmd-s": "workspace::Save",
       "cmd-shift-s": "workspace::SaveAs",
@@ -409,7 +392,6 @@
     "context": "Editor",
     "bindings": {
       "ctrl-shift-k": "editor::DeleteLine",
-      "cmd-shift-d": "editor::DuplicateLine",
       "ctrl-j": "editor::JoinLines",
       "ctrl-cmd-up": "editor::MoveLineUp",
       "ctrl-cmd-down": "editor::MoveLineDown",
@@ -429,14 +411,14 @@
   },
   {
     "bindings": {
-      "cmd-k cmd-left": ["workspace::ActivatePaneInDirection", "Left"],
-      "cmd-k cmd-right": ["workspace::ActivatePaneInDirection", "Right"],
-      "cmd-k cmd-up": ["workspace::ActivatePaneInDirection", "Up"],
-      "cmd-k cmd-down": ["workspace::ActivatePaneInDirection", "Down"],
-      "cmd-k shift-left": ["workspace::SwapPaneInDirection", "Left"],
-      "cmd-k shift-right": ["workspace::SwapPaneInDirection", "Right"],
-      "cmd-k shift-up": ["workspace::SwapPaneInDirection", "Up"],
-      "cmd-k shift-down": ["workspace::SwapPaneInDirection", "Down"]
+      "cmd-k cmd-left": "workspace::ActivatePaneLeft",
+      "cmd-k cmd-right": "workspace::ActivatePaneRight",
+      "cmd-k cmd-up": "workspace::ActivatePaneUp",
+      "cmd-k cmd-down": "workspace::ActivatePaneDown",
+      "cmd-k shift-left": "workspace::SwapPaneLeft",
+      "cmd-k shift-right": "workspace::SwapPaneRight",
+      "cmd-k shift-up": "workspace::SwapPaneUp",
+      "cmd-k shift-down": "workspace::SwapPaneDown"
     }
   },
   // Bindings from Atom
@@ -515,12 +497,9 @@
       "cmd-x": "project_panel::Cut",
       "cmd-c": "project_panel::Copy",
       "cmd-v": "project_panel::Paste",
-      "cmd-alt-c": "project_panel::CopyPath",
-      "alt-cmd-shift-c": "project_panel::CopyRelativePath",
       "f2": "project_panel::Rename",
       "enter": "project_panel::Rename",
       "backspace": "project_panel::Delete",
-      "alt-cmd-r": "project_panel::RevealInFinder",
       "alt-shift-f": "project_panel::NewSearchInDirectory"
     }
   },
@@ -584,10 +563,10 @@
   {
     "context": "Dock || Workspace || Editor || Pane || Terminal",
     "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-j": "workspace::ActivatePaneDown",
       "alt-l": "workspace::ToggleBottomDock",
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp",
@@ -601,7 +580,7 @@
       "alt-a": "editor::Format",
       "alt-d": "diagnostics::Deploy",
       "alt-i": "editor::Hover",
-      "alt-n": "editor::AcceptInlineCompletion"
+      "alt-n": "editor::AcceptEditPrediction"
     }
   }
 ]
