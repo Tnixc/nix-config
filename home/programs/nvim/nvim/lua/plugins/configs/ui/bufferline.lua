@@ -16,6 +16,13 @@ bl.setup({
 		always_show_bufferline = true,
 		themable = true,
 		show_buffer_icons = true,
+		hover = {
+			enabled = true,
+			delay = 200,
+			reveal = { "close" },
+		},
+		buffer_close_icon = "󰅖",
+        close_icon = '󰅖',
 	},
 })
 
