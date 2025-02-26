@@ -73,7 +73,7 @@
         ./modules/host-users.nix
 
         darwin-custom-icons.darwinModules.default
-        ./modules/app-icons.nix
+        ./modules/icons
 
         home-manager.darwinModules.home-manager
         {
