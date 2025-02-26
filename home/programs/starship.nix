@@ -32,21 +32,21 @@ in {
       git_status = {
         disabled = false;
         ignore_submodules = false;
-        ahead = "[󰁞($count) ](blue)";
-        behind = "[󰁆($count) ](yellow)";
-        deleted = "[($count) ](red)";
-        diverged = "[($count) ](red)";
+        ahead = "[􀄨 ($count) ](blue)";
+        behind = "[􀄩 ($count) ](yellow)";
+        deleted = "[􀆄 ($count) ](red)";
+        diverged = "[􀢁 ($count) ](red)";
         format = "[ $all_status$ahead_behind]()";
-        modified = "[~($count) ](yellow)";
-        renamed = "[/($count) ](purple)";
-        staged = "[+($count) ](cyan)";
-        stashed = "[=($count) ](blue)";
+        modified = "[􁚛 ($count) ](yellow)";
+        renamed = "[􀈏  ($count) ](purple)";
+        staged = "[􀥄 ($count) ](cyan)";
+        stashed = "[􀐚 ($count) ](blue)";
       };
 
       character = {
         disabled = false;
-        success_symbol = "[](bold green)";
-        error_symbol = "[](bold red)";
+        success_symbol = "[􀄫](green)";
+        error_symbol = "[􀄫](red)";
       };
 
       shell = {
