@@ -8,5 +8,5 @@ sbar.bar({
 	topmost = "window",
 	padding_right = 2,
 	padding_left = 6,
-    y_offset = 3
+	y_offset = 3,
 })

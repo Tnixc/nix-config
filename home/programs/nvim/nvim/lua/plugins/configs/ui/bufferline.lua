@@ -22,7 +22,7 @@ bl.setup({
 			reveal = { "close" },
 		},
 		buffer_close_icon = "󰅖",
-        close_icon = '󰅖',
+		close_icon = "󰅖",
 	},
 })
 
