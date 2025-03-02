@@ -60,7 +60,8 @@
       bind \el forward-word
 
       set -g fish_greeting
-
+      set TERM xterm-256color
+    
       fzf --fish | source
       zoxide init fish | source
     '';

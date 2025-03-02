@@ -22,6 +22,7 @@
         export PATH="/Users/tnixc/.bun/bin:$PATH"
         export PATH="/Users/tnixc/.local/bin:$PATH"
         export PATH="/opt/homebrew/bin:$PATH"
+        export TERM=xterm-256color
 
         export FZF_DEFAULT_OPTS=" \
         --color=bg+:#363834,spinner:#E6A5C9,hl:#E46876 \
@@ -47,7 +48,6 @@
     ga = "git add -A";
     lz = "lazygit";
     gz = "nvim +DiffviewOpen";
-
     g = "git";
 
     ls = "eza --icons --group-directories-first";
