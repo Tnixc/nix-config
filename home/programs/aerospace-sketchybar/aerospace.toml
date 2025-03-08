@@ -100,7 +100,7 @@ outer.right =      8
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # cmd-alt-ctrl-enter = 'exec-and-forget kitty --single-instance -d ~'
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-cmd-alt-ctrl-enter = 'exec-and-forget /run/current-system/sw/bin/kitty --single-instance -d ~'
+cmd-alt-ctrl-enter = 'exec-and-forget /opt/homebrew/bin/kitty --single-instance -d ~'
 cmd-alt-ctrl-f = 'fullscreen'
 alt-s = 'layout floating tiling'
 alt-e = 'balance-sizes'

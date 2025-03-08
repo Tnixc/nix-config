@@ -3,7 +3,7 @@
     enable = true;
     icons = [
       {
-        path = "/Applications/Nix Apps/kitty.app/";
+        path = "/System/Volumes/Data/Applications/kitty.app";
         icon = ./kitty.icns;
       }
     ];
