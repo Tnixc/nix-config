@@ -477,7 +477,6 @@
     "bindings": {
       "alt-enter": "editor::OpenExcerpts",
       "cmd-f8": "editor::GoToHunk",
-      "cmd-shift-f8": "editor::GoToPrevHunk",
       "alt-shift-i": "assistant::InlineAssist"
     }
   },

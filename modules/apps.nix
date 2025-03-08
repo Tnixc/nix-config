@@ -10,7 +10,6 @@
     # dev tools
     pueue
     nix-output-monitor
-    kitty
     btop
     bat
     tldr
@@ -124,6 +123,7 @@
       "font-sf-mono"
       "font-sf-pro"
       "visual-studio-code"
+      "kitty"
     ];
   };
 }
