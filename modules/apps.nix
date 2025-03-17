@@ -38,6 +38,7 @@
     gh
     docker
     colima # docker daemon
+    dioxus-cli
 
     sketchybar-app-font
 
