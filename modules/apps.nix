@@ -107,6 +107,7 @@
       "yazi"
       "spotify_player"
       "zig"
+      "openssl"
     ];
 
     # `brew install --cask`
