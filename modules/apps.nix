@@ -108,6 +108,8 @@
       "spotify_player"
       "zig"
       "openssl"
+      "ghc"
+      "opam"
     ];
 
     # `brew install --cask`
