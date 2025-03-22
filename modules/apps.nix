@@ -39,7 +39,7 @@
     docker
     colima # docker daemon
     dioxus-cli
-
+    gnupg
     sketchybar-app-font
 
     # Languages
