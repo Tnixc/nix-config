@@ -87,6 +87,8 @@
     gz = "nvim +DiffviewOpen";
     g = "git";
 
+    nvs = "rm \"/Users/tnixc/.local/share/nvim/sessions/$(pwd | sed 's|/|%2F|g').vim\"";
+
     ls = "eza --icons --group-directories-first";
     l = "eza --icons -la --no-user --no-time --no-permissions --git --group-directories-first";
     lr = "eza --icons -laR --git-ignore --git --no-user --no-time --no-permissions --group-directories-first";
