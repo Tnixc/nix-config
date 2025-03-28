@@ -2,75 +2,75 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-        # Color Palette
-        set -l foreground C5C9C5
-        set -l selection  2A2A37
-        set -l comment    51516b
-        set -l red        E46876
-        set -l orange     E6A96D
-        set -l yellow     E6C384
-        set -l green      87A987
-        set -l purple     A292A3
-        set -l cyan       7FB4CA
-        set -l pink       D98AAD
-        
-        # Syntax Highlighting Colors
-        set -g fish_color_normal $foreground
-        set -g fish_color_command $green
-        set -g fish_color_keyword $pink set -g fish_color_quote $yellow
-        set -g fish_color_redirection $foreground
-        set -g fish_color_end $orange
-        set -g fish_color_option $pink
-        set -g fish_color_error $red
-        set -g fish_color_param $purple
-        set -g fish_color_comment $comment
-        set -g fish_color_selection --background=$selection
-        set -g fish_color_search_match --background=$selection
-        set -g fish_color_operator $green
-        set -g fish_color_escape $pink
-        set -g fish_color_autosuggestion $comment
+      # Color Palette
+      set -l foreground C5C9C5
+      set -l selection  2A2A37
+      set -l comment    51516b
+      set -l red        E46876
+      set -l orange     E6A96D
+      set -l yellow     E6C384
+      set -l green      87A987
+      set -l purple     A292A3
+      set -l cyan       7FB4CA
+      set -l pink       D98AAD
 
-        # Completion Pager Colors
-        set -g fish_pager_color_progress $comment
-        set -g fish_pager_color_prefix $cyan
-        set -g fish_pager_color_completion $foreground
-        set -g fish_pager_color_description $comment
-        set -g fish_pager_color_selected_background --background=$selection
+      # Syntax Highlighting Colors
+      set -g fish_color_normal $foreground
+      set -g fish_color_command $green
+      set -g fish_color_keyword $pink set -g fish_color_quote $yellow
+      set -g fish_color_redirection $foreground
+      set -g fish_color_end $orange
+      set -g fish_color_option $pink
+      set -g fish_color_error $red
+      set -g fish_color_param $purple
+      set -g fish_color_comment $comment
+      set -g fish_color_selection --background=$selection
+      set -g fish_color_search_match --background=$selection
+      set -g fish_color_operator $green
+      set -g fish_color_escape $pink
+      set -g fish_color_autosuggestion $comment
 
-        set -x EDITOR nvim
-        set -x LLVM_PROFILE_FILE "/dev/null"
-        set -x BUN_INSTALL "$HOME/.bun"
-        fish_add_path $BUN_INSTALL/bin
-        fish_add_path $HOME/.cargo/bin
-        fish_add_path $HOME/.bun/bin
-        fish_add_path $HOME/.local/bin
-        fish_add_path /usr/local/bin
-        fish_add_path /opt/homebrew/bin
-        fish_add_path /run/current-system/sw/bin
-        
-        set -Ux FZF_DEFAULT_OPTS "\
-        --color=bg+:#363834,spinner:#E6A5C9,hl:#E46876 \
-        --color=fg:#C5C9C5,header:#E46876,info:#A292A3,pointer:#E6A5C9 \
-        --color=marker:#938AA9,fg+:#C5C9C5,prompt:#A292A3,hl+:#E46876 \
-        --color=selected-bg:#4a4c47 \
-        --multi"
-        
-        bind \eh backward-word
-        bind \el forward-word
-        
-        set -g fish_greeting
-        set TERM xterm-256color
-        
-        fzf --fish | source
-        zoxide init fish | source
-        
-        # BEGIN opam configuration
-        # This is useful if you're using opam as it adds:
-        #   - the correct directories to the PATH
-        #   - auto-completion for the opam binary
-        # This section can be safely removed at any time if needed.
-        test -r '/Users/tnixc/.opam/opam-init/init.fish' && source '/Users/tnixc/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
-        # END opam configuration
+      # Completion Pager Colors
+      set -g fish_pager_color_progress $comment
+      set -g fish_pager_color_prefix $cyan
+      set -g fish_pager_color_completion $foreground
+      set -g fish_pager_color_description $comment
+      set -g fish_pager_color_selected_background --background=$selection
+
+      set -x EDITOR nvim
+      set -x LLVM_PROFILE_FILE "/dev/null"
+      set -x BUN_INSTALL "$HOME/.bun"
+      fish_add_path $BUN_INSTALL/bin
+      fish_add_path $HOME/.cargo/bin
+      fish_add_path $HOME/.bun/bin
+      fish_add_path $HOME/.local/bin
+      fish_add_path /usr/local/bin
+      fish_add_path /opt/homebrew/bin
+      fish_add_path /run/current-system/sw/bin
+
+      set -Ux FZF_DEFAULT_OPTS "\
+      --color=bg+:#363834,spinner:#E6A5C9,hl:#E46876 \
+      --color=fg:#C5C9C5,header:#E46876,info:#A292A3,pointer:#E6A5C9 \
+      --color=marker:#938AA9,fg+:#C5C9C5,prompt:#A292A3,hl+:#E46876 \
+      --color=selected-bg:#4a4c47 \
+      --multi"
+
+      bind \eh backward-word
+      bind \el forward-word
+
+      set -g fish_greeting
+      set TERM xterm-256color
+
+      fzf --fish | source
+      zoxide init fish | source
+
+      # BEGIN opam configuration
+      # This is useful if you're using opam as it adds:
+      #   - the correct directories to the PATH
+      #   - auto-completion for the opam binary
+      # This section can be safely removed at any time if needed.
+      test -r '/Users/tnixc/.opam/opam-init/init.fish' && source '/Users/tnixc/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
+      # END opam configuration
 
     '';
     functions = {
