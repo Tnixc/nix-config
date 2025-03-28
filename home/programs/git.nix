@@ -12,7 +12,7 @@
     userEmail = "tnixxc@gmail.com";
 
     extraConfig = {
-      # commit.gpgsign = true;
+      commit.gpgsign = true;
       core.pager = "delta --dark";
       core.autocrlf = "input";
       diff.algorithm = "histogram";

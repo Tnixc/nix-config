@@ -39,7 +39,6 @@
     docker
     colima # docker daemon
     dioxus-cli
-    gnupg
     sketchybar-app-font
 
     # Languages
@@ -110,6 +109,7 @@
       "openssl"
       "ghc"
       "opam"
+      "gnupg"
     ];
 
     # `brew install --cask`

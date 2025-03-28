@@ -7,6 +7,12 @@
 }: let
   config-dir = "${config.home.homeDirectory}/nix-config/home/config";
   mkLink = config.lib.file.mkOutOfStoreSymlink;
+  # links a config directory
+  linkConfigs = configDirs:
+    builtins.foldl'
+    (acc: dir: acc // {".config/${dir}" = {source = mkLink "${config-dir}/${dir}";};})
+    {}
+    configDirs;
 in {
   # import sub modules
   imports = [
@@ -19,15 +25,15 @@ in {
     ./programs/helix.nix
   ];
 
-  home.file = {
-    ".config/bat" = { source = mkLink "${config-dir}/bat"; };
-    ".config/nvim" = { source = mkLink "${config-dir}/nvim"; };
-    ".config/zed" = { source = mkLink "${config-dir}/zed"; };
-    ".config/yabai" = { source = mkLink "${config-dir}/yabai"; };
-    ".config/skhd" = { source = mkLink "${config-dir}/skhd"; };
-    ".config/kitty" = { source = mkLink "${config-dir}/kitty"; };
-    ".config/btop" = { source = mkLink "${config-dir}/btop"; };
-  };
+  home.file = linkConfigs [
+    "bat"
+    "nvim"
+    "zed"
+    "yabai"
+    "skhd"
+    "kitty"
+    "btop"
+  ];
 
   launchd.agents."aerospace-sketchybar" = {
     enable = true;
