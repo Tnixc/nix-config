@@ -2,25 +2,32 @@
   username,
   lib,
   pwaerospace,
+  config,
   ...
-}: {
+}: let
+  config-dir = "${config.home.homeDirectory}/nix-config/home/config";
+  mkLink = config.lib.file.mkOutOfStoreSymlink;
+in {
   # import sub modules
   imports = [
     ./programs/zsh.nix
     ./programs/fish.nix
     ./programs/starship.nix
-    ./programs/bat/bat.nix
     ./programs/git.nix
     ./programs/lazygit.nix
-    ./programs/yabai/yabai.nix
-    ./programs/skhd/skhd.nix
-    ./programs/nvim/nvim.nix
-    ./programs/zed/zed.nix
-    ./programs/kitty/kitty.nix
-    ./programs/btop/btop.nix
     ./programs/direnv.nix
     ./programs/helix.nix
   ];
+
+  home.file = {
+    ".config/bat" = { source = mkLink "${config-dir}/bat"; };
+    ".config/nvim" = { source = mkLink "${config-dir}/nvim"; };
+    ".config/zed" = { source = mkLink "${config-dir}/zed"; };
+    ".config/yabai" = { source = mkLink "${config-dir}/yabai"; };
+    ".config/skhd" = { source = mkLink "${config-dir}/skhd"; };
+    ".config/kitty" = { source = mkLink "${config-dir}/kitty"; };
+    ".config/btop" = { source = mkLink "${config-dir}/btop"; };
+  };
 
   launchd.agents."aerospace-sketchybar" = {
     enable = true;
