@@ -114,6 +114,7 @@
 
     # `brew install --cask`
     casks = [
+      "steam"
       "tableplus"
       "eloston-chromium"
       "linearmouse"
