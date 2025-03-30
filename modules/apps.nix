@@ -40,6 +40,7 @@
     colima # docker daemon
     dioxus-cli
     sketchybar-app-font
+    ast-grep
 
     # Languages
     lua
