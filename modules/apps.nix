@@ -41,6 +41,7 @@
     dioxus-cli
     sketchybar-app-font
     ast-grep
+    zellij
 
     # Languages
     lua
@@ -130,6 +131,7 @@
       "font-sf-pro"
       "visual-studio-code"
       "kitty"
+      "craft"
     ];
   };
 }
