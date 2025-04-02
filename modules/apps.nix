@@ -132,6 +132,7 @@
       "visual-studio-code"
       "kitty"
       "craft"
+      "yaak"
     ];
   };
 }

@@ -1,6 +1,6 @@
 {
   // The name of the Zed theme to use for the UI
-  "theme": "edo",
+  "theme": "Vitesse Refined Dark",
   // The name of a base set of key bindings to use.
   // This setting can take four values, each named after another
   // text editor:
@@ -11,9 +11,6 @@
   // 4. "Atom"
   "base_keymap": "VSCode",
   // Features that can be globally enabled or disabled
-  "features": {
-    "inline_completion_provider": "supermaven"
-  },
   // The name of a font to use for rendering text in the editor
   "buffer_font_family": "BerkeleyMono Nerd Font",
   // The OpenType features to enable for text in the editor.
@@ -452,10 +449,10 @@
   },
   "languages": {
     "Python": {
-      "show_inline_completions": false
+      "show_edit_predictions": false
     },
     "Rust": {
-      "show_inline_completions": true,
+      "show_edit_predictions": true,
       "show_copilot_suggestions": true
     },
     "Plain Text": {
@@ -472,7 +469,7 @@
       "soft_wrap": "preferred_line_length"
     },
     "JavaScript": {
-      "show_inline_completions": true,
+      "show_edit_predictions": true,
       "tab_size": 2
     },
     "TypeScript": {
