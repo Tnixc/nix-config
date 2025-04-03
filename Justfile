@@ -3,3 +3,7 @@ deploy:
 
 	./result/activate-user
 	sudo ./result/activate
+
+fmt:
+    nix fmt
+    stylua . --sort-requires

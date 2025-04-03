@@ -1,8 +1,8 @@
+local Promise = require("promise")
+local app_icons = require("sbar-config-libs/helpers.app_icons")
 local colors = require("sbar-config-libs/colors")
 local icons = require("sbar-config-libs/icons")
 local settings = require("sbar-config-libs/settings")
-local app_icons = require("sbar-config-libs/helpers.app_icons")
-local Promise = require("promise")
 
 local function dump(o)
 	if type(o) == "table" then

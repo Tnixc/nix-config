@@ -1,5 +1,5 @@
-local settings = require("sbar-config-libs/settings")
 local colors = require("sbar-config-libs/colors")
+local settings = require("sbar-config-libs/settings")
 
 -- Padding item required because of bracket
 sbar.add("item", { position = "right", width = settings.group_paddings })

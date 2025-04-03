@@ -42,6 +42,7 @@
     sketchybar-app-font
     ast-grep
     zellij
+    just
 
     # Languages
     lua
@@ -112,6 +113,7 @@
       "ghc"
       "opam"
       "gnupg"
+      "rustywind"
     ];
 
     # `brew install --cask`

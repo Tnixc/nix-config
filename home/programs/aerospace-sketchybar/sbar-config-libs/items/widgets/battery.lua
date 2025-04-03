@@ -1,5 +1,5 @@
-local icons = require("sbar-config-libs/icons")
 local colors = require("sbar-config-libs/colors")
+local icons = require("sbar-config-libs/icons")
 local settings = require("sbar-config-libs/settings")
 
 local battery = sbar.add("item", "widgets.battery", {
