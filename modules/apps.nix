@@ -114,6 +114,7 @@
       "opam"
       "gnupg"
       "rustywind"
+      "vercel-cli"
     ];
 
     # `brew install --cask`

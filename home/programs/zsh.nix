@@ -57,6 +57,7 @@
     lz = "lazygit";
     gz = "nvim +DiffviewOpen";
     g = "git";
+    j = "just";
 
     nvs = "rm \"/Users/tnixc/.local/share/nvim/sessions/$(pwd | sed 's|/|%2F|g').vim\"";
 
