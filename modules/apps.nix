@@ -43,6 +43,7 @@
     ast-grep
     zellij
     just
+    qbe
 
     # Languages
     lua
@@ -115,6 +116,7 @@
       "gnupg"
       "rustywind"
       "vercel-cli"
+      "swift-format"
     ];
 
     # `brew install --cask`
