@@ -43,7 +43,6 @@
     ast-grep
     zellij
     just
-    qbe
 
     # Languages
     lua
