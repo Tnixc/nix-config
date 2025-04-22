@@ -155,7 +155,7 @@
   },
   "chat_panel": {
     // Whether to show the collaboration panel button in the status bar.
-    "button": true,
+    "button": "always",
     // Where to dock channels panel. Can be 'left' or 'right'.
     "dock": "right",
     // Default width of the channels panel.
@@ -173,7 +173,7 @@
     // Whether to show the assistant panel button in the status bar.
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
+      "model": "claude-3-7-sonnet-latest"
     },
     "version": "2",
     "button": true,
@@ -498,10 +498,10 @@
   // project has no other Prettier installed.
   "prettier": {
     // Use regular Prettier json configuration:
-    // "trailingComma": "es5",
-    // "tabWidth": 2,
-    // "semi": false,
-    // "singleQuote": true
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
   },
   // LSP Specific settings.
   "lsp": {
