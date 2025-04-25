@@ -60,11 +60,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745325289,
-        "narHash": "sha256-RKLaR/x3jsc57lu+giaSa+3xXwky/IZMJ/f8RB+XPWs=",
+        "lastModified": 1745555634,
+        "narHash": "sha256-lhVyVn1utb2UVTbyKJ6mfKB7wLTjrj14OlebvO0WU2s=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ce8dc1f77ada561f4deee2c76f7cd6f6c7b8feec",
+        "rev": "98f4fef7fd7b4a77245db12e33616023162bc6d9",
         "type": "github"
       },
       "original": {
@@ -86,11 +86,11 @@
     },
     "nixpkgs-darwin": {
       "locked": {
-        "lastModified": 1744868846,
-        "narHash": "sha256-5RJTdUHDmj12Qsv7XOhuospjAjATNiTMElplWnJE9Hs=",
+        "lastModified": 1745377448,
+        "narHash": "sha256-jhZDfXVKdD7TSEGgzFJQvEEZ2K65UMiqW5YJ2aIqxMA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ebe4301cbd8f81c4f8d3244b3632338bbeb6d49c",
+        "rev": "507b63021ada5fee621b6ca371c4fca9ca46f52c",
         "type": "github"
       },
       "original": {
@@ -102,11 +102,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1744868846,
-        "narHash": "sha256-5RJTdUHDmj12Qsv7XOhuospjAjATNiTMElplWnJE9Hs=",
+        "lastModified": 1745377448,
+        "narHash": "sha256-jhZDfXVKdD7TSEGgzFJQvEEZ2K65UMiqW5YJ2aIqxMA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ebe4301cbd8f81c4f8d3244b3632338bbeb6d49c",
+        "rev": "507b63021ada5fee621b6ca371c4fca9ca46f52c",
         "type": "github"
       },
       "original": {
@@ -140,14 +140,15 @@
         "sbarlua": "sbarlua"
       },
       "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-WHKmRsVp/ClkK10P4tn840pbs/18Uo+qswp1kMk49lQ=",
         "path": "./home/programs/aerospace-sketchybar",
         "type": "path"
       },
       "original": {
         "path": "./home/programs/aerospace-sketchybar",
         "type": "path"
-      },
-      "parent": []
+      }
     },
     "root": {
       "inputs": {
