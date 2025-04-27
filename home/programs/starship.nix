@@ -1,8 +1,8 @@
 {lib, ...}: let
   color-mix = import ../../modules/utils/colors-mix.nix {inherit lib;};
 
-  bg = "#181616";
-  fg = "#87A987";
+  bg = "#121212";
+  fg = "#80A665";
 
   mixedColor = color-mix.mixColors bg fg 0.8;
 in {

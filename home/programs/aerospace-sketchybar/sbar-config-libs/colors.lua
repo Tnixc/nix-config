@@ -1,13 +1,13 @@
 return {
-	black = 0xFF0A0909,
-	white = 0xFFC5C9C5,
-	red = 0xFFE46876,
-	green = 0xFF87A987,
-	blue = 0xFF7F94B4,
-	yellow = 0xFFE6C384,
-	orange = 0xFFE6A96D,
+	black = 0xFF000000,
+	white = 0xFFD8D6C9,
+	red = 0xFFCB7676,
+	green = 0xFF80A665,
+	blue = 0xFF687eaa,
+	yellow = 0xFFB8A865,
+	orange = 0xFFCC8D70,
 	magenta = 0xFFD98AAD,
-	grey = 0xFFA6A69C,
+	grey = 0xFFB2B0A6,
 	transparent = 0x00000000,
 
 	bar = {
@@ -16,7 +16,7 @@ return {
 	},
 
 	popup = {
-		bg = 0x99181616,
+		bg = 0x99121212,
 		border = 0xFF24273A,
 	},
 

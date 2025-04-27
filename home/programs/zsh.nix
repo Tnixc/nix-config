@@ -25,10 +25,10 @@
         export TERM=xterm-256color
 
         export FZF_DEFAULT_OPTS=" \
-        --color=bg+:#363834,spinner:#E6A5C9,hl:#E46876 \
-        --color=fg:#C5C9C5,header:#E46876,info:#A292A3,pointer:#E6A5C9 \
-        --color=marker:#938AA9,fg+:#C5C9C5,prompt:#A292A3,hl+:#E46876 \
-        --color=selected-bg:#4a4c47 \
+        --color=bg+:#1E1E1E,spinner:#C97D6E,hl:#CB7676 \
+        --color=fg:#D8D6C9,header:#CB7676,info:#6872AB,pointer:#C97D6E \
+        --color=marker:#4C8E72,fg+:#D8D6C9,prompt:#6872AB,hl+:#CB7676 \
+        --color=selected-bg:#232323 \
         --multi"
 
         bindkey '^[h' backward-word

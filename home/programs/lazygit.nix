@@ -14,30 +14,30 @@
           ];
           inactiveBorderColor = ["#6c7086"];
           optionsTextColor = ["yellow"];
-          selectedLineBgColor = ["#4a4c47"];
-          cherryPickedCommitBgColor = ["#4a4c47"];
+          selectedLineBgColor = ["#232323"];
+          cherryPickedCommitBgColor = ["#232323"];
           cherryPickedCommitFgColor = ["#D98AAD"];
-          unstagedChangesColor = ["#E46876"];
-          defaultFgColor = ["#C5C9C5"];
-          searchingActiveBorderColor = ["#E6A5C9"];
+          unstagedChangesColor = ["#CB7676"];
+          defaultFgColor = ["#D8D6C9"];
+          searchingActiveBorderColor = ["#C97D6E"];
         };
         authorColors = {
-          "Tnixc" = "#7AA89F";
+          "Tnixc" = "#5EA994";
         };
         unspecifiedAuthorColors = [
-          "#E46876"
-          "#C4746E"
+          "#CB7676"
+          "#CC8D82"
           "#D98AAD"
-          "#EAAB9D"
-          "#E6A5C9"
-          "#E6A96D"
-          "#E6C384"
-          "#87A987"
-          "#7FB4CA"
-          "#8BA4B0"
-          "#7F94B4"
-          "#938AA9"
-          "#A292A3"
+          "#C98A7D"
+          "#C97D6E"
+          "#CC8D70"
+          "#B8A865"
+          "#80A665"
+          "#5D9AA9"
+          "#6394BF"
+          "#687eaa"
+          "#4C8E72"
+          "#6872AB"
         ];
       };
     };

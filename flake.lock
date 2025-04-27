@@ -140,15 +140,14 @@
         "sbarlua": "sbarlua"
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-WHKmRsVp/ClkK10P4tn840pbs/18Uo+qswp1kMk49lQ=",
         "path": "./home/programs/aerospace-sketchybar",
         "type": "path"
       },
       "original": {
         "path": "./home/programs/aerospace-sketchybar",
         "type": "path"
-      }
+      },
+      "parent": []
     },
     "root": {
       "inputs": {

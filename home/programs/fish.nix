@@ -3,15 +3,15 @@
     enable = true;
     interactiveShellInit = ''
       # Color Palette
-      set -l foreground C5C9C5
+      set -l foreground D8D6C9
       set -l selection  2A2A37
       set -l comment    51516b
-      set -l red        E46876
-      set -l orange     E6A96D
-      set -l yellow     E6C384
-      set -l green      87A987
-      set -l purple     A292A3
-      set -l cyan       7FB4CA
+      set -l red        CB7676
+      set -l orange     CC8D70
+      set -l yellow     B8A865
+      set -l green      80A665
+      set -l purple     6872AB
+      set -l cyan       5D9AA9
       set -l pink       D98AAD
 
       # Syntax Highlighting Colors
@@ -49,10 +49,10 @@
       fish_add_path /run/current-system/sw/bin
 
       set -Ux FZF_DEFAULT_OPTS "\
-      --color=bg+:#363834,spinner:#E6A5C9,hl:#E46876 \
-      --color=fg:#C5C9C5,header:#E46876,info:#A292A3,pointer:#E6A5C9 \
-      --color=marker:#938AA9,fg+:#C5C9C5,prompt:#A292A3,hl+:#E46876 \
-      --color=selected-bg:#4a4c47 \
+      --color=bg+:#1E1E1E,spinner:#C97D6E,hl:#CB7676 \
+      --color=fg:#D8D6C9,header:#CB7676,info:#6872AB,pointer:#C97D6E \
+      --color=marker:#4C8E72,fg+:#D8D6C9,prompt:#6872AB,hl+:#CB7676 \
+      --color=selected-bg:#232323 \
       --multi"
 
       bind \eh backward-word

@@ -22,24 +22,24 @@
         line-numbers = true;
         syntax-theme = "edo";
         blame-palette = [
-          "#181616"
-          "#0D0C0C"
-          "#0A0909"
-          "#363834"
-          "#4a4c47"
+          "#121212"
+          "#0A0A0A"
+          "#000000"
+          "#1E1E1E"
+          "#232323"
         ];
         dark = true;
-        file-decoration-style = "#C5C9C5";
-        file-style = "#C5C9C5";
+        file-decoration-style = "#D8D6C9";
+        file-style = "#D8D6C9";
         hunk-header-decoration-style = "#23273D";
         hunk-header-file-style = "#23273D";
         hunk-header-line-number-style = "#23273D";
         hunk-header-style = "#23273D";
-        line-numbers-left-style = "#686b64";
-        line-numbers-minus-style = "bold #E46876";
-        line-numbers-plus-style = "bold #87A987";
-        line-numbers-right-style = "#686b64";
-        line-numbers-zero-style = "#686b64";
+        line-numbers-left-style = "#4C4C4C";
+        line-numbers-minus-style = "bold #CB7676";
+        line-numbers-plus-style = "bold #80A665";
+        line-numbers-right-style = "#4C4C4C";
+        line-numbers-zero-style = "#4C4C4C";
         minus-emph-style = "bold syntax #53394c";
         minus-style = "syntax #34293a";
         plus-emph-style = "bold syntax #404f4a";
