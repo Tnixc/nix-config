@@ -4,9 +4,9 @@ return {
 	red = 0xFFCB7676,
 	green = 0xFF80A665,
 	blue = 0xFF687eaa,
-	yellow = 0xFFB8A865,
+	yellow = 0xFFCC9B70,
 	orange = 0xFFCC8D70,
-	magenta = 0xFFD98AAD,
+	magenta = 0xFFBC76C1,
 	grey = 0xFFB2B0A6,
 	transparent = 0x00000000,
 

@@ -39,7 +39,7 @@ theme[div_line]="#4C4C4C"
 
 # Temperature graph color (Green -> Yellow -> Red)
 theme[temp_start]="#80A665"
-theme[temp_mid]="#B8A865"
+theme[temp_mid]="#CC9B70"
 theme[temp_end]="#CB7676"
 
 # CPU graph colors (Teal -> Lavender)

@@ -8,11 +8,11 @@
       set -l comment    51516b
       set -l red        CB7676
       set -l orange     CC8D70
-      set -l yellow     B8A865
+      set -l yellow     CC9B70
       set -l green      80A665
       set -l purple     6872AB
       set -l cyan       5D9AA9
-      set -l pink       D98AAD
+      set -l pink       BC76C1
 
       # Syntax Highlighting Colors
       set -g fish_color_normal $foreground

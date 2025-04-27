@@ -6,13 +6,13 @@
 local colors = {
   red      = '#CB7676',
   orange   = '#CC8D70',
-  yellow   = '#B8A865',
+  yellow   = '#CC9B70',
   green    = '#80A665',
   cyan     = '#5EA994',
   sapphire = '#6394BF',
   blue     = '#687eaa',
   purple   = '#6872AB',
-  magenta  = '#D98AAD',
+  magenta  = '#BC76C1',
   bg       = '#0A0A0A',
   fg       = '#D8D6C9',
 }

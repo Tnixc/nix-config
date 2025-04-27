@@ -16,7 +16,7 @@
           optionsTextColor = ["yellow"];
           selectedLineBgColor = ["#232323"];
           cherryPickedCommitBgColor = ["#232323"];
-          cherryPickedCommitFgColor = ["#D98AAD"];
+          cherryPickedCommitFgColor = ["#BC76C1"];
           unstagedChangesColor = ["#CB7676"];
           defaultFgColor = ["#D8D6C9"];
           searchingActiveBorderColor = ["#C97D6E"];
@@ -27,11 +27,11 @@
         unspecifiedAuthorColors = [
           "#CB7676"
           "#CC8D82"
-          "#D98AAD"
+          "#BC76C1"
           "#C98A7D"
           "#C97D6E"
           "#CC8D70"
-          "#B8A865"
+          "#CC9B70"
           "#80A665"
           "#5D9AA9"
           "#6394BF"
