@@ -11,7 +11,7 @@ return {
 	transparent = 0x00000000,
 
 	bar = {
-		bg = 0x00000000,
+		bg = 0x00121212,
 		border = 0x00FFFFFF,
 	},
 
@@ -20,7 +20,7 @@ return {
 		border = 0xFF24273A,
 	},
 
-	bg1 = 0x00000000,
+	bg1 = 0xFF121212,
 	bg2 = 0x001F1F1F,
 
 	with_alpha = function(color, alpha)

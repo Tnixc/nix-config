@@ -60,11 +60,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1745894335,
-        "narHash": "sha256-m47zhftaod/oHOwoVT25jstdcVLhkrVGyvEHKjbnFHI=",
+        "lastModified": 1746040799,
+        "narHash": "sha256-osgPX/SzIpkR50vev/rqoTEAVkEcOWXoQXmbzsaI4KU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1ad123239957d40e11ef66c203d0a7e272eb48aa",
+        "rev": "5f217e5a319f6c186283b530f8c975e66c028433",
         "type": "github"
       },
       "original": {
@@ -74,12 +74,10 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1745870676,
-        "narHash": "sha256-IpldIaWrlasZZlKHPxitkrJ1ex4EVphuWYXVDdF5kf4=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "fdb6c240562c5ad516253419cc6f26819705d3e0",
-        "type": "github"
+        "lastModified": 0,
+        "narHash": "sha256-vn285HxnnlHLWnv59Og7muqECNMS33mWLM14soFIv2g=",
+        "path": "/nix/store/97hxap05brgklr57xh7qaab6s833rfg0-source",
+        "type": "path"
       },
       "original": {
         "id": "nixpkgs",
@@ -88,11 +86,11 @@
     },
     "nixpkgs-darwin": {
       "locked": {
-        "lastModified": 1745870676,
-        "narHash": "sha256-IpldIaWrlasZZlKHPxitkrJ1ex4EVphuWYXVDdF5kf4=",
+        "lastModified": 1746061036,
+        "narHash": "sha256-OxYwCGJf9VJ2KnUO+w/hVJVTjOgscdDg/lPv8Eus07Y=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "fdb6c240562c5ad516253419cc6f26819705d3e0",
+        "rev": "3afd19146cac33ed242fc0fc87481c67c758a59e",
         "type": "github"
       },
       "original": {
@@ -104,11 +102,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1745804731,
-        "narHash": "sha256-v/sK3AS0QKu/Tu5sHIfddiEHCvrbNYPv8X10Fpux68g=",
+        "lastModified": 1746061036,
+        "narHash": "sha256-OxYwCGJf9VJ2KnUO+w/hVJVTjOgscdDg/lPv8Eus07Y=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "29335f23bea5e34228349ea739f31ee79e267b88",
+        "rev": "3afd19146cac33ed242fc0fc87481c67c758a59e",
         "type": "github"
       },
       "original": {
@@ -142,14 +140,15 @@
         "sbarlua": "sbarlua"
       },
       "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-grXiqmsUB3Dmcc9aOQObnXydAFpR5zawQJ0BuFnRm1w=",
         "path": "./home/programs/aerospace-sketchybar",
         "type": "path"
       },
       "original": {
         "path": "./home/programs/aerospace-sketchybar",
         "type": "path"
-      },
-      "parent": []
+      }
     },
     "root": {
       "inputs": {
