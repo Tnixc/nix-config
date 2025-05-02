@@ -43,7 +43,7 @@ in {
         # "${aerospace-flake.packages.aarch64-darwin.pwaerospace}/bin/pwaerospace"
       ];
       RunAtLoad = true;
-      KeepAlive = false;
+      KeepAlive = true;
       StandardOutPath = "/tmp/aerospace-sketchybar.log";
       StandardErrorPath = "/tmp/aerospace-sketchybar.error.log";
     };
