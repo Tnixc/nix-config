@@ -122,7 +122,9 @@
     casks = [
       "steam"
       "tableplus"
-      "eloston-chromium"
+      # "eloston-chromium"
+      "google-chrome"
+      "reminders-menubar"
       "linearmouse"
       "nordvpn"
       "zed"
