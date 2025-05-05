@@ -5,5 +5,5 @@ deploy:
 	sudo ./result/activate
 
 fmt:
-    nix fmt
+    nix fmt .
     stylua . --sort-requires
