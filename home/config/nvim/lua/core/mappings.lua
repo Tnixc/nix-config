@@ -135,6 +135,13 @@ wk.add({
 		{
 			group = "LSP",
 			{ "<leader>l", desc = "LSP" },
+            {
+              "<leader>lq",
+                "<cmd>lua vim.lsp.buf.code_action()<cr>",
+				icon = { icon = "", color = "yellow" },
+                desc = "Code actions"
+            },
+
 			{
 				"<leader>ld",
 				"<cmd>Telescope lsp_document_symbols<cr>",

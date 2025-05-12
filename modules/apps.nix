@@ -59,6 +59,10 @@
     nrr
     yarn
     jdk23
+    wasmer
+    wasmtime
+    meson
+    ninja
 
     # media / others
     ani-cli
@@ -94,6 +98,7 @@
 
     # `brew install`
     brews = [
+      "emscripten"
       "deno"
       "supabase/tap/supabase"
       "jupyterlab"
@@ -120,6 +125,7 @@
 
     # `brew install --cask`
     casks = [
+      "obsidian"
       "steam"
       "tableplus"
       # "eloston-chromium"
