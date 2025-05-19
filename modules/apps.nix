@@ -38,7 +38,7 @@
     gh
     docker
     colima # docker daemon
-    dioxus-cli
+    # dioxus-cli
     sketchybar-app-font
     ast-grep
     zellij

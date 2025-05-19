@@ -315,7 +315,6 @@ wk.add({
 	-- Insert mode mappings
 	{
 		mode = "i",
-		{ "jk", "<ESC>", desc = "Quick escape to normal mode" },
 		{ "<A-j>", "<Esc><cmd>m .+1<cr>==gi", desc = "Move line down" },
 		{ "<A-k>", "<Esc><cmd>m .-2<cr>==gi", desc = "Move line up" },
 	},
