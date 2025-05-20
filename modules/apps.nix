@@ -78,8 +78,6 @@
     fontforge-fonttools
     brotli
     zopfli
-
-    karabiner-elements
   ];
 
   homebrew = {

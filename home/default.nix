@@ -33,6 +33,7 @@ in {
     "skhd"
     "kitty"
     "btop"
+    "karabiner"
   ];
 
   launchd.agents."aerospace-sketchybar" = {
