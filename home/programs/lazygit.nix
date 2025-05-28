@@ -4,6 +4,7 @@
     settings = {
       git.paging.colorArg = "always";
       git.paging.pager = "delta --dark --paging=never";
+      git.overrideGpg = true;
       gui = {
         border = "single";
         nerdFontsVersion = "3";

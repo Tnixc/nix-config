@@ -244,7 +244,7 @@ lazy.setup({
 		"akinsho/toggleterm.nvim",
 		event = "VeryLazy",
 		version = "*",
-		opts = { open_mapping = [[<M-l>]] },
+		opts = { open_mapping = [[<M-l>]], shell = "fish" },
 	},
 	{
 		"natecraddock/workspaces.nvim",

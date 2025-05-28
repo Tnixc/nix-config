@@ -169,7 +169,7 @@
     // Default width of the channels panel.
     "default_width": 380
   },
-  "assistant": {
+  "agent": {
     // Whether to show the assistant panel button in the status bar.
     "default_model": {
       "provider": "zed.dev",

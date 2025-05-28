@@ -43,6 +43,7 @@
     ast-grep
     zellij
     just
+    dua
 
     # Languages
     lua
@@ -70,8 +71,6 @@
     aria2
     yt-dlp
     ffmpeg
-    iina
-    vesktop
 
     # Font things
     python312Packages.fonttools
@@ -121,6 +120,11 @@
       "rustywind"
       "vercel-cli"
       "swift-format"
+      "coreutils"
+      "readline"
+      "xz"
+      "zlib"
+      "llvm"
     ];
 
     # `brew install --cask`
@@ -130,6 +134,7 @@
       "tableplus"
       # "eloston-chromium"
       "google-chrome"
+      "microsoft-edge"
       "reminders-menubar"
       "linearmouse"
       "nordvpn"
@@ -145,6 +150,7 @@
       "kitty"
       "craft"
       "yaak"
+      "iina"
     ];
   };
 }
