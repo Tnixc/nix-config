@@ -14,7 +14,7 @@ in {
     enableNushellIntegration = true;
 
     settings = {
-      format = " $hostname$shell$directory$git_branch$git_status$character";
+      format = "$shell$directory$git_branch$git_status$character";
 
       directory = {
         style = "blue";

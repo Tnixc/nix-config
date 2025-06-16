@@ -15,7 +15,7 @@ after-startup-command = [
 
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
-    'exec-and-forget BORDERSBIN active_color=0xff5EA994 inactive_color=0xff494d64 width=6.0',
+    'exec-and-forget BORDERSBIN active_color=0xff007AFF inactive_color=0xff494d64 width=6.0',
     'exec-and-forget SKETCHYBARBIN -c NIXPATHTOSKETCHYCONFIG',
     'exec-and-forget SKETCHYBARBIN --trigger aerospace_started',
 ]
@@ -102,8 +102,7 @@ outer.right =      8
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
 cmd-alt-ctrl-enter = 'exec-and-forget /opt/homebrew/bin/kitty --single-instance -d ~'
 cmd-alt-ctrl-f = 'fullscreen'
-alt-s = 'layout floating tiling'
-alt-e = 'balance-sizes'
+cmd-alt-ctrl-z = 'balance-sizes'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 cmd-ctrl-alt-slash = 'layout tiles horizontal vertical'
@@ -171,7 +170,7 @@ backspace = ['close-all-windows-but-current', 'mode main']
 
 
 [[on-window-detected]]
-if.app-id = "company.thebrowser.Browser"
+if.app-id = "net.imput.helium"
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]

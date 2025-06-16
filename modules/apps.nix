@@ -63,6 +63,8 @@
     wasmer
     wasmtime
     meson
+    act
+    pnpm
     ninja
 
     # media / others
@@ -125,10 +127,13 @@
       "xz"
       "zlib"
       "llvm"
+      "ninja"
     ];
 
     # `brew install --cask`
     casks = [
+      "cursor"
+      "hammerspoon"
       "obsidian"
       "steam"
       "tableplus"
