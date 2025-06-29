@@ -21,6 +21,11 @@ local icons = {
 			_10 = "􀊡",
 			_0 = "􀊣",
 		},
+		sound_out = {
+			device = "􀊧",
+			airpods = "􀪷",
+			headphones = "􀺭",
+		},
 		battery = {
 			_100 = "􀛨",
 			_75 = "􀺸",

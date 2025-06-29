@@ -18,7 +18,7 @@ local volume_icon = sbar.add("item", "widgets.volume2", {
 	position = "right",
 	padding_right = -1,
 	icon = {
-		string = icons.volume._100,
+		string = icons.sound_out.device,
 		width = 0,
 		align = "left",
 		color = colors.grey,
@@ -70,23 +70,36 @@ local volume_slider = sbar.add("slider", popup_width, {
 
 volume_percent:subscribe("volume_change", function(env)
 	local volume = tonumber(env.INFO)
-	local icon = icons.volume._0
-	if volume > 60 then
-		icon = icons.volume._100
-	elseif volume > 30 then
-		icon = icons.volume._66
-	elseif volume > 10 then
-		icon = icons.volume._33
-	elseif volume > 0 then
-		icon = icons.volume._10
-	end
+	sbar.exec("SwitchAudioSource -t output -c", function(result)
+		local current_audio_device = result:sub(1, -2)
+		local icon
+		if string.find(current_audio_device, "Headphone", 1, true) then
+			icon = icons.sound_out.headphones
+		elseif string.find(current_audio_device, "AirPod", 1, true) then
+			icon = icons.sound_out.airpods
+		else
+			icon = icons.sound_out.device
+		end
+		volume_icon:set({ icon = { string = icon } })
+	end)
 
+	-- -- local volume = tonumber(env.INFO)
+	-- local icon = icons.volume._0
+	-- if volume > 60 then
+	-- 	icon = icons.volume._100
+	-- elseif volume > 30 then
+	-- 	icon = icons.volume._66
+	-- elseif volume > 10 then
+	-- 	icon = icons.volume._33
+	-- elseif volume > 0 then
+	-- 	icon = icons.volume._10
+	-- end
+	--
 	local lead = ""
 	if volume < 10 then
 		lead = "0"
 	end
-
-	volume_icon:set({ label = icon })
+	--
 	volume_percent:set({ label = lead .. volume .. "%" })
 	volume_slider:set({ slider = { percentage = volume } })
 end)

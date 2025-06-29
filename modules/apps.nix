@@ -132,6 +132,7 @@
 
     # `brew install --cask`
     casks = [
+      "spotify"
       "cursor"
       "hammerspoon"
       "obsidian"
