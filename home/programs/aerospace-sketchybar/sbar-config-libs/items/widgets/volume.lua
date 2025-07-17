@@ -75,6 +75,8 @@ volume_percent:subscribe("volume_change", function(env)
 		local icon
 		if string.find(current_audio_device, "Headphone", 1, true) then
 			icon = icons.sound_out.headphones
+		elseif string.find(current_audio_device, "MOMENTUM", 1, true) then
+			icon = icons.sound_out.headphones
 		elseif string.find(current_audio_device, "AirPod", 1, true) then
 			icon = icons.sound_out.airpods
 		else

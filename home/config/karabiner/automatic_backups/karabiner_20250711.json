@@ -31,14 +31,13 @@
                                         "modifiers": ["left_option", "left_control"]
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "tab" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
                             }
                         ]
                     },
                     {
                         "description": "Right Command + UI for Plus/Equals +=",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -65,7 +64,6 @@
                     },
                     {
                         "description": "Right Command + ER for Underscore/Hyphen _-",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -92,7 +90,6 @@
                     },
                     {
                         "description": "Right Command + DK for Square Brackets []",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -114,7 +111,6 @@
                     },
                     {
                         "description": "Right Command + FJ for Curly Braces {}",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -146,7 +142,6 @@
                     },
                     {
                         "description": "Right Command + GH for Parentheses ()",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -187,12 +182,12 @@
                     },
                     "simple_modifications": [
                         {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_option" }]
-                        },
-                        {
                             "from": { "key_code": "left_option" },
                             "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
                         }
                     ]
                 }

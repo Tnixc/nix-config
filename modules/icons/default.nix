@@ -6,6 +6,10 @@
         path = "/System/Volumes/Data/Applications/kitty.app";
         icon = ./kitty.icns;
       }
+      {
+        path = "/System/Volumes/Data/Applications/Balatro.app";
+        icon = ./balatro.icns;
+      }
     ];
   };
 }

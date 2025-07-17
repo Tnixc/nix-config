@@ -17,7 +17,7 @@
   // The OpenType features to enable for text in the editor.
   "buffer_font_features": {
     // Disable ligatures:
-    "calt": false
+    "calt": true
   },
   // The default font size for text in the editor
   "buffer_font_size": 15,
@@ -43,6 +43,7 @@
   "ui_font_size": 17,
   // The factor to grow the active pane by. Defaults to 1.0
   // which gives the same size as all other panes.
+  "active_pane_magnification": 1.8,
   // Whether to enable vim modes and key bindings
   "vim_mode": true,
   // Whether to show the informational hover box when moving the mouse
@@ -73,6 +74,7 @@
   "use_on_type_format": true,
   // Controls whether copilot provides suggestion immediately
   // or waits for a `copilot::Toggle`
+  "show_copilot_suggestions": true,
   // Whether to show tabs and spaces in the editor.
   // This setting can take two values:
   //
@@ -104,7 +106,9 @@
     //    "never"
     "show": "auto",
     // Whether to show git diff indicators in the scrollbar.
-    "git_diff": true
+    "git_diff": true,
+    // Whether to show selections in the scrollbar.
+    "selections": true
   },
   "relative_line_numbers": true,
   // When to populate a new search's query based on the text under the cursor.
@@ -139,7 +143,7 @@
     // Whether to show the git status in the project panel.
     "git_status": true,
     // Amount of indentation for nested items.
-    "indent_size": 20
+    "indent_size": 14
   },
   "collaboration_panel": {
     // Whether to show the collaboration panel button in the status bar.
@@ -167,21 +171,25 @@
   },
   "agent": {
     // Whether to show the assistant panel button in the status bar.
-    "inline_assistant_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
-    },
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet-latest"
     },
+    "version": "2",
     "button": true,
     // Where to dock the assistant. Can be 'left', 'right' or 'bottom'.
     "dock": "right",
     // Default width when the assistant is docked to the left or right.
     "default_width": 640,
     // Default height when the assistant is docked to the bottom.
-    "default_height": 320
+    "default_height": 320,
+    // The default OpenAI model to use when starting new conversations. This
+    // setting can take two values:
+    //
+    // 1. "gpt-3.5-turbo-0613""
+    // 2. "gpt-4-0613""
+    // 3. "gpt-4-1106-preview"
+    "default_open_ai_model": null
   },
   // Whether the screen sharing icon is shown in the os status bar.
   "show_call_status_icon": true,
@@ -198,19 +206,13 @@
   //     "autosave": "on_focus_change",
   // 4. Save when idle for a certain amount of time:
   //     "autosave": { "after_delay": {"milliseconds": 500} },
-  "autosave": {
-    "after_delay": {
-      "milliseconds": 500
-    }
-  },
+  "autosave": { "after_delay": { "milliseconds": 500 } },
   // Settings related to the editor's tabs
   "tabs": {
     // Show git status colors in the editor tabs.
     "git_status": true,
     // Position of the close button on the editor tabs.
-    "close_position": "right",
-    "file_icons": true,
-    "show_diagnostics": "all"
+    "close_position": "right"
   },
   // Whether or not to remove any trailing whitespace from lines of a buffer
   // before saving it.
@@ -269,14 +271,7 @@
   // Diagnostics configuration.
   "diagnostics": {
     // Whether to show warnings or not by default.
-    "include_warnings": true,
-    "inline": {
-      "enabled": true,
-      "update_debounce_ms": 50,
-      "padding": 4,
-      "min_column": 0,
-      "max_severity": null
-    }
+    "include_warnings": true
   },
   // Add files or globs of files that will be excluded by Zed entirely:
   // they will be skipped during FS scan(s), file tree and file search
@@ -303,9 +298,7 @@
   "copilot": {
     // The set of glob patterns for which copilot should be disabled
     // in any matching file.
-    "disabled_globs": [
-      ".env"
-    ]
+    "disabled_globs": [".env"]
   },
   // Settings specific to journaling
   "journal": {
@@ -414,12 +407,7 @@
         // Default directories to search for virtual environments, relative
         // to the current working directory. We recommend overriding this
         // in your project's settings, rather than globally.
-        "directories": [
-          ".env",
-          "env",
-          ".venv",
-          "venv"
-        ],
+        "directories": [".env", "env", ".venv", "venv"],
         // Can also be 'csh', 'fish', and `nushell`
         "activate_script": "default"
       }

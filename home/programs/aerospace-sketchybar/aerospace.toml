@@ -138,6 +138,18 @@ ctrl-6 = 'workspace 6'
 ctrl-7 = 'workspace 7'
 ctrl-8 = 'workspace 8'
 ctrl-9 = 'workspace 9'
+ctrl-0 = 'workspace 10'
+
+ctrl-f1 = 'workspace 11'
+ctrl-f2 = 'workspace 12'
+ctrl-f3 = 'workspace 13'
+ctrl-f4 = 'workspace 14'
+ctrl-f5 = 'workspace 15'
+ctrl-f6 = 'workspace 16'
+ctrl-f7 = 'workspace 17'
+ctrl-f8 = 'workspace 18'
+ctrl-f9 = 'workspace 19'
+ctrl-f10 = 'workspace 20'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 ctrl-shift-1 = ['move-node-to-workspace 1', 'workspace 1']
@@ -149,6 +161,42 @@ ctrl-shift-6 = ['move-node-to-workspace 6', 'workspace 6']
 ctrl-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
 ctrl-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 ctrl-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
+ctrl-shift-0 = ['move-node-to-workspace 10', 'workspace 10']
+
+ctrl-shift-f1 = ['move-node-to-workspace 11', 'workspace 11']
+ctrl-shift-f2 = ['move-node-to-workspace 12', 'workspace 12']
+ctrl-shift-f3 = ['move-node-to-workspace 13', 'workspace 13']
+ctrl-shift-f4 = ['move-node-to-workspace 14', 'workspace 14']
+ctrl-shift-f5 = ['move-node-to-workspace 15', 'workspace 15']
+ctrl-shift-f6 = ['move-node-to-workspace 16', 'workspace 16']
+ctrl-shift-f7 = ['move-node-to-workspace 17', 'workspace 17']
+ctrl-shift-f8 = ['move-node-to-workspace 18', 'workspace 18']
+ctrl-shift-f9 = ['move-node-to-workspace 19', 'workspace 19']
+ctrl-shift-f10 = ['move-node-to-workspace 20', 'workspace 20']
+
+[workspace-to-monitor-force-assignment]
+1 = 'main'
+2 = 'main'
+3 = 'main'
+4 = 'main'
+5 = 'main'
+6 = 'main'
+7 = 'main'
+8 = 'main'
+9 = 'main'
+10 = 'main'
+
+11 = ['secondary', 'main']
+12 = ['secondary', 'main']
+13 = ['secondary', 'main']
+14 = ['secondary', 'main']
+15 = ['secondary', 'main']
+16 = ['secondary', 'main']
+17 = ['secondary', 'main']
+18 = ['secondary', 'main']
+19 = ['secondary', 'main']
+20 = ['secondary', 'main']
+
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 ctrl-alt-cmd-semicolon = 'mode service'
