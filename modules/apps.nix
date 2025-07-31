@@ -95,10 +95,14 @@
       "FelixKratz/formulae"
       "mrkai77/cask"
       "socsieng/tap"
+      "sst/tap"
+      "charmbracelet/tap"
     ];
 
     # `brew install`
     brews = [
+      "sst/tap/opencode"
+      "charmbracelet/tap/crush"
       "emscripten"
       "deno"
       "supabase/tap/supabase"

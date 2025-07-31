@@ -204,11 +204,11 @@
                     },
                     "simple_modifications": [
                         {
-                            "from": { "key_code": "left_command" },
-                            "to": [{ "key_code": "left_control" }]
+                            "from": { "key_code": "left_control" },
+                            "to": [{ "key_code": "left_command" }]
                         },
                         {
-                            "from": { "key_code": "left_control" },
+                            "from": { "key_code": "left_command" },
                             "to": [{ "key_code": "left_command" }]
                         }
                     ]
