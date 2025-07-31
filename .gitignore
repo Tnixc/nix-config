@@ -7,3 +7,4 @@ result
 nohup.out
 conversations/
 home/config/zed/prompts/
+.crush/
