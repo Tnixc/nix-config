@@ -27,7 +27,6 @@
     wget
     fastfetch
     gum
-    license-cli
     comma
     fish
     direnv
@@ -37,7 +36,6 @@
     delta
     gh
     docker
-    colima # docker daemon
     # dioxus-cli
     sketchybar-app-font
     ast-grep
@@ -132,10 +130,12 @@
       "zlib"
       "llvm"
       "ninja"
+      "colima"
     ];
 
     # `brew install --cask`
     casks = [
+      "parsec"
       "spotify"
       "cursor"
       "hammerspoon"
@@ -161,6 +161,7 @@
       "craft"
       "yaak"
       "iina"
+      "tailscale"
     ];
   };
 }
