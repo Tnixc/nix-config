@@ -49,10 +49,10 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 
 -- Restore cursor position
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
-	pattern = { "*" },
-	callback = function()
-		vim.api.nvim_exec('silent! normal! g`"zv', false)
-	end,
+  pattern = { "*" },
+  callback = function()
+    vim.api.nvim_exec('silent! normal! g`"zv', false)
+  end,
 })
 
 vim.g.gui_font_default_size = 1
@@ -60,17 +60,17 @@ vim.g.gui_font_size = vim.g.gui_font_default_size
 vim.g.gui_font_face = "JetBrains Mono Nerd Font"
 
 RefreshGuiFont = function()
-	vim.opt.guifont = string.format("%s:h%s", vim.g.gui_font_face, vim.g.gui_font_size)
+  vim.opt.guifont = string.format("%s:h%s", vim.g.gui_font_face, vim.g.gui_font_size)
 end
 
 ResizeGuiFont = function(delta)
-	vim.g.gui_font_size = vim.g.gui_font_size + delta
-	RefreshGuiFont()
+  vim.g.gui_font_size = vim.g.gui_font_size + delta
+  RefreshGuiFont()
 end
 
 ResetGuiFont = function()
-	vim.g.gui_font_size = vim.g.gui_font_default_size
-	RefreshGuiFont()
+  vim.g.gui_font_size = vim.g.gui_font_default_size
+  RefreshGuiFont()
 end
 
 -- Call function on startup to set default value
@@ -78,11 +78,11 @@ ResetGuiFont()
 
 local opts = { silent = true }
 vim.keymap.set({ "n", "i" }, "<C-+>", function()
-	ResizeGuiFont(1)
+  ResizeGuiFont(1)
 end, opts)
 vim.keymap.set({ "n", "i" }, "<C-->", function()
-	ResizeGuiFont(-1)
+  ResizeGuiFont(-1)
 end, opts)
 vim.keymap.set({ "n", "i" }, "<C-BS>", function()
-	ResetGuiFont()
+  ResetGuiFont()
 end, opts)

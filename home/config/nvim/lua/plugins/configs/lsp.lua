@@ -6,40 +6,40 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
 capabilities.textDocument.foldingRange = {
-	dynamicRegistration = false,
-	lineFoldingOnly = true,
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
 }
 
 local foldHandler = function(virtText, lnum, endLnum, width, truncate)
-	local newVirtText = {}
-	local suffix = (" 󰁂 %d "):format(endLnum - lnum)
-	local sufWidth = vim.fn.strdisplaywidth(suffix)
-	local targetWidth = width - sufWidth
-	local curWidth = 0
-	for _, chunk in ipairs(virtText) do
-		local chunkText = chunk[1]
-		local chunkWidth = vim.fn.strdisplaywidth(chunkText)
-		if targetWidth > curWidth + chunkWidth then
-			table.insert(newVirtText, chunk)
-		else
-			chunkText = truncate(chunkText, targetWidth - curWidth)
-			local hlGroup = chunk[2]
-			table.insert(newVirtText, { chunkText, hlGroup })
-			chunkWidth = vim.fn.strdisplaywidth(chunkText)
-			-- str width returned from truncate() may less than 2nd argument, need padding
-			if curWidth + chunkWidth < targetWidth then
-				suffix = suffix .. (" "):rep(targetWidth - curWidth - chunkWidth)
-			end
-			break
-		end
-		curWidth = curWidth + chunkWidth
-	end
-	table.insert(newVirtText, { suffix, "MoreMsg" })
-	return newVirtText
+  local newVirtText = {}
+  local suffix = (" 󰁂 %d "):format(endLnum - lnum)
+  local sufWidth = vim.fn.strdisplaywidth(suffix)
+  local targetWidth = width - sufWidth
+  local curWidth = 0
+  for _, chunk in ipairs(virtText) do
+    local chunkText = chunk[1]
+    local chunkWidth = vim.fn.strdisplaywidth(chunkText)
+    if targetWidth > curWidth + chunkWidth then
+      table.insert(newVirtText, chunk)
+    else
+      chunkText = truncate(chunkText, targetWidth - curWidth)
+      local hlGroup = chunk[2]
+      table.insert(newVirtText, { chunkText, hlGroup })
+      chunkWidth = vim.fn.strdisplaywidth(chunkText)
+      -- str width returned from truncate() may less than 2nd argument, need padding
+      if curWidth + chunkWidth < targetWidth then
+        suffix = suffix .. (" "):rep(targetWidth - curWidth - chunkWidth)
+      end
+      break
+    end
+    curWidth = curWidth + chunkWidth
+  end
+  table.insert(newVirtText, { suffix, "MoreMsg" })
+  return newVirtText
 end
 
 require("ufo").setup({
-	fold_virt_text_handler = foldHandler,
+  fold_virt_text_handler = foldHandler,
 })
 
 -- ensure installed:
@@ -52,55 +52,55 @@ vim.g.zig_fmt_parse_errors = 0
 -- Override floating preview globally
 local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
 function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-	opts = opts or {}
-	opts.border = opts.border or Border("BGFloatBorder")
-	opts.header = ""
-	return orig_util_open_floating_preview(contents, syntax, opts, ...)
+  opts = opts or {}
+  opts.border = opts.border or Border("BGFloatBorder")
+  opts.header = ""
+  return orig_util_open_floating_preview(contents, syntax, opts, ...)
 end
 
 require("mason-lspconfig").setup({
-	handlers = {
-		function(server_name)
-			local server = servers[server_name] or {}
-			server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-			server.on_attach = function(client, bufnr)
-				require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-			end
-			require("lspconfig")[server_name].setup(server)
-		end,
-	},
+  handlers = {
+    function(server_name)
+      local server = servers[server_name] or {}
+      server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+      server.on_attach = function(client, bufnr)
+        require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+      end
+      require("lspconfig")[server_name].setup(server)
+    end,
+  },
 })
 
 vim.api.nvim_create_autocmd("BufReadPost", {
-	callback = function()
-		vim.cmd("LspStart")
-	end,
+  callback = function()
+    vim.cmd("LspStart")
+  end,
 })
 
 local signs = {
-	ERROR = " 􀻀 ",
-	WARN = " 􀘰 ",
-	HINT = " 󰌵 ",
-	INFO = " 􀅵 ",
+  ERROR = " 􀻀 ",
+  WARN = " 􀘰 ",
+  HINT = " 󰌵 ",
+  INFO = " 􀅵 ",
 }
 
 vim.diagnostic.config({
-	-- vim.fn.sign_define("DiagnosticSignError", { text = "􀃰", texthl = "DiagnosticSignError" })
-	-- vim.fn.sign_define("DiagnosticSignWarn", { text = "􀃮", texthl = "DiagnosticSignWarn" })
-	-- vim.fn.sign_define("DiagnosticSignInfo", { text = "􁊇", texthl = "DiagnosticSignInfo" })
-	-- vim.fn.sign_define("DiagnosticSignHint", { text = "􁇖", texthl = "DiagnosticSignHint" })
-	signs = {
-		text = {
-			[vim.diagnostic.severity.ERROR] = "􀃰",
-			[vim.diagnostic.severity.WARN] = "􀃮",
-			[vim.diagnostic.severity.INFO] = "􁊇",
-			[vim.diagnostic.severity.HINT] = "􁇖",
-		},
-	},
+  -- vim.fn.sign_define("DiagnosticSignError", { text = "􀃰", texthl = "DiagnosticSignError" })
+  -- vim.fn.sign_define("DiagnosticSignWarn", { text = "􀃮", texthl = "DiagnosticSignWarn" })
+  -- vim.fn.sign_define("DiagnosticSignInfo", { text = "􁊇", texthl = "DiagnosticSignInfo" })
+  -- vim.fn.sign_define("DiagnosticSignHint", { text = "􁇖", texthl = "DiagnosticSignHint" })
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "􀃰",
+      [vim.diagnostic.severity.WARN] = "􀃮",
+      [vim.diagnostic.severity.INFO] = "􁊇",
+      [vim.diagnostic.severity.HINT] = "􁇖",
+    },
+  },
 
-	virtual_text = {
-		prefix = function(diagnostic)
-			return signs[vim.diagnostic.severity[diagnostic.severity]]
-		end,
-	},
+  virtual_text = {
+    prefix = function(diagnostic)
+      return signs[vim.diagnostic.severity[diagnostic.severity]]
+    end,
+  },
 })

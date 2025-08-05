@@ -24,7 +24,7 @@ struct network {
 };
 
 static inline void ifdata(uint32_t net_row, struct ifmibdata* data) {
-	static size_t size = sizeof(struct ifmibdata);
+    static size_t size = sizeof(struct ifmibdata);
   static int32_t data_option[] = { CTL_NET, PF_LINK, NETLINK_GENERIC, IFMIB_IFDATA, 0, IFDATA_GENERAL };
   data_option[4] = net_row;
   sysctl(data_option, 6, data, &size, NULL, 0);
