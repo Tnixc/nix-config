@@ -39,8 +39,7 @@
             readline
             clang
             stdenv
-          ]
-          ++ lib.optionals stdenv.isDarwin (with pkgs.darwin.apple_sdk.frameworks; [CoreFoundation]);
+          ];
       };
 
       # Build promise-lua

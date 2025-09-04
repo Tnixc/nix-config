@@ -131,10 +131,14 @@
       "llvm"
       "ninja"
       "colima"
+      "pdfcpu"
+      "qpdf"
+      "cpdf"
     ];
 
     # `brew install --cask`
     casks = [
+      "calibre"
       "parsec"
       "spotify"
       "cursor"
