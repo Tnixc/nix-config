@@ -138,6 +138,7 @@
 
     # `brew install --cask`
     casks = [
+      "racket"
       "calibre"
       "parsec"
       "spotify"
