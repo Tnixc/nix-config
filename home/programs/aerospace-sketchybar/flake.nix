@@ -33,13 +33,12 @@
           mkdir -p $out/lib/lua/5.4
           cp bin/sketchybar.so $out/lib/lua/5.4/
         '';
-        nativeBuildInputs = with pkgs;
-          [
-            gcc
-            readline
-            clang
-            stdenv
-          ];
+        nativeBuildInputs = with pkgs; [
+          gcc
+          readline
+          clang
+          stdenv
+        ];
       };
 
       # Build promise-lua
