@@ -22,6 +22,7 @@
         export PATH="/Users/tnixc/.bun/bin:$PATH"
         export PATH="/Users/tnixc/.local/bin:$PATH"
         export PATH="/opt/homebrew/bin:$PATH"
+        export PATH="/usr/local/texlive/2025/bin/universal-darwin:$PATH"
         export TERM=xterm-256color
 
         export FZF_DEFAULT_OPTS=" \
