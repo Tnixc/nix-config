@@ -53,7 +53,6 @@
     rustup
     cargo-binstall
     pipx
-    poetry
     uv
     nrr
     yarn
@@ -64,6 +63,7 @@
     act
     pnpm
     ninja
+    lua54Packages.cjson
 
     # media / others
     ani-cli
