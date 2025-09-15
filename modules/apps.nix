@@ -134,6 +134,10 @@
       "pdfcpu"
       "qpdf"
       "cpdf"
+      "xcodegen"
+      "swiftlint"
+      "swiftformat"
+      "xcbeautify"
     ];
 
     # `brew install --cask`

@@ -142,6 +142,12 @@ local weather_current = sbar.add("item", "widgets.weather_current", {
 })
 
 weather_high:subscribe("forced", "routine", "system_woke", function(_)
+
+      weather_current:set({
+        label = {
+          string = "...",
+        },
+      })
   sbar.exec(
     "curl wttr.in/Waterloo+Ontario?format=j2 | jq '{high: .weather[0].maxtempC, low: .weather[0].mintempC, current: .current_condition[0].temp_C, weatherCode: .current_condition[0].weatherCode}'",
     function(res)
