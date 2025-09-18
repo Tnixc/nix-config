@@ -217,39 +217,39 @@ backspace = ['close-all-windows-but-current', 'mode main']
 #s = ['layout sticky tiling', 'mode main']
 
 
-[[on-window-detected]]
-if.app-id = "net.imput.helium"
-run = "move-node-to-workspace 1"
-
-[[on-window-detected]]
-if.app-id = "net.kovidgoyal.kitty"
-run = "move-node-to-workspace 2"
-
-[[on-window-detected]]
-if.app-id = "com.apple.finder"
-run = "move-node-to-workspace 3"
-
-[[on-window-detected]]
-if.app-id = "com.microsoft.VSCode"
-run = "move-node-to-workspace 4"
-[[on-window-detected]]
-if.app-id = "com.todesktop.230313mzl4w4u92"
-run = "move-node-to-workspace 4"
-[[on-window-detected]]
-if.app-id = "dev.zed.Zed-Preview"
-run = "move-node-to-workspace 4"
-
-[[on-window-detected]]
-if.app-id = "md.obsidian"
-run = "move-node-to-workspace 3"
-
-[[on-window-detected]]
-if.app-id = "com.lukilabs.lukiapp"
-run = "move-node-to-workspace 8"
-
-[[on-window-detected]]
-if.app-id = "dev.vencord.vesktop"
-run = "move-node-to-workspace 9"
+# [[on-window-detected]]
+# if.app-id = "net.imput.helium"
+# run = "move-node-to-workspace 1"
+#
+# [[on-window-detected]]
+# if.app-id = "net.kovidgoyal.kitty"
+# run = "move-node-to-workspace 2"
+#
+# [[on-window-detected]]
+# if.app-id = "com.apple.finder"
+# run = "move-node-to-workspace 3"
+#
+# [[on-window-detected]]
+# if.app-id = "com.microsoft.VSCode"
+# run = "move-node-to-workspace 4"
+# [[on-window-detected]]
+# if.app-id = "com.todesktop.230313mzl4w4u92"
+# run = "move-node-to-workspace 4"
+# [[on-window-detected]]
+# if.app-id = "dev.zed.Zed-Preview"
+# run = "move-node-to-workspace 4"
+#
+# [[on-window-detected]]
+# if.app-id = "md.obsidian"
+# run = "move-node-to-workspace 3"
+#
+# [[on-window-detected]]
+# if.app-id = "com.lukilabs.lukiapp"
+# run = "move-node-to-workspace 8"
+#
+# [[on-window-detected]]
+# if.app-id = "dev.vencord.vesktop"
+# run = "move-node-to-workspace 9"
 [[on-window-detected]]
 if.app-id = "com.hnc.Discord"
 run = "move-node-to-workspace 9"

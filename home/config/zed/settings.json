@@ -1,6 +1,6 @@
 {
   // The name of the Zed theme to use for the UI
-  "icon_theme": "Colored Zed Icons Theme Dark",
+  "icon_theme": "Clean VSCode Icon Theme",
   "theme": "Vitesse Refined Dark",
   // The name of a base set of key bindings to use.
   // This setting can take four values, each named after another
@@ -167,13 +167,14 @@
   },
   "agent": {
     // Whether to show the assistant panel button in the status bar.
+    "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "copilot_chat",
       "model": "claude-sonnet-4"
     },
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
     },
     "button": true,
     // Where to dock the assistant. Can be 'left', 'right' or 'bottom'.

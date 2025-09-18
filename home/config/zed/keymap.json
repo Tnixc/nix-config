@@ -569,7 +569,7 @@
       "alt-l": "workspace::ToggleBottomDock",
       "alt-j": "editor::MoveLineDown",
       "alt-k": "editor::MoveLineUp",
-      "alt-g": "workspace::ToggleZoom",
+      "alt-g": "workspace::ToggleLeftDock",
       "alt-o": "workspace::NewCenterTerminal",
       "alt-h": "workspace::ToggleRightDock",
       "alt-t": "file_finder::Toggle",

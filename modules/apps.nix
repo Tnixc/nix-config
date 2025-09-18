@@ -63,7 +63,8 @@
     act
     pnpm
     ninja
-    lua54Packages.cjson
+    micropython
+    rshell
 
     # media / others
     ani-cli
