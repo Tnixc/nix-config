@@ -2,6 +2,7 @@
   username,
   lib,
   pwaerospace,
+  sketchybar-config,
   config,
   ...
 }: let
@@ -36,7 +37,7 @@ in {
     "karabiner"
   ];
 
-  launchd.agents."aerospace-sketchybar" = {
+  launchd.agents."aerospace" = {
     enable = true;
     config = {
       ProgramArguments = [
@@ -45,8 +46,21 @@ in {
       ];
       RunAtLoad = true;
       KeepAlive = true;
-      StandardOutPath = "/tmp/aerospace-sketchybar.log";
-      StandardErrorPath = "/tmp/aerospace-sketchybar.error.log";
+      StandardOutPath = "/tmp/aerospace.log";
+      StandardErrorPath = "/tmp/aerospace.error.log";
+    };
+  };
+
+  launchd.agents."sketchybar" = {
+    enable = true;
+    config = {
+      ProgramArguments = [
+        "${lib.getExe sketchybar-config.packages.aarch64-darwin.sketchybar-standalone}"
+      ];
+      RunAtLoad = true;
+      KeepAlive = true;
+      StandardOutPath = "/tmp/sketchybar.log";
+      StandardErrorPath = "/tmp/sketchybar.error.log";
     };
   };
 

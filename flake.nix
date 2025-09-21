@@ -42,6 +42,10 @@
       # url = "git+file:///${builtins.toString ./.}/home/programs/aerospace";
       flake = true;
     };
+    sketchybar-config = {
+      url = "path:./home/programs/sketchybar";
+      flake = true;
+    };
     darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
   };
 
@@ -56,6 +60,7 @@
     home-manager,
     darwin,
     pwaerospace, # aerospace, sketchybar, borders
+    sketchybar-config,
     darwin-custom-icons,
     ...
   }: let

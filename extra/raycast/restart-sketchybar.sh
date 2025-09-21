@@ -2,8 +2,8 @@
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title Reload sketchybar
-# @raycast.mode silent
+# @raycast.title Restart SketchyBar
+# @raycast.mode inline
 
 # Optional parameters:
 # @raycast.icon icon.png
@@ -13,5 +13,7 @@
 # @raycast.authorURL https://raycast.com/tnixc
 
 export USER='tnixc'
-/run/current-system/sw/bin/sketchybar --reload
+
+# Use sketchybar-standalone (now available in system PATH)
+sketchybar-standalone
 

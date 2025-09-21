@@ -1,11 +1,13 @@
 {
   pkgs,
   pwaerospace,
+  sketchybar-config,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     pwaerospace.packages.aarch64-darwin.aerospace-standalone
+    sketchybar-config.packages.aarch64-darwin.sketchybar-standalone
 
     # dev tools
     pueue

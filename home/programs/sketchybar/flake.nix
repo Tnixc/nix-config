@@ -107,6 +107,9 @@
           sketchybar-config
         ];
         nativeBuildInputs = [pkgs.makeBinaryWrapper];
+        meta = {
+          mainProgram = "sketchybar-standalone";
+        };
       };
 
       packages.default = packages.sketchybar-standalone;
