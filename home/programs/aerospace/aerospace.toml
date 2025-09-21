@@ -9,18 +9,13 @@ after-login-command = [
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-    # Before starting everything up, kill dependent apps so they can refresh configs
-    # ... this is killing things started below so no bueno...
-    #'exec-and-forget killall -q sketchybar borders',
-
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
-    'exec-and-forget BORDERSBIN active_color=0xff007AFF inactive_color=0xff494d64 width=6.0',
-    'exec-and-forget SKETCHYBARBIN -c NIXPATHTOSKETCHYCONFIG',
-    'exec-and-forget SKETCHYBARBIN --trigger aerospace_started',
+    'exec-and-forget borders active_color=0xff007AFF inactive_color=0xff494d64 width=6.0',
+    'exec-and-forget sketchybar --trigger aerospace_started',
 ]
 exec-on-workspace-change = ['/bin/bash', '-c',
-  'SKETCHYBARBIN --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
+  'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE'
 ]
 
 # Start AeroSpace at login
@@ -253,4 +248,3 @@ backspace = ['close-all-windows-but-current', 'mode main']
 [[on-window-detected]]
 if.app-id = "com.hnc.Discord"
 run = "move-node-to-workspace 9"
-

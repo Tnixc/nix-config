@@ -5,7 +5,7 @@
 }: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    pwaerospace.packages.aarch64-darwin.pwaerospace
+    pwaerospace.packages.aarch64-darwin.aerospace-standalone
 
     # dev tools
     pueue

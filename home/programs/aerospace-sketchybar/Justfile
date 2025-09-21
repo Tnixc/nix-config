@@ -1,5 +1,0 @@
-start:
-    touch nohup.out
-    rm nohup.out
-    nohup nix run &
-    disown $(ps | grep /bin/pwaerospace | cut -d' ' -f1)

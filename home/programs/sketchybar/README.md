@@ -1,12 +1,12 @@
-# README
+# Sketchybar Configuration
 
 ## Goal
 
-My goal with this repo is to use Aerospace and Sketchybar together where their configs and versions are interdependent and I want reproducible working setups.  I want the sketchybar setup to be reasonably fast so I want it to use the lua interface instead of the bash madness.  And I want the whole mess to be largely outside of my system files so as not to overly pollute my already complicated setup [there](https://github.com/zmre/nix-config).
+My goal with this repo is to create a standalone Sketchybar configuration that's reproducible and performant. I want the sketchybar setup to be reasonably fast so I want it to use the lua interface instead of the bash madness. This configuration can work with any window manager (including Aerospace) and is largely outside of my system files so as not to overly pollute my already complicated setup [there](https://github.com/zmre/nix-config).
 
 ## Starting Point
 
-To start with, I'm using the [creator of Sketchybar's dotfiles](https://github.com/FelixKratz/dotfiles/tree/e27673f07ff41eb6a4816daabb79b0a5e837a105/.config/sketchybar), `FelixKratz`, as my config, but he uses yabai and isn't in nix-land, so I'm switching yabai for Aerospace and packaging it all.  The major change to his configs are just the addition of `aerospace.lua` as an alternative to `spaces.lua`.
+To start with, I'm using the [creator of Sketchybar's dotfiles](https://github.com/FelixKratz/dotfiles/tree/e27673f07ff41eb6a4816daabb79b0a5e837a105/.config/sketchybar), `FelixKratz`, as my config. I've adapted it to work with Aerospace instead of yabai and packaged it all in Nix. The major change to his configs is the addition of `aerospace.lua` as an alternative to `spaces.lua` to handle workspace management.
 
 ## Disclaimer
 
@@ -33,7 +33,7 @@ At present I tweak and test by cloning this repo and then just locally doing:
 
 `nix run`
 
-That will kill off any running processes and start them back up fresh with new configs. It holds the apps in the foreground and print statements go to the console.  I'll add directions for how to include this from your system config later.
+That will kill off any running sketchybar processes and start them back up fresh with new configs. It holds the app in the foreground and print statements go to the console. For use with Aerospace, make sure to have the separate Aerospace configuration running as well.
 
 ## Home manager
 
@@ -43,11 +43,11 @@ In my system config, I install this flake and then have it launch on startup by 
   launchd = {
     # enable by default is true only on darwin
     agents = {
-      "com.zmre.aerospace-sketchy" = {
+      "com.zmre.sketchybar" = {
         enable = true;
         config = {
-          Label = "com.zmre.aerospace-sketchy";
-          ProgramArguments = ["${pkgs.aerospace-sketchy}/bin/pwaerospace"];
+          Label = "com.zmre.sketchybar";
+          ProgramArguments = ["${pkgs.sketchybar-standalone}/bin/sketchybar-standalone"];
           RunAtLoad = true;
           KeepAlive = true;
         };
@@ -56,9 +56,11 @@ In my system config, I install this flake and then have it launch on startup by 
   };
 ```
 
+Note: This configuration expects Aerospace to be running separately if you want workspace integration. The Aerospace configuration should be set up independently.
+
 ## TODO
 
-### Flake
+### Sketchybar
 
 * [ ] Change build stuff so the sketchybar compiled C files are actually compiled instead of being checked in as binaries
   * 2025-02-13 checked and the helpers haven't been updated in a long time, but for future me:
@@ -66,9 +68,15 @@ In my system config, I install this flake and then have it launch on startup by 
   * Above repo is what I want to fetch and build from. Problem is, his dotfiles change often but the helpers don't and that's going to create a lot of unnecessary rebuilds.  not a huge deal, but annoying.
   * Alternate idea: would it be idiotic to make my own helpers, but in rust?  Then I could make a weather one, too?
 
-### Sketchybar
+### Window Manager Integration
 
-* [ ] Moving a workspace to a different screen doesn't trigger any sort of update right now. Maybe the events above?
+* [ ] Moving a workspace to a different screen doesn't trigger any sort of update right now when using with Aerospace. Need to investigate workspace change events.
 * [ ] the sketchybar-app-fonts are great for many apps, but I keep finding ones that are missing (eg, Photos, Ghostty, etc) so is there a way for me to use icons from elsewhere if the repo doesn't support something?  
   * Or do I need a fork and to make my own icons?  I've seen PRs that are languishing and will need to see if that continues. Update: I submitted a PR that's languishing
-* [ ] When I go to macos full screen, it uses Mac spaces. But I've disabled keys and swipes for getting into/out of those spaces which means I can't navigate to those windows. If the app has only one window that's full screen, cmd-tab works, but if this is Preview, for example, and one PDF is full screen and another isn't, I might have a hard time getting to the full screen one. Should I disable full screen app options outside of what aerospace does?  Or bring back a way to access them?
+* [ ] When using with Aerospace and going to macOS full screen, it uses Mac spaces. But I've disabled keys and swipes for getting into/out of those spaces which means I can't navigate to those windows. If the app has only one window that's full screen, cmd-tab works, but if this is Preview, for example, and one PDF is full screen and another isn't, I might have a hard time getting to the full screen one. Should I disable full screen app options outside of what aerospace does?  Or bring back a way to access them?
+
+### Standalone Features
+
+* [ ] Make sketchybar work well without any window manager
+* [ ] Add configuration options for different window manager integrations
+* [ ] Improve error handling when aerospace/window manager is not available

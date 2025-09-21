@@ -118,35 +118,17 @@
         "type": "github"
       }
     },
-    "promise-lua": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1603853302,
-        "narHash": "sha256-LNNLTAAEPIalRSjC6z8QTkhnmwpFAHSlwxuFxb9r2OE=",
-        "owner": "pyericz",
-        "repo": "promise-lua",
-        "rev": "20d2ab1bb6aa398fe06ba597c943077a72c22451",
-        "type": "github"
-      },
-      "original": {
-        "owner": "pyericz",
-        "repo": "promise-lua",
-        "type": "github"
-      }
-    },
     "pwaerospace": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_2",
-        "promise-lua": "promise-lua",
-        "sbarlua": "sbarlua"
+        "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "path": "./home/programs/aerospace-sketchybar",
+        "path": "./home/programs/aerospace",
         "type": "path"
       },
       "original": {
-        "path": "./home/programs/aerospace-sketchybar",
+        "path": "./home/programs/aerospace",
         "type": "path"
       },
       "parent": []
@@ -159,22 +141,6 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-darwin": "nixpkgs-darwin",
         "pwaerospace": "pwaerospace"
-      }
-    },
-    "sbarlua": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1723484726,
-        "narHash": "sha256-F0UfNxHM389GhiPQ6/GFbeKQq5EvpiqQdvyf7ygzkPg=",
-        "owner": "FelixKratz",
-        "repo": "SbarLua",
-        "rev": "437bd2031da38ccda75827cb7548e7baa4aa9978",
-        "type": "github"
-      },
-      "original": {
-        "owner": "FelixKratz",
-        "repo": "SbarLua",
-        "type": "github"
       }
     },
     "systems": {

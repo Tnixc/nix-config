@@ -1,0 +1,13 @@
+start:
+    touch nohup.out
+    rm nohup.out
+    nix run &
+    disown $(ps | grep sketchybar | cut -d' ' -f1)
+
+stop:
+    killall -q sketchybar || echo "No sketchybar processes running"
+
+restart: stop start
+
+status:
+    ps aux | grep sketchybar | grep -v grep || echo "No sketchybar processes running"

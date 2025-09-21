@@ -36,10 +36,10 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
 
-    # pwaerospace.url = "path:./home/programs/aerospace-sketchybar";
+    # pwaerospace.url = "path:./home/programs/aerospace";
     pwaerospace = {
-      url = "path:./home/programs/aerospace-sketchybar";
-      # url = "git+file:///${builtins.toString ./.}/home/programs/aerospace-sketchybar";
+      url = "path:./home/programs/aerospace";
+      # url = "git+file:///${builtins.toString ./.}/home/programs/aerospace";
       flake = true;
     };
     darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";

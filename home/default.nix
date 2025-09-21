@@ -40,7 +40,7 @@ in {
     enable = true;
     config = {
       ProgramArguments = [
-        "${lib.getExe' pwaerospace.packages.aarch64-darwin.pwaerospace "pwaerospace"}"
+        "${lib.getExe pwaerospace.packages.aarch64-darwin.aerospace-standalone}"
         # "${aerospace-flake.packages.aarch64-darwin.pwaerospace}/bin/pwaerospace"
       ];
       RunAtLoad = true;

@@ -1,0 +1,13 @@
+start:
+    touch nohup.out
+    rm nohup.out
+    nix run &
+    disown $(ps | grep AeroSpace | cut -d' ' -f1)
+
+stop:
+    killall -q AeroSpace aerospace || echo "No AeroSpace processes running"
+
+restart: stop start
+
+status:
+    ps aux | grep -E "(AeroSpace|aerospace)" | grep -v grep || echo "No AeroSpace processes running"

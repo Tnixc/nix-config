@@ -1,5 +1,5 @@
 {
-  description = "A config for aerospace and sketchybar that's reproducible and performant";
+  description = "A sketchybar config that's reproducible and performant";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -87,64 +87,40 @@
         require("sbar-config-libs/init")
       '';
 
-      aerospace-config = pkgs.writeTextFile {
-        name = "aerospace-config";
-        destination = "/share/aerospace.toml";
-        text =
-          builtins.replaceStrings
-          ["NIXPATHTOSKETCHYCONFIG" "NIXPATHTOBINARIES" "SKETCHYBARBIN" "AEROSPACEBIN" "BORDERSBIN"]
-          [
-            "${sketchybar-config}/bin/sketchybarrc"
-            "${l}/bin:${pkgs.sketchybar}/bin:${pkgs.jankyborders}/bin:${pkgs.aerospace}/bin"
-            "${pkgs.sketchybar}/bin/sketchybar"
-            "${pkgs.aerospace}/bin/aerospace"
-            "${pkgs.jankyborders}/bin/borders"
-          ]
-          (pkgs.lib.readFile ./aerospace.toml);
-      };
-
-      aerospace-launcher = pkgs.writeShellApplication {
-        name = "pwaerospace";
+      sketchybar-launcher = pkgs.writeShellApplication {
+        name = "sketchybar-standalone";
         text = ''
-          echo "killing..."
-          killall -q AeroSpace aerospace sketchybar borders || echo "No processes running"
-          echo "launching..."
-          ${pkgs.aerospace}/Applications/AeroSpace.app/Contents/MacOS/AeroSpace --config-path ${aerospace-config}/share/aerospace.toml
+          echo "Stopping any running sketchybar instance..."
+          killall -q sketchybar || echo "No sketchybar processes running"
+          echo "Starting sketchybar..."
+          ${pkgs.sketchybar}/bin/sketchybar -c ${sketchybar-config}/bin/sketchybarrc
         '';
       };
     in rec {
-      packages.pwaerospace = pkgs.symlinkJoin {
-        name = "pwaerospace-full";
+      packages.sketchybar-standalone = pkgs.symlinkJoin {
+        name = "sketchybar-standalone";
         paths = [
-          pkgs.aerospace
           pkgs.sketchybar
           pkgs.sketchybar-app-font
-          pkgs.jankyborders
           sbar-config-libs
-          aerospace-launcher
+          sketchybar-launcher
           sketchybar-config
-          aerospace-config
         ];
         nativeBuildInputs = [pkgs.makeBinaryWrapper];
-        postBuild = ''
-          wrapProgramBinary $out/Applications/AeroSpace.app/Contents/MacOS/AeroSpace \
-            --add-flags "--config-path ${aerospace-config}/share/aerospace.toml"
-        '';
       };
 
-      packages.default = packages.pwaerospace;
+      packages.default = packages.sketchybar-standalone;
 
-      apps.pwaerospace = flake-utils.lib.mkApp {
-        drv = packages.pwaerospace;
-        name = "pwaerospace";
-        exePath = "/bin/pwaerospace";
-        # mainProgram = "pwaerospace";
+      apps.sketchybar-standalone = flake-utils.lib.mkApp {
+        drv = packages.sketchybar-standalone;
+        name = "sketchybar-standalone";
+        exePath = "/bin/sketchybar-standalone";
       };
 
-      apps.default = apps.pwaerospace;
+      apps.default = apps.sketchybar-standalone;
 
       devShell = pkgs.mkShell {
-        buildInputs = [l packages.pwaerospace pkgs.aerospace pkgs.jankyborders pkgs.sketchybar];
+        buildInputs = [l packages.sketchybar-standalone pkgs.sketchybar];
       };
     });
 }
