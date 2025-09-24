@@ -68,9 +68,6 @@
         installPhase = ''
           mkdir -p $out/share/lua/5.4/sbar-config-libs
           cp -r sbar-config-libs $out/share/lua/5.4/
-          for luaFile in $(find $out/share/lua/5.4/ -type f -name "*.lua"); do
-            substituteInPlace "$luaFile" --replace "AEROSPACEBIN" "${pkgs.aerospace}/bin/aerospace"
-          done
         '';
       };
 
