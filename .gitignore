@@ -10,3 +10,4 @@ home/config/zed/prompts/*
 .crush/
 
 
+home/config/zed/prompts/prompts-library-db.0.mdb/lock.mdb
