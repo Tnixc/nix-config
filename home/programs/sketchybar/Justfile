@@ -1,5 +1,5 @@
 start:
-    nix run &
+    nix run
 
 stop:
     killall -q sketchybar || echo "No sketchybar processes running"

@@ -167,6 +167,7 @@
   },
   "agent": {
     // Whether to show the assistant panel button in the status bar.
+    "default_profile": "ask",
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "copilot_chat",

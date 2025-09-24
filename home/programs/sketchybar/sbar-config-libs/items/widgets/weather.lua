@@ -1,87 +1,91 @@
 local colors = require("sbar-config-libs/colors")
 local icons = require("sbar-config-libs/icons")
 local settings = require("sbar-config-libs/settings")
+local weather_config = require("sbar-config-libs/weather_config")
 
+-- WeatherAPI condition codes to weather conditions mapping
 local function get_weather_emoji(code)
-  local WWO_CODE = {
-    ["113"] = "Sunny",
-    ["116"] = "PartlyCloudy",
-    ["119"] = "Cloudy",
-    ["122"] = "VeryCloudy",
-    ["143"] = "Fog",
-    ["176"] = "LightShowers",
-    ["179"] = "LightSleetShowers",
-    ["182"] = "LightSleet",
-    ["185"] = "LightSleet",
-    ["200"] = "ThunderyShowers",
-    ["227"] = "LightSnow",
-    ["230"] = "HeavySnow",
-    ["248"] = "Fog",
-    ["260"] = "Fog",
-    ["263"] = "LightShowers",
-    ["266"] = "LightRain",
-    ["281"] = "LightSleet",
-    ["284"] = "LightSleet",
-    ["293"] = "LightRain",
-    ["296"] = "LightRain",
-    ["299"] = "HeavyShowers",
-    ["302"] = "HeavyRain",
-    ["305"] = "HeavyShowers",
-    ["308"] = "HeavyRain",
-    ["311"] = "LightSleet",
-    ["314"] = "LightSleet",
-    ["317"] = "LightSleet",
-    ["320"] = "LightSnow",
-    ["323"] = "LightSnowShowers",
-    ["326"] = "LightSnowShowers",
-    ["329"] = "HeavySnow",
-    ["332"] = "HeavySnow",
-    ["335"] = "HeavySnowShowers",
-    ["338"] = "HeavySnow",
-    ["350"] = "LightSleet",
-    ["353"] = "LightShowers",
-    ["356"] = "HeavyShowers",
-    ["359"] = "HeavyRain",
-    ["362"] = "LightSleetShowers",
-    ["365"] = "LightSleetShowers",
-    ["368"] = "LightSnowShowers",
-    ["371"] = "HeavySnowShowers",
-    ["374"] = "LightSleetShowers",
-    ["377"] = "LightSleet",
-    ["386"] = "ThunderyShowers",
-    ["389"] = "ThunderyHeavyRain",
-    ["392"] = "ThunderySnowShowers",
-    ["395"] = "HeavySnowShowers",
+  local WEATHER_API_CONDITIONS = {
+    -- Map WeatherAPI condition codes to weather descriptions
+    [1000] = "Sunny", -- Sunny / Clear
+    [1003] = "PartlyCloudy", -- Partly cloudy
+    [1006] = "Cloudy", -- Cloudy
+    [1009] = "VeryCloudy", -- Overcast
+    [1030] = "Fog", -- Mist
+    [1063] = "LightShowers", -- Patchy rain possible
+    [1066] = "LightSnow", -- Patchy snow possible
+    [1069] = "LightSleet", -- Patchy sleet possible
+    [1072] = "LightSleet", -- Patchy freezing drizzle possible
+    [1087] = "ThunderyShowers", -- Thundery outbreaks possible
+    [1114] = "HeavySnow", -- Blowing snow
+    [1117] = "HeavySnow", -- Blizzard
+    [1135] = "Fog", -- Fog
+    [1147] = "Fog", -- Freezing fog
+    [1150] = "LightRain", -- Patchy light drizzle
+    [1153] = "LightRain", -- Light drizzle
+    [1168] = "LightSleet", -- Freezing drizzle
+    [1171] = "LightSleet", -- Heavy freezing drizzle
+    [1180] = "LightRain", -- Patchy light rain
+    [1183] = "LightRain", -- Light rain
+    [1186] = "HeavyRain", -- Moderate rain at times
+    [1189] = "HeavyRain", -- Moderate rain
+    [1192] = "HeavyRain", -- Heavy rain at times
+    [1195] = "HeavyRain", -- Heavy rain
+    [1198] = "LightSleet", -- Light freezing rain
+    [1201] = "LightSleet", -- Moderate or heavy freezing rain
+    [1204] = "LightSleet", -- Light sleet
+    [1207] = "LightSleet", -- Moderate or heavy sleet
+    [1210] = "LightSnow", -- Patchy light snow
+    [1213] = "LightSnow", -- Light snow
+    [1216] = "HeavySnow", -- Patchy moderate snow
+    [1219] = "HeavySnow", -- Moderate snow
+    [1222] = "HeavySnow", -- Patchy heavy snow
+    [1225] = "HeavySnow", -- Heavy snow
+    [1237] = "LightSleet", -- Ice pellets
+    [1240] = "LightShowers", -- Light rain shower
+    [1243] = "HeavyShowers", -- Moderate or heavy rain shower
+    [1246] = "HeavyShowers", -- Torrential rain shower
+    [1249] = "LightSleetShowers", -- Light sleet showers
+    [1252] = "LightSleetShowers", -- Moderate or heavy sleet showers
+    [1255] = "LightSnowShowers", -- Light snow showers
+    [1258] = "HeavySnowShowers", -- Moderate or heavy snow showers
+    [1261] = "LightSleetShowers", -- Light showers of ice pellets
+    [1264] = "LightSleetShowers", -- Moderate or heavy showers of ice pellets
+    [1273] = "ThunderyShowers", -- Patchy light rain with thunder
+    [1276] = "ThunderyHeavyRain", -- Moderate or heavy rain with thunder
+    [1279] = "ThunderySnowShowers", -- Patchy light snow with thunder
+    [1282] = "HeavySnowShowers", -- Moderate or heavy snow with thunder
   }
-  local WEATHER_SYMBOL = {
+
+  local WEATHER_SYMBOLS = {
     ["Unknown"] = "􀿩 ",
-    ["Cloudy"] = "􀇃 ",
-    ["Fog"] = "􀇋 ",
-    ["HeavyRain"] = "􀇇 ",
-    ["HeavyShowers"] = "􀇇 ",
-    ["HeavySnow"] = "􀇥 ",
-    ["HeavySnowShowers"] = "􀇥 ",
-    ["LightRain"] = "􀇗 ",
-    ["LightShowers"] = "􀇗 ",
-    ["LightSleet"] = "􀇑 ",
-    ["LightSleetShowers"] = "🌧",
-    ["LightSnow"] = "􀇏 ",
-    ["LightSnowShowers"] = "􀇏 ",
-    ["PartlyCloudy"] = "􀇕 ",
     ["Sunny"] = "􀆮 ",
-    ["ThunderyHeavyRain"] = "􀇟 ",
-    ["ThunderyShowers"] = "􀇙 ",
-    ["ThunderySnowShowers"] = "􀇟 ",
+    ["PartlyCloudy"] = "􀇕 ",
+    ["Cloudy"] = "􀇃 ",
     ["VeryCloudy"] = "􀇣 ",
+    ["Fog"] = "􀇋 ",
+    ["LightRain"] = "􀇗 ",
+    ["HeavyRain"] = "􀇇 ",
+    ["LightShowers"] = "􀇗 ",
+    ["HeavyShowers"] = "􀇇 ",
+    ["LightSleet"] = "􀇑 ",
+    ["LightSleetShowers"] = "􀇏",
+    ["LightSnow"] = "􀇏 ",
+    ["HeavySnow"] = "􀇥 ",
+    ["LightSnowShowers"] = "􀇏 ",
+    ["HeavySnowShowers"] = "􀇥 ",
+    ["ThunderyShowers"] = "􀇙 ",
+    ["ThunderyHeavyRain"] = "􀇟 ",
+    ["ThunderySnowShowers"] = "􀇟 ",
   }
-  local code_str = tostring(code)
-  local condition = WWO_CODE[code_str]
-  return WEATHER_SYMBOL[condition] or WEATHER_SYMBOL["Unknown"]
+
+  local condition = WEATHER_API_CONDITIONS[code]
+  return WEATHER_SYMBOLS[condition] or WEATHER_SYMBOLS["Unknown"]
 end
 
 local weather_high = sbar.add("item", "widgets.weather_high", {
   position = "right",
-  update_freq = 180,
+  update_freq = weather_config.update_freq,
   padding_left = -8,
   width = 0,
   icon = {
@@ -147,25 +151,65 @@ weather_high:subscribe({ "forced", "routine", "system_woke" }, function(_)
       string = "...",
     },
   })
-  sbar.exec(
-    "curl wttr.in/Waterloo+Ontario?format=j2 | jq '{high: .weather[0].maxtempC, low: .weather[0].mintempC, current: .current_condition[0].temp_C, weatherCode: .current_condition[0].weatherCode}'",
-    function(res)
+
+  -- Check if API key is configured
+  if not weather_config.api_key then
+    print("Error: WeatherAPI key not configured in weather_config.lua")
+    weather_current:set({
+      label = { string = "ERR" },
+      icon = { string = "⚠️ " },
+    })
+    weather_high:set({ label = { string = "ERR" } })
+    weather_low:set({ label = { string = "ERR" } })
+    return
+  end
+
+  -- Get current date for history API (today)
+  local today = os.date("%Y-%m-%d")
+
+  -- Construct the weather API commands
+  local history_cmd = string.format(
+    "curl -s -X GET 'https://api.weatherapi.com/v1/history.json?key=%s&q=%s&dt=%s'",
+    weather_config.api_key,
+    weather_config.location,
+    today
+  )
+  print(history_cmd)
+
+  local current_cmd = string.format(
+    "curl -s -X GET 'https://api.weatherapi.com/v1/current.json?key=%s&q=%s&aqi=no'",
+    weather_config.api_key,
+    weather_config.location
+  )
+
+  -- Execute history command first for high/low temps
+  sbar.exec(history_cmd, function(history_res)
+    if
+      history_res
+      and history_res.forecast.forecastday[1].day.maxtemp_c
+      and history_res.forecast.forecastday[1].day.mintemp_c
+    then
       weather_high:set({
-        label = {
-          string = res.high .. "°",
-        },
+        label = { string = history_res.forecast.forecastday[1].day.maxtemp_c .. "°" },
       })
       weather_low:set({
-        label = {
-          string = res.low .. "°",
-        },
-      })
-      weather_current:set({
-        label = {
-          string = res.current .. "°",
-        },
-        icon = { string = get_weather_emoji(res.weatherCode) },
+        label = { string = history_res.forecast.forecastday[1].day.mintemp_c .. "°" },
       })
     end
-  )
+
+    -- Then execute current weather command
+    sbar.exec(current_cmd, function(current_res)
+      if current_res and current_res.current.temp_c and current_res.current.condition.code then
+        weather_current:set({
+          label = { string = current_res.current.temp_c .. "°" },
+          icon = { string = get_weather_emoji(current_res.current.condition.code) },
+        })
+      else
+        weather_current:set({
+          label = { string = "ERR" },
+          icon = { string = "⚠️ " },
+        })
+      end
+    end)
+  end)
 end)

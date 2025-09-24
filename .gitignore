@@ -6,5 +6,9 @@ result
 .git-old
 nohup.out
 conversations/
-home/config/zed/prompts/
+home/config/zed/prompts/*
 .crush/
+
+weather_config.lua
+
+
