@@ -68,6 +68,8 @@
     micropython
     rshell
 
+    git-crypt
+
     # media / others
     ani-cli
     mangal
