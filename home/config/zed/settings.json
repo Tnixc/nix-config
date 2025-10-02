@@ -33,7 +33,7 @@
   //         },
   "buffer_line_height": "comfortable",
   // The name of a font to use for rendering text in the UI
-  "ui_font_family": "BerkeleyMono Nerd Font",
+  "ui_font_family": "Maple Mono NF",
   // The OpenType features to enable for text in the UI
   "ui_font_features": {
     // Disable ligatures:
@@ -167,7 +167,33 @@
   },
   "agent": {
     // Whether to show the assistant panel button in the status bar.
-    "default_profile": "ask",
+    "profiles": {
+      "all": {
+        "name": "All",
+        "tools": {
+          "open": true,
+          "copy_path": true,
+          "create_directory": true,
+          "delete_path": true,
+          "diagnostics": true,
+          "edit_file": true,
+          "fetch": true,
+          "list_directory": true,
+          "project_notifications": true,
+          "move_path": true,
+          "now": true,
+          "find_path": true,
+          "read_file": true,
+          "grep": true,
+          "terminal": true,
+          "thinking": true,
+          "web_search": true
+        },
+        "enable_all_context_servers": true,
+        "context_servers": {}
+      }
+    },
+    "default_profile": "all",
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "copilot_chat",
@@ -175,7 +201,7 @@
     },
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4"
+      "model": "claude-sonnet-4.5"
     },
     "button": true,
     // Where to dock the assistant. Can be 'left', 'right' or 'bottom'.

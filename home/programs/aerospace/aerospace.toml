@@ -31,7 +31,7 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 accordion-padding = 50
 
 # Possible values: tiles|accordion
-default-root-container-layout = 'accordion'
+default-root-container-layout = 'tiles'
 
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
@@ -95,13 +95,14 @@ outer.right =      8
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 # cmd-alt-ctrl-enter = 'exec-and-forget kitty --single-instance -d ~'
 # You can uncomment the following lines to open up terminal with alt + enter shortcut (like in i3)
-cmd-alt-ctrl-enter = 'exec-and-forget /opt/homebrew/bin/kitty --single-instance -d ~'
+# cmd-alt-ctrl-enter = 'exec-and-forget /opt/homebrew/bin/kitty --single-instance -d ~'
 cmd-alt-ctrl-f = 'fullscreen'
 cmd-alt-ctrl-z = 'balance-sizes'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
 cmd-ctrl-alt-slash = 'layout tiles horizontal vertical'
-cmd-ctrl-alt-alt-comma = 'layout accordion horizontal vertical'
+cmd-ctrl-alt-comma = 'layout accordion horizontal vertical'
+ctrl-comma = 'layout tiling floating'
 
 cmd-alt-ctrl-q = 'workspace prev'
 cmd-alt-ctrl-e = 'workspace next'
@@ -192,59 +193,57 @@ ctrl-shift-f10 = ['move-node-to-workspace 20', 'workspace 20']
 19 = ['secondary', 'main']
 20 = ['secondary', 'main']
 
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#mode
-ctrl-alt-cmd-semicolon = 'mode service'
-
-# 'service' binding mode declaration.
-# See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
-[mode.service.binding]
-h = ['join-with left', 'mode main']
-j = ['join-with down', 'mode main']
-k = ['join-with up', 'mode main']
-l = ['join-with right', 'mode main']
-esc = ['reload-config', 'mode main']
-r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-backspace = ['close-all-windows-but-current', 'mode main']
-
-# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-#s = ['layout sticky tiling', 'mode main']
-
-
 [[on-window-detected]]
+check-further-callbacks = true
 if.app-id = "net.imput.helium"
 run = "move-node-to-workspace 1"
 
 [[on-window-detected]]
+check-further-callbacks = true
 if.app-id = "net.kovidgoyal.kitty"
 run = "move-node-to-workspace 2"
 
 [[on-window-detected]]
+check-further-callbacks = true
 if.app-id = "com.apple.finder"
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
+check-further-callbacks = true
 if.app-id = "com.microsoft.VSCode"
 run = "move-node-to-workspace 4"
+
 [[on-window-detected]]
+check-further-callbacks = true
 if.app-id = "com.todesktop.230313mzl4w4u92"
 run = "move-node-to-workspace 4"
+
 [[on-window-detected]]
+check-further-callbacks = true
 if.app-id = "dev.zed.Zed-Preview"
 run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
+check-further-callbacks = true
 if.app-id = "md.obsidian"
 run = "move-node-to-workspace 3"
 
 [[on-window-detected]]
+check-further-callbacks = true
 if.app-id = "com.lukilabs.lukiapp"
 run = "move-node-to-workspace 8"
 
 [[on-window-detected]]
+check-further-callbacks = true
 if.app-id = "dev.vencord.vesktop"
 run = "move-node-to-workspace 9"
+
 [[on-window-detected]]
+check-further-callbacks = true
 if.app-id = "com.hnc.Discord"
 run = "move-node-to-workspace 9"
+
+[[on-window-detected]]
+check-further-callbacks = true
+run = "layout floating"
+

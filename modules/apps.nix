@@ -147,6 +147,8 @@
 
     # `brew install --cask`
     casks = [
+      "loop"
+      "chatgpt"
       "racket"
       "calibre"
       "parsec"

@@ -15,5 +15,5 @@
 export USER='tnixc'
 
 # Use sketchybar-standalone (now available in system PATH)
-sketchybar-standalone
+/run/current-system/sw/bin/sketchybar --reload
 
