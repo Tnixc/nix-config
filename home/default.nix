@@ -38,14 +38,14 @@ in {
   ];
 
   launchd.agents."aerospace" = {
-    enable = true;
+    enable = false;
     config = {
       ProgramArguments = [
         "${lib.getExe pwaerospace.packages.aarch64-darwin.aerospace-standalone}"
         # "${aerospace-flake.packages.aarch64-darwin.pwaerospace}/bin/pwaerospace"
       ];
-      RunAtLoad = true;
-      KeepAlive = true;
+      RunAtLoad = false;
+      KeepAlive = false;
       StandardOutPath = "/tmp/aerospace.log";
       StandardErrorPath = "/tmp/aerospace.error.log";
     };
