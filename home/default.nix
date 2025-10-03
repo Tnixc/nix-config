@@ -52,13 +52,13 @@ in {
   };
 
   launchd.agents."sketchybar" = {
-    enable = true;
+    enable = false;
     config = {
       ProgramArguments = [
         "${lib.getExe sketchybar-config.packages.aarch64-darwin.sketchybar-standalone}"
       ];
-      RunAtLoad = true;
-      KeepAlive = true;
+      RunAtLoad = false;
+      KeepAlive = false;
       StandardOutPath = "/tmp/sketchybar.log";
       StandardErrorPath = "/tmp/sketchybar.error.log";
     };

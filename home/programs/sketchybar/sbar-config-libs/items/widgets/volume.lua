@@ -70,7 +70,7 @@ local volume_slider = sbar.add("slider", popup_width, {
 
 volume_percent:subscribe("volume_change", function(env)
   local volume = tonumber(env.INFO)
-  sbar.exec("SwitchAudioSource -t output -c", function(result)
+  sbar.exec("/opt/homebrew/bin/SwitchAudioSource -t output -c", function(result)
     local current_audio_device = result:sub(1, -2)
     local icon
     if string.find(current_audio_device, "Headphone", 1, true) then

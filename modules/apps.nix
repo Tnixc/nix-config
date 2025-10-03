@@ -148,7 +148,6 @@
     # `brew install --cask`
     casks = [
       "loop"
-      "chatgpt"
       "racket"
       "calibre"
       "parsec"
@@ -177,7 +176,7 @@
       "craft"
       "yaak"
       "iina"
-      "tailscale"
+      "tailscale-app"
     ];
   };
 }
