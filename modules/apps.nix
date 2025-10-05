@@ -147,6 +147,7 @@
 
     # `brew install --cask`
     casks = [
+      "leader-key"
       "loop"
       "racket"
       "calibre"
@@ -158,6 +159,7 @@
       "steam"
       "tableplus"
       # "eloston-chromium"
+      "jordanbaird-ice"
       "google-chrome"
       "microsoft-edge"
       "reminders-menubar"
