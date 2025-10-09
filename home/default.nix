@@ -15,6 +15,17 @@
     {}
     configDirs;
 in {
+  home.file = linkConfigs [
+    "bat"
+    "nvim"
+    "zed"
+    "yabai"
+    "skhd"
+    "kitty"
+    "btop"
+    "karabiner"
+  ];
+
   # import sub modules
   imports = [
     ./programs/zsh.nix
@@ -26,16 +37,6 @@ in {
     ./programs/helix.nix
   ];
 
-  home.file = linkConfigs [
-    "bat"
-    "nvim"
-    "zed"
-    "yabai"
-    "skhd"
-    "kitty"
-    "btop"
-    "karabiner"
-  ];
 
   launchd.agents."aerospace" = {
     enable = false;

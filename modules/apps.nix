@@ -147,6 +147,7 @@
 
     # `brew install --cask`
     casks = [
+      "flashspace"
       "leader-key"
       "loop"
       "racket"

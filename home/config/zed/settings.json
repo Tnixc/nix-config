@@ -1,7 +1,7 @@
 {
   // The name of the Zed theme to use for the UI
   "icon_theme": "Clean VSCode Icon Theme",
-  "theme": "One Light",
+  "theme": "Vitesse Refined Dark",
   // The name of a base set of key bindings to use.
   // This setting can take four values, each named after another
   // text editor:
@@ -193,7 +193,7 @@
         "context_servers": {}
       }
     },
-    "default_profile": "all",
+    "default_profile": "write",
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "copilot_chat",
