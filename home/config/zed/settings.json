@@ -1,5 +1,17 @@
 {
   // The name of the Zed theme to use for the UI
+  "context_servers": {
+    "mcp-server-context7": {
+      "source": "extension",
+      "enabled": false,
+      "settings": {}
+    },
+    "mcp-server-exa-search": {
+      "source": "extension",
+      "enabled": true,
+      "settings": {}
+    }
+  },
   "icon_theme": "Clean VSCode Icon Theme",
   "theme": "Vitesse Refined Dark",
   // The name of a base set of key bindings to use.
@@ -201,7 +213,7 @@
     },
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "model": "gpt-5"
     },
     "button": true,
     // Where to dock the assistant. Can be 'left', 'right' or 'bottom'.

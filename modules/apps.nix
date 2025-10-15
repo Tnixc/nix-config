@@ -100,10 +100,13 @@
       "socsieng/tap"
       "sst/tap"
       "charmbracelet/tap"
+      "zegervdv/zathura"
     ];
 
     # `brew install`
     brews = [
+      "zathura-pdf-mupdf"
+      "zathura"
       "sst/tap/opencode"
       "charmbracelet/tap/crush"
       "emscripten"
@@ -147,6 +150,7 @@
 
     # `brew install --cask`
     casks = [
+      "zotero@beta"
       "flashspace"
       "leader-key"
       "loop"

@@ -1,0 +1,58 @@
+set selection-clipboard clipboard
+set guioptions none
+set scroll-step 1
+set scroll-hstep 1
+set zoom-step 1
+set smooth-scroll true
+set window-title-basename "true"
+set selection-clipboard "clipboard"
+
+set statusbar-basename          "true"
+set statusbar-home-tilde        "true"
+set statusbar-h-padding         "5"
+set statusbar-v-padding         "5"
+
+
+set incremental-search          "true"
+set adjust-open                 "best-fit"
+
+set statusbar-basename          "true"
+set statusbar-home-tilde        "true"
+
+set save_position               "true"
+set font                        "BerkeleyMono Nerd Font normal 20"
+
+map b adjust_window best-fit
+
+set recolor true
+set recolor-keephue true
+set recolor-darkcolor 		"#D8D6CA"
+set recolor-lightcolor          "#060606"
+
+set default-fg                rgba(200,200,200,1)
+set default-bg                rgba(10,10,10,1)
+set completion-bg             rgba(40,40,40,1)
+set completion-fg             rgba(200,200,200,1)
+set completion-highlight-bg   rgba(180,180,180,1)
+set completion-highlight-fg   rgba(30,30,30,1)
+set completion-group-bg       rgba(25,25,25,1)
+set completion-group-fg       rgba(200,200,200,1)
+set statusbar-fg              rgba(200,200,200,1)
+set statusbar-bg              rgba(20,20,20,1)
+set inputbar-fg               rgba(200,200,200,1)
+set inputbar-bg               rgba(30,30,30,1)
+set notification-bg           rgba(30,30,30,1)
+set notification-fg           rgba(200,200,200,1)
+set notification-error-bg     rgba(30,30,30,1)
+set notification-error-fg     rgba(160,160,160,1)
+set notification-warning-bg   rgba(30,30,30,1)
+set notification-warning-fg   rgba(220,220,220,1)
+set index-fg                  rgba(200,200,200,1)
+set index-bg                  rgba(30,30,30,1)
+set index-active-fg           rgba(200,200,200,1)
+set index-active-bg           rgba(50,50,50,1)
+set render-loading-bg         rgba(30,30,30,1)
+set render-loading-fg         rgba(200,200,200,1)
+set highlight-color           rgba(150,150,150,0.3)
+set highlight-fg              rgba(200,200,200,1)
+set highlight-active-color    rgba(180,180,180,0.3)

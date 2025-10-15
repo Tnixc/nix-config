@@ -24,6 +24,7 @@ in {
     "kitty"
     "btop"
     "karabiner"
+    "zathura"
   ];
 
   # import sub modules
