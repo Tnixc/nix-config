@@ -38,7 +38,6 @@ in {
     ./programs/helix.nix
   ];
 
-
   launchd.agents."aerospace" = {
     enable = false;
     config = {

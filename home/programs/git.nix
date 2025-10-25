@@ -8,7 +8,7 @@
     enable = true;
     lfs.enable = true;
 
-    userName = "Tnixc";
+    userName = "Enoch";
     userEmail = "tnixxc@gmail.com";
 
     extraConfig = {
