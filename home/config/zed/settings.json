@@ -8,7 +8,7 @@
     },
     "mcp-server-exa-search": {
       "source": "extension",
-      "enabled": true,
+      "enabled": false,
       "settings": {}
     }
   },
@@ -209,11 +209,11 @@
     "always_allow_tool_actions": true,
     "inline_assistant_model": {
       "provider": "copilot_chat",
-      "model": "gpt-5"
+      "model": "claude-sonnet-4.5"
     },
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5"
+      "provider": "openrouter",
+      "model": "z-ai/glm-4.5-air:free"
     },
     "button": true,
     // Where to dock the assistant. Can be 'left', 'right' or 'bottom'.

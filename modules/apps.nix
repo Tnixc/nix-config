@@ -77,6 +77,7 @@
     yt-dlp
     ffmpeg
 
+    python313Packages.mako
     # Font things
     python312Packages.fonttools
     fontforge-fonttools
