@@ -8,25 +8,10 @@
 }: let
   config-dir = "${config.home.homeDirectory}/nix-config/home/config";
   mkLink = config.lib.file.mkOutOfStoreSymlink;
-  # links a config directory
-  linkConfigs = configDirs:
-    builtins.foldl'
-    (acc: dir: acc // {".config/${dir}" = {source = mkLink "${config-dir}/${dir}";};})
-    {}
-    configDirs;
 in {
-  home.file = linkConfigs [
-    "bat"
-    "nvim"
-    "zed"
-    "yabai"
-    "skhd"
-    "kitty"
-    "ghostty"
-    "btop"
-    "karabiner"
-    "zathura"
-  ];
+  home.file = {
+    ".config/nvim" = {source = mkLink "${config-dir}/nvim";};
+  };
 
   # import sub modules
   imports = [
@@ -37,6 +22,15 @@ in {
     ./programs/lazygit.nix
     ./programs/direnv.nix
     ./programs/helix.nix
+    ./programs/bat.nix
+    ./programs/ghostty.nix
+    ./programs/kitty.nix
+    ./programs/btop.nix
+    ./programs/zed.nix
+    ./programs/yabai.nix
+    ./programs/skhd.nix
+    ./programs/karabiner.nix
+    ./programs/zathura.nix
   ];
 
   launchd.agents."aerospace" = {
