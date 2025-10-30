@@ -22,6 +22,7 @@ in {
     "yabai"
     "skhd"
     "kitty"
+    "ghostty"
     "btop"
     "karabiner"
     "zathura"

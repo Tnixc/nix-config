@@ -8,10 +8,10 @@
     enable = true;
     lfs.enable = true;
 
-    userName = "Tnixc";
-    userEmail = "tnixxc@gmail.com";
+    settings = {
+      user.name = "Tnixc";
+      user.email = "tnixxc@gmail.com";
 
-    extraConfig = {
       commit.gpgsign = true;
       core.pager = "delta --dark";
       core.autocrlf = "input";

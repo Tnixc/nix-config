@@ -1,0 +1,57 @@
+# Basic behavior
+shell-integration = detect
+scrollback-limit = 2000000000
+window-inherit-working-directory = false
+command = /run/current-system/sw/bin/fish
+
+# Font
+font-family = "BerkeleyMono Nerd Font"
+font-thicken = true
+font-size = 13.5
+font-feature = -calt,-liga,-dlig
+adjust-cell-height = 77%
+adjust-underline-thickness = 10%
+adjust-underline-position = 3
+
+# Cursor
+cursor-style = underline
+
+# macOS specific
+macos-option-as-alt = true
+macos-icon = holographic
+macos-titlebar-style = tabs
+
+# Colors (edo theme)
+foreground = #d8d6c9
+background = #121212
+selection-foreground = #DDDDDD
+selection-background = #333333
+cursor-color = #c97d6e
+cursor-text = #000000
+
+# Palette
+palette = 0=#232323
+palette = 1=#cb7676
+palette = 2=#80a665
+palette = 3=#cc9b70
+palette = 4=#687eaa
+palette = 5=#bc76c1
+palette = 6=#5ea994
+palette = 7=#b2b0a6
+palette = 8=#333333
+palette = 9=#cb7676
+palette = 10=#80a665
+palette = 11=#cc9b70
+palette = 12=#687eaa
+palette = 13=#bc76c1
+palette = 14=#5ea994
+palette = 15=#999895
+
+# Transparency
+background-opacity = 0.95
+background-blur-radius = 24
+alpha-blending = native
+window-colorspace = display-p3
+
+# Window title
+window-title-font-family = "BerkeleyMono Nerd Font"
