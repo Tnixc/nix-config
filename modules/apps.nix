@@ -45,7 +45,7 @@
     just
     dua
 
-    # Languages
+    # languages and runtimes
     lua
     elixir
     python3
@@ -67,22 +67,26 @@
     ninja
     micropython
     rshell
+    conan
 
-    git-crypt
-
-    # media / others
+    # media
     ani-cli
     mangal
     aria2
     yt-dlp
     ffmpeg
 
+    # python
     python313Packages.mako
-    # Font things
+
+    # Font Tools
     python312Packages.fonttools
     fontforge-fonttools
     brotli
     zopfli
+
+    # misc
+    git-crypt
   ];
 
   homebrew = {
@@ -102,89 +106,145 @@
       "sst/tap"
       "charmbracelet/tap"
       "zegervdv/zathura"
+      "keith/formulae"
+      "mmazzarolo/formulae"
+      "supabase/tap"
     ];
 
     # `brew install`
     brews = [
-      "zathura-pdf-mupdf"
-      "zathura"
-      "sst/tap/opencode"
-      "charmbracelet/tap/crush"
-      "emscripten"
-      "deno"
-      "supabase/tap/supabase"
-      "jupyterlab"
-      "node"
-      "neovim"
-      "nowplaying-cli"
-      "switchaudio-osx"
-      "lua"
-      "brightness"
-      "macos-trash"
-      "sendkeys"
-      "dprint"
-      "yazi"
-      "spotify_player"
-      "zig"
-      "openssl"
-      "ghc"
-      "opam"
-      "gnupg"
-      "rustywind"
-      "vercel-cli"
-      "swift-format"
-      "coreutils"
-      "readline"
+      # compression
       "xz"
       "zlib"
-      "llvm"
-      "ninja"
+
+      # system utils
+      "brightness"
+      "coreutils"
       "colima"
-      "pdfcpu"
-      "qpdf"
+      "dua-cli"
+      "lsusb"
+      "macos-trash"
+      "switchaudio-osx"
+
+      # dev tools
+      "clang-format"
+      "cmake"
       "cpdf"
-      "xcodegen"
-      "swiftlint"
-      "swiftformat"
+      "dprint"
+      "git-lfs"
+      "gitui"
+      "gnupg"
+      "just"
+      "llvm"
+      "neovim"
+      "nmap"
+      "pdfcpu"
+      "protobuf"
+      "qpdf"
       "xcbeautify"
+      "xcodegen"
+      "yazi"
+      "zig"
+
+      # languages and runtimes
+      "cocoapods"
+      "deno"
+      "emscripten"
+      "ghc"
+      "lua"
+      "node"
+      "opam"
+      "python@3.13"
+
+      # graphics and libraries
+      "glfw"
+      "glm"
+      "glslang"
+      "libavif"
+      "libsoundio"
+      "raylib"
+      "sdl2"
+      "spirv-tools"
+
+      # utilities
+      "jupyterlab"
+      "nowplaying-cli"
+      "vercel-cli"
+      "woff2"
+
+      # build tools
+      "ninja"
+
+      # media and audio
+      "sherlock"
+      "spotify_player"
+      "rustywind"
+      "swift-format"
+      "swiftformat"
+      "swiftlint"
+
+      # taps
+      "charmbracelet/tap/crush"
+      "socsieng/tap/sendkeys"
+      "sst/tap/opencode"
+      "supabase/tap/supabase"
+      "zegervdv/zathura/zathura"
+      "zegervdv/zathura/zathura-pdf-mupdf"
     ];
 
     # `brew install --cask`
     casks = [
-      "zotero@beta"
-      "flashspace"
-      "leader-key"
-      "loop"
-      "racket"
-      "calibre"
-      "parsec"
-      "spotify"
-      "cursor"
+      # productivity
+      "alt-tab"
       "hammerspoon"
-      "obsidian"
-      "steam"
-      "tableplus"
-      # "eloston-chromium"
       "jordanbaird-ice"
+      "kitty"
+      "leader-key"
+      "linearmouse"
+      "loop"
+      "reminders-menubar"
+      "stats"
+      "tableplus"
+      "tailscale-app"
+      "chatgpt"
+
+      # development
+      "cursor"
+      "racket"
+      "visual-studio-code"
+      "yaak"
+      "zed"
+
+      # browsers
       "google-chrome"
       "microsoft-edge"
-      "reminders-menubar"
-      "linearmouse"
-      "nordvpn"
-      "zed"
-      "loop"
-      "motrix"
-      "alt-tab"
+
+      # media
+      "calibre"
+      "iina"
+      "obsidian"
+      "parsec"
       "shottr"
-      "sf-symbols"
+      "spotify"
+      "steam"
+      "zotero@beta"
+
+      # design and writing
+      "craft"
+      "eul"
+      "flashspace"
+
+      # fonts
+      "font-maple-mono"
+      "font-maple-mono-nf"
       "font-sf-mono"
       "font-sf-pro"
-      "visual-studio-code"
-      "kitty"
-      "craft"
-      "yaak"
-      "iina"
-      "tailscale-app"
+      "sf-symbols"
+
+      # utilities
+      "motrix"
+      "nordvpn"
+      "texshop"
     ];
   };
 }
