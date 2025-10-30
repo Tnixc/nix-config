@@ -1,10 +1,9 @@
 {lib, ...}: let
   color-mix = import ../../modules/utils/colors-mix.nix {inherit lib;};
+  theme = import ../theme.nix;
+  c = theme.colors;
 
-  bg = "#121212";
-  fg = "#80A665";
-
-  mixedColor = color-mix.mixColors bg fg 0.8;
+  mixedColor = color-mix.mixColors c.base c.green 0.8;
 in {
   programs.starship = {
     enable = true;

@@ -1,4 +1,8 @@
-{...}: {
+{...}: let
+  theme = import ../theme.nix;
+  c = theme.colors;
+  strip = theme.rawHexValue;
+in {
   # Ghostty is not available on macOS in nixpkgs, so we just manage the config
   xdg.configFile."ghostty/config".text = ''
     # Basic behavior
@@ -25,30 +29,30 @@
     macos-titlebar-style = tabs
 
     # Colors (edo theme)
-    foreground = #d8d6c9
-    background = #121212
+    foreground = ${strip c.text}
+    background = ${strip c.base}
     selection-foreground = #DDDDDD
-    selection-background = #333333
-    cursor-color = #c97d6e
-    cursor-text = #000000
+    selection-background = ${strip c.surface2}
+    cursor-color = ${strip c.rosewater}
+    cursor-text = ${strip c.crust}
 
     # Palette
-    palette = 0=#232323
-    palette = 1=#cb7676
-    palette = 2=#80a665
-    palette = 3=#cc9b70
-    palette = 4=#687eaa
-    palette = 5=#bc76c1
-    palette = 6=#5ea994
-    palette = 7=#b2b0a6
-    palette = 8=#333333
-    palette = 9=#cb7676
-    palette = 10=#80a665
-    palette = 11=#cc9b70
-    palette = 12=#687eaa
-    palette = 13=#bc76c1
-    palette = 14=#5ea994
-    palette = 15=#999895
+    palette = 0=${strip c.surface1}
+    palette = 1=${strip c.red}
+    palette = 2=${strip c.green}
+    palette = 3=${strip c.yellow}
+    palette = 4=${strip c.blue}
+    palette = 5=${strip c.pink}
+    palette = 6=${strip c.teal}
+    palette = 7=${strip c.subtext1}
+    palette = 8=${strip c.surface2}
+    palette = 9=${strip c.red}
+    palette = 10=${strip c.green}
+    palette = 11=${strip c.yellow}
+    palette = 12=${strip c.blue}
+    palette = 13=${strip c.pink}
+    palette = 14=${strip c.teal}
+    palette = 15=${strip c.subtext0}
 
     # Transparency
     background-opacity = 0.95

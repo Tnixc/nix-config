@@ -1,18 +1,22 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  theme = import ../theme.nix;
+  c = theme.colors;
+  strip = theme.rawHexValue;
+in {
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      # Color Palette
-      set -l foreground D8D6C9
+      # Color Palette from theme.nix
+      set -l foreground ${strip c.text}
       set -l selection  2A2A37
       set -l comment    51516b
-      set -l red        CB7676
-      set -l orange     CC8D70
-      set -l yellow     CC9B70
-      set -l green      80A665
-      set -l purple     6872AB
-      set -l cyan       5D9AA9
-      set -l pink       BC76C1
+      set -l red        ${strip c.red}
+      set -l orange     ${strip c.peach}
+      set -l yellow     ${strip c.yellow}
+      set -l green      ${strip c.green}
+      set -l purple     ${strip c.mauve}
+      set -l cyan       ${strip c.sky}
+      set -l pink       ${strip c.pink}
 
       # Syntax Highlighting Colors
       set -g fish_color_normal $foreground
@@ -50,10 +54,10 @@
       fish_add_path /usr/local/texlive/2025/bin/universal-darwin
 
       set -Ux FZF_DEFAULT_OPTS "\
-      --color=bg+:#1E1E1E,spinner:#C97D6E,hl:#CB7676 \
-      --color=fg:#D8D6C9,header:#CB7676,info:#6872AB,pointer:#C97D6E \
-      --color=marker:#4C8E72,fg+:#D8D6C9,prompt:#6872AB,hl+:#CB7676 \
-      --color=selected-bg:#232323 \
+      --color=bg+:${c.surface0},spinner:${c.rosewater},hl:${c.red} \
+      --color=fg:${c.text},header:${c.red},info:${c.mauve},pointer:${c.rosewater} \
+      --color=marker:${c.lavender},fg+:${c.text},prompt:${c.mauve},hl+:${c.red} \
+      --color=selected-bg:${c.surface1} \
       --multi"
 
       bind \eh backward-word

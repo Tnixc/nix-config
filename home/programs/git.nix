@@ -1,4 +1,7 @@
-{...}: {
+{...}: let
+  theme = import ../theme.nix;
+  c = theme.colors;
+in {
   # `programs.git` will generate the config file: ~/.config/git/config
   # to make git use this config file, `~/.gitconfig` should not exist!
   #
@@ -22,24 +25,24 @@
         line-numbers = true;
         syntax-theme = "edo";
         blame-palette = [
-          "#121212"
-          "#0A0A0A"
-          "#000000"
-          "#1E1E1E"
-          "#232323"
+          c.base
+          c.mantle
+          c.crust
+          c.surface0
+          c.surface1
         ];
         dark = true;
-        file-decoration-style = "#D8D6C9";
-        file-style = "#D8D6C9";
+        file-decoration-style = c.text;
+        file-style = c.text;
         hunk-header-decoration-style = "#23273D";
         hunk-header-file-style = "#23273D";
         hunk-header-line-number-style = "#23273D";
         hunk-header-style = "#23273D";
-        line-numbers-left-style = "#4C4C4C";
-        line-numbers-minus-style = "bold #CB7676";
-        line-numbers-plus-style = "bold #80A665";
-        line-numbers-right-style = "#4C4C4C";
-        line-numbers-zero-style = "#4C4C4C";
+        line-numbers-left-style = c.overlay0;
+        line-numbers-minus-style = "bold ${c.red}";
+        line-numbers-plus-style = "bold ${c.green}";
+        line-numbers-right-style = c.overlay0;
+        line-numbers-zero-style = c.overlay0;
         minus-emph-style = "bold syntax #53394c";
         minus-style = "syntax #34293a";
         plus-emph-style = "bold syntax #404f4a";

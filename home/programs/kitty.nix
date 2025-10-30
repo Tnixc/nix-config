@@ -1,4 +1,7 @@
-{...}: {
+{...}: let
+  theme = import ../theme.nix;
+  c = theme.colors;
+in {
   programs.kitty = {
     enable = true;
 
@@ -45,65 +48,65 @@
       allow_remote_control = true;
 
       # edo theme colors
-      foreground = "#D8D6C9";
-      background = "#121212";
+      foreground = c.text;
+      background = c.base;
       selection_foreground = "none";
-      selection_background = "#333333";
+      selection_background = c.surface2;
 
-      cursor = "#C97D6E";
-      cursor_text_color = "#000000";
+      cursor = c.rosewater;
+      cursor_text_color = c.crust;
 
-      url_color = "#C97D6E";
+      url_color = c.rosewater;
 
-      active_border_color = "#4C8E72";
+      active_border_color = c.lavender;
       inactive_border_color = "#6c7086";
-      bell_border_color = "#CC9B70";
+      bell_border_color = c.yellow;
 
       wayland_titlebar_color = "system";
       macos_titlebar_color = "system";
 
       active_tab_foreground = "#11111b";
-      active_tab_background = "#687eaa";
-      inactive_tab_foreground = "#D8D6C9";
-      inactive_tab_background = "#121212";
-      tab_bar_background = "#000000";
+      active_tab_background = c.blue;
+      inactive_tab_foreground = c.text;
+      inactive_tab_background = c.base;
+      tab_bar_background = c.crust;
 
       background_opacity = "0.95";
       background_blur = 24;
 
-      mark1_foreground = "#000000";
-      mark1_background = "#4C8E72";
+      mark1_foreground = c.crust;
+      mark1_background = c.lavender;
 
-      mark2_foreground = "#000000";
-      mark2_background = "#6872AB";
+      mark2_foreground = c.crust;
+      mark2_background = c.mauve;
 
-      mark3_foreground = "#000000";
-      mark3_background = "#5D9AA9";
+      mark3_foreground = c.crust;
+      mark3_background = c.sky;
 
       # Terminal colors
-      color0 = "#232323";
-      color8 = "#333333";
+      color0 = c.surface1;
+      color8 = c.surface2;
 
-      color1 = "#CB7676";
-      color9 = "#CB7676";
+      color1 = c.red;
+      color9 = c.red;
 
-      color2 = "#80A665";
-      color10 = "#80A665";
+      color2 = c.green;
+      color10 = c.green;
 
-      color3 = "#CC9B70";
-      color11 = "#CC9B70";
+      color3 = c.yellow;
+      color11 = c.yellow;
 
-      color4 = "#687eaa";
-      color12 = "#687eaa";
+      color4 = c.blue;
+      color12 = c.blue;
 
-      color5 = "#BC76C1";
-      color13 = "#BC76C1";
+      color5 = c.pink;
+      color13 = c.pink;
 
-      color6 = "#5EA994";
-      color14 = "#5EA994";
+      color6 = c.teal;
+      color14 = c.teal;
 
-      color7 = "#B2B0A6";
-      color15 = "#999895";
+      color7 = c.subtext1;
+      color15 = c.subtext0;
 
       disable_ligatures = "always";
     };

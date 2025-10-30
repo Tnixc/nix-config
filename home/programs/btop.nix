@@ -1,4 +1,7 @@
-{config, ...}: {
+{config, ...}: let
+  theme = import ../theme.nix;
+  c = theme.colors;
+in {
   programs.btop = {
     enable = true;
     settings = {
@@ -73,5 +76,89 @@
     };
   };
 
-  xdg.configFile."btop/themes/edo.theme".source = ./btop-themes/edo.theme;
+  xdg.configFile."btop/themes/edo.theme".text = ''
+    # Main background, empty for terminal default, need to be empty if you want transparent background
+    theme[main_bg]="${c.base}"
+
+    # Main text color
+    theme[main_fg]="${c.text}"
+
+    # Title color for boxes
+    theme[title]="${c.text}"
+
+    # Highlight color for keyboard shortcuts
+    theme[hi_fg]="${c.blue}"
+
+    # Background color of selected item in processes box
+    theme[selected_bg]="${c.surface1}"
+
+    # Foreground color of selected item in processes box
+    theme[selected_fg]="${c.blue}"
+
+    # Color of inactive/disabled text
+    theme[inactive_fg]="${c.surface1}"
+
+    # Color of text appearing on top of graphs, i.e uptime and current network graph scaling
+    theme[graph_text]="${c.flamingo}"
+
+    # Background color of the percentage meters
+    theme[meter_bg]="${c.surface1}"
+
+    # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
+    theme[proc_misc]="${c.surface1}"
+
+    # CPU, Memory, Network, Proc box outline colors
+    theme[cpu_box]="${c.mauve}"
+    theme[mem_box]="${c.green}"
+    theme[net_box]="${c.maroon}"
+    theme[proc_box]="${c.blue}"
+
+    # Box divider line and small boxes line color
+    theme[div_line]="${c.overlay0}"
+
+    # Temperature graph color (Green -> Yellow -> Red)
+    theme[temp_start]="${c.green}"
+    theme[temp_mid]="${c.yellow}"
+    theme[temp_end]="${c.red}"
+
+    # CPU graph colors (Teal -> Sky -> Lavender)
+    theme[cpu_start]="${c.teal}"
+    theme[cpu_mid]="${c.sky}"
+    theme[cpu_end]="${c.lavender}"
+
+    # Mem/Disk free meter (Mauve -> Lavender -> Blue)
+    theme[free_start]="${c.mauve}"
+    theme[free_mid]="${c.lavender}"
+    theme[free_end]="${c.blue}"
+
+    # Mem/Disk cached meter (Sky -> Blue -> Lavender)
+    theme[cached_start]="${c.sky}"
+    theme[cached_mid]="${c.blue}"
+    theme[cached_end]="${c.lavender}"
+
+    # Mem/Disk available meter (Peach -> Maroon -> Red)
+    theme[available_start]="${c.peach}"
+    theme[available_mid]="${c.maroon}"
+    theme[available_end]="${c.red}"
+
+    # Mem/Disk used meter (Green -> Teal -> Sapphire)
+    theme[used_start]="${c.green}"
+    theme[used_mid]="${c.teal}"
+    theme[used_end]="${c.sapphire}"
+
+    # Download graph colors (Peach -> Maroon -> Red)
+    theme[download_start]="${c.peach}"
+    theme[download_mid]="${c.maroon}"
+    theme[download_end]="${c.red}"
+
+    # Upload graph colors (Green -> Teal -> Sapphire)
+    theme[upload_start]="${c.green}"
+    theme[upload_mid]="${c.teal}"
+    theme[upload_end]="${c.sapphire}"
+
+    # Process box color gradient for threads, mem and cpu usage (Sky -> Lavender -> Mauve)
+    theme[process_start]="${c.sky}"
+    theme[process_mid]="${c.lavender}"
+    theme[process_end]="${c.mauve}"
+  '';
 }
