@@ -13,7 +13,7 @@
     }
   },
   "icon_theme": "Clean VSCode Icon Theme",
-  "theme": "Vitesse Refined Dark",
+  "theme": "Vercel Light",
   // The name of a base set of key bindings to use.
   // This setting can take four values, each named after another
   // text editor:
@@ -179,6 +179,7 @@
   },
   "agent": {
     // Whether to show the assistant panel button in the status bar.
+    "play_sound_when_agent_done": true,
     "profiles": {
       "all": {
         "name": "All",
@@ -212,8 +213,8 @@
       "model": "claude-sonnet-4.5"
     },
     "default_model": {
-      "provider": "openrouter",
-      "model": "z-ai/glm-4.5-air:free"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-thinking-latest"
     },
     "button": true,
     // Where to dock the assistant. Can be 'left', 'right' or 'bottom'.

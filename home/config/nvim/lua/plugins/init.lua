@@ -351,6 +351,9 @@ lazy.setup({
 
   -- Syntax and Language Support
   {
+    "xiyaowong/virtcolumn.nvim",
+  },
+  {
     event = "VeryLazy",
     "nvim-treesitter/nvim-treesitter",
     config = function()

@@ -68,7 +68,7 @@
     tree = "eza --icons --tree --git-ignore";
     treea = "eza --icons --tree -a";
 
-    cd = "z";
+    # cd = "z";
     f = "open .";
 
     rm = "trash";
