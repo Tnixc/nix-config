@@ -2,15 +2,19 @@
   programs.lazygit = {
     enable = true;
     settings = {
-      git.paging.colorArg = "always";
-      git.paging.pager = "delta --dark --paging=never";
+      git.pagers = [
+        {
+          colorArg = "always";
+          pager = "delta --dark --paging=never";
+        }
+      ];
       git.overrideGpg = true;
       gui = {
         border = "single";
         nerdFontsVersion = "3";
         theme = {
           activeBorderColor = [
-            "blue"
+            "cyan"
             "bold"
           ];
           inactiveBorderColor = ["#6c7086"];
