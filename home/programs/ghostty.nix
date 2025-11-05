@@ -31,7 +31,7 @@ in {
     # Colors (edo theme)
     foreground = ${strip c.text}
     background = ${strip c.base}
-    selection-foreground = #DDDDDD
+    selection-foreground = ${strip c.text}
     selection-background = ${strip c.surface2}
     cursor-color = ${strip c.rosewater}
     cursor-text = ${strip c.crust}

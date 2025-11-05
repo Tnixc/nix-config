@@ -59,13 +59,13 @@ in {
       url_color = c.rosewater;
 
       active_border_color = c.lavender;
-      inactive_border_color = "#6c7086";
+      inactive_border_color = c.overlay1;
       bell_border_color = c.yellow;
 
       wayland_titlebar_color = "system";
       macos_titlebar_color = "system";
 
-      active_tab_foreground = "#11111b";
+      active_tab_foreground = c.crust;
       active_tab_background = c.blue;
       inactive_tab_foreground = c.text;
       inactive_tab_background = c.base;

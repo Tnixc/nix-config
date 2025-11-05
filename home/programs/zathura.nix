@@ -1,4 +1,7 @@
-{...}: {
+{...}: let
+  theme = import ../theme.nix;
+  c = theme.colors;
+in {
   programs.zathura = {
     enable = true;
 
@@ -24,8 +27,8 @@
 
       recolor = true;
       recolor-keephue = true;
-      recolor-darkcolor = "#D8D6CA";
-      recolor-lightcolor = "#060606";
+      recolor-darkcolor = c.text;
+      recolor-lightcolor = c.crust;
 
       default-fg = "rgba(200,200,200,1)";
       default-bg = "rgba(10,10,10,1)";

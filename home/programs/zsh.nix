@@ -1,4 +1,7 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  theme = import ../theme.nix;
+  c = theme.colors;
+in {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -26,10 +29,10 @@
         export TERM=xterm-256color
 
         export FZF_DEFAULT_OPTS=" \
-        --color=bg+:#1E1E1E,spinner:#C97D6E,hl:#CB7676 \
-        --color=fg:#D8D6C9,header:#CB7676,info:#6872AB,pointer:#C97D6E \
-        --color=marker:#4C8E72,fg+:#D8D6C9,prompt:#6872AB,hl+:#CB7676 \
-        --color=selected-bg:#232323 \
+        --color=bg+:${c.surface0},spinner:${c.rosewater},hl:${c.red} \
+        --color=fg:${c.text},header:${c.red},info:${c.mauve},pointer:${c.rosewater} \
+        --color=marker:${c.lavender},fg+:${c.text},prompt:${c.mauve},hl+:${c.red} \
+        --color=selected-bg:${c.surface1} \
         --multi"
 
         bindkey '^[h' backward-word

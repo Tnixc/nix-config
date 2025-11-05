@@ -32,4 +32,22 @@
     mantle = "#0A0A0A";
     crust = "#000000";
   };
+
+  # Git/delta diff colors
+  diff = {
+    hunkHeader = "#23273D";
+    minusEmph = "#53394c";
+    minus = "#34293a";
+    plusEmph = "#404f4a";
+    plus = "#2c3239";
+    purple = "#494060";
+    blue = "#384361";
+    cyan = "#384d5d";
+    yellow = "#544f4e";
+  };
+
+  # Editor UI colors
+  ui = {
+    findHighlight = "#3e5767";
+  };
 }
