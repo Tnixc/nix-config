@@ -4,4 +4,4 @@ deploy:
 
 fmt:
     nix fmt .
-    stylua . --sort-requires --indent-type spaces --indent-width 2
+    stylua . --sort-requires --indent-type spaces --indent-width 4
