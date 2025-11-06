@@ -213,8 +213,8 @@
       "model": "claude-sonnet-4.5"
     },
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-5-thinking-latest"
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4.5"
     },
     "button": true,
     // Where to dock the assistant. Can be 'left', 'right' or 'bottom'.

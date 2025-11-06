@@ -47,6 +47,7 @@
       flake = true;
     };
     darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
+    rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -62,6 +63,7 @@
     pwaerospace, # aerospace, sketchybar, borders
     sketchybar-config,
     darwin-custom-icons,
+    rust-overlay,
     ...
   }: let
     username = "tnixc";
@@ -84,6 +86,11 @@
 
         darwin-custom-icons.darwinModules.default
         ./modules/icons
+
+        # rust overlay
+        ({pkgs, ...}: {
+          nixpkgs.overlays = [rust-overlay.overlays.default];
+        })
 
         home-manager.darwinModules.home-manager
         {

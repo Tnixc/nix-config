@@ -52,7 +52,9 @@
     go
     gleam
     stylua
-    rustup
+    (rust-bin.nightly."2025-11-05".default.override {
+      extensions = ["rust-src" "rust-analyzer"];
+    })
     cargo-binstall
     pipx
     uv
