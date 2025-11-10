@@ -56,7 +56,7 @@ in {
 
     # Transparency
     background-opacity = 0.95
-    background-blur-radius = 24
+    background-blur-radius = 94
     alpha-blending = native
     window-colorspace = display-p3
 

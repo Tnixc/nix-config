@@ -13,7 +13,7 @@
     }
   },
   "icon_theme": "Clean VSCode Icon Theme",
-  "theme": "Vercel Light",
+  "theme": "Vitesse Refined Dark",
   // The name of a base set of key bindings to use.
   // This setting can take four values, each named after another
   // text editor:
@@ -213,8 +213,8 @@
       "model": "claude-sonnet-4.5"
     },
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
+      "provider": "openrouter",
+      "model": "openrouter/polaris-alpha"
     },
     "button": true,
     // Where to dock the assistant. Can be 'left', 'right' or 'bottom'.
