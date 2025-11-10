@@ -34,6 +34,7 @@ lazy.setup({
     { "rose-pine/neovim", name = "rose-pine", opts = {}, event = "VeryLazy" },
     {
         "goolord/alpha-nvim",
+        event = "VimEnter",
         config = function()
             require("plugins.configs.ui.alpha")
         end,
@@ -50,6 +51,7 @@ lazy.setup({
     -- UI Enhancements
     {
         "akinsho/bufferline.nvim",
+        event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons", "rachartier/tiny-devicons-auto-colors.nvim" },
         config = function()
             require("plugins.configs.ui.bufferline")
@@ -68,6 +70,7 @@ lazy.setup({
     },
     {
         "nvim-lualine/lualine.nvim",
+        event = "VeryLazy",
         dependencies = { "kyazdani42/nvim-web-devicons" },
         config = function()
             require("plugins.configs.ui.lualine")
@@ -75,7 +78,7 @@ lazy.setup({
     },
     {
         "nvim-tree/nvim-tree.lua",
-        event = "BufEnter",
+        cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile", "NvimTreeCollapse" },
         config = function()
             require("plugins.configs.ui.nvim-tree")
         end,
@@ -87,7 +90,7 @@ lazy.setup({
         config = function()
             require("mini.files").setup({
                 options = {
-                    use_as_default_explorer = true,
+                    use_as_default_explorer = false,
                 },
                 windows = {
                     preview = true,
@@ -132,7 +135,7 @@ lazy.setup({
     },
     {
         "sindrets/diffview.nvim",
-        event = "BufEnter",
+        cmd = { "DiffviewOpen", "DiffviewFileHistory" },
         config = function()
             require("diffview").setup({
                 file_panel = {
@@ -146,7 +149,7 @@ lazy.setup({
             })
         end,
     },
-    { "hiphish/rainbow-delimiters.nvim" },
+    { "hiphish/rainbow-delimiters.nvim", event = "BufReadPost" },
     {
         "folke/noice.nvim",
         event = "VeryLazy",
@@ -165,6 +168,7 @@ lazy.setup({
     -- Utility
     {
         "fei6409/log-highlight.nvim",
+        event = "VeryLazy",
         config = function()
             require("log-highlight").setup({})
         end,
@@ -291,6 +295,7 @@ lazy.setup({
     {
         "declancm/cinnamon.nvim",
         version = "*", -- use latest release
+        event = "VeryLazy",
         opts = {
             keymaps = {
                 basic = true,
@@ -310,7 +315,7 @@ lazy.setup({
     }, -- discord presence
     {
         "brenoprata10/nvim-highlight-colors",
-        event = "BufEnter",
+        event = "VeryLazy",
         opts = { enable_tailwind = true },
     },
     {
@@ -352,6 +357,7 @@ lazy.setup({
     -- Syntax and Language Support
     {
         "xiyaowong/virtcolumn.nvim",
+        event = "VeryLazy",
     },
     {
         event = "VeryLazy",
@@ -467,8 +473,8 @@ lazy.setup({
             require("plugins.configs.cmp")
         end,
     },
-    { "artemave/workspace-diagnostics.nvim" },
-    { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }, event = "BufEnter" },
+    { "artemave/workspace-diagnostics.nvim", event = "VeryLazy" },
+    { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }, event = "VeryLazy" },
     -- LSP configuration (using Neovim 0.11 native API with Nix-installed servers)
     {
         "j-hui/fidget.nvim",
