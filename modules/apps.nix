@@ -45,6 +45,16 @@
     just
     dua
 
+    # LSP servers for Neovim
+    lua-language-server
+    nodePackages.typescript-language-server
+    nodePackages.vscode-langservers-extracted # provides eslint, json, html, css
+    tailwindcss-language-server
+    nodePackages.svelte-language-server
+    nodePackages."@astrojs/language-server"
+    pyright
+    gopls
+
     # languages and runtimes
     lua
     elixir
