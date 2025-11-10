@@ -76,7 +76,6 @@ in {
       # This section can be safely removed at any time if needed.
       test -r '/Users/tnixc/.opam/opam-init/init.fish' && source '/Users/tnixc/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
       # END opam configuration
-
     '';
     functions = {
       gc = "git commit -m $argv[1]";

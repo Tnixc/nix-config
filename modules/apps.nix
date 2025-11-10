@@ -60,7 +60,6 @@
     uv
     nrr
     yarn
-    jdk23
     wasmer
     wasmtime
     meson
