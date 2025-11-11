@@ -47,8 +47,7 @@ require("ufo").setup({
 -- LSP servers to enable (installed via Nix, except ocamllsp via opam)
 local lsp_servers = {
     "lua_ls",
-    "ts_ls",
-    "eslint",
+    "vtsls",
     "jsonls",
     "html",
     "cssls",
@@ -109,22 +108,50 @@ local function configure_lsp_servers()
         },
     }
 
-    -- TypeScript/JavaScript
-    vim.lsp.config.ts_ls = {
-        cmd = { "typescript-language-server", "--stdio" },
-        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    -- TypeScript/JavaScript (vtsls)
+    vim.lsp.config.vtsls = {
+        cmd = { "vtsls", "--stdio" },
+        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
         root_markers = { "package.json", "tsconfig.json", "jsconfig.json", ".git" },
         capabilities = capabilities,
         on_attach = on_attach,
-    }
-
-    -- ESLint
-    vim.lsp.config.eslint = {
-        cmd = { "vscode-eslint-language-server", "--stdio" },
-        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte", "astro" },
-        root_markers = { ".eslintrc", ".eslintrc.js", ".eslintrc.json", "eslint.config.js", "package.json", ".git" },
-        capabilities = capabilities,
-        on_attach = on_attach,
+        settings = {
+            vtsls = {
+                experimental = {
+                    completion = {
+                        enableServerSideFuzzyMatch = true,
+                    },
+                },
+            },
+            typescript = {
+                updateImportsOnFileMove = { enabled = "always" },
+                suggest = {
+                    completeFunctionCalls = true,
+                },
+                inlayHints = {
+                    parameterNames = { enabled = "literals" },
+                    parameterTypes = { enabled = true },
+                    variableTypes = { enabled = true },
+                    propertyDeclarationTypes = { enabled = true },
+                    functionLikeReturnTypes = { enabled = true },
+                    enumMemberValues = { enabled = true },
+                },
+            },
+            javascript = {
+                updateImportsOnFileMove = { enabled = "always" },
+                suggest = {
+                    completeFunctionCalls = true,
+                },
+                inlayHints = {
+                    parameterNames = { enabled = "literals" },
+                    parameterTypes = { enabled = true },
+                    variableTypes = { enabled = true },
+                    propertyDeclarationTypes = { enabled = true },
+                    functionLikeReturnTypes = { enabled = true },
+                    enumMemberValues = { enabled = true },
+                },
+            },
+        },
     }
 
     -- JSON

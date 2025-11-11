@@ -61,6 +61,7 @@
     python3
     go
     gleam
+    vtsls
     stylua
     (rust-bin.nightly."2025-11-05".default.override {
       extensions = ["rust-src" "rust-analyzer"];

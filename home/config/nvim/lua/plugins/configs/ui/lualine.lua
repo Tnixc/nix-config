@@ -192,12 +192,39 @@ ins_right({
         if next(clients) == nil then
             return msg
         end
+
+        -- Priority order for main language servers
+        local priority_servers = {
+            "vtsls",
+            "ts_ls",
+            "lua_ls",
+            "pyright",
+            "rust_analyzer",
+            "gopls",
+            "ocamllsp",
+            "svelte",
+            "astro",
+        }
+
+        -- First try to find priority servers
+        for _, priority in ipairs(priority_servers) do
+            for _, client in ipairs(clients) do
+                local filetypes = client.config.filetypes
+                if client.name == priority and filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                    return client.name
+                end
+            end
+        end
+
+        -- Fall back to any other attached server (excluding utility servers)
+        local exclude = { "tailwindcss", "null-ls" }
         for _, client in ipairs(clients) do
             local filetypes = client.config.filetypes
-            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+            if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 and vim.fn.index(exclude, client.name) == -1 then
                 return client.name
             end
         end
+
         return msg
     end,
     icon = "􀱢  LSP:",
