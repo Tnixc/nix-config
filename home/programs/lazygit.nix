@@ -5,6 +5,10 @@ in {
   programs.lazygit = {
     enable = true;
     settings = {
+      os = {
+          shellFunctionsFile= "/Users/tnixc/.zshrc";
+          editPreset = "nvim-remote";
+      };
       git.pagers = [
         {
           colorArg = "always";
