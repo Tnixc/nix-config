@@ -45,26 +45,15 @@
     just
     dua
 
-    # LSP servers for Neovim
-    lua-language-server
-    nodePackages.typescript-language-server
-    nodePackages.vscode-langservers-extracted # provides eslint, json, html, css
-    tailwindcss-language-server
-    nodePackages.svelte-language-server
-    nodePackages."@astrojs/language-server"
-    pyright
-    gopls
-
     # languages and runtimes
     lua
     elixir
     python3
     go
     gleam
-    vtsls
     stylua
     (rust-bin.nightly."2025-11-05".default.override {
-      extensions = ["rust-src" "rust-analyzer"];
+      extensions = ["rust-src"];
     })
     cargo-binstall
     pipx

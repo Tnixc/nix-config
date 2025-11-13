@@ -374,6 +374,24 @@ lazy.setup({
 
     -- LSP and Completion
     {
+        "williamboman/mason.nvim",
+        build = ":MasonUpdate",
+        config = function()
+            require("mason").setup({
+                ui = {
+                    border = "rounded",
+                    icons = {
+                        package_installed = "✓",
+                        package_pending = "➜",
+                        package_uninstalled = "✗",
+                    },
+                },
+            })
+            -- Load LSP configuration
+            require("plugins.configs.lsp")
+        end,
+    },
+    {
         "stevearc/conform.nvim",
         event = { "BufWritePre" },
         cmd = { "ConformInfo" },
@@ -475,12 +493,9 @@ lazy.setup({
     },
     { "artemave/workspace-diagnostics.nvim", event = "VeryLazy" },
     { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }, event = "VeryLazy" },
-    -- LSP configuration (using Neovim 0.11 native API with Nix-installed servers)
+    -- LSP configuration (using Neovim 0.11 native API with Mason-installed servers)
     {
         "j-hui/fidget.nvim",
         opts = {},
-        config = function()
-            require("plugins.configs.lsp")
-        end,
     },
 })

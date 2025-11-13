@@ -44,7 +44,7 @@ require("ufo").setup({
     fold_virt_text_handler = foldHandler,
 })
 
--- LSP servers to enable (installed via Nix, except ocamllsp via opam)
+-- LSP servers to enable (installed via Mason, except ocamllsp via opam and racket via racket)
 local lsp_servers = {
     "lua_ls",
     "vtsls",
@@ -58,6 +58,7 @@ local lsp_servers = {
     "rust_analyzer",
     "gopls",
     "ocamllsp",
+    "racket_langserver",
 }
 
 vim.g.zig_fmt_parse_errors = 0
@@ -266,6 +267,15 @@ local function configure_lsp_servers()
             "dune-workspace",
             "*.ml",
         },
+        capabilities = capabilities,
+        on_attach = on_attach,
+    }
+
+    -- Racket
+    vim.lsp.config.racket_langserver = {
+        cmd = { "racket", "-l", "racket-langserver" },
+        filetypes = { "racket", "rkt" },
+        root_markers = { ".git" },
         capabilities = capabilities,
         on_attach = on_attach,
     }
