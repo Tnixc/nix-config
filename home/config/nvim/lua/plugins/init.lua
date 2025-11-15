@@ -114,7 +114,7 @@ lazy.setup({
     },
     {
         "rachartier/tiny-inline-diagnostic.nvim",
-        event = "VeryLazy",
+        event = "BufReadPost",
         priority = 1000,
         config = function()
             require("tiny-inline-diagnostic").setup({
@@ -399,6 +399,7 @@ lazy.setup({
             formatters_by_ft = {
                 lua = { "stylua" },
                 nix = { "nixfmt" },
+                racket = { "raco_fmt" },
                 go = { "goimports", "gofmt" },
                 typescriptreact = { "prettierd" },
                 javascriptreact = { "prettierd" },
@@ -413,6 +414,13 @@ lazy.setup({
                 html = { "prettierd" },
                 css = { "prettierd" },
                 scss = { "prettierd" },
+            },
+            formatters = {
+                raco_fmt = {
+                    command = "raco",
+                    args = { "fmt", "-i", "$FILENAME" },
+                    stdin = false,
+                },
             },
         },
     },

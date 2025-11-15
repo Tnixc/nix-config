@@ -55,6 +55,7 @@
     (rust-bin.nightly."2025-11-05".default.override {
       extensions = ["rust-src"];
     })
+    (pkgs.discord.override { withMoonlight = true; })
     cargo-binstall
     pipx
     uv
@@ -69,6 +70,7 @@
     micropython
     rshell
     conan
+    gdb
 
     # media
     ani-cli

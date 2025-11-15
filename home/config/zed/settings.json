@@ -213,8 +213,8 @@
       "model": "claude-sonnet-4.5"
     },
     "default_model": {
-      "provider": "openrouter",
-      "model": "openrouter/polaris-alpha"
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
     },
     "button": true,
     // Where to dock the assistant. Can be 'left', 'right' or 'bottom'.
