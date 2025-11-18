@@ -83,14 +83,10 @@
         ./modules/system.nix
         ./modules/apps.nix
         ./modules/host-users.nix
+        ./modules/overlays.nix
 
         darwin-custom-icons.darwinModules.default
         ./modules/icons
-
-        # rust overlay
-        ({pkgs, ...}: {
-          nixpkgs.overlays = [rust-overlay.overlays.default];
-        })
 
         home-manager.darwinModules.home-manager
         {

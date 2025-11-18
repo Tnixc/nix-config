@@ -6,8 +6,8 @@ in {
     enable = true;
     settings = {
       os = {
-          shellFunctionsFile= "/Users/tnixc/.zshrc";
-          editPreset = "nvim-remote";
+        shellFunctionsFile = "/Users/tnixc/.zshrc";
+        editPreset = "nvim-remote";
       };
       git.pagers = [
         {

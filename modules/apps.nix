@@ -55,7 +55,7 @@
     (rust-bin.nightly."2025-11-05".default.override {
       extensions = ["rust-src"];
     })
-    (pkgs.discord.override { withMoonlight = true; })
+    (pkgs.discord.override {withMoonlight = true;})
     cargo-binstall
     pipx
     uv
@@ -210,12 +210,12 @@
       "tableplus"
       "tailscale-app"
       "chatgpt"
+      "orion"
 
       # development
       "cursor"
       "racket"
       "visual-studio-code"
-      "yaak"
       "zed"
 
       # browsers
