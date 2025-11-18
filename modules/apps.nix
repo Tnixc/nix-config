@@ -55,7 +55,7 @@
     (rust-bin.nightly."2025-11-05".default.override {
       extensions = ["rust-src"];
     })
-    (pkgs.discord.override {withMoonlight = true;})
+    # (pkgs.discord.override {withMoonlight = true;})
     cargo-binstall
     pipx
     uv
@@ -96,9 +96,9 @@
     enable = true;
 
     onActivation = {
-      autoUpdate = false;
+      autoUpdate = true;
       # 'zap': uninstalls all formulae(and related files) not listed here.
-      # cleanup = "zap";
+      cleanup = "zap";
     };
 
     taps = [
@@ -211,6 +211,7 @@
       "tailscale-app"
       "chatgpt"
       "orion"
+      "vesktop"
 
       # development
       "cursor"
