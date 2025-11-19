@@ -52,6 +52,7 @@ lazy.setup({
     {
         "akinsho/bufferline.nvim",
         event = "VeryLazy",
+        after = "catppuccin",
         dependencies = { "nvim-tree/nvim-web-devicons", "rachartier/tiny-devicons-auto-colors.nvim" },
         config = function()
             require("plugins.configs.ui.bufferline")

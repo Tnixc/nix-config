@@ -3,18 +3,29 @@
 -- Credit: glepnir
 -- Color table for highlights
 -- stylua: ignore
-local colors = {
-  red      = '#CB7676',
-  orange   = '#CC8D70',
-  yellow   = '#CC9B70',
-  green    = '#80A665',
-  cyan     = '#5EA994',
-  sapphire = '#6394BF',
-  blue     = '#687eaa',
-  purple   = '#6872AB',
-  magenta  = '#BC76C1',
-  bg       = '#0A0A0A',
-  fg       = '#D8D6C9',
+
+local colors = require("catppuccin.palettes").get_palette("macchiato")
+local mode_color = {
+    n = colors.yellow,
+    i = colors.green,
+    v = colors.blue,
+    ["\22"] = colors.blue,
+    V = colors.blue,
+    c = colors.mauve,
+    no = colors.red,
+    s = colors.orange,
+    S = colors.orange,
+    [""] = colors.orange,
+    ic = colors.yellow,
+    R = colors.mauve,
+    Rv = colors.mauve,
+    cv = colors.red,
+    ce = colors.red,
+    r = colors.sky,
+    rm = colors.sky,
+    ["r?"] = colors.sky,
+    ["!"] = colors.red,
+    t = colors.red,
 }
 
 local conditions = {
@@ -38,8 +49,8 @@ local config = {
         component_separators = "",
         section_separators = "",
         theme = {
-            normal = { c = { fg = colors.fg, bg = colors.bg } },
-            inactive = { c = { fg = colors.fg, bg = colors.bg } },
+            normal = { c = { fg = colors.text, bg = colors.crust } },
+            inactive = { c = { fg = colors.text, bg = colors.crust } },
         },
     },
     sections = {
@@ -102,41 +113,29 @@ ins_left({
     end,
     color = function()
         -- auto change color according to neovims mode
-        local mode_color = {
-            n = colors.yellow,
-            i = colors.green,
-            v = colors.blue,
-            ["\22"] = colors.blue,
-            V = colors.blue,
-            c = colors.magenta,
-            no = colors.red,
-            s = colors.orange,
-            S = colors.orange,
-            [""] = colors.orange,
-            ic = colors.yellow,
-            R = colors.purple,
-            Rv = colors.purple,
-            cv = colors.red,
-            ce = colors.red,
-            r = colors.cyan,
-            rm = colors.cyan,
-            ["r?"] = colors.cyan,
-            ["!"] = colors.red,
-            t = colors.red,
-        }
-        return { fg = colors.bg, bg = mode_color[vim.fn.mode()], gui = "bold" }
+        return { fg = colors.crust, bg = mode_color[vim.fn.mode()], gui = "bold" }
     end,
     padding = { left = 1, right = 1 },
 })
 
+ins_left({
+    function()
+        return ""
+    end,
+    color = function()
+        return { fg = mode_color[vim.fn.mode()], bg = colors.bg }
+    end,
+    padding = { left = 0, right = 0 },
+})
+
 ins_left({ "location" })
 
-ins_left({ "progress", color = { fg = colors.fg, gui = "bold" } })
+ins_left({ "progress", color = { fg = colors.pink, gui = "bold" } })
 
 ins_left({
     "branch",
     icon = "",
-    color = { fg = colors.green, gui = "bold" },
+    color = { fg = colors.lavender, gui = "bold" },
 })
 
 ins_left({
@@ -167,7 +166,7 @@ ins_right({
     "filename",
     icon = "􀈿 ",
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.magenta, gui = "bold" },
+    color = { fg = colors.sapphire, gui = "bold" },
 })
 
 ins_right({
@@ -176,8 +175,8 @@ ins_right({
     symbols = { error = "􀻀 ", warn = "􀘰 ", info = "􀅵 " },
     diagnostics_color = {
         color_error = { fg = colors.red },
-        color_warn = { fg = colors.orange },
-        color_info = { fg = colors.cyan },
+        color_warn = { fg = colors.peach },
+        color_info = { fg = colors.sapphire },
     },
 })
 
@@ -227,8 +226,8 @@ ins_right({
 
         return msg
     end,
-    icon = "􀱢  LSP:",
-    color = { fg = colors.purple, gui = "bold" },
+    icon = "􀱢 ",
+    color = { fg = colors.mauve, gui = "bold" },
 })
 
 require("lualine").setup(config)
