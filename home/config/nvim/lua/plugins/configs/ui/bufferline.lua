@@ -22,13 +22,13 @@ bl.setup({
                 modified = { bg = t.base },
                 modified_selected = { bg = t.surface1 },
                 modified_visible = { bg = t.surface0 },
+                trunc_marker = { bg = t.crust },
             },
         },
     }),
     options = {
         close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
         right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
-        offsets = { { filetype = "NeoTree", text = "", padding = 1 } },
         -- separator_style = { "|", "|" }, -- slant, padded_slant; slope, padded_slope; thick; thin
         separator_style = "slope",
         color_icons = true,

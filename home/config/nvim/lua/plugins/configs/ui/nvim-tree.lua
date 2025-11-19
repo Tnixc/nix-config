@@ -64,7 +64,7 @@ require("nvim-tree").setup({
 
     hijack_directories = { enable = true },
     view = {
-        width = "20%",
+        width = "250",
         side = "right",
     },
 })
