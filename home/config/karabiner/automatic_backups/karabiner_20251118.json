@@ -32,7 +32,7 @@
                                         "modifiers": ["left_option", "left_control"]
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "tab" }],
+                                "to_if_alone": [{ "key_code": "escape" }],
                                 "type": "basic"
                             }
                         ]
@@ -205,10 +205,6 @@
                         "vendor_id": 57624
                     },
                     "simple_modifications": [
-                        {
-                            "from": { "key_code": "f24" },
-                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
-                        },
                         {
                             "from": { "key_code": "left_command" },
                             "to": [{ "key_code": "left_control" }]
