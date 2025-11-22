@@ -77,24 +77,6 @@ lazy.setup({
         end,
     },
     {
-        "echasnovski/mini.files",
-        version = "*",
-        event = "VeryLazy",
-        config = function()
-            require("mini.files").setup({
-                options = {
-                    use_as_default_explorer = false,
-                },
-                windows = {
-                    preview = true,
-                    width_focus = 45,
-                    width_nofocus = 30,
-                    width_preview = 45,
-                },
-            })
-        end,
-    },
-    {
         "folke/todo-comments.nvim",
         event = "BufReadPost",
         opts = {},
@@ -141,7 +123,37 @@ lazy.setup({
             })
         end,
     },
-    { "hiphish/rainbow-delimiters.nvim", event = "BufReadPost" },
+    {
+        "saghen/blink.pairs",
+        version = "*",
+        build = "nix run .#build-plugin",
+        opts = {
+            highlights = {
+                groups = {
+                    "BlinkIndentBlue",
+                    "BlinkIndentOrange",
+                    "BlinkIndentGreen",
+                    "BlinkIndentRed",
+                },
+            },
+        },
+    },
+    {
+        "saghen/blink.indent",
+        event = "BufReadPost",
+        opts = {
+            scope = {
+                char = "│",
+                highlights = {
+                    "BlinkIndentOrange",
+                    "BlinkIndentGreen",
+                    "BlinkIndentRed",
+                    "BlinkIndentBlue",
+                },
+            },
+        },
+    },
+
     {
         "folke/noice.nvim",
         event = "VeryLazy",
@@ -218,11 +230,6 @@ lazy.setup({
             vim.g.closetag_filenames = "*.vue,*.svelte,*.html,*.xhtml,*.phtml"
             vim.g.closetag_xhtml_filenames = "*.xhtml,*.jsx,*.tsx"
         end,
-    },
-    {
-        "windwp/nvim-autopairs",
-        config = true,
-        event = "InsertEnter",
     },
     {
         "windwp/nvim-ts-autotag",
