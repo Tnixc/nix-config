@@ -288,7 +288,148 @@ wk.add({
         },
 
         -- Multicursor
-        { "m", "<cmd>MCstart<cr>", desc = "Create multiple cursors (normal)" },
+        {
+            group = "Multicursor",
+            { "<leader>m", desc = "Multicursor" },
+            -- Add cursors by matching word/selection
+            {
+                "<leader>mn",
+                function()
+                    require("multicursor-nvim").matchAddCursor(1)
+                end,
+                desc = "Add cursor at next match",
+                icon = { icon = "󰆿", color = "cyan" },
+            },
+            {
+                "<leader>mN",
+                function()
+                    require("multicursor-nvim").matchAddCursor(-1)
+                end,
+                desc = "Add cursor at prev match",
+                icon = { icon = "󰆿", color = "cyan" },
+            },
+            {
+                "<leader>ms",
+                function()
+                    require("multicursor-nvim").matchSkipCursor(1)
+                end,
+                desc = "Skip next match",
+                icon = { icon = "󰒭", color = "yellow" },
+            },
+            {
+                "<leader>mS",
+                function()
+                    require("multicursor-nvim").matchSkipCursor(-1)
+                end,
+                desc = "Skip prev match",
+                icon = { icon = "󰒮", color = "yellow" },
+            },
+            {
+                "<leader>ma",
+                function()
+                    require("multicursor-nvim").matchAllAddCursors()
+                end,
+                desc = "Add cursors to all matches",
+                icon = { icon = "󰓦", color = "green" },
+            },
+            -- Add cursors up/down
+            {
+                "<leader>mk",
+                function()
+                    require("multicursor-nvim").lineAddCursor(-1)
+                end,
+                desc = "Add cursor above",
+                icon = { icon = "", color = "purple" },
+            },
+            {
+                "<leader>mj",
+                function()
+                    require("multicursor-nvim").lineAddCursor(1)
+                end,
+                desc = "Add cursor below",
+                icon = { icon = "", color = "purple" },
+            },
+            {
+                "<leader>mK",
+                function()
+                    require("multicursor-nvim").lineSkipCursor(-1)
+                end,
+                desc = "Skip cursor above",
+                icon = { icon = "", color = "orange" },
+            },
+            {
+                "<leader>mJ",
+                function()
+                    require("multicursor-nvim").lineSkipCursor(1)
+                end,
+                desc = "Skip cursor below",
+                icon = { icon = "", color = "orange" },
+            },
+            -- Cursor management
+            {
+                "<leader>mx",
+                function()
+                    require("multicursor-nvim").deleteCursor()
+                end,
+                desc = "Delete cursor",
+                icon = { icon = "󰆴", color = "red" },
+            },
+            {
+                "<leader>mq",
+                function()
+                    require("multicursor-nvim").toggleCursor()
+                end,
+                desc = "Toggle cursor",
+                icon = { icon = "󰔡", color = "azure" },
+            },
+            {
+                "<leader>mr",
+                function()
+                    require("multicursor-nvim").restoreCursors()
+                end,
+                desc = "Restore cursors",
+                icon = { icon = "󰑓", color = "green" },
+            },
+            {
+                "<leader>ml",
+                function()
+                    require("multicursor-nvim").alignCursors()
+                end,
+                desc = "Align cursors",
+                icon = { icon = "󰘠", color = "blue" },
+            },
+            -- Operator mode
+            {
+                "<leader>mo",
+                function()
+                    require("multicursor-nvim").operator()
+                end,
+                desc = "Multicursor operator",
+                icon = { icon = "", color = "cyan" },
+            },
+            icon = { icon = "󰆿", color = "purple" },
+        },
+
+        -- Quick multicursor (no leader)
+        {
+            "n",
+            function()
+                require("multicursor-nvim").matchAddCursor(1)
+            end,
+            desc = "Add cursor at next match",
+        },
+        {
+            "<esc>",
+            function()
+                local mc = require("multicursor-nvim")
+                if not mc.cursorsEnabled() then
+                    mc.enableCursors()
+                elseif mc.hasCursors() then
+                    mc.clearCursors()
+                end
+            end,
+            desc = "Clear/enable cursors",
+        },
 
         -- Other
         { "<A-k>", "<cmd>m .-2<cr>", desc = "Move line up" },
@@ -362,7 +503,42 @@ wk.add({
         { "p", '"_dP', desc = "Paste without yanking" },
         { "<", "<gv", desc = "Indent left and reselect" },
         { ">", ">gv", desc = "Indent right and reselect" },
-        { "m", "<cmd>'<,'>MCvisual<cr>", desc = "Create multiple cursors (visual)" },
+        -- Multicursor visual
+        {
+            "n",
+            function()
+                require("multicursor-nvim").matchAddCursor(1)
+            end,
+            desc = "Add cursor at next match",
+        },
+        {
+            "S",
+            function()
+                require("multicursor-nvim").splitCursors()
+            end,
+            desc = "Split selection by regex",
+        },
+        {
+            "M",
+            function()
+                require("multicursor-nvim").matchCursors()
+            end,
+            desc = "Match cursors by regex",
+        },
+        {
+            "i",
+            function()
+                require("multicursor-nvim").insertVisual()
+            end,
+            desc = "Insert at each line",
+        },
+        {
+            "a",
+            function()
+                require("multicursor-nvim").appendVisual()
+            end,
+            desc = "Append at each line",
+        },
         {
             "<A-k>",
             function()

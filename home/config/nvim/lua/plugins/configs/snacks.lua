@@ -35,24 +35,6 @@ require("snacks").setup({
             { section = "startup", indent = 60, padding = 5, pane = 1, icon = "􀋥  " },
         },
     },
-    indent = {
-        indent = {
-            char = "│",
-        },
-        animate = {
-            enabled = vim.fn.has("nvim-0.10") == 1,
-            style = "out",
-            easing = "outQuad",
-            duration = {
-                step = 10, -- ms per step
-                total = 200, -- maximum duration
-            },
-        },
-        scope = {
-            char = "│",
-            hl = "RainbowDelimiterViolet",
-        },
-    },
     terminal = {
         shell = "fish",
         win = {
