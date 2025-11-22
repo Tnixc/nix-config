@@ -52,7 +52,7 @@ require("catppuccin").setup({
             TelescopePreviewTitle = { fg = colors.crust, bg = colors.sapphire },
             TelescopePromptTitle = { fg = colors.crust, bg = colors.green },
 
-            PmenuSel = { bg = colors.overlay1, fg = colors.text },
+            PmenuSel = { bg = colors.surface0, fg = colors.blue },
             Pmenu = { fg = colors.text, bg = colors.mantle },
 
             CmpItemAbbrDeprecated = { fg = colors.overlay1, bg = "NONE", strikethrough = true },

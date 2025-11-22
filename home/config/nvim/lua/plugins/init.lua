@@ -140,7 +140,7 @@ lazy.setup({
         config = function()
             require("diffview").setup({
                 file_panel = {
-                    listing_style = "list",
+                    listing_style = "tree",
                     win_config = {
                         position = "right",
                         width = 30,
