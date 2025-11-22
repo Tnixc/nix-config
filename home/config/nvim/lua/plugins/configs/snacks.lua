@@ -23,9 +23,9 @@ require("snacks").setup({
             {
                 pane = 2,
                 section = "terminal",
-                cmd = "chafa /Users/tnixc/Pictures/assets/Z2.JPG --format symbols --symbols vhalf --size 100x7 --stretch",
-                height = 7,
-                padding = 1,
+                cmd = "chafa /Users/tnixc/Pictures/assets/Z2.JPG --format symbols --symbols vhalf --size 100x6 --stretch",
+                height = 6,
+                padding = 2,
                 indent = -52,
             },
             { section = "header", pane = 1 },

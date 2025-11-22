@@ -409,15 +409,6 @@ wk.add({
             },
             icon = { icon = "󰆿", color = "purple" },
         },
-
-        -- Quick multicursor (no leader)
-        {
-            "n",
-            function()
-                require("multicursor-nvim").matchAddCursor(1)
-            end,
-            desc = "Add cursor at next match",
-        },
         {
             "<esc>",
             function()
@@ -505,7 +496,7 @@ wk.add({
         { ">", ">gv", desc = "Indent right and reselect" },
         -- Multicursor visual
         {
-            "n",
+            "m",
             function()
                 require("multicursor-nvim").matchAddCursor(1)
             end,
