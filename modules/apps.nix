@@ -78,6 +78,8 @@
     aria2
     yt-dlp
     ffmpeg
+    dwt1-shell-color-scripts
+    chafa
 
     # python
     python313Packages.mako

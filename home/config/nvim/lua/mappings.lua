@@ -56,6 +56,21 @@ wk.add({
         },
 
         {
+            "<leader>a",
+            function()
+                for _, win in ipairs(vim.api.nvim_list_wins()) do
+                    local buf = vim.api.nvim_win_get_buf(win)
+                    if vim.bo[buf].filetype == "snacks_dashboard" then
+                        vim.cmd("q")
+                        return
+                    end
+                end
+                Snacks.dashboard()
+            end,
+            desc = "Toggle Dashboard",
+            icon = { icon = "󰕮", color = "purple" },
+        },
+        {
             "<leader>e",
             function()
                 Snacks.explorer()
@@ -63,7 +78,6 @@ wk.add({
             desc = "Toggle Explorer",
             icon = { icon = "", color = "azure" },
         },
-        { "<leader>a", "<cmd>Alpha<cr>", desc = "Go to Alpha Screen", icon = { icon = "󱌎", color = "purple" } },
         { "<leader>w", "<cmd>w<cr>", desc = "Save File", icon = { icon = "󰆓", color = "green" } },
         { "<leader>q", "<cmd>q<cr>", desc = "Quit", icon = { icon = "󰈆", color = "yellow" } },
         { "<leader>Q", "<cmd>qa!<cr>", desc = "Quit All", icon = { icon = "", color = "red" } },

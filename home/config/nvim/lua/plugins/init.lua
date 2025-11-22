@@ -33,13 +33,6 @@ lazy.setup({
     { "tiagovla/tokyodark.nvim", opts = {}, lazy = true },
     { "rose-pine/neovim", name = "rose-pine", opts = {}, lazy = true },
     {
-        "goolord/alpha-nvim",
-        event = "VimEnter",
-        config = function()
-            require("plugins.configs.alpha")
-        end,
-    },
-    {
         "rachartier/tiny-devicons-auto-colors.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         event = "VeryLazy",
@@ -219,16 +212,16 @@ lazy.setup({
         "rmagatti/auto-session",
         lazy = false,
         opts = {
-            bypass_save_filetypes = { "alpha", "" },
+            bypass_save_filetypes = { "snacks_dashboard", "" },
             post_restore_cmds = {
                 function()
-                    -- Show alpha if restored to a blank buffer
+                    -- Show dashboard if restored to a blank buffer
                     vim.schedule(function()
                         local buf = vim.api.nvim_get_current_buf()
                         local bufname = vim.api.nvim_buf_get_name(buf)
                         local bufft = vim.bo[buf].filetype
                         if bufname == "" and bufft == "" then
-                            vim.cmd("Alpha")
+                            Snacks.dashboard()
                         end
                     end)
                 end,
