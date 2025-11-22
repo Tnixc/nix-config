@@ -130,7 +130,7 @@ ins_left({
 
 ins_left({ "location" })
 
-ins_left({ "progress", color = { fg = colors.pink, gui = "bold" } })
+ins_left({ "progress", color = { fg = colors.flamingo } })
 
 ins_left({
     "branch",
@@ -140,13 +140,22 @@ ins_left({
 
 ins_left({
     "diff",
-    symbols = { added = "􀑍 ", modified = "􁚛 ", removed = "􀃞 " },
+    source = function()
+        local gitsigns = vim.b.gitsigns_status_dict
+        if gitsigns then
+            return {
+                added = gitsigns.added,
+                modified = gitsigns.changed,
+                removed = gitsigns.removed,
+            }
+        end
+    end,
+    symbols = { added = "􀑍 ", modified = "􁚛 ", removed = "􀺾 " },
     diff_color = {
         added = { fg = colors.green },
         modified = { fg = colors.yellow },
         removed = { fg = colors.red },
     },
-    cond = conditions.hide_in_width,
 })
 
 ins_left({
@@ -155,24 +164,36 @@ ins_left({
     color = { fg = colors.orange },
 })
 
+ins_left({
+    function()
+        local msg = require("lsp-progress").progress()
+        if #msg > 40 then
+            return msg:sub(1, 37) .. "..."
+        end
+        return msg
+    end,
+    color = { fg = colors.pink },
+})
+
 ins_right({
     -- filesize component
     "filesize",
     icon = "􀎾 ",
     cond = conditions.buffer_not_empty,
+    color = { fg = colors.sky },
 })
 
 ins_right({
     "filename",
     icon = "􀈿 ",
     cond = conditions.buffer_not_empty,
-    color = { fg = colors.sapphire, gui = "bold" },
+    color = { fg = colors.sapphire },
 })
 
 ins_right({
     "diagnostics",
     sources = { "nvim_diagnostic" },
-    symbols = { error = "􀻀 ", warn = "􀘰 ", info = "􀅵 " },
+    symbols = { error = "􀃰 ", warn = "􀃮 ", info = "􁊇 " },
     diagnostics_color = {
         color_error = { fg = colors.red },
         color_warn = { fg = colors.peach },
@@ -231,4 +252,11 @@ ins_right({
 })
 
 require("lualine").setup(config)
--- require("lualine").setup({})
+
+-- Listen to lsp-progress event and refresh lualine
+vim.api.nvim_create_augroup("lualine_augroup", { clear = true })
+vim.api.nvim_create_autocmd("User", {
+    group = "lualine_augroup",
+    pattern = "LspProgressStatusUpdated",
+    callback = require("lualine").refresh,
+})

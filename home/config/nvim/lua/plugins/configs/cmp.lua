@@ -45,7 +45,7 @@ cmp.setup({
     },
     window = {
         completion = {
-            winhighlight = "Normal:CmpNormal,FloatBorder:CmpNormal,Search:None",
+            winhighlight = "Normal:CmpNormal,FloatBorder:CmpNormal,Search:None,CursorLine:CmpSel",
             col_offset = -3,
             side_padding = 0,
         },

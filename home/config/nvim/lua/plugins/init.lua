@@ -516,14 +516,16 @@ lazy.setup({
     { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }, event = "VeryLazy" },
     -- LSP configuration (using Neovim 0.11 native API with Mason-installed servers)
     {
-        "j-hui/fidget.nvim",
-        opts = {
-            notification = {
-                window = {
-                    winblend = 0,
-                    normal_hl = "Normal",
-                },
-            },
-        },
+        "linrongbin16/lsp-progress.nvim",
+        config = function()
+            require("lsp-progress").setup({
+                format = function(client_messages)
+                    if #client_messages > 0 then
+                        return table.concat(client_messages, " ")
+                    end
+                    return ""
+                end,
+            })
+        end,
     },
 })

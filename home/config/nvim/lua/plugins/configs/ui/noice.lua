@@ -1,8 +1,7 @@
 require("noice").setup({
     lsp = {
         progress = {
-            enabled = true,
-            view = "mini",
+            enabled = false,
         },
         hover = {
             opts = {

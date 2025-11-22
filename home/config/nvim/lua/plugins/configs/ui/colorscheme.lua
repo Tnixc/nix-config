@@ -52,13 +52,15 @@ require("catppuccin").setup({
             TelescopePreviewTitle = { fg = colors.crust, bg = colors.sapphire },
             TelescopePromptTitle = { fg = colors.crust, bg = colors.green },
 
-            PmenuSel = { bg = colors.surface0, fg = colors.blue },
+            PmenuSel = { bg = colors.surface1, fg = colors.text },
             Pmenu = { fg = colors.text, bg = colors.mantle },
 
             CmpItemAbbrDeprecated = { fg = colors.overlay1, bg = "NONE", strikethrough = true },
             CmpItemAbbrMatch = { fg = colors.blue, bg = "NONE", bold = true },
             CmpItemAbbrMatchFuzzy = { fg = colors.blue, bg = "NONE", bold = true },
             CmpItemMenu = { fg = colors.pink, bg = "NONE", italic = true },
+
+            CmpSel = { bg = colors.surface2, bold = true },
 
             CmpItemKindField = { fg = colors.crust, bg = colors.red },
             CmpItemKindProperty = { fg = colors.crust, bg = colors.red },
