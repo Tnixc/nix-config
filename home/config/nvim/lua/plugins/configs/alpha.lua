@@ -1,7 +1,7 @@
 local alpha = require("alpha")
 local dashboard = require("alpha.themes.dashboard")
 
-dashboard.section.header.val = require("plugins.configs.ui.alpha_header")
+dashboard.section.header.val = require("plugins.configs.alpha_header")
 
 local function button(sc, txt, leader_txt, keybind, keybind_opts)
     local sc_after = sc:gsub("%s", ""):gsub(leader_txt, "<leader>")

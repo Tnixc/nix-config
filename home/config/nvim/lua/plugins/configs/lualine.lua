@@ -130,7 +130,7 @@ ins_left({
 
 ins_left({ "location" })
 
-ins_left({ "progress", color = { fg = colors.flamingo } })
+ins_left({ "progress", color = { fg = colors.flamingo }, padding = { left = 0, right = 1 } })
 
 ins_left({
     "branch",

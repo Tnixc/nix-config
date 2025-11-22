@@ -1,7 +1,7 @@
 vim.loader.enable()
 -- For options & keymappings & coloring
 -- options & settings for neovim
-require("core.options")
+require("options")
 
 -- Install the Lazy Plugins Manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -22,10 +22,10 @@ vim.opt.runtimepath:prepend(lazypath)
 require("plugins")
 
 -- Keybindings
-require("core.mappings")
+require("mappings")
 
 -- Filetype-specific settings
-require("core.ft")
+require("ft")
 
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 

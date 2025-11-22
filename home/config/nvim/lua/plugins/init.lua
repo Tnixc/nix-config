@@ -24,7 +24,7 @@ lazy.setup({
         name = "catppuccin",
         priority = 1000,
         config = function()
-            require("plugins.configs.ui.colorscheme")
+            require("plugins.configs.colorscheme")
         end,
     },
     { "sam4llis/nvim-tundra", opts = {}, event = "VeryLazy" },
@@ -36,7 +36,7 @@ lazy.setup({
         "goolord/alpha-nvim",
         event = "VimEnter",
         config = function()
-            require("plugins.configs.ui.alpha")
+            require("plugins.configs.alpha")
         end,
     },
     {
@@ -51,37 +51,29 @@ lazy.setup({
     -- UI Enhancements
     {
         "akinsho/bufferline.nvim",
-        event = "VeryLazy",
-        after = "catppuccin",
+        event = "BufAdd",
         dependencies = { "nvim-tree/nvim-web-devicons", "rachartier/tiny-devicons-auto-colors.nvim" },
         config = function()
-            require("plugins.configs.ui.bufferline")
+            require("plugins.configs.bufferline")
         end,
     },
-    -- {
-    --     "Bekaboo/dropbar.nvim",
-    --     event = "VeryLazy",
-    --     dependencies = {
-    --         "nvim-telescope/telescope-fzf-native.nvim",
-    --     },
-    -- },
     {
         "famiu/bufdelete.nvim",
         event = "VeryLazy",
     },
     {
         "nvim-lualine/lualine.nvim",
-        event = "VeryLazy",
-        dependencies = { "kyazdani42/nvim-web-devicons" },
+        event = "UIEnter",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            require("plugins.configs.ui.lualine")
+            require("plugins.configs.lualine")
         end,
     },
     {
         "nvim-tree/nvim-tree.lua",
         cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile", "NvimTreeCollapse" },
         config = function()
-            require("plugins.configs.ui.nvim-tree")
+            require("plugins.configs.nvim-tree")
         end,
     },
     {
@@ -104,14 +96,13 @@ lazy.setup({
     },
     {
         "folke/todo-comments.nvim",
-        event = "VeryLazy",
+        event = "BufReadPost",
         opts = {},
     },
     {
         "folke/trouble.nvim",
-        event = "VeryLazy",
-        opts = {},
         cmd = "Trouble",
+        opts = {},
     },
     {
         "rachartier/tiny-inline-diagnostic.nvim",
@@ -157,12 +148,12 @@ lazy.setup({
         opts = {},
         dependencies = { "MunifTanjim/nui.nvim" },
         config = function()
-            require("plugins.configs.ui.noice")
+            require("plugins.configs.noice")
         end,
     },
     {
         "petertriho/nvim-scrollbar",
-        event = "VeryLazy",
+        event = "BufReadPost",
         opts = { handlers = { gitsigns = true } },
     },
 
@@ -190,7 +181,7 @@ lazy.setup({
     -- Editing Helpers
     {
         "MagicDuck/grug-far.nvim",
-        event = "VeryLazy",
+        cmd = "GrugFar",
         config = function()
             require("grug-far").setup({})
         end,
@@ -280,11 +271,11 @@ lazy.setup({
     {
         "lewis6991/gitsigns.nvim",
         opts = { current_line_blame = true },
-        event = "VeryLazy",
+        event = "BufReadPost",
     },
     {
         "kdheepak/lazygit.nvim",
-        event = "VeryLazy",
+        cmd = "LazyGit",
     },
 
     -- Miscellaneous
@@ -361,8 +352,8 @@ lazy.setup({
         event = "VeryLazy",
     },
     {
-        event = "VeryLazy",
         "nvim-treesitter/nvim-treesitter",
+        event = "BufReadPost",
         config = function()
             require("plugins.configs.treesitter")
         end,
@@ -437,62 +428,22 @@ lazy.setup({
             },
         },
     },
-    -- {
-    --     "supermaven-inc/supermaven-nvim",
-    --     event = "VeryLazy",
-    --     config = function()
-    --         require("supermaven-nvim").setup({
-    --             log_level = "off",
-    --             keymaps = { -- NOTE: Keymaps here
-    --                 accept_suggestion = "<M-n>",
-    --                 clear_suggestion = "<C-]>",
-    --                 accept_word = "<C-j>",
-    --             },
-    --         })
-    --     end,
-    -- },
-    -- {
-    --     "zbirenbaum/copilot.lua",
-    --     cmd = "Copilot",
-    --     event = "InsertEnter",
-    --     config = function()
-    --         require("copilot").setup({
-    --             panel = { enabled = false },
-    --             suggestion = {
-    --                 enabled = true,
-    --                 auto_trigger = true,
-    --                 hide_during_completion = true,
-    --                 debounce = 75,
-    --                 keymap = {
-    --                     accept = "<M-i>",
-    --                     accept_word = false,
-    --                     accept_line = false,
-    --                     next = "<M-]>",
-    --                     prev = "<M-[>",
-    --                     dismiss = "<C-]>",
-    --                 },
-    --             },
-    --         })
-    --     end,
-    -- },
     {
         "kawre/leetcode.nvim",
-        event = "VeryLazy",
+        cmd = "Leet",
         dependencies = {
             "nvim-telescope/telescope.nvim",
-            -- "ibhagwan/fzf-lua",
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
         },
         opts = {
-            -- configuration goes here
             lang = "typescript",
             image_support = true,
         },
     },
     {
         "hrsh7th/nvim-cmp",
-        event = "VeryLazy",
+        event = "InsertEnter",
         dependencies = {
             {
                 "L3MON4D3/LuaSnip",
