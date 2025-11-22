@@ -50,7 +50,7 @@ cmp.setup({
             side_padding = 0,
         },
         documentation = {
-            border = Border("BGFloatBorder"),
+            border = Border("CrustBorder"),
             winhighlight = "Normal:DocNormal",
         },
     },

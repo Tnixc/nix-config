@@ -37,9 +37,9 @@ require("catppuccin").setup({
     },
     custom_highlights = function(colors)
         return {
-            MantleBorder = { fg = colors.surface1, bg = colors.mantle },
-            FloatBorder = { fg = colors.surface2, bg = colors.base },
-            BGFloatBorder = { fg = colors.surface1, bg = colors.crust },
+            MantleBorder = { fg = colors.surface2, bg = colors.mantle },
+            BaseBorder = { fg = colors.surface2, bg = colors.base },
+            CrustBorder = { fg = colors.surface2, bg = colors.crust },
             MultiCursor = { fg = colors.maroon, bg = colors.crust },
             MultiCursorMain = { fg = colors.red, bg = colors.crust },
             Folded = { fg = colors.sapphire, bg = colors.mantle },

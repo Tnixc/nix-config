@@ -154,7 +154,7 @@ require("telescope").setup({
                     },
                 },
                 win_options = {
-                    winhighlight = "Normal:TelescopeNormal,FloatBorder:BGFloatBorder",
+                    winhighlight = "Normal:TelescopeNormal,FloatBorder:CrustBorder",
                 },
             })
 
@@ -168,7 +168,7 @@ require("telescope").setup({
                     },
                 },
                 win_options = {
-                    winhighlight = "Normal:TelescopeNormal,FloatBorder:BGFloatBorder",
+                    winhighlight = "Normal:TelescopeNormal,FloatBorder:CrustBorder",
                 },
             })
 
@@ -182,7 +182,7 @@ require("telescope").setup({
                     },
                 },
                 win_options = {
-                    winhighlight = "Normal:TelescopeNormal,FloatBorder:BGFloatBorder",
+                    winhighlight = "Normal:TelescopeNormal,FloatBorder:CrustBorder",
                 },
             })
 

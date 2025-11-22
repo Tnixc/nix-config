@@ -49,8 +49,8 @@ local config = {
         component_separators = "",
         section_separators = "",
         theme = {
-            normal = { c = { fg = colors.text, bg = colors.crust } },
-            inactive = { c = { fg = colors.text, bg = colors.crust } },
+            normal = { c = { fg = colors.text, bg = colors.mantle } },
+            inactive = { c = { fg = colors.text, bg = colors.mantle } },
         },
     },
     sections = {
@@ -113,7 +113,7 @@ ins_left({
     end,
     color = function()
         -- auto change color according to neovims mode
-        return { fg = colors.crust, bg = mode_color[vim.fn.mode()], gui = "bold" }
+        return { fg = colors.mantle, bg = mode_color[vim.fn.mode()], gui = "bold" }
     end,
     padding = { left = 1, right = 1 },
 })
