@@ -123,21 +123,7 @@ lazy.setup({
             })
         end,
     },
-    {
-        "saghen/blink.pairs",
-        version = "*",
-        build = "nix run .#build-plugin",
-        opts = {
-            highlights = {
-                groups = {
-                    "BlinkIndentBlue",
-                    "BlinkIndentOrange",
-                    "BlinkIndentGreen",
-                    "BlinkIndentRed",
-                },
-            },
-        },
-    },
+    { "hiphish/rainbow-delimiters.nvim", event = "BufReadPost" },
     {
         "saghen/blink.indent",
         event = "BufReadPost",
@@ -145,15 +131,24 @@ lazy.setup({
             scope = {
                 char = "│",
                 highlights = {
-                    "BlinkIndentOrange",
-                    "BlinkIndentGreen",
-                    "BlinkIndentRed",
-                    "BlinkIndentBlue",
+                    "RainbowDelimiterViolet",
                 },
             },
         },
     },
-
+    {
+        "hedyhli/outline.nvim",
+        event = "VeryLazy",
+        cmd = { "Outline", "OutlineOpen" },
+        opts = {
+            outline_window = {
+                position = "left",
+                width = 40,
+                relative_width = false,
+                auto_close = true,
+            },
+        },
+    },
     {
         "folke/noice.nvim",
         event = "VeryLazy",
@@ -199,10 +194,12 @@ lazy.setup({
         end,
     },
     {
-        "smoka7/multicursors.nvim",
-        event = "VeryLazy",
-        dependencies = { "nvimtools/hydra.nvim" },
-        opts = {},
+        "jake-stewart/multicursor.nvim",
+        branch = "1.0",
+        config = function()
+            local mc = require("multicursor-nvim")
+            mc.setup()
+        end,
     },
     {
         "kylechui/nvim-surround",
