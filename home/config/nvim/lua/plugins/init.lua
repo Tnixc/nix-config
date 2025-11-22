@@ -459,26 +459,42 @@ lazy.setup({
         },
     },
     {
-        "hrsh7th/nvim-cmp",
+        "saghen/blink.cmp",
+        version = "*",
+        build = "nix run .#build-plugin",
         event = "InsertEnter",
-        dependencies = {
-            {
-                "L3MON4D3/LuaSnip",
-                build = (function()
-                    if vim.fn.has("win32") == 1 or vim.fn.executable("make") == 0 then
-                        return
-                    end
-                    return "make install_jsregexp"
-                end)(),
+        dependencies = { "rafamadriz/friendly-snippets" },
+        opts = {
+            keymap = {
+                preset = "default",
+                ["<Tab>"] = { "accept", "fallback" },
+                ["<C-j>"] = { "select_next", "fallback" },
+                ["<C-k>"] = { "select_prev", "fallback" },
             },
-            "saadparwaiz1/cmp_luasnip",
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-path",
-            "onsails/lspkind.nvim",
+            appearance = {
+                nerd_font_variant = "normal",
+            },
+            completion = {
+                menu = {
+                    draw = {
+                        columns = { { "kind_icon" }, { "label", "label_description", gap = 1 } },
+                        treesitter = { "lsp" },
+                    },
+                    winhighlight = "Normal:CmpNormal,FloatBorder:CmpNormal,CursorLine:CmpSel,Search:None",
+                },
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 0,
+                    window = {
+                        border = "single",
+                        winhighlight = "Normal:DocNormal,FloatBorder:CrustBorder",
+                    },
+                },
+            },
+            sources = {
+                default = { "lsp", "path", "snippets", "buffer" },
+            },
         },
-        config = function()
-            require("plugins.configs.cmp")
-        end,
     },
     { "artemave/workspace-diagnostics.nvim", event = "VeryLazy" },
     { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }, event = "VeryLazy" },
