@@ -51,10 +51,6 @@ lazy.setup({
         end,
     },
     {
-        "famiu/bufdelete.nvim",
-        event = "VeryLazy",
-    },
-    {
         "nvim-lualine/lualine.nvim",
         event = "UIEnter",
         dependencies = { "nvim-tree/nvim-web-devicons" },

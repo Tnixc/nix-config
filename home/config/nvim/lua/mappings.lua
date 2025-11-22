@@ -382,7 +382,13 @@ wk.add({
     -- All
     {
         mode = { "n", "v", "i" },
-        { "<M-w>", "<cmd>Bdelete<cr>", desc = "Close current buffer" },
+        {
+            "<M-w>",
+            function()
+                Snacks.bufdelete()
+            end,
+            desc = "Close current buffer",
+        },
         { "<M-S-Tab>", "<cmd>BufferLineCyclePrev<cr>", desc = "Switch to previous buffer" },
         { "<M-Tab>", "<cmd>BufferLineCycleNext<cr>", desc = "Switch to next buffer" },
         { "<D-a>", "<esc>ggVG", desc = "Select all text" },
