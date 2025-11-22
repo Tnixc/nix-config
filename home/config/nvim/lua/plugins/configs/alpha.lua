@@ -38,14 +38,6 @@ end
 
 local leader = " "
 dashboard.section.buttons.val = {
-    button("o", "  Open workspace", leader, nil, {
-        noremap = true,
-        silent = true,
-        nowait = true,
-        callback = function()
-            require("telescope").extensions.workspaces.workspaces({})
-        end,
-    }),
     button("f", "  Open file", leader, nil, {
         noremap = true,
         silent = true,
@@ -134,16 +126,64 @@ vim.api.nvim_create_autocmd("User", {
     end,
 })
 vim.api.nvim_create_augroup("alpha_on_empty", { clear = true })
+
+local function should_show_alpha()
+    -- Don't show if there are multiple windows (splits)
+    if vim.fn.winnr("$") > 1 then
+        return false
+    end
+
+    -- Get current buffer info
+    local buf = vim.api.nvim_get_current_buf()
+    local bufname = vim.api.nvim_buf_get_name(buf)
+    local bufft = vim.bo[buf].filetype
+    local buftype = vim.bo[buf].buftype
+    local modified = vim.bo[buf].modified
+    local line_count = vim.api.nvim_buf_line_count(buf)
+
+    -- Check if it's an empty unnamed buffer
+    local is_empty = bufname == "" and bufft == "" and buftype == "" and not modified and line_count <= 1
+
+    -- Also check if only content is empty
+    if is_empty and line_count == 1 then
+        local first_line = vim.api.nvim_buf_get_lines(buf, 0, 1, false)[1]
+        is_empty = first_line == ""
+    end
+
+    return is_empty
+end
+
+-- Handle bufdelete.nvim events
 vim.api.nvim_create_autocmd("User", {
     pattern = "BDeletePost*",
     group = "alpha_on_empty",
-    callback = function(event)
-        local fallback_name = vim.api.nvim_buf_get_name(event.buf)
-        local fallback_ft = vim.api.nvim_buf_get_option(event.buf, "filetype")
-        local fallback_on_empty = fallback_name == "" and fallback_ft == ""
-
-        if fallback_on_empty then
+    callback = function()
+        if should_show_alpha() then
             vim.cmd("Alpha")
         end
+    end,
+})
+
+-- Handle regular buffer deletion and other events that might leave blank buffers
+vim.api.nvim_create_autocmd({ "BufDelete", "BufEnter" }, {
+    group = "alpha_on_empty",
+    callback = function()
+        vim.schedule(function()
+            if should_show_alpha() then
+                vim.cmd("Alpha")
+            end
+        end)
+    end,
+})
+
+-- Handle auto-session restore to blank buffer
+vim.api.nvim_create_autocmd("SessionLoadPost", {
+    group = "alpha_on_empty",
+    callback = function()
+        vim.schedule(function()
+            if should_show_alpha() then
+                vim.cmd("Alpha")
+            end
+        end)
     end,
 })

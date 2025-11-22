@@ -27,11 +27,11 @@ lazy.setup({
             require("plugins.configs.colorscheme")
         end,
     },
-    { "sam4llis/nvim-tundra", opts = {}, event = "VeryLazy" },
-    { "Everblush/nvim", name = "everblush", opts = {}, event = "VeryLazy" },
-    { "projekt0n/github-nvim-theme", name = "github-theme", opts = {}, event = "VeryLazy" },
-    { "tiagovla/tokyodark.nvim", opts = {}, event = "VeryLazy" },
-    { "rose-pine/neovim", name = "rose-pine", opts = {}, event = "VeryLazy" },
+    { "sam4llis/nvim-tundra", opts = {}, lazy = true },
+    { "Everblush/nvim", name = "everblush", opts = {}, lazy = true },
+    { "projekt0n/github-nvim-theme", name = "github-theme", opts = {}, lazy = true },
+    { "tiagovla/tokyodark.nvim", opts = {}, lazy = true },
+    { "rose-pine/neovim", name = "rose-pine", opts = {}, lazy = true },
     {
         "goolord/alpha-nvim",
         event = "VimEnter",
@@ -241,7 +241,22 @@ lazy.setup({
     {
         "rmagatti/auto-session",
         lazy = false,
-        opts = {},
+        opts = {
+            bypass_save_filetypes = { "alpha", "" },
+            post_restore_cmds = {
+                function()
+                    -- Show alpha if restored to a blank buffer
+                    vim.schedule(function()
+                        local buf = vim.api.nvim_get_current_buf()
+                        local bufname = vim.api.nvim_buf_get_name(buf)
+                        local bufft = vim.bo[buf].filetype
+                        if bufname == "" and bufft == "" then
+                            vim.cmd("Alpha")
+                        end
+                    end)
+                end,
+            },
+        },
     },
     {
         "akinsho/toggleterm.nvim",
@@ -250,19 +265,11 @@ lazy.setup({
         opts = { open_mapping = [[<M-l>]], shell = "fish" },
     },
     {
-        "natecraddock/workspaces.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("workspaces").setup({ hooks = { open = { "Telescope find_files" } } })
-        end,
-    },
-    {
         "nvim-telescope/telescope.nvim",
         event = "VeryLazy",
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-ui-select.nvim",
-            "debugloop/telescope-undo.nvim",
         },
         config = function()
             require("plugins.configs.telescope")

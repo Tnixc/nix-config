@@ -261,19 +261,7 @@ require("telescope").setup({
             return TSLayout(layout)
         end,
     },
-    extensions = {
-        undo = {},
-        ["ui-select"] = {
-            require("telescope.themes").get_dropdown({}),
-        },
-        workspaces = {
-            keep_insert = true,
-            path_hl = "Delimiter",
-        },
-    },
 })
 
-require("telescope").load_extension("undo")
 require("telescope").load_extension("ui-select")
-require("telescope").load_extension("workspaces")
 require("telescope").load_extension("noice")
