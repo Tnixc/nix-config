@@ -1,6 +1,9 @@
 require("noice").setup({
     lsp = {
-        progress = { format = "notify" },
+        progress = {
+            enabled = true,
+            view = "mini",
+        },
         hover = {
             opts = {
                 border = {

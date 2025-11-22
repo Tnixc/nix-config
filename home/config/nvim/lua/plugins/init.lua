@@ -517,6 +517,13 @@ lazy.setup({
     -- LSP configuration (using Neovim 0.11 native API with Mason-installed servers)
     {
         "j-hui/fidget.nvim",
-        opts = {},
+        opts = {
+            notification = {
+                window = {
+                    winblend = 0,
+                    normal_hl = "Normal",
+                },
+            },
+        },
     },
 })
