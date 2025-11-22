@@ -64,13 +64,6 @@ local lsp_servers = {
 vim.g.zig_fmt_parse_errors = 0
 
 -- Override floating preview globally
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-    opts = opts or {}
-    opts.border = opts.border or Border("BGFloatBorder")
-    opts.header = ""
-    return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
 
 -- Configure language servers using Neovim 0.11 native API
 local function configure_lsp_servers()

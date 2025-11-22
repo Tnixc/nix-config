@@ -44,7 +44,7 @@ in {
     palette = 4=${strip c.blue}
     palette = 5=${strip c.pink}
     palette = 6=${strip c.teal}
-    palette = 7=${strip c.subtext1}
+    palette = 7=${strip c.text}
     palette = 8=${strip c.surface2}
     palette = 9=${strip c.red}
     palette = 10=${strip c.green}
@@ -52,7 +52,7 @@ in {
     palette = 12=${strip c.blue}
     palette = 13=${strip c.pink}
     palette = 14=${strip c.teal}
-    palette = 15=${strip c.subtext0}
+    palette = 15=${strip c.text}
 
     # Transparency
     background-opacity = 0.95

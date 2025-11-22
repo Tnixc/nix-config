@@ -37,12 +37,61 @@ require("catppuccin").setup({
     },
     custom_highlights = function(colors)
         return {
-            FloatBorder = { fg = colors.bascruscrustte },
-            BGFloatBorder = { fg = colors.surface1, bg = colors.mantle },
+            MantleBorder = { fg = colors.surface1, bg = colors.mantle },
+            FloatBorder = { fg = colors.surface2, bg = colors.base },
+            BGFloatBorder = { fg = colors.surface1, bg = colors.crust },
             MultiCursor = { fg = colors.maroon, bg = colors.crust },
             MultiCursorMain = { fg = colors.red, bg = colors.crust },
             Folded = { fg = colors.sapphire, bg = colors.mantle },
             UfoFoldedBg = { bg = colors.surface0 },
+            CmpNormal = { bg = colors.base },
+            DocNormal = { bg = colors.crust },
+
+            TelescopeNormal = { bg = colors.crust },
+            TelescopeResultsTitle = { fg = colors.crust, bg = colors.red },
+            TelescopePreviewTitle = { fg = colors.crust, bg = colors.sapphire },
+            TelescopePromptTitle = { fg = colors.crust, bg = colors.green },
+
+            PmenuSel = { bg = colors.overlay1, fg = colors.text },
+            Pmenu = { fg = colors.text, bg = colors.mantle },
+
+            CmpItemAbbrDeprecated = { fg = colors.overlay1, bg = "NONE", strikethrough = true },
+            CmpItemAbbrMatch = { fg = colors.blue, bg = "NONE", bold = true },
+            CmpItemAbbrMatchFuzzy = { fg = colors.blue, bg = "NONE", bold = true },
+            CmpItemMenu = { fg = colors.pink, bg = "NONE", italic = true },
+
+            CmpItemKindField = { fg = colors.crust, bg = colors.red },
+            CmpItemKindProperty = { fg = colors.crust, bg = colors.red },
+            CmpItemKindEvent = { fg = colors.crust, bg = colors.red },
+
+            CmpItemKindText = { fg = colors.crust, bg = colors.green },
+            CmpItemKindEnum = { fg = colors.crust, bg = colors.green },
+            CmpItemKindKeyword = { fg = colors.crust, bg = colors.green },
+
+            CmpItemKindConstant = { fg = colors.crust, bg = colors.yellow },
+            CmpItemKindConstructor = { fg = colors.crust, bg = colors.yellow },
+            CmpItemKindReference = { fg = colors.crust, bg = colors.yellow },
+
+            CmpItemKindFunction = { fg = colors.crust, bg = colors.pink },
+            CmpItemKindStruct = { fg = colors.crust, bg = colors.pink },
+            CmpItemKindClass = { fg = colors.crust, bg = colors.pink },
+            CmpItemKindModule = { fg = colors.crust, bg = colors.pink },
+            CmpItemKindOperator = { fg = colors.crust, bg = colors.pink },
+
+            CmpItemKindVariable = { fg = colors.crust, bg = colors.overlay1 },
+            CmpItemKindFile = { fg = colors.crust, bg = colors.overlay1 },
+
+            CmpItemKindUnit = { fg = colors.crust, bg = colors.peach },
+            CmpItemKindSnippet = { fg = colors.crust, bg = colors.peach },
+            CmpItemKindFolder = { fg = colors.crust, bg = colors.peach },
+
+            CmpItemKindMethod = { fg = colors.crust, bg = colors.blue },
+            CmpItemKindValue = { fg = colors.crust, bg = colors.blue },
+            CmpItemKindEnumMember = { fg = colors.crust, bg = colors.blue },
+
+            CmpItemKindInterface = { fg = colors.crust, bg = colors.teal },
+            CmpItemKindColor = { fg = colors.crust, bg = colors.teal },
+            CmpItemKindTypeParameter = { fg = colors.crust, bg = colors.teal },
         }
     end,
 })

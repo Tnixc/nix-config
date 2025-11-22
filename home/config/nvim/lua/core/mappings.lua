@@ -1,22 +1,6 @@
 -- NOTE: Keymaps here
 local wk = require("which-key")
 
-local function create_border_opts()
-    return {
-        border = Border("BGFloatBorder"), -- Using the same border as your diagnostic window
-        max_width = 80,
-        focus = false,
-    }
-end
-
--- Override the LSP floating preview function
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-    opts = opts or {}
-    opts = vim.tbl_extend("force", create_border_opts(), opts)
-    return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
-
 vim.api.nvim_create_user_command("Format", function(args)
     local range = nil
     if args.count ~= -1 then
@@ -245,14 +229,6 @@ wk.add({
         -- Multicursor
         { "m", "<cmd>MCstart<cr>", desc = "Create multiple cursors (normal)" },
 
-        -- Hover
-        {
-            "K",
-            function()
-                vim.lsp.buf.hover(create_border_opts())
-            end,
-            desc = "Show diagnostics or hover information",
-        },
         -- Other
         { "<A-k>", "<cmd>m .-2<cr>", desc = "Move line up" },
         { "<A-j>", "<cmd>m .+1<cr>", desc = "Move line down" },

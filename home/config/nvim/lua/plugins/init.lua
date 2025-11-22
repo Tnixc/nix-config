@@ -370,7 +370,19 @@ lazy.setup({
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
-        opts = { delay = 1000, preset = "modern", win = { border = "single" } },
+        opts = {
+            delay = 1000,
+            preset = "modern",
+            win = {
+                border = "single",
+                title = true,
+            },
+        },
+        config = function(_, opts)
+            local wk = require("which-key")
+            wk.setup(opts)
+            vim.api.nvim_set_hl(0, "WhichKeyBorder", { link = "MantleBorder" })
+        end,
     },
 
     -- LSP and Completion
