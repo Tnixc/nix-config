@@ -383,6 +383,13 @@ wk.add({
     {
         mode = { "n", "v", "i" },
         {
+            "<M-l>",
+            function()
+                Snacks.terminal.toggle()
+            end,
+            desc = "Toggle terminal",
+        },
+        {
             "<M-w>",
             function()
                 Snacks.bufdelete()

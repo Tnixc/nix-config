@@ -107,18 +107,6 @@ lazy.setup({
     },
     { "hiphish/rainbow-delimiters.nvim", event = "BufReadPost" },
     {
-        "saghen/blink.indent",
-        event = "BufReadPost",
-        opts = {
-            scope = {
-                char = "│",
-                highlights = {
-                    "RainbowDelimiterViolet",
-                },
-            },
-        },
-    },
-    {
         "folke/noice.nvim",
         event = "VeryLazy",
         opts = {},
@@ -223,12 +211,6 @@ lazy.setup({
                 end,
             },
         },
-    },
-    {
-        "akinsho/toggleterm.nvim",
-        event = "VeryLazy",
-        version = "*",
-        opts = { open_mapping = [[<M-l>]], shell = "fish" },
     },
     {
         "folke/snacks.nvim",

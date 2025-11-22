@@ -35,6 +35,48 @@ require("snacks").setup({
             { section = "startup", indent = 60, padding = 5, pane = 1, icon = "􀋥  " },
         },
     },
+    indent = {
+        indent = {
+            char = "│",
+        },
+        animate = {
+            enabled = vim.fn.has("nvim-0.10") == 1,
+            style = "out",
+            easing = "outQuad",
+            duration = {
+                step = 10, -- ms per step
+                total = 200, -- maximum duration
+            },
+        },
+        scope = {
+            char = "│",
+            hl = "RainbowDelimiterViolet",
+        },
+    },
+    terminal = {
+        shell = "fish",
+        win = {
+            style = "terminal",
+            position = "float",
+            border = "single",
+            width = 0.8,
+            height = 0.8,
+            on_win = function(win)
+                vim.api.nvim_create_autocmd("WinLeave", {
+                    buffer = win.buf,
+                    callback = function()
+                        win:hide()
+                    end,
+                })
+            end,
+            wo = {
+                winhighlight = "Normal:DocNormal,FloatBorder:CrustBorder",
+            },
+            keys = {
+                ["<M-l>"] = { "hide", mode = { "n", "t", "i" } },
+            },
+        },
+    },
     picker = {
         prompt = " 􀊫  ",
         ui_select = true,
