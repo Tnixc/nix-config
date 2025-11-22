@@ -71,44 +71,67 @@ wk.add({
             group = "Find",
             { "<leader>f", desc = "Find" },
             {
+                "<leader>f?",
+                function()
+                    Snacks.picker()
+                end,
+                desc = "Open picker",
+                icon = { icon = "󱎸", color = "green" },
+            },
+
+            {
                 "<leader>fg",
-                function() Snacks.picker.grep() end,
+                function()
+                    Snacks.picker.grep()
+                end,
                 desc = "Live grep",
                 icon = { icon = "󱎸", color = "cyan" },
             },
             {
                 "<leader>ff",
-                function() Snacks.picker.files() end,
+                function()
+                    Snacks.picker.files()
+                end,
                 desc = "Find files",
                 icon = { icon = "", color = "green" },
             },
             {
                 "<leader>ft",
-                function() Snacks.picker.recent() end,
+                function()
+                    Snacks.picker.recent()
+                end,
                 desc = "Find history",
                 icon = { icon = "", color = "blue" },
             },
             {
                 "<leader>fd",
-                function() Snacks.picker.git_files() end,
+                function()
+                    Snacks.picker.git_files()
+                end,
                 desc = "Find git files",
                 icon = { icon = "", color = "orange" },
             },
             {
                 "<leader>fo",
-                function() Snacks.picker.projects() end,
+                function()
+                    Snacks.picker.projects()
+                end,
                 desc = "Open project",
                 icon = { icon = "", color = "red" },
             },
             {
                 "<leader>f<Tab>",
-                function() Snacks.picker.buffers() end,
+                function()
+                    Snacks.picker.buffers()
+                end,
                 desc = "Find buffers",
                 icon = { icon = "󱦞", color = "yellow" },
             },
             {
                 "<leader>fu",
-                function() Snacks.picker.undo() end,
+                function()
+                    Snacks.picker.undo()
+                end,
                 desc = "View undo history",
                 icon = { icon = "", color = "orange" },
             },
@@ -128,19 +151,25 @@ wk.add({
 
             {
                 "<leader>ld",
-                function() Snacks.picker.lsp_symbols() end,
+                function()
+                    Snacks.picker.lsp_symbols()
+                end,
                 desc = "Find document symbols",
                 icon = { icon = "", color = "blue" },
             },
             {
                 "<leader>li",
-                function() Snacks.picker.lsp_references() end,
+                function()
+                    Snacks.picker.lsp_references()
+                end,
                 desc = "Find references",
                 icon = { icon = "", color = "orange" },
             },
             {
                 "<leader>lh",
-                function() Snacks.picker.lsp_workspace_symbols() end,
+                function()
+                    Snacks.picker.lsp_workspace_symbols()
+                end,
                 desc = "Find workspace symbols",
                 icon = { icon = "", color = "green" },
             },
@@ -170,7 +199,9 @@ wk.add({
             },
             {
                 "<leader>xt",
-                function() Snacks.picker.diagnostics() end,
+                function()
+                    Snacks.picker.diagnostics()
+                end,
                 desc = "Open picker diagnostics",
                 icon = { icon = "", color = "cyan" },
             },
@@ -189,12 +220,27 @@ wk.add({
             { "<leader>j", desc = "Git" },
             {
                 "<leader>jc",
-                function() Snacks.picker.git_log() end,
+                function()
+                    Snacks.picker.git_log()
+                end,
                 desc = "Git commits",
                 icon = { icon = "", color = "green" },
             },
-            { "<leader>jb", function() Snacks.picker.git_branches() end, desc = "Git branches" },
-            { "<leader>jj", "<cmd>LazyGit<cr>", desc = "Open LazyGit", icon = { icon = "", color = "purple" } },
+            {
+                "<leader>jb",
+                function()
+                    Snacks.picker.git_branches()
+                end,
+                desc = "Git branches",
+            },
+            {
+                "<leader>jj",
+                function()
+                    Snacks.lazygit()
+                end,
+                desc = "Open LazyGit",
+                icon = { icon = "", color = "purple" },
+            },
             { "<leader>jv", toggle_diffview, desc = "Toggle Diffview", icon = { icon = "", color = "red" } },
             {
                 "<leader>jg",

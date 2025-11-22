@@ -276,10 +276,6 @@ lazy.setup({
         opts = { current_line_blame = true },
         event = "BufReadPost",
     },
-    {
-        "kdheepak/lazygit.nvim",
-        cmd = "LazyGit",
-    },
 
     -- Miscellaneous
     {
