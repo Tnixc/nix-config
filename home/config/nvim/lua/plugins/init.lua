@@ -262,20 +262,12 @@ lazy.setup({
         opts = { open_mapping = [[<M-l>]], shell = "fish" },
     },
     {
-        "nvim-telescope/telescope.nvim",
-        event = "VeryLazy",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope-ui-select.nvim",
-        },
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
         config = function()
-            require("plugins.configs.telescope")
+            require("plugins.configs.snacks")
         end,
-    },
-    {
-        "nvim-telescope/telescope-file-browser.nvim",
-        event = "VeryLazy",
-        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
     },
 
     -- Git Integration
@@ -453,7 +445,6 @@ lazy.setup({
         "kawre/leetcode.nvim",
         cmd = "Leet",
         dependencies = {
-            "nvim-telescope/telescope.nvim",
             "nvim-lua/plenary.nvim",
             "MunifTanjim/nui.nvim",
         },

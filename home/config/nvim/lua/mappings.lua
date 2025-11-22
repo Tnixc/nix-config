@@ -68,47 +68,47 @@ wk.add({
         { "<leader>Q", "<cmd>qa!<cr>", desc = "Quit All", icon = { icon = "", color = "red" } },
         -- file operations
         {
-            group = "Telescope",
-            { "<leader>f", desc = "Telescope" },
+            group = "Find",
+            { "<leader>f", desc = "Find" },
             {
                 "<leader>fg",
-                "<cmd>Telescope live_grep<cr>",
+                function() Snacks.picker.grep() end,
                 desc = "Live grep",
                 icon = { icon = "󱎸", color = "cyan" },
             },
             {
                 "<leader>ff",
-                "<cmd>Telescope find_files<cr>",
+                function() Snacks.picker.files() end,
                 desc = "Find files",
                 icon = { icon = "", color = "green" },
             },
             {
                 "<leader>ft",
-                "<cmd>Telescope oldfiles<cr>",
+                function() Snacks.picker.recent() end,
                 desc = "Find history",
                 icon = { icon = "", color = "blue" },
             },
             {
                 "<leader>fd",
-                "<cmd>Telescope git_files<cr>",
+                function() Snacks.picker.git_files() end,
                 desc = "Find git files",
                 icon = { icon = "", color = "orange" },
             },
             {
                 "<leader>fo",
-                "<cmd>Telescope workspaces<cr>",
-                desc = "Open workspace",
+                function() Snacks.picker.projects() end,
+                desc = "Open project",
                 icon = { icon = "", color = "red" },
             },
             {
                 "<leader>f<Tab>",
-                "<cmd>Telescope buffers<cr>",
+                function() Snacks.picker.buffers() end,
                 desc = "Find buffers",
                 icon = { icon = "󱦞", color = "yellow" },
             },
             {
                 "<leader>fu",
-                "<cmd>Telescope undo<cr>",
+                function() Snacks.picker.undo() end,
                 desc = "View undo history",
                 icon = { icon = "", color = "orange" },
             },
@@ -128,19 +128,19 @@ wk.add({
 
             {
                 "<leader>ld",
-                "<cmd>Telescope lsp_document_symbols<cr>",
+                function() Snacks.picker.lsp_symbols() end,
                 desc = "Find document symbols",
                 icon = { icon = "", color = "blue" },
             },
             {
                 "<leader>li",
-                "<cmd>Telescope lsp_references<cr>",
+                function() Snacks.picker.lsp_references() end,
                 desc = "Find references",
                 icon = { icon = "", color = "orange" },
             },
             {
                 "<leader>lh",
-                "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+                function() Snacks.picker.lsp_workspace_symbols() end,
                 desc = "Find workspace symbols",
                 icon = { icon = "", color = "green" },
             },
@@ -170,8 +170,8 @@ wk.add({
             },
             {
                 "<leader>xt",
-                "<cmd>Telescope diagnostics<cr>",
-                desc = "Open Telescope diagnostics",
+                function() Snacks.picker.diagnostics() end,
+                desc = "Open picker diagnostics",
                 icon = { icon = "", color = "cyan" },
             },
             {
@@ -189,11 +189,11 @@ wk.add({
             { "<leader>j", desc = "Git" },
             {
                 "<leader>jc",
-                "<cmd>Telescope git_commits<cr>",
+                function() Snacks.picker.git_log() end,
                 desc = "Git commits",
                 icon = { icon = "", color = "green" },
             },
-            { "<leader>jb", "<cmd>Telescope git_branches<cr>", desc = "Git branches" },
+            { "<leader>jb", function() Snacks.picker.git_branches() end, desc = "Git branches" },
             { "<leader>jj", "<cmd>LazyGit<cr>", desc = "Open LazyGit", icon = { icon = "", color = "purple" } },
             { "<leader>jv", toggle_diffview, desc = "Toggle Diffview", icon = { icon = "", color = "red" } },
             {

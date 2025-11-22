@@ -43,7 +43,7 @@ dashboard.section.buttons.val = {
         silent = true,
         nowait = true,
         callback = function()
-            require("telescope.builtin").find_files()
+            Snacks.picker.files()
         end,
     }),
     button("h", "  File history", leader, nil, {
@@ -51,7 +51,7 @@ dashboard.section.buttons.val = {
         silent = true,
         nowait = true,
         callback = function()
-            require("telescope.builtin").oldfiles()
+            Snacks.picker.recent()
         end,
     }),
     button("n", "  New File", leader, nil, {
@@ -67,7 +67,7 @@ dashboard.section.buttons.val = {
         silent = true,
         nowait = true,
         callback = function()
-            require("telescope.builtin").live_grep()
+            Snacks.picker.grep()
         end,
     }),
     button("q", "  Quit", leader, nil, {

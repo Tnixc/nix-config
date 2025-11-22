@@ -47,10 +47,9 @@ require("catppuccin").setup({
             CmpNormal = { bg = colors.base },
             DocNormal = { bg = colors.crust },
 
-            TelescopeNormal = { bg = colors.crust },
-            TelescopeResultsTitle = { fg = colors.crust, bg = colors.red },
-            TelescopePreviewTitle = { fg = colors.crust, bg = colors.sapphire },
-            TelescopePromptTitle = { fg = colors.crust, bg = colors.green },
+            SnacksPickerNormal = { bg = colors.crust },
+            SnacksPickerTitle = { fg = colors.crust, bg = colors.green },
+            SnacksPickerPreview = { bg = colors.crust },
 
             PmenuSel = { bg = colors.surface1, fg = colors.text },
             Pmenu = { fg = colors.text, bg = colors.mantle },
