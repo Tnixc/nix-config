@@ -306,9 +306,19 @@ lazy.setup({
         opts = {},
     }, -- discord presence
     {
-        "brenoprata10/nvim-highlight-colors",
-        event = "VeryLazy",
-        opts = { enable_tailwind = true },
+        "catgoose/nvim-colorizer.lua",
+        event = "BufReadPre",
+        opts = {
+            filetypes = { "*" },
+            user_default_options = {
+                css = true,
+                names = false,
+                tailwind = true,
+                mode = "virtualtext",
+                virtualtext_inline = "before",
+                virtualtext = "􀑌",
+            },
+        },
     },
     {
         "nacro90/numb.nvim",

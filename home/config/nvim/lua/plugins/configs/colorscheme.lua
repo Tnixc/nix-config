@@ -60,7 +60,7 @@ require("catppuccin").setup({
             CmpItemAbbrMatchFuzzy = { fg = colors.blue, bg = "NONE", bold = true },
             CmpItemMenu = { fg = colors.pink, bg = "NONE", italic = true },
 
-            CmpSel = { bg = colors.surface2, bold = true },
+            CmpSel = { bg = colors.teal, fg = colors.crust },
 
             CmpItemKindField = { fg = colors.crust, bg = colors.red },
             CmpItemKindProperty = { fg = colors.crust, bg = colors.red },
