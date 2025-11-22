@@ -48,8 +48,14 @@ require("catppuccin").setup({
             DocNormal = { bg = colors.crust },
 
             SnacksPickerNormal = { bg = colors.crust },
+            SnacksPickerBorder = { fg = colors.surface2, bg = colors.crust },
             SnacksPickerTitle = { fg = colors.crust, bg = colors.green },
+            SnacksPickerInput = { bg = colors.crust },
+            SnacksPickerInputBorder = { fg = colors.surface2, bg = colors.crust },
+            SnacksPickerList = { bg = colors.crust },
+            SnacksPickerListBorder = { fg = colors.surface2, bg = colors.crust },
             SnacksPickerPreview = { bg = colors.crust },
+            SnacksPickerPreviewBorder = { fg = colors.surface2, bg = colors.crust },
 
             PmenuSel = { bg = colors.surface1, fg = colors.text },
             Pmenu = { fg = colors.text, bg = colors.mantle },

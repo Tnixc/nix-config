@@ -70,13 +70,6 @@ lazy.setup({
         end,
     },
     {
-        "nvim-tree/nvim-tree.lua",
-        cmd = { "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile", "NvimTreeCollapse" },
-        config = function()
-            require("plugins.configs.nvim-tree")
-        end,
-    },
-    {
         "folke/todo-comments.nvim",
         event = "BufReadPost",
         opts = {},
@@ -133,19 +126,6 @@ lazy.setup({
                 highlights = {
                     "RainbowDelimiterViolet",
                 },
-            },
-        },
-    },
-    {
-        "hedyhli/outline.nvim",
-        event = "VeryLazy",
-        cmd = { "Outline", "OutlineOpen" },
-        opts = {
-            outline_window = {
-                position = "left",
-                width = 40,
-                relative_width = false,
-                auto_close = true,
             },
         },
     },
@@ -284,21 +264,6 @@ lazy.setup({
         opts = {},
     },
     {
-        "declancm/cinnamon.nvim",
-        version = "*", -- use latest release
-        event = "VeryLazy",
-        opts = {
-            keymaps = {
-                basic = true,
-            },
-            delay = 1,
-            max_delta = {
-                column = 1,
-                time = 300,
-            },
-        },
-    },
-    {
         "vyfor/cord.nvim",
         build = "./build || .\\build",
         event = "VeryLazy",
@@ -341,17 +306,6 @@ lazy.setup({
             },
         },
         dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-    },
-    {
-        "anuvyklack/windows.nvim",
-        event = "VeryLazy",
-        dependencies = { "anuvyklack/middleclass", "anuvyklack/animation.nvim" },
-        config = function()
-            vim.o.winwidth = 10
-            vim.o.winminwidth = 10
-            vim.o.equalalways = false
-            require("windows").setup({})
-        end,
     },
     { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
 

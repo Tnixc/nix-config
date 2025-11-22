@@ -55,12 +55,13 @@ wk.add({
             icon = { icon = "", color = "orange" },
         },
 
-        { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle NvimTree", icon = { icon = "", color = "azure" } },
         {
-            "<leader>E",
-            "<cmd>Outline<cr>",
-            desc = "Open Outline",
-            icon = { icon = "󰺔", color = "blue" },
+            "<leader>e",
+            function()
+                Snacks.explorer()
+            end,
+            desc = "Toggle Explorer",
+            icon = { icon = "", color = "azure" },
         },
         { "<leader>a", "<cmd>Alpha<cr>", desc = "Go to Alpha Screen", icon = { icon = "󱌎", color = "purple" } },
         { "<leader>w", "<cmd>w<cr>", desc = "Save File", icon = { icon = "󰆓", color = "green" } },

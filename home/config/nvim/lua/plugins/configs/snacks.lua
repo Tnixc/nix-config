@@ -15,6 +15,31 @@ require("snacks").setup({
                     ["<C-q>"] = { "qflist", mode = { "i", "n" } },
                     ["<Esc>"] = { "close", mode = { "n", "i" } },
                 },
+                wo = {
+                    winhighlight = "Normal:SnacksPickerInput,FloatBorder:SnacksPickerInputBorder",
+                },
+            },
+            list = {
+                wo = {
+                    winhighlight = "Normal:SnacksPickerList,FloatBorder:SnacksPickerListBorder",
+                },
+            },
+            preview = {
+                wo = {
+                    wrap = false,
+                    winhighlight = "Normal:SnacksPickerPreview,FloatBorder:SnacksPickerPreviewBorder",
+                },
+            },
+        },
+        sources = {
+            explorer = {
+                auto_close = true,
+                layout = {
+                    layout = {
+                        position = "right",
+                        width = 45,
+                    },
+                },
             },
         },
     },
@@ -26,8 +51,17 @@ require("snacks").setup({
         need_search = false,
         supports_live = true,
     },
-    explorer = {},
+    explorer = {
+        replace_netrw = true,
+    },
     lazygit = {
         configure = false,
+    },
+
+    scroll = {
+        animate = {
+            duration = { step = 10, total = 300 },
+            easing = "outQuad",
+        },
     },
 })
