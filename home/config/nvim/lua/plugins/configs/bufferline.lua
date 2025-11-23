@@ -24,6 +24,8 @@ bl.setup({
                 modified_visible = { bg = t.surface0 },
                 duplicate_selected = { bg = t.surface1 },
                 duplicate_visible = { bg = t.surface0 },
+                indicator_selected = { bg = t.surface1, fg = t.surface1 },
+                indicator_visible = { bg = t.surface1, fg = t.surface1 },
                 duplicate = { bg = t.base },
                 trunc_marker = { bg = t.mantle },
             },
@@ -32,8 +34,8 @@ bl.setup({
     options = {
         close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
         right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
-        -- separator_style = { "|", "|" }, -- slant, padded_slant; slope, padded_slope; thick; thin
-        separator_style = "slope",
+        separator_style = { "▌", "▐" }, -- slant, padded_slant; slope, padded_slope; thick; thin
+        -- separator_style = "slope",
         color_icons = true,
         always_show_bufferline = true,
         themable = true,

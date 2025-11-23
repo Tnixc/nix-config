@@ -118,16 +118,6 @@ ins_left({
     padding = { left = 1, right = 1 },
 })
 
-ins_left({
-    function()
-        return ""
-    end,
-    color = function()
-        return { fg = mode_color[vim.fn.mode()], bg = colors.bg }
-    end,
-    padding = { left = 0, right = 0 },
-})
-
 ins_left({ "location" })
 
 ins_left({ "progress", color = { fg = colors.flamingo }, padding = { left = 0, right = 1 } })

@@ -61,7 +61,7 @@ lazy.setup({
     {
         "folke/trouble.nvim",
         cmd = "Trouble",
-        opts = {},
+        opts = { auto_preview = false },
     },
     {
         "rachartier/tiny-inline-diagnostic.nvim",
