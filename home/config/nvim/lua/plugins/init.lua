@@ -59,11 +59,6 @@ lazy.setup({
         end,
     },
     {
-        "folke/todo-comments.nvim",
-        event = "BufReadPost",
-        opts = {},
-    },
-    {
         "folke/trouble.nvim",
         cmd = "Trouble",
         opts = {},
@@ -118,12 +113,6 @@ lazy.setup({
             require("plugins.configs.noice")
         end,
     },
-    {
-        "petertriho/nvim-scrollbar",
-        event = "BufReadPost",
-        opts = { handlers = { gitsigns = true } },
-    },
-
     -- Utility
     {
         "fei6409/log-highlight.nvim",
@@ -133,18 +122,10 @@ lazy.setup({
         end,
     },
     {
-        "nullishamy/autosave.nvim",
+        "pocco81/auto-save.nvim",
         event = "VeryLazy",
-        config = function()
-            require("autosave").setup({})
-        end,
+        opts = {},
     },
-    {
-        "willothy/moveline.nvim",
-        event = "VeryLazy",
-        build = "make",
-    },
-
     -- Editing Helpers
     {
         "MagicDuck/grug-far.nvim",
@@ -162,22 +143,49 @@ lazy.setup({
         end,
     },
     {
-        "kylechui/nvim-surround",
         version = "*",
         event = "VeryLazy",
+        "nvim-mini/mini.nvim",
         config = function()
-            require("nvim-surround").setup({ keymaps = { visual = "s" } }) -- NOTE: Keymaps here
-        end,
-    },
-    {
-        "numToStr/Comment.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("Comment").setup({
-                toggler = { line = "<D-/>" },
-                opleader = { line = "<D-/>" },
-                mappings = { extra = false, basic = true },
+            require("mini.surround").setup({
+                mappings = {
+                    add = "s",
+                },
             })
+            require("mini.diff").setup({
+                -- Options for how hunks are visualized
+                view = {
+                    -- Visualization style. Possible values are 'sign' and 'number'.
+                    -- Default: 'number' if line numbers are enabled, 'sign' otherwise.
+                    style = "sign",
+
+                    -- Signs used for hunks with 'sign' view
+                    signs = { add = "│", change = "│", delete = "─" },
+
+                    -- Priority of used visualization extmarks
+                    priority = 199,
+                },
+            })
+            require("mini.move").setup({
+                left = "<M-h>",
+                right = "<M-l>",
+                up = "<M-k>",
+                down = "<M-j>",
+
+                line_left = "<M-h>",
+                line_right = "<M-l>",
+                line_down = "<M-j>",
+                line_up = "<M-k>",
+            })
+            require("mini.comment").setup({
+                mappings = {
+                    comment = "",
+                    comment_line = "<D-/>",
+                    comment_visual = "<D-/>",
+                    textobject = "<D-/>",
+                },
+            })
+            require("mini.pairs").setup({ view = { style = "sign" } })
         end,
     },
     {
@@ -224,25 +232,37 @@ lazy.setup({
         end,
     },
 
-    -- Git Integration
-    {
-        "lewis6991/gitsigns.nvim",
-        opts = { current_line_blame = true },
-        event = "BufReadPost",
-    },
-
     -- Miscellaneous
     {
         "rachartier/tiny-glimmer.nvim",
-        event = "TextYankPost",
-        opts = {},
-    },
-    {
-        "vyfor/cord.nvim",
-        build = "./build || .\\build",
         event = "VeryLazy",
-        opts = {},
-    }, -- discord presence
+        config = function()
+            require("tiny-glimmer").setup({
+                overwrite = {
+                    auto_map = true,
+                    yank = { enabled = true, default_animation = "fade" },
+                    redo = {
+                        enabled = true,
+                        default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH4Bg" } },
+                    },
+                    undo = {
+                        enabled = true,
+                        default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH1Bg" } },
+                    },
+                },
+                transparency_color = "#121212",
+                animations = {
+                    fade = { from_color = "RenderMarkdownH6Bg" },
+                },
+
+                -- Filetypes to disable hijacking/overwrites
+                hijack_ft_disabled = { "snacks_dashboard" },
+                virt_text = {
+                    priority = 2048, -- Higher values appear above other plugins
+                },
+            })
+        end,
+    },
     {
         "catgoose/nvim-colorizer.lua",
         event = "BufReadPre",
@@ -280,13 +300,6 @@ lazy.setup({
             },
         },
         dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-    },
-    { "christoomey/vim-tmux-navigator", event = "VeryLazy" },
-
-    -- Syntax and Language Support
-    {
-        "xiyaowong/virtcolumn.nvim",
-        event = "VeryLazy",
     },
     {
         "nvim-treesitter/nvim-treesitter",
@@ -363,18 +376,6 @@ lazy.setup({
                     stdin = false,
                 },
             },
-        },
-    },
-    {
-        "kawre/leetcode.nvim",
-        cmd = "Leet",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "MunifTanjim/nui.nvim",
-        },
-        opts = {
-            lang = "typescript",
-            image_support = true,
         },
     },
     {

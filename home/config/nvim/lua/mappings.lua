@@ -259,19 +259,25 @@ wk.add({
             { "<leader>jv", toggle_diffview, desc = "Toggle Diffview", icon = { icon = "", color = "red" } },
             {
                 "<leader>jg",
-                "<cmd>Gitsigns preview_hunk<cr>",
-                desc = "Preview hunk",
+                function()
+                    MiniDiff.toggle_overlay()
+                end,
+                desc = "Toggle diff overlay",
                 icon = { icon = "", color = "azure" },
             },
             {
                 "<leader>jo",
-                "<cmd>Gitsigns next_hunk<cr>",
-                desc = "next hunk",
+                function()
+                    MiniDiff.goto_hunk("next")
+                end,
+                desc = "Next hunk",
                 icon = { icon = "", color = "green" },
             },
             {
                 "<leader>ji",
-                "<cmd>Gitsigns prev_hunk<cr>",
+                function()
+                    MiniDiff.goto_hunk("prev")
+                end,
                 desc = "Previous hunk",
                 icon = { icon = "", color = "red" },
             },
@@ -481,13 +487,6 @@ wk.add({
         },
     },
 
-    -- Insert mode mappings
-    {
-        mode = "i",
-        { "<A-j>", "<Esc><cmd>m .+1<cr>==gi", desc = "Move line down" },
-        { "<A-k>", "<Esc><cmd>m .-2<cr>==gi", desc = "Move line up" },
-    },
-
     -- Visual mode mappings
     {
         mode = "v",
@@ -529,20 +528,6 @@ wk.add({
                 require("multicursor-nvim").appendVisual()
             end,
             desc = "Append at each line",
-        },
-        {
-            "<A-k>",
-            function()
-                require("moveline").block_up()
-            end,
-            desc = "Move block up",
-        },
-        {
-            "<A-j>",
-            function()
-                require("moveline").block_down()
-            end,
-            desc = "Move block down",
         },
     },
 

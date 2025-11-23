@@ -61,6 +61,15 @@ require("catppuccin").setup({
             Pmenu = { fg = colors.text, bg = colors.mantle },
 
             CmpSel = { bg = colors.lavender, fg = colors.crust },
+
+            -- Treesitter comment highlights
+            ["@comment.todo"] = { fg = colors.blue, bg = colors.surface0, bold = true },
+            ["@comment.note"] = { fg = colors.teal, bg = colors.surface0, bold = true },
+            ["@comment.fixme"] = { fg = colors.red, bg = colors.surface0, bold = true },
+            ["@comment.warning"] = { fg = colors.yellow, bg = colors.surface0, bold = true },
+
+            -- Prevent LSP semantic tokens from overriding comment highlights
+            ["@lsp.type.comment"] = {},
         }
     end,
 })

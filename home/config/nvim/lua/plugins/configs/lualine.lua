@@ -141,12 +141,12 @@ ins_left({
 ins_left({
     "diff",
     source = function()
-        local gitsigns = vim.b.gitsigns_status_dict
-        if gitsigns then
+        local summary = vim.b.minidiff_summary
+        if summary then
             return {
-                added = gitsigns.added,
-                modified = gitsigns.changed,
-                removed = gitsigns.removed,
+                added = summary.add,
+                modified = summary.change,
+                removed = summary.delete,
             }
         end
     end,

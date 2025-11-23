@@ -279,13 +279,6 @@ configure_lsp_servers()
 -- Enable all configured language servers
 vim.lsp.enable(lsp_servers)
 
-local signs = {
-    ERROR = " 􀻀 ",
-    WARN = " 􀘰 ",
-    HINT = " 󰌵 ",
-    INFO = " 􀅵 ",
-}
-
 vim.diagnostic.config({
     -- vim.fn.sign_define("DiagnosticSignError", { text = "􀃰", texthl = "DiagnosticSignError" })
     -- vim.fn.sign_define("DiagnosticSignWarn", { text = "􀃮", texthl = "DiagnosticSignWarn" })
@@ -298,11 +291,5 @@ vim.diagnostic.config({
             [vim.diagnostic.severity.INFO] = "􁊇",
             [vim.diagnostic.severity.HINT] = "􁇖",
         },
-    },
-
-    virtual_text = {
-        prefix = function(diagnostic)
-            return signs[vim.diagnostic.severity[diagnostic.severity]]
-        end,
     },
 })
