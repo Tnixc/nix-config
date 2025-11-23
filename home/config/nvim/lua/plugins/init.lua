@@ -53,7 +53,7 @@ lazy.setup({
     {
         "nvim-lualine/lualine.nvim",
         event = "UIEnter",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
+        dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine" },
         config = function()
             require("plugins.configs.lualine")
         end,
@@ -107,7 +107,7 @@ lazy.setup({
     {
         "folke/noice.nvim",
         event = "VeryLazy",
-        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+        dependencies = { "MunifTanjim/nui.nvim" },
         config = function()
             require("plugins.configs.noice")
         end,
@@ -235,7 +235,7 @@ lazy.setup({
     -- Miscellaneous
     {
         "rachartier/tiny-glimmer.nvim",
-        event = "VeryLazy",
+        event = "BufWritePre",
         config = function()
             require("tiny-glimmer").setup({
                 overwrite = {
@@ -246,7 +246,7 @@ lazy.setup({
                     },
                     paste = {
                         enabled = true,
-                        default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH2Bg" } },
+                        default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH3Bg" } },
                     },
                     redo = {
                         enabled = true,
@@ -330,6 +330,20 @@ lazy.setup({
         end,
     },
 
+    -- Copilot
+    {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        opts = {
+            suggestion = { enabled = false },
+            panel = { enabled = false },
+            filetypes = {
+                markdown = true,
+                help = true,
+            },
+        },
+    },
     -- LSP and Completion
     {
         "williamboman/mason.nvim",
@@ -387,7 +401,7 @@ lazy.setup({
         version = "*",
         build = "nix run .#build-plugin",
         event = "InsertEnter",
-        dependencies = { "rafamadriz/friendly-snippets" },
+        dependencies = { "rafamadriz/friendly-snippets", "fang2hou/blink-copilot" },
         opts = {
             keymap = {
                 preset = "default",
@@ -416,7 +430,15 @@ lazy.setup({
                 },
             },
             sources = {
-                default = { "lsp", "path", "snippets", "buffer" },
+                default = { "lsp", "path", "snippets", "buffer", "copilot" },
+                providers = {
+                    copilot = {
+                        name = "copilot",
+                        module = "blink-copilot",
+                        score_offset = 100,
+                        async = true,
+                    },
+                },
             },
         },
     },

@@ -251,6 +251,14 @@ ins_right({
     color = { fg = colors.mauve, gui = "bold" },
 })
 
+ins_right({
+    "copilot",
+    show_colors = true,
+    symbols = {
+        spinners = "dots",
+    },
+})
+
 require("lualine").setup(config)
 
 -- Listen to lsp-progress event and refresh lualine
