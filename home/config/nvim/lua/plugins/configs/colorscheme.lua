@@ -56,12 +56,13 @@ require("catppuccin").setup({
             SnacksPickerPreview = { bg = colors.mantle },
             SnacksPickerPreviewBorder = { fg = colors.mantle, bg = colors.mantle },
 
-            SnacksDashboardFile = { fg = colors.sky },
-            SnacksDashboardHeader = { fg = colors.lavender },
-            SnacksDashboardIcon = { fg = colors.yellow },
+            SnacksDashboardFile = { fg = colors.blue },
+            SnacksDashboardHeader = { fg = colors.blue },
+            SnacksDashboardIcon = { fg = colors.blue },
             SnacksDashboardFooter = { fg = colors.mauve },
-            SnacksDashboardSpecial = { fg = colors.pink },
-            SnacksDashboardTitle = { fg = colors.lavender, bold = true },
+            SnacksDashboardSpecial = { fg = colors.blue },
+            SnacksDashboardTitle = { fg = colors.mauve, bold = true },
+            SnacksDashboardKey = { fg = colors.sapphire },
 
             PmenuSel = { bg = colors.surface1, fg = colors.text },
             Pmenu = { fg = colors.text, bg = colors.mantle },

@@ -45,6 +45,7 @@ lazy.setup({
         opts = {
             recipe = { "default", { animate = false } },
             fadelevel = 0.2,
+            checkinterval = 0,
             basebg = "#121212",
             blocklist = {
                 default_block = function(win, current)

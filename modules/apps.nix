@@ -123,6 +123,7 @@
       "zlib"
 
       # system utils
+      "keith/formulae/reminders-cli"
       "brightness"
       "coreutils"
       "colima"
