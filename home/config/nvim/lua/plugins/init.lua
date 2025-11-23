@@ -168,15 +168,17 @@ lazy.setup({
                 },
             })
             require("mini.move").setup({
-                left = "<M-h>",
-                right = "<M-l>",
-                up = "<M-k>",
-                down = "<M-j>",
+                mappings = {
+                    left = "",
+                    right = "",
+                    up = "<M-k>",
+                    down = "<M-j>",
 
-                line_left = "<M-h>",
-                line_right = "<M-l>",
-                line_down = "<M-j>",
-                line_up = "<M-k>",
+                    line_left = "",
+                    line_right = "",
+                    line_down = "<M-j>",
+                    line_up = "<M-k>",
+                },
             })
             require("mini.comment").setup({
                 mappings = {

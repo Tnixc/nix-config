@@ -40,7 +40,7 @@ require("snacks").setup({
         win = {
             style = "terminal",
             position = "float",
-            border = "single",
+            border = "none",
             width = 0.8,
             height = 0.8,
             on_win = function(win)
