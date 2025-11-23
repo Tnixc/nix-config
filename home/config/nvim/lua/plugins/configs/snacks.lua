@@ -139,9 +139,6 @@ require("snacks").setup({
     explorer = {
         replace_netrw = true,
     },
-    lazygit = {
-        configure = false,
-    },
     scroll = {
         animate = {
             duration = { step = 10, total = 300 },

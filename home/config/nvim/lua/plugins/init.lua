@@ -71,7 +71,11 @@ lazy.setup({
     {
         "akinsho/bufferline.nvim",
         event = "BufAdd",
-        dependencies = { "nvim-tree/nvim-web-devicons", "rachartier/tiny-devicons-auto-colors.nvim" },
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            "rachartier/tiny-devicons-auto-colors.nvim",
+            { "tiagovla/scope.nvim", config = true },
+        },
         config = function()
             require("plugins.configs.bufferline")
         end,

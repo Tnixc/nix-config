@@ -248,15 +248,7 @@ wk.add({
                 end,
                 desc = "Git branches",
             },
-            {
-                "<leader>jj",
-                function()
-                    Snacks.lazygit()
-                end,
-                desc = "Open LazyGit",
-                icon = { icon = "", color = "purple" },
-            },
-            { "<leader>jv", toggle_diffview, desc = "Toggle Diffview", icon = { icon = "", color = "red" } },
+            { "<leader>jj", toggle_diffview, desc = "Toggle Diffview", icon = { icon = "", color = "red" } },
             {
                 "<leader>jg",
                 function()
@@ -564,8 +556,24 @@ for i = 1, 9 do
             desc = "Go to buffer " .. i,
             mode = { "n", "i", "v" },
         },
+        {
+            "<M-S-" .. i .. ">",
+            "<cmd>tabn " .. i .. "<cr>",
+            desc = "Go to tab " .. i,
+            mode = { "n", "i", "v" },
+        },
     })
 end
+
+-- Tab close mapping
+wk.add({
+    {
+        "<M-S-w>",
+        "<cmd>tabclose<cr>",
+        desc = "Close current tab",
+        mode = { "n", "i", "v" },
+    },
+})
 
 -- Set leader key
 vim.g.mapleader = " "

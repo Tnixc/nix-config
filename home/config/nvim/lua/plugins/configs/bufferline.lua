@@ -27,7 +27,7 @@ bl.setup({
                 indicator_selected = { bg = t.surface1, fg = t.surface1 },
                 indicator_visible = { bg = t.surface1, fg = t.surface1 },
                 duplicate = { bg = t.base, bold = false },
-                trunc_marker = { bg = t.base },
+                trunc_marker = { bg = t.mantle },
 
                 -- Diagnostic highlights
                 error = { bg = t.base },
@@ -57,6 +57,12 @@ bl.setup({
                 hint_diagnostic = { bg = t.base },
                 hint_diagnostic_visible = { bg = t.surface0 },
                 hint_diagnostic_selected = { bg = t.surface1 },
+                -- Tab highlights
+                tab = { bg = t.base, fg = t.overlay1 },
+                tab_selected = { bg = t.surface1, fg = t.blue },
+                tab_separator = { fg = t.mantle, bg = t.base },
+                tab_separator_selected = { fg = t.mantle, bg = t.surface1 },
+                tab_close = { bg = t.base, fg = t.overlay1 },
             },
         },
     }),
@@ -70,19 +76,18 @@ bl.setup({
         themable = true,
         show_buffer_icons = true,
         diagnostics = "nvim_lsp",
-
-        diagnostics_indicator = function(count, level, diagnostics_dict, context)
-            local s = " "
-            for e, n in pairs(diagnostics_dict) do
-                local sym = e == "error" and " " or (e == "warning" and " " or " ")
-                s = s .. n .. sym
-            end
-            return s
-        end,
         hover = {
             enabled = false,
             delay = 200,
             reveal = { "close" },
+        },
+        offsets = {
+            {
+                filetype = "",
+                text = "",
+                padding = 6,
+                separator = false,
+            },
         },
     },
 })
