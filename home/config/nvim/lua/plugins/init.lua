@@ -1,440 +1,439 @@
 local ok, lazy = pcall(require, "lazy")
 if not ok then
-	return
+    return
 end
 
 function Border(hl_name)
-	return {
-		{ "┌", hl_name },
-		{ "─", hl_name },
-		{ "┐", hl_name },
-		{ "│", hl_name },
-		{ "┘", hl_name },
-		{ "─", hl_name },
-		{ "└", hl_name },
-		{ "│", hl_name },
-	}
+    return {
+        { "┌", hl_name },
+        { "─", hl_name },
+        { "┐", hl_name },
+        { "│", hl_name },
+        { "┘", hl_name },
+        { "─", hl_name },
+        { "└", hl_name },
+        { "│", hl_name },
+    }
 end
 
 lazy.setup({
-	root = vim.fn.stdpath("data") .. "/lazy",
-	-- Appearance
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			require("plugins.configs.colorscheme")
-		end,
-	},
-	{ "sam4llis/nvim-tundra", opts = {}, lazy = true },
-	{ "Everblush/nvim", name = "everblush", opts = {}, lazy = true },
-	{ "projekt0n/github-nvim-theme", name = "github-theme", opts = {}, lazy = true },
-	{ "tiagovla/tokyodark.nvim", opts = {}, lazy = true },
-	{ "rose-pine/neovim", name = "rose-pine", opts = {}, lazy = true },
-	{
-		"rachartier/tiny-devicons-auto-colors.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		event = "VeryLazy",
-		config = function()
-			require("tiny-devicons-auto-colors").setup({})
-		end,
-	},
+    root = vim.fn.stdpath("data") .. "/lazy",
+    -- Appearance
+    {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+            require("plugins.configs.colorscheme")
+        end,
+    },
+    { "sam4llis/nvim-tundra", opts = {}, lazy = true },
+    { "Everblush/nvim", name = "everblush", opts = {}, lazy = true },
+    { "projekt0n/github-nvim-theme", name = "github-theme", opts = {}, lazy = true },
+    { "tiagovla/tokyodark.nvim", opts = {}, lazy = true },
+    { "rose-pine/neovim", name = "rose-pine", opts = {}, lazy = true },
+    {
+        "rachartier/tiny-devicons-auto-colors.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        event = "VeryLazy",
+        config = function()
+            require("tiny-devicons-auto-colors").setup({})
+        end,
+    },
 
-	-- UI Enhancements
-	{
-		"akinsho/bufferline.nvim",
-		event = "BufAdd",
-		dependencies = { "nvim-tree/nvim-web-devicons", "rachartier/tiny-devicons-auto-colors.nvim" },
-		config = function()
-			require("plugins.configs.bufferline")
-		end,
-	},
-	{
-		"nvim-lualine/lualine.nvim",
-		event = "UIEnter",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("plugins.configs.lualine")
-		end,
-	},
-	{
-		"folke/trouble.nvim",
-		cmd = "Trouble",
-		opts = {},
-	},
-	{
-		"rachartier/tiny-inline-diagnostic.nvim",
-		event = "BufReadPost",
-		priority = 1000,
-		config = function()
-			require("tiny-inline-diagnostic").setup({
-				preset = "classic",
-				options = {
-					use_icons_from_diagnostic = true,
-					multiple_diag_under_cursor = true,
-					show_all_diags_on_cursorline = true,
-					enable_on_insert = true,
-					multilines = {
-						enabled = true,
-						always_show = true,
-					},
-					format = function(diag)
-						return "⠀" .. diag.message .. " — " .. diag.source
-					end,
-				},
-			})
-			vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
-		end,
-	},
-	{
-		"sindrets/diffview.nvim",
-		cmd = { "DiffviewOpen", "DiffviewFileHistory" },
-		config = function()
-			require("diffview").setup({
-				file_panel = {
-					listing_style = "tree",
-					win_config = {
-						position = "right",
-						width = 30,
-						win_opts = {},
-					},
-				},
-			})
-		end,
-	},
-	{ "hiphish/rainbow-delimiters.nvim", event = "BufReadPost" },
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
-		config = function()
-			require("plugins.configs.noice")
-		end,
-	},
-	-- Utility
-	{
-		"fei6409/log-highlight.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("log-highlight").setup({})
-		end,
-	},
-	{
-		"pocco81/auto-save.nvim",
-		event = "VeryLazy",
-		opts = {
-			execution_message = { message = "" },
-		},
-	},
-	-- Editing Helpers
-	{
-		"MagicDuck/grug-far.nvim",
-		cmd = "GrugFar",
-		config = function()
-			require("grug-far").setup({})
-		end,
-	},
-	{
-		"jake-stewart/multicursor.nvim",
-		branch = "1.0",
-		config = function()
-			local mc = require("multicursor-nvim")
-			mc.setup()
-		end,
-	},
-	{
-		version = "*",
-		event = "VeryLazy",
-		"nvim-mini/mini.nvim",
-		config = function()
-			require("mini.surround").setup({
-				mappings = {
-					add = "s",
-				},
-			})
-			require("mini.diff").setup({
-				-- Options for how hunks are visualized
-				view = {
-					-- Visualization style. Possible values are 'sign' and 'number'.
-					-- Default: 'number' if line numbers are enabled, 'sign' otherwise.
-					style = "sign",
+    -- UI Enhancements
+    {
+        "akinsho/bufferline.nvim",
+        event = "BufAdd",
+        dependencies = { "nvim-tree/nvim-web-devicons", "rachartier/tiny-devicons-auto-colors.nvim" },
+        config = function()
+            require("plugins.configs.bufferline")
+        end,
+    },
+    {
+        "nvim-lualine/lualine.nvim",
+        event = "UIEnter",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("plugins.configs.lualine")
+        end,
+    },
+    {
+        "folke/trouble.nvim",
+        cmd = "Trouble",
+        opts = {},
+    },
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "BufReadPost",
+        priority = 1000,
+        config = function()
+            require("tiny-inline-diagnostic").setup({
+                preset = "classic",
+                options = {
+                    use_icons_from_diagnostic = true,
+                    multiple_diag_under_cursor = true,
+                    show_all_diags_on_cursorline = true,
+                    enable_on_insert = true,
+                    multilines = {
+                        enabled = true,
+                        always_show = true,
+                    },
+                    format = function(diag)
+                        return "⠀" .. diag.message .. " — " .. diag.source
+                    end,
+                },
+            })
+            vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
+        end,
+    },
+    {
+        "sindrets/diffview.nvim",
+        cmd = { "DiffviewOpen", "DiffviewFileHistory" },
+        config = function()
+            require("diffview").setup({
+                file_panel = {
+                    listing_style = "tree",
+                    win_config = {
+                        position = "right",
+                        width = 30,
+                        win_opts = {},
+                    },
+                },
+            })
+        end,
+    },
+    { "hiphish/rainbow-delimiters.nvim", event = "BufReadPost" },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+        config = function()
+            require("plugins.configs.noice")
+        end,
+    },
+    -- Utility
+    {
+        "fei6409/log-highlight.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("log-highlight").setup({})
+        end,
+    },
+    {
+        "pocco81/auto-save.nvim",
+        event = "VeryLazy",
+        opts = {
+            execution_message = { message = "" },
+        },
+    },
+    -- Editing Helpers
+    {
+        "MagicDuck/grug-far.nvim",
+        cmd = "GrugFar",
+        config = function()
+            require("grug-far").setup({})
+        end,
+    },
+    {
+        "jake-stewart/multicursor.nvim",
+        branch = "1.0",
+        config = function()
+            local mc = require("multicursor-nvim")
+            mc.setup()
+        end,
+    },
+    {
+        version = "*",
+        event = "VeryLazy",
+        "nvim-mini/mini.nvim",
+        config = function()
+            require("mini.surround").setup({
+                mappings = {
+                    add = "s",
+                },
+            })
+            require("mini.diff").setup({
+                -- Options for how hunks are visualized
+                view = {
+                    -- Visualization style. Possible values are 'sign' and 'number'.
+                    -- Default: 'number' if line numbers are enabled, 'sign' otherwise.
+                    style = "sign",
 
-					-- Signs used for hunks with 'sign' view
-					signs = { add = "│", change = "│", delete = "─" },
+                    -- Signs used for hunks with 'sign' view
+                    signs = { add = "│", change = "│", delete = "─" },
 
-					-- Priority of used visualization extmarks
-					priority = 199,
-				},
-			})
-			require("mini.move").setup({
-				left = "<M-h>",
-				right = "<M-l>",
-				up = "<M-k>",
-				down = "<M-j>",
+                    -- Priority of used visualization extmarks
+                    priority = 199,
+                },
+            })
+            require("mini.move").setup({
+                left = "<M-h>",
+                right = "<M-l>",
+                up = "<M-k>",
+                down = "<M-j>",
 
-				line_left = "<M-h>",
-				line_right = "<M-l>",
-				line_down = "<M-j>",
-				line_up = "<M-k>",
-			})
-			require("mini.comment").setup({
-				mappings = {
-					comment = "",
-					comment_line = "<D-/>",
-					comment_visual = "<D-/>",
-					textobject = "<D-/>",
-				},
-			})
-			require("mini.pairs").setup({ view = { style = "sign" } })
-		end,
-	},
-	{
-		"alvan/vim-closetag",
-		event = "InsertEnter",
-		config = function()
-			vim.g.closetag_filenames = "*.vue,*.svelte,*.html,*.xhtml,*.phtml"
-			vim.g.closetag_xhtml_filenames = "*.xhtml,*.jsx,*.tsx"
-		end,
-	},
-	{
-		"windwp/nvim-ts-autotag",
-		event = "InsertEnter",
-		opts = {},
-	},
+                line_left = "<M-h>",
+                line_right = "<M-l>",
+                line_down = "<M-j>",
+                line_up = "<M-k>",
+            })
+            require("mini.comment").setup({
+                mappings = {
+                    comment = "",
+                    comment_line = "<D-/>",
+                    comment_visual = "<D-/>",
+                    textobject = "<D-/>",
+                },
+            })
+            require("mini.pairs").setup({ view = { style = "sign" } })
+        end,
+    },
+    {
+        "alvan/vim-closetag",
+        event = "InsertEnter",
+        config = function()
+            vim.g.closetag_filenames = "*.vue,*.svelte,*.html,*.xhtml,*.phtml"
+            vim.g.closetag_xhtml_filenames = "*.xhtml,*.jsx,*.tsx"
+        end,
+    },
+    {
+        "windwp/nvim-ts-autotag",
+        event = "InsertEnter",
+        opts = {},
+    },
+    -- Navigation and Search
+    {
+        "rmagatti/auto-session",
+        lazy = false,
+        opts = {
+            bypass_save_filetypes = { "snacks_dashboard", "" },
+            post_restore_cmds = {
+                function()
+                    -- Show dashboard if restored to a blank buffer
+                    vim.schedule(function()
+                        local buf = vim.api.nvim_get_current_buf()
+                        local bufname = vim.api.nvim_buf_get_name(buf)
+                        local bufft = vim.bo[buf].filetype
+                        if bufname == "" and bufft == "" then
+                            Snacks.dashboard()
+                        end
+                    end)
+                end,
+            },
+        },
+    },
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        lazy = false,
+        config = function()
+            require("plugins.configs.snacks")
+        end,
+    },
 
-	-- Navigation and Search
-	{
-		"rmagatti/auto-session",
-		lazy = false,
-		opts = {
-			bypass_save_filetypes = { "snacks_dashboard", "" },
-			post_restore_cmds = {
-				function()
-					-- Show dashboard if restored to a blank buffer
-					vim.schedule(function()
-						local buf = vim.api.nvim_get_current_buf()
-						local bufname = vim.api.nvim_buf_get_name(buf)
-						local bufft = vim.bo[buf].filetype
-						if bufname == "" and bufft == "" then
-							Snacks.dashboard()
-						end
-					end)
-				end,
-			},
-		},
-	},
-	{
-		"folke/snacks.nvim",
-		priority = 1000,
-		lazy = false,
-		config = function()
-			require("plugins.configs.snacks")
-		end,
-	},
+    -- Miscellaneous
+    {
+        "rachartier/tiny-glimmer.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("tiny-glimmer").setup({
+                overwrite = {
+                    auto_map = true,
+                    yank = {
+                        enabled = true,
+                        default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH6Bg" } },
+                    },
+                    paste = {
+                        enabled = true,
+                        default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH2Bg" } },
+                    },
+                    redo = {
+                        enabled = true,
+                        default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH4Bg" } },
+                    },
+                    undo = {
+                        enabled = true,
+                        default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH1Bg" } },
+                    },
+                },
+                transparency_color = "#121212",
 
-	-- Miscellaneous
-	{
-		"rachartier/tiny-glimmer.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("tiny-glimmer").setup({
-				overwrite = {
-					auto_map = true,
-					yank = {
-						enabled = true,
-						default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH6Bg" } },
-					},
-					paste = {
-						enabled = true,
-						default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH2Bg" } },
-					},
-					redo = {
-						enabled = true,
-						default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH4Bg" } },
-					},
-					undo = {
-						enabled = true,
-						default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH1Bg" } },
-					},
-				},
-				transparency_color = "#121212",
+                -- Filetypes to disable hijacking/overwrites
+                hijack_ft_disabled = { "snacks_dashboard" },
+                virt_text = {
+                    priority = 2048, -- Higher values appear above other plugins
+                },
+            })
+        end,
+    },
+    {
+        "catgoose/nvim-colorizer.lua",
+        event = "BufReadPre",
+        opts = {
+            filetypes = { "*" },
+            user_default_options = {
+                css = true,
+                names = false,
+                tailwind = true,
+                mode = "virtualtext",
+                virtualtext_inline = "before",
+                virtualtext = "􀑌",
+            },
+        },
+    },
+    {
+        "nacro90/numb.nvim",
+        opts = {},
+        event = "VeryLazy",
+    },
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        event = "VeryLazy",
+        opts = {
+            heading = {
+                width = "block",
+                left_pad = 1,
+                right_pad = 2,
+                position = "inline",
+            },
+            code = {
+                width = "block",
+                left_pad = 2,
+                right_pad = 2,
+            },
+        },
+        dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
+    },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        event = "BufReadPost",
+        config = function()
+            require("plugins.configs.treesitter")
+        end,
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        opts = {
+            delay = 1000,
+            preset = "modern",
+            win = {
+                border = "single",
+                title = true,
+            },
+        },
+        config = function(_, opts)
+            local wk = require("which-key")
+            wk.setup(opts)
+            vim.api.nvim_set_hl(0, "WhichKeyBorder", { link = "MantleBorder" })
+        end,
+    },
 
-				-- Filetypes to disable hijacking/overwrites
-				hijack_ft_disabled = { "snacks_dashboard" },
-				virt_text = {
-					priority = 2048, -- Higher values appear above other plugins
-				},
-			})
-		end,
-	},
-	{
-		"catgoose/nvim-colorizer.lua",
-		event = "BufReadPre",
-		opts = {
-			filetypes = { "*" },
-			user_default_options = {
-				css = true,
-				names = false,
-				tailwind = true,
-				mode = "virtualtext",
-				virtualtext_inline = "before",
-				virtualtext = "􀑌",
-			},
-		},
-	},
-	{
-		"nacro90/numb.nvim",
-		opts = {},
-		event = "VeryLazy",
-	},
-	{
-		"MeanderingProgrammer/render-markdown.nvim",
-		event = "VeryLazy",
-		opts = {
-			heading = {
-				width = "block",
-				left_pad = 1,
-				right_pad = 2,
-				position = "inline",
-			},
-			code = {
-				width = "block",
-				left_pad = 2,
-				right_pad = 2,
-			},
-		},
-		dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-	},
-	{
-		"nvim-treesitter/nvim-treesitter",
-		event = "BufReadPost",
-		config = function()
-			require("plugins.configs.treesitter")
-		end,
-	},
-	{
-		"folke/which-key.nvim",
-		event = "VeryLazy",
-		opts = {
-			delay = 1000,
-			preset = "modern",
-			win = {
-				border = "single",
-				title = true,
-			},
-		},
-		config = function(_, opts)
-			local wk = require("which-key")
-			wk.setup(opts)
-			vim.api.nvim_set_hl(0, "WhichKeyBorder", { link = "MantleBorder" })
-		end,
-	},
-
-	-- LSP and Completion
-	{
-		"williamboman/mason.nvim",
-		build = ":MasonUpdate",
-		config = function()
-			require("mason").setup({
-				ui = {
-					border = "rounded",
-					icons = {
-						package_installed = "✓",
-						package_pending = "➜",
-						package_uninstalled = "✗",
-					},
-				},
-			})
-			-- Load LSP configuration
-			require("plugins.configs.lsp")
-		end,
-	},
-	{
-		"stevearc/conform.nvim",
-		event = { "BufWritePre" },
-		cmd = { "ConformInfo" },
-		opts = {
-			formatters_by_ft = {
-				lua = { "stylua" },
-				nix = { "nixfmt" },
-				racket = { "raco_fmt" },
-				go = { "goimports", "gofmt" },
-				typescriptreact = { "prettierd" },
-				javascriptreact = { "prettierd" },
-				javascript = { "prettierd" },
-				typescript = { "prettierd" },
-				svelte = { "prettierd" },
-				astro = { "prettierd" },
-				vue = { "prettierd" },
-				markdown = { "prettierd" },
-				json = { "prettierd" },
-				yaml = { "prettierd" },
-				html = { "prettierd" },
-				css = { "prettierd" },
-				scss = { "prettierd" },
-			},
-			formatters = {
-				raco_fmt = {
-					command = "raco",
-					args = { "fmt", "-i", "$FILENAME" },
-					stdin = false,
-				},
-			},
-		},
-	},
-	{
-		"saghen/blink.cmp",
-		version = "*",
-		build = "nix run .#build-plugin",
-		event = "InsertEnter",
-		dependencies = { "rafamadriz/friendly-snippets" },
-		opts = {
-			keymap = {
-				preset = "default",
-				["<Tab>"] = { "accept", "fallback" },
-				["<C-j>"] = { "select_next", "fallback" },
-				["<C-k>"] = { "select_prev", "fallback" },
-			},
-			appearance = {
-				nerd_font_variant = "normal",
-			},
-			completion = {
-				menu = {
-					draw = {
-						columns = { { "kind_icon" }, { "label", "label_description", gap = 1 } },
-						treesitter = { "lsp" },
-					},
-					winhighlight = "Normal:CmpNormal,FloatBorder:CmpNormal,CursorLine:CmpSel,Search:None",
-				},
-				documentation = {
-					auto_show = true,
-					auto_show_delay_ms = 0,
-					window = {
-						border = "single",
-						winhighlight = "Normal:DocNormal,FloatBorder:CrustBorder",
-					},
-				},
-			},
-			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
-			},
-		},
-	},
-	{ "artemave/workspace-diagnostics.nvim", event = "VeryLazy" },
-	{ "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }, event = "VeryLazy" },
-	-- LSP configuration (using Neovim 0.11 native API with Mason-installed servers)
-	{
-		"linrongbin16/lsp-progress.nvim",
-		config = function()
-			require("lsp-progress").setup({
-				format = function(client_messages)
-					if #client_messages > 0 then
-						return table.concat(client_messages, " ")
-					end
-					return ""
-				end,
-			})
-		end,
-	},
+    -- LSP and Completion
+    {
+        "williamboman/mason.nvim",
+        build = ":MasonUpdate",
+        config = function()
+            require("mason").setup({
+                ui = {
+                    border = "rounded",
+                    icons = {
+                        package_installed = "✓",
+                        package_pending = "➜",
+                        package_uninstalled = "✗",
+                    },
+                },
+            })
+            -- Load LSP configuration
+            require("plugins.configs.lsp")
+        end,
+    },
+    {
+        "stevearc/conform.nvim",
+        event = { "BufWritePre" },
+        cmd = { "ConformInfo" },
+        opts = {
+            formatters_by_ft = {
+                lua = { "stylua" },
+                nix = { "nixfmt" },
+                racket = { "raco_fmt" },
+                go = { "goimports", "gofmt" },
+                typescriptreact = { "prettierd" },
+                javascriptreact = { "prettierd" },
+                javascript = { "prettierd" },
+                typescript = { "prettierd" },
+                svelte = { "prettierd" },
+                astro = { "prettierd" },
+                vue = { "prettierd" },
+                markdown = { "prettierd" },
+                json = { "prettierd" },
+                yaml = { "prettierd" },
+                html = { "prettierd" },
+                css = { "prettierd" },
+                scss = { "prettierd" },
+            },
+            formatters = {
+                raco_fmt = {
+                    command = "raco",
+                    args = { "fmt", "-i", "$FILENAME" },
+                    stdin = false,
+                },
+            },
+        },
+    },
+    {
+        "saghen/blink.cmp",
+        version = "*",
+        build = "nix run .#build-plugin",
+        event = "InsertEnter",
+        dependencies = { "rafamadriz/friendly-snippets" },
+        opts = {
+            keymap = {
+                preset = "default",
+                ["<Tab>"] = { "accept", "fallback" },
+                ["<C-j>"] = { "select_next", "fallback" },
+                ["<C-k>"] = { "select_prev", "fallback" },
+            },
+            appearance = {
+                nerd_font_variant = "normal",
+            },
+            completion = {
+                menu = {
+                    draw = {
+                        columns = { { "kind_icon" }, { "label", "label_description", gap = 1 } },
+                        treesitter = { "lsp" },
+                    },
+                    winhighlight = "Normal:CmpNormal,FloatBorder:CmpNormal,CursorLine:CmpSel,Search:None",
+                },
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 0,
+                    window = {
+                        border = "single",
+                        winhighlight = "Normal:DocNormal,FloatBorder:CrustBorder",
+                    },
+                },
+            },
+            sources = {
+                default = { "lsp", "path", "snippets", "buffer" },
+            },
+        },
+    },
+    { "artemave/workspace-diagnostics.nvim", event = "VeryLazy" },
+    { "kevinhwang91/nvim-ufo", dependencies = { "kevinhwang91/promise-async" }, event = "VeryLazy" },
+    -- LSP configuration (using Neovim 0.11 native API with Mason-installed servers)
+    {
+        "linrongbin16/lsp-progress.nvim",
+        config = function()
+            require("lsp-progress").setup({
+                format = function(client_messages)
+                    if #client_messages > 0 then
+                        return table.concat(client_messages, " ")
+                    end
+                    return ""
+                end,
+            })
+        end,
+    },
 })
