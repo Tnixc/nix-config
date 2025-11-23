@@ -40,7 +40,7 @@ require("snacks").setup({
         win = {
             style = "terminal",
             position = "float",
-            border = "none",
+            border = "single",
             width = 0.8,
             height = 0.8,
             on_win = function(win)
@@ -52,7 +52,7 @@ require("snacks").setup({
                 })
             end,
             wo = {
-                winhighlight = "Normal:DocNormal,FloatBorder:CrustBorder",
+                winhighlight = "Normal:MantleBorder,FloatBorder:MantleBorder",
             },
             keys = {
                 ["<M-l>"] = { "hide", mode = { "n", "t", "i" } },
@@ -63,9 +63,32 @@ require("snacks").setup({
         prompt = " 􀊫  ",
         ui_select = true,
         layout = {
-            preset = function()
-                return vim.o.columns >= 120 and "default" or "vertical"
-            end,
+            reverse = false,
+            layout = {
+                box = "horizontal",
+                backdrop = false,
+                width = 0.9,
+                height = 0.9,
+                border = "none",
+                {
+                    box = "vertical",
+                    {
+                        win = "input",
+                        height = 1,
+                        border = true,
+                        title = "{title} {live} {flags}",
+                        title_pos = "center",
+                    },
+                    { win = "list", title = " Results ", title_pos = "center", border = true },
+                },
+                {
+                    win = "preview",
+                    title = "{preview:Preview}",
+                    width = 0.5,
+                    border = true,
+                    title_pos = "center",
+                },
+            },
         },
         win = {
             input = {

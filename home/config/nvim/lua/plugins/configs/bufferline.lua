@@ -9,7 +9,7 @@ bl.setup({
         styles = { "bold" },
         custom = {
             macchiato = {
-                fill = { bg = t.mantle },
+                -- fill = { bg = t.mantle },
                 background = { bg = t.base },
                 separator = { fg = t.mantle, bg = t.base },
                 separator_selected = { fg = t.mantle, bg = t.surface1 },
@@ -26,16 +26,16 @@ bl.setup({
                 duplicate_visible = { bg = t.surface0 },
                 indicator_selected = { bg = t.surface1, fg = t.surface1 },
                 indicator_visible = { bg = t.surface1, fg = t.surface1 },
-                duplicate = { bg = t.base },
-                trunc_marker = { bg = t.mantle },
+                duplicate = { bg = t.base, bold = false },
+                trunc_marker = { bg = t.base },
             },
         },
     }),
     options = {
         close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
         right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
-        separator_style = { "▌", "▐" }, -- slant, padded_slant; slope, padded_slope; thick; thin
-        -- separator_style = "slope",
+        -- separator_style = { "▓","▓" }, -- slant, padded_slant; slope, padded_slope; thick; thin
+        separator_style = "thick",
         color_icons = true,
         always_show_bufferline = true,
         themable = true,
