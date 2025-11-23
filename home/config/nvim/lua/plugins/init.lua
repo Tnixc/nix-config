@@ -43,7 +43,7 @@ lazy.setup({
     {
         "tadaa/vimade",
         opts = {
-            recipe = { "default", { animate = true } },
+            recipe = { "default", { animate = false } },
             fadelevel = 0.2,
             basebg = "#121212",
             blocklist = {

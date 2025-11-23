@@ -28,6 +28,35 @@ bl.setup({
                 indicator_visible = { bg = t.surface1, fg = t.surface1 },
                 duplicate = { bg = t.base, bold = false },
                 trunc_marker = { bg = t.base },
+
+                -- Diagnostic highlights
+                error = { bg = t.base },
+                error_visible = { bg = t.surface0 },
+                error_selected = { bg = t.surface1 },
+                warning = { bg = t.base },
+                warning_visible = { bg = t.surface1 },
+                warning_selected = { bg = t.surface1 },
+                info = { bg = t.base },
+                info_visible = { bg = t.surface0 },
+                info_selected = { bg = t.surface1 },
+                hint = { bg = t.base },
+                hint_visible = { bg = t.surface0 },
+                hint_selected = { bg = t.surface1 },
+                diagnostic = { bg = t.base },
+                diagnostic_visible = { bg = t.surface0 },
+                diagnostic_selected = { bg = t.surface1 },
+                error_diagnostic = { bg = t.base },
+                error_diagnostic_visible = { bg = t.surface0 },
+                error_diagnostic_selected = { bg = t.surface1 },
+                warning_diagnostic = { bg = t.base },
+                warning_diagnostic_visible = { bg = t.surface0 },
+                warning_diagnostic_selected = { bg = t.surface1 },
+                info_diagnostic = { bg = t.base },
+                info_diagnostic_visible = { bg = t.surface0 },
+                info_diagnostic_selected = { bg = t.surface1 },
+                hint_diagnostic = { bg = t.base },
+                hint_diagnostic_visible = { bg = t.surface0 },
+                hint_diagnostic_selected = { bg = t.surface1 },
             },
         },
     }),
@@ -40,6 +69,16 @@ bl.setup({
         always_show_bufferline = true,
         themable = true,
         show_buffer_icons = true,
+        diagnostics = "nvim_lsp",
+
+        diagnostics_indicator = function(count, level, diagnostics_dict, context)
+            local s = " "
+            for e, n in pairs(diagnostics_dict) do
+                local sym = e == "error" and " " or (e == "warning" and " " or " ")
+                s = s .. n .. sym
+            end
+            return s
+        end,
         hover = {
             enabled = false,
             delay = 200,
