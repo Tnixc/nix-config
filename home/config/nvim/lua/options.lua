@@ -87,3 +87,38 @@ end, opts)
 vim.keymap.set({ "n", "i" }, "<C-BS>", function()
     ResetGuiFont()
 end, opts)
+
+-- Dim other windows when in a floating window
+-- local dim_group = vim.api.nvim_create_augroup("DimOnFloat", { clear = true })
+--
+-- vim.api.nvim_create_autocmd("WinEnter", {
+--     group = dim_group,
+--     callback = function()
+--         local win = vim.api.nvim_get_current_win()
+--         local config = vim.api.nvim_win_get_config(win)
+--
+--         if config.relative ~= "" then
+--             -- Entered a float - dim all other windows
+--             for _, w in ipairs(vim.api.nvim_list_wins()) do
+--                 if w ~= win and vim.api.nvim_win_get_config(w).relative == "" then
+--                     vim.wo[w].winhighlight = "Normal:NormalDimmed"
+--                 end
+--             end
+--         else
+--             -- Entered a normal window - restore all windows
+--             for _, w in ipairs(vim.api.nvim_list_wins()) do
+--                 if vim.api.nvim_win_get_config(w).relative == "" then
+--                     vim.wo[w].winhighlight = ""
+--                 end
+--             end
+--         end
+--     end,
+-- })
+--
+-- -- Create the dimmed highlight
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+--     callback = function()
+--         vim.api.nvim_set_hl(0, "NormalDimmed", { bg = "#0e0e0e" })
+--     end,
+-- })
+-- vim.api.nvim_set_hl(0, "NormalDimmed", { bg = "#0e0e0e" })

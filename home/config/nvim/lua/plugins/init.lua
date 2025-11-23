@@ -40,8 +40,34 @@ lazy.setup({
             require("tiny-devicons-auto-colors").setup({})
         end,
     },
-
-    -- UI Enhancements
+    {
+        "tadaa/vimade",
+        opts = {
+            recipe = { "default", { animate = true } },
+            fadelevel = 0.2,
+            basebg = "#121212",
+            blocklist = {
+                default_block = function(win, current)
+                    -- current can be nil
+                    if (win.win_config.relative == "") and (current and current.win_config.relative ~= "") then
+                        return false
+                    end
+                    return true
+                end,
+            },
+            link = {
+                snacks_explorer = function(win, current)
+                    if not current then
+                        return false
+                    end
+                    -- Link explorer with other windows so main doesn't fade
+                    local dominated_fts = { "snacks_picker_list", "snacks_picker_preview" }
+                    return vim.tbl_contains(dominated_fts, win.buf_opts.filetype)
+                        or vim.tbl_contains(dominated_fts, current.buf_opts.filetype)
+                end,
+            },
+        },
+    },
     {
         "akinsho/bufferline.nvim",
         event = "BufAdd",

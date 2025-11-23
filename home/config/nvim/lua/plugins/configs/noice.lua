@@ -3,17 +3,6 @@ require("noice").setup({
         progress = {
             enabled = false,
         },
-        hover = {
-            opts = {
-                border = {
-                    style = "single",
-                    highlight = "MantleBorder",
-                },
-                position = {
-                    row = 2,
-                },
-            },
-        },
     },
     messages = {
         -- NOTE: If you enable messages, then the cmdline is enabled automatically.

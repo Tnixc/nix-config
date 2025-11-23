@@ -43,6 +43,8 @@ require("snacks").setup({
             border = "single",
             width = 0.8,
             height = 0.8,
+            title = " Terminal ",
+            title_pos = "center",
             on_win = function(win)
                 vim.api.nvim_create_autocmd("WinLeave", {
                     buffer = win.buf,
@@ -52,7 +54,7 @@ require("snacks").setup({
                 })
             end,
             wo = {
-                winhighlight = "Normal:MantleBorder,FloatBorder:MantleBorder",
+                winhighlight = "FloatBorder:MantleBorder",
             },
             keys = {
                 ["<M-l>"] = { "hide", mode = { "n", "t", "i" } },
