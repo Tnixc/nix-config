@@ -346,12 +346,11 @@ lazy.setup({
     },
     -- LSP and Completion
     {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         build = ":MasonUpdate",
         config = function()
             require("mason").setup({
                 ui = {
-                    border = "rounded",
                     icons = {
                         package_installed = "✓",
                         package_pending = "➜",
