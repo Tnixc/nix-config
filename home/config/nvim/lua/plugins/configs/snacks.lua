@@ -24,7 +24,18 @@ require("snacks").setup({
             },
             { section = "keys", gap = 1, padding = 2, pane = 2 },
             { pane = 2, icon = "􀣔", title = "Recent Files", section = "recent_files", indent = 2, padding = 2 },
-            { pane = 2, icon = "􀙅", title = "Projects", section = "projects", indent = 2, padding = 2 },
+            {
+                pane = 2,
+                icon = "􀙅",
+                title = "Projects",
+                section = "projects",
+                indent = 2,
+                padding = 2,
+                action = function(item)
+                    vim.cmd("AutoSession save")
+                    vim.cmd("AutoSession restore " .. item)
+                end,
+            },
             { section = "startup", padding = 1, pane = 2, icon = "􀋥  " },
         },
     },
