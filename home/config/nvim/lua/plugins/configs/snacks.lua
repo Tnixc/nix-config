@@ -56,7 +56,7 @@ require("snacks").setup({
     },
     picker = {
         prompt = " 􀊫  ",
-        ui_select = true,
+        ui_select = false,
         layout = {
             reverse = false,
             layout = {
