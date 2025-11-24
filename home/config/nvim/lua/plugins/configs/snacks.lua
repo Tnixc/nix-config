@@ -18,7 +18,7 @@ require("snacks").setup({
             {
                 pane = 1,
                 section = "terminal",
-                cmd = "echo '' && chafa ./assets/banner.jpg --format symbols --fg-only --symbols braille --size 70x25 --stretch",
+                cmd = "echo '' && chafa /Users/tnixc/nix-config/home/config/nvim/assets/banner.jpg --format symbols --fg-only --symbols braille --size 70x25 --stretch",
                 height = 27,
                 padding = 0,
             },
