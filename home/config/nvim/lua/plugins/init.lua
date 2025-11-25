@@ -143,6 +143,30 @@ lazy.setup({
             require("plugins.configs.noice")
         end,
     },
+    {
+        "stevearc/dressing.nvim",
+        event = "VeryLazy",
+        opts = {
+            input = {
+                enabled = true,
+                default_prompt = "> ",
+                win_options = {
+                    winblend = 0,
+                },
+            },
+            select = {
+                enabled = true,
+                backend = { "builtin" },
+                builtin = {
+                    border = "single",
+                    relative = "cursor",
+                    win_options = {
+                        winblend = 0,
+                    },
+                },
+            },
+        },
+    },
     -- Utility
     {
         "fei6409/log-highlight.nvim",
