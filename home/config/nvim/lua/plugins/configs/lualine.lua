@@ -158,7 +158,7 @@ ins_left({
     function()
         local msg = require("lsp-progress").progress()
         if #msg > 40 then
-            return msg:sub(1, 37) .. "..."
+            return msg:sub(1, 40)
         end
         return msg
     end,
