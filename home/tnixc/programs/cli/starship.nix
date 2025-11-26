@@ -1,4 +1,9 @@
-{lib, theme, colorMix, ...}: let
+{
+  lib,
+  theme,
+  colorMix,
+  ...
+}: let
   c = theme.colors;
   mixedColor = (colorMix {inherit lib;}).mixColors c.base c.green 0.8;
 in {

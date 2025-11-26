@@ -1,4 +1,8 @@
-{pkgs, theme, ...}: let
+{
+  pkgs,
+  theme,
+  ...
+}: let
   c = theme.colors;
   ui = theme.ui;
 in {

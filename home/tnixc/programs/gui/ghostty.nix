@@ -1,4 +1,8 @@
-{pkgs, theme, ...}: let
+{
+  pkgs,
+  theme,
+  ...
+}: let
   c = theme.colors;
   strip = theme.rawHexValue;
 in {
