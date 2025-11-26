@@ -1,13 +1,14 @@
-{...}: let
-  theme = import ../../theme.nix;
+{pkgs, theme, ...}: let
   c = theme.colors;
 in {
   programs.lazygit = {
     enable = true;
     settings = {
       os = {
-        shellFunctionsFile = "/Users/tnixc/.zshrc";
-        editPreset = "nvim-remote";
+        edit = "${pkgs.neovim}/bin/nvim {{filename}}";
+        editAtLine = "${pkgs.neovim}/bin/nvim +{{line}} {{filename}}";
+        editAtLineAndWait = "${pkgs.neovim}/bin/nvim +{{line}} {{filename}}";
+        openDirInEditor = "${pkgs.neovim}/bin/nvim {{dir}}";
       };
       git.pagers = [
         {

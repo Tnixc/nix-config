@@ -1,5 +1,4 @@
-{...}: let
-  theme = import ../../theme.nix;
+{theme, ...}: let
   c = theme.colors;
 in {
   programs.zathura = {

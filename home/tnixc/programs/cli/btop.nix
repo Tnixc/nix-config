@@ -1,5 +1,4 @@
-{config, ...}: let
-  theme = import ../../theme.nix;
+{config, theme, ...}: let
   c = theme.colors;
 in {
   programs.btop = {

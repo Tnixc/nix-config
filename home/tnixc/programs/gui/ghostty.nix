@@ -1,5 +1,4 @@
-{pkgs, ...}: let
-  theme = import ../../theme.nix;
+{pkgs, theme, ...}: let
   c = theme.colors;
   strip = theme.rawHexValue;
 in {

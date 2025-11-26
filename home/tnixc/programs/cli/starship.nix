@@ -1,9 +1,6 @@
-{lib, ...}: let
-  color-mix = import ../../../../modules/utils/colors-mix.nix {inherit lib;};
-  theme = import ../../theme.nix;
+{lib, theme, colorMix, ...}: let
   c = theme.colors;
-
-  mixedColor = color-mix.mixColors c.base c.green 0.8;
+  mixedColor = (colorMix {inherit lib;}).mixColors c.base c.green 0.8;
 in {
   programs.starship = {
     enable = true;

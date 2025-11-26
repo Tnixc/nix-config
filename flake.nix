@@ -68,10 +68,14 @@
     system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
     hostname = "End";
 
+    # Import theme and utils once at flake level
+    theme = import ./home/tnixc/theme.nix;
+    colorMix = import ./modules/utils/colors-mix.nix;
+
     specialArgs =
       inputs
       // {
-        inherit username hostname system;
+        inherit username hostname system theme colorMix;
       };
   in {
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
