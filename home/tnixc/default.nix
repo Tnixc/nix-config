@@ -11,6 +11,7 @@
 in {
   imports = [
     ./programs
+    ./shell.nix
   ];
 
   home.file = {
