@@ -16,6 +16,8 @@ in {
 
   home.file = {
     ".config/nvim" = {source = mkLink "${config-dir}/nvim";};
+    ".config/karabiner" = {source = mkLink "${config-dir}/karabiner";};
+    ".config/zed" = {source = mkLink "${config-dir}/zed";};
   };
 
   launchd.agents."aerospace" = {
