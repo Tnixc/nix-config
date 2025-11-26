@@ -30,11 +30,11 @@
       # system utils
       "keith/formulae/reminders-cli"
       "brightness"
-      "coreutils"
+      # "coreutils"
       "colima"
       "dua-cli"
       "lsusb"
-      "macos-trash"
+      # "macos-trash"
       "switchaudio-osx"
 
       # dev tools
