@@ -122,11 +122,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1763375004,
-        "narHash": "sha256-e81Xfa7xhRZfqGB4s3xEvrg4p1v+fToM6CIQlXUyaX0=",
+        "lastModified": 1764081664,
+        "narHash": "sha256-sUoHmPr/EwXzRMpv1u/kH+dXuvJEyyF2Q7muE+t0EU4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8b6600824693a9c706ef09bd86711ca393703466",
+        "rev": "dc205f7b4fdb04c8b7877b43edb7b73be7730081",
         "type": "github"
       },
       "original": {
@@ -154,11 +154,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1763375004,
-        "narHash": "sha256-e81Xfa7xhRZfqGB4s3xEvrg4p1v+fToM6CIQlXUyaX0=",
+        "lastModified": 1764081664,
+        "narHash": "sha256-sUoHmPr/EwXzRMpv1u/kH+dXuvJEyyF2Q7muE+t0EU4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "8b6600824693a9c706ef09bd86711ca393703466",
+        "rev": "dc205f7b4fdb04c8b7877b43edb7b73be7730081",
         "type": "github"
       },
       "original": {
@@ -190,11 +190,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "path": "./home/programs/aerospace",
+        "path": "./home/tnixc/programs/gui/aerospace",
         "type": "path"
       },
       "original": {
-        "path": "./home/programs/aerospace",
+        "path": "./home/tnixc/programs/gui/aerospace",
         "type": "path"
       },
       "parent": []
@@ -253,11 +253,11 @@
         "sbarlua": "sbarlua"
       },
       "locked": {
-        "path": "./home/programs/sketchybar",
+        "path": "./home/tnixc/programs/gui/sketchybar",
         "type": "path"
       },
       "original": {
-        "path": "./home/programs/sketchybar",
+        "path": "./home/tnixc/programs/gui/sketchybar",
         "type": "path"
       },
       "parent": []

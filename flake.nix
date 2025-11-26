@@ -36,14 +36,12 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
 
-    # pwaerospace.url = "path:./home/programs/aerospace";
     pwaerospace = {
-      url = "path:./home/programs/aerospace";
-      # url = "git+file:///${builtins.toString ./.}/home/programs/aerospace";
+      url = "path:./home/tnixc/programs/gui/aerospace";
       flake = true;
     };
     sketchybar-config = {
-      url = "path:./home/programs/sketchybar";
+      url = "path:./home/tnixc/programs/gui/sketchybar";
       flake = true;
     };
     darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
@@ -79,9 +77,8 @@
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
       inherit system specialArgs;
       modules = [
-        ./modules/nix-core.nix
-        ./modules/system.nix
-        ./modules/apps.nix
+        ./modules/base
+        ./modules/darwin
         ./modules/host-users.nix
         ./modules/overlays.nix
 
@@ -94,7 +91,7 @@
           home-manager.backupFileExtension = "backup";
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users.${username} = import ./home;
+          home-manager.users.${username} = import ./home/tnixc;
         }
       ];
     };
