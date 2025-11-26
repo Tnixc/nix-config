@@ -1,66 +1,72 @@
-{...}: let
+{pkgs, ...}: let
   theme = import ../../theme.nix;
   c = theme.colors;
   strip = theme.rawHexValue;
 in {
-  # Ghostty is not available on macOS in nixpkgs, so we just manage the config
-  xdg.configFile."ghostty/config".text = ''
-    # Basic behavior
-    shell-integration = detect
-    scrollback-limit = 2000000000
-    window-inherit-working-directory = false
-    command = /run/current-system/sw/bin/fish
+  programs.ghostty = {
+    enable = true;
+    package = pkgs.ghostty-bin;
 
-    # Font
-    font-family = "BerkeleyMono Nerd Font"
-    font-thicken = true
-    font-size = 13.5
-    font-feature = -calt,-liga,-dlig
-    adjust-cell-height = 77%
-    adjust-underline-thickness = 10%
-    adjust-underline-position = 3
+    settings = {
+      # Basic behavior
+      shell-integration = "detect";
+      scrollback-limit = 2000000000;
+      window-inherit-working-directory = false;
+      command = "/run/current-system/sw/bin/fish";
 
-    # Cursor
-    cursor-style = underline
+      # Font
+      font-family = "BerkeleyMono Nerd Font";
+      font-thicken = true;
+      font-size = 13.5;
+      font-feature = ["-calt" "-liga" "-dlig"];
+      adjust-cell-height = "77%";
+      adjust-underline-thickness = "10%";
+      adjust-underline-position = 3;
 
-    # macOS specific
-    macos-option-as-alt = true
-    macos-icon = holographic
-    macos-titlebar-style = tabs
+      # Cursor
+      cursor-style = "underline";
 
-    # Colors (edo theme)
-    foreground = ${strip c.text}
-    background = ${strip c.base}
-    selection-foreground = ${strip c.text}
-    selection-background = ${strip c.surface2}
-    cursor-color = ${strip c.rosewater}
-    cursor-text = ${strip c.crust}
+      # macOS specific
+      macos-option-as-alt = true;
+      macos-icon = "holographic";
+      macos-titlebar-style = "tabs";
 
-    # Palette
-    palette = 0=${strip c.surface1}
-    palette = 1=${strip c.red}
-    palette = 2=${strip c.green}
-    palette = 3=${strip c.yellow}
-    palette = 4=${strip c.blue}
-    palette = 5=${strip c.pink}
-    palette = 6=${strip c.teal}
-    palette = 7=${strip c.text}
-    palette = 8=${strip c.surface2}
-    palette = 9=${strip c.red}
-    palette = 10=${strip c.green}
-    palette = 11=${strip c.yellow}
-    palette = 12=${strip c.blue}
-    palette = 13=${strip c.pink}
-    palette = 14=${strip c.teal}
-    palette = 15=${strip c.text}
+      # Colors (edo theme)
+      foreground = strip c.text;
+      background = strip c.base;
+      selection-foreground = strip c.text;
+      selection-background = strip c.surface2;
+      cursor-color = strip c.rosewater;
+      cursor-text = strip c.crust;
 
-    # Transparency
-    background-opacity = 0.95
-    background-blur-radius = 94
-    alpha-blending = native
-    window-colorspace = display-p3
+      # Palette
+      palette = [
+        "0=${strip c.surface1}"
+        "1=${strip c.red}"
+        "2=${strip c.green}"
+        "3=${strip c.yellow}"
+        "4=${strip c.blue}"
+        "5=${strip c.pink}"
+        "6=${strip c.teal}"
+        "7=${strip c.text}"
+        "8=${strip c.surface2}"
+        "9=${strip c.red}"
+        "10=${strip c.green}"
+        "11=${strip c.yellow}"
+        "12=${strip c.blue}"
+        "13=${strip c.pink}"
+        "14=${strip c.teal}"
+        "15=${strip c.text}"
+      ];
 
-    # Window title
-    window-title-font-family = "BerkeleyMono Nerd Font"
-  '';
+      # Transparency
+      background-opacity = 0.95;
+      background-blur-radius = 94;
+      alpha-blending = "native";
+      window-colorspace = "display-p3";
+
+      # Window title
+      window-title-font-family = "BerkeleyMono Nerd Font";
+    };
+  };
 }
