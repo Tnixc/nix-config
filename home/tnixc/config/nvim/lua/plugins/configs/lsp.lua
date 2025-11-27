@@ -43,241 +43,36 @@ require("ufo").setup({
     fold_virt_text_handler = foldHandler,
 })
 
--- LSP servers to enable (installed via Mason, except ocamllsp via opam and racket via racket)
-local lsp_servers = {
-    "lua_ls",
-    "vtsls",
-    "jsonls",
-    "html",
-    "cssls",
-    "tailwindcss",
-    "svelte",
-    "astro",
-    "pyright",
-    "rust_analyzer",
-    "gopls",
-    "ocamllsp",
-    "racket_langserver",
-}
-
 vim.g.zig_fmt_parse_errors = 0
 
--- Override floating preview globally
-
--- Configure language servers using Neovim 0.11 native API
-local function configure_lsp_servers()
-    -- Common on_attach function
-    local on_attach = function(client, bufnr)
-        require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-    end
-
-    -- Lua Language Server
-    vim.lsp.config.lua_ls = {
-        cmd = { "lua-language-server" },
-        filetypes = { "lua" },
-        root_markers = {
-            ".luarc.json",
-            ".luarc.jsonc",
-            ".luacheckrc",
-            ".stylua.toml",
-            "stylua.toml",
-            "selene.toml",
-            "selene.yml",
-            ".git",
-        },
-        capabilities = capabilities,
-        on_attach = on_attach,
-        settings = {
-            Lua = {
-                runtime = { version = "LuaJIT" },
-                workspace = {
-                    checkThirdParty = false,
-                    library = { vim.env.VIMRUNTIME },
-                },
-                completion = { callSnippet = "Replace" },
-                telemetry = { enable = false },
-                diagnostics = { disable = { "missing-fields" } },
-            },
-        },
-    }
-
-    -- TypeScript/JavaScript (vtsls)
-    vim.lsp.config.vtsls = {
-        cmd = { "vtsls", "--stdio" },
-        filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
-        root_markers = { "package.json", "tsconfig.json", "jsconfig.json", ".git" },
-        capabilities = capabilities,
-        on_attach = on_attach,
-        settings = {
-            vtsls = {
-                experimental = {
-                    completion = {
-                        enableServerSideFuzzyMatch = true,
-                    },
-                },
-            },
-            typescript = {
-                updateImportsOnFileMove = { enabled = "always" },
-                suggest = {
-                    completeFunctionCalls = true,
-                },
-                inlayHints = {
-                    parameterNames = { enabled = "literals" },
-                    parameterTypes = { enabled = true },
-                    variableTypes = { enabled = true },
-                    propertyDeclarationTypes = { enabled = true },
-                    functionLikeReturnTypes = { enabled = true },
-                    enumMemberValues = { enabled = true },
-                },
-            },
-            javascript = {
-                updateImportsOnFileMove = { enabled = "always" },
-                suggest = {
-                    completeFunctionCalls = true,
-                },
-                inlayHints = {
-                    parameterNames = { enabled = "literals" },
-                    parameterTypes = { enabled = true },
-                    variableTypes = { enabled = true },
-                    propertyDeclarationTypes = { enabled = true },
-                    functionLikeReturnTypes = { enabled = true },
-                    enumMemberValues = { enabled = true },
-                },
-            },
-        },
-    }
-
-    -- JSON
-    vim.lsp.config.jsonls = {
-        cmd = { "vscode-json-language-server", "--stdio" },
-        filetypes = { "json", "jsonc" },
-        root_markers = { ".git" },
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
-
-    -- HTML
-    vim.lsp.config.html = {
-        cmd = { "vscode-html-language-server", "--stdio" },
-        filetypes = { "html" },
-        root_markers = { "package.json", ".git" },
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
-
-    -- CSS
-    vim.lsp.config.cssls = {
-        cmd = { "vscode-css-language-server", "--stdio" },
-        filetypes = { "css", "scss", "less" },
-        root_markers = { "package.json", ".git" },
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
-
-    -- Tailwind CSS
-    vim.lsp.config.tailwindcss = {
-        cmd = { "tailwindcss-language-server", "--stdio" },
-        filetypes = {
-            "html",
-            "css",
-            "scss",
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
-            "vue",
-            "svelte",
-            "astro",
-        },
-        root_markers = {
-            "tailwind.config.js",
-            "tailwind.config.ts",
-            "postcss.config.js",
-            "postcss.config.ts",
-            "package.json",
-            ".git",
-        },
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
-
-    -- Svelte
-    vim.lsp.config.svelte = {
-        cmd = { "svelteserver", "--stdio" },
-        filetypes = { "svelte" },
-        root_markers = { "package.json", ".git" },
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
-
-    -- Astro
-    vim.lsp.config.astro = {
-        cmd = { "astro-ls", "--stdio" },
-        filetypes = { "astro" },
-        root_markers = { "package.json", "astro.config.mjs", ".git" },
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
-
-    -- Python
-    vim.lsp.config.pyright = {
-        cmd = { "pyright-langserver", "--stdio" },
-        filetypes = { "python" },
-        root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", "Pipfile", ".git" },
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
-
-    -- Rust
-    vim.lsp.config.rust_analyzer = {
-        cmd = { "rust-analyzer" },
-        filetypes = { "rust" },
-        root_markers = { "Cargo.toml", ".git" },
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
-
-    -- Go
-    vim.lsp.config.gopls = {
-        cmd = { "gopls" },
-        filetypes = { "go", "gomod", "gowork", "gotmpl" },
-        root_markers = { "go.work", "go.mod", ".git" },
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
-
-    -- OCaml (installed per opam switch)
-    vim.lsp.config.ocamllsp = {
-        cmd = { "ocamllsp" },
-        filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocamllex", "reason", "dune" },
-        root_markers = {
-            "*.opam",
-            "esy.json",
-            "package.json",
-            ".git",
-            "dune-project",
-            "dune-workspace",
-            "*.ml",
-        },
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
-
-    -- Racket
-    vim.lsp.config.racket_langserver = {
-        cmd = { "racket", "-l", "racket-langserver" },
-        filetypes = { "racket", "rkt" },
-        root_markers = { ".git" },
-        capabilities = capabilities,
-        on_attach = on_attach,
-    }
+-- Common on_attach function
+local on_attach = function(client, bufnr)
+    require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
 end
 
--- Call configuration function
-configure_lsp_servers()
+-- Configure servers with custom settings BEFORE mason-lspconfig auto-enables them
+-- These configs are used when mason-lspconfig calls vim.lsp.enable() for installed servers
+-- Set default config for all servers (wildcard pattern)
+-- Any server without specific config above will inherit these settings
+vim.lsp.config("*", {
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
 
--- Enable all configured language servers
-vim.lsp.enable(lsp_servers)
+-- Mason-lspconfig v2.x: automatically calls vim.lsp.enable() for all installed servers
+-- For each server, it uses: nvim-lspconfig defaults + your vim.lsp.config() overrides
+require("mason-lspconfig").setup()
+
+-- Non-Mason LSPs (installed via other package managers)
+-- For servers not managed by Mason, define config AND manually enable them
+
+-- Racket (installed via racket package manager)
+vim.lsp.config("racket_langserver", {
+    cmd = { "racket", "-l", "racket-langserver" },
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+vim.lsp.enable("racket_langserver") -- Manually enable since not managed by Mason
 
 vim.diagnostic.config({
     -- vim.fn.sign_define("DiagnosticSignError", { text = "􀃰", texthl = "DiagnosticSignError" })

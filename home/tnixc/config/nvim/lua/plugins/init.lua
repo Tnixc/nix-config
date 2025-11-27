@@ -402,46 +402,106 @@ lazy.setup({
         },
     },
     -- LSP and Completion
+    -- Modern LSP setup (Neovim 0.11+):
+    -- - nvim-lspconfig provides default configs in lsp/ directory
+    -- - vim.lsp.config() to override specific servers
+    -- - mason-lspconfig calls vim.lsp.enable() automatically
+    {
+        "neovim/nvim-lspconfig",
+        lazy = false,
+    },
     {
         "mason-org/mason.nvim",
+        lazy = false,
         build = ":MasonUpdate",
-        config = function()
-            require("mason").setup({
-                ui = {
-                    icons = {
-                        package_installed = "✓",
-                        package_pending = "➜",
-                        package_uninstalled = "✗",
-                    },
+        opts = {
+            ui = {
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗",
                 },
-            })
-            -- Load LSP configuration
+            },
+        },
+    },
+    {
+        "mason-org/mason-lspconfig.nvim",
+        lazy = false,
+        dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
+        config = function()
+            -- Load LSP configuration first (sets up vim.lsp.config overrides before mason-lspconfig enables servers)
             require("plugins.configs.lsp")
         end,
+    },
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        dependencies = { "mason-org/mason.nvim" },
+        opts = {
+            ensure_installed = {},
+            auto_update = false,
+            run_on_start = false,
+        },
     },
     {
         "stevearc/conform.nvim",
         event = { "BufWritePre" },
         cmd = { "ConformInfo" },
         opts = {
+            -- Auto-detect formatters: tries each formatter in order, uses first available
             formatters_by_ft = {
-                lua = { "stylua" },
-                nix = { "nixfmt" },
+                -- Use LSP formatting as fallback
+                ["_"] = { "trim_whitespace", "trim_newlines" },
+
+                -- Lua
+                lua = { "stylua", stop_after_first = true },
+
+                -- Nix
+                nix = { "nixfmt", "alejandra", stop_after_first = true },
+
+                -- Racket
                 racket = { "raco_fmt" },
-                go = { "goimports", "gofmt" },
-                typescriptreact = { "prettierd" },
-                javascriptreact = { "prettierd" },
-                javascript = { "prettierd" },
-                typescript = { "prettierd" },
-                svelte = { "prettierd" },
-                astro = { "prettierd" },
-                vue = { "prettierd" },
-                markdown = { "prettierd" },
-                json = { "prettierd" },
-                yaml = { "prettierd" },
-                html = { "prettierd" },
-                css = { "prettierd" },
-                scss = { "prettierd" },
+
+                -- Go
+                go = { "goimports", "gofumpt", "gofmt", stop_after_first = true },
+
+                -- JavaScript/TypeScript (tries prettierd, then prettier, then deno)
+                javascript = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
+                typescript = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
+                javascriptreact = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
+                typescriptreact = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
+
+                -- Web frameworks
+                svelte = { "prettierd", "prettier", stop_after_first = true },
+                astro = { "prettierd", "prettier", stop_after_first = true },
+                vue = { "prettierd", "prettier", stop_after_first = true },
+
+                -- Markup/data
+                markdown = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
+                json = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
+                jsonc = { "prettierd", "prettier", stop_after_first = true },
+                yaml = { "prettierd", "prettier", stop_after_first = true },
+
+                -- Web
+                html = { "prettierd", "prettier", stop_after_first = true },
+                css = { "prettierd", "prettier", stop_after_first = true },
+                scss = { "prettierd", "prettier", stop_after_first = true },
+
+                -- Python
+                python = { "ruff_format", "black", "isort", stop_after_first = true },
+
+                -- Rust
+                rust = { "rustfmt", stop_after_first = true },
+
+                -- Shell
+                sh = { "shfmt", stop_after_first = true },
+                bash = { "shfmt", stop_after_first = true },
+
+                -- C/C++
+                c = { "clang_format", stop_after_first = true },
+                cpp = { "clang_format", stop_after_first = true },
+
+                -- Java
+                java = { "google-java-format", stop_after_first = true },
             },
             formatters = {
                 raco_fmt = {
