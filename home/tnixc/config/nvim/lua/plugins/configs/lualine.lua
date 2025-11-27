@@ -176,6 +176,7 @@ ins_right({
 ins_right({
     "filename",
     icon = "􀈿 ",
+    path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path, 3 = absolute path with ~
     cond = conditions.buffer_not_empty,
     color = { fg = colors.sapphire },
 })
