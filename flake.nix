@@ -69,7 +69,8 @@
     hostname = "End";
 
     # Import theme and utils once at flake level
-    theme = import ./lib/theme.nix;
+    inherit (inputs.nixpkgs-darwin) lib;
+    theme = import ./lib/theme.nix {inherit lib;};
     colorMix = import ./modules/utils/colors-mix.nix;
 
     specialArgs =

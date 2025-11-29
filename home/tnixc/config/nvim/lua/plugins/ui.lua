@@ -104,7 +104,10 @@ return {
                         always_show = true,
                     },
                     format = function(diag)
-                        return "⠀" .. diag.message .. " — " .. diag.source
+                        if diag.source then
+                            return "⠀" .. diag.message .. " — " .. diag.source
+                        end
+                        return "⠀" .. diag.message
                     end,
                 },
             })

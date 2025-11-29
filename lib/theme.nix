@@ -1,53 +1,56 @@
-{
-  # Utility function to strip the # from hex colors
-  rawHexValue = color: builtins.substring 1 6 color;
+{lib}: let
+  colorMix = (import ../modules/utils/colors-mix.nix {inherit lib;}).mixColors;
 
   # Edo color palette
   colors = {
-    rosewater = "#C97D6E";
-    flamingo = "#C98A7D";
-    pink = "#BC76C1";
-    mauve = "#6872AB";
-    red = "#CB7676";
-    maroon = "#CC8D82";
-    peach = "#CC8D70";
-    yellow = "#CC9B70";
-    green = "#80A665";
-    teal = "#5EA994";
-    sky = "#5D9AA9";
-    sapphire = "#6394BF";
-    blue = "#687EAA";
-    lavender = "#4C8E72";
-
-    text = "#D8D6C9";
-    subtext1 = "#B2B0A6";
-    subtext0 = "#999895";
-    overlay2 = "#7F7F7C";
-    overlay1 = "#666666";
-    overlay0 = "#4C4C4C";
-    surface2 = "#333333";
-    surface1 = "#232323";
-    surface0 = "#1E1E1E";
-    base = "#121212";
-    mantle = "#0A0A0A";
-    crust = "#000000";
+    rosewater = "#de9d9d";
+    flamingo = "#dea89d";
+    pink = "#b294bb";
+    mauve = "#9d8bb8";
+    red = "#cc6666";
+    maroon = "#c67d7d";
+    peach = "#de935f";
+    yellow = "#f0c674";
+    green = "#b5bd68";
+    teal = "#8abeb7";
+    sky = "#95b3c9";
+    sapphire = "#7ea9b8";
+    blue = "#81a2be";
+    lavender = "#9db5c9";
+    text = "#c5c8c6";
+    subtext1 = "#a8aba9";
+    subtext0 = "#8b8d8b";
+    overlay2 = "#6f7271";
+    overlay1 = "#5a5c5b";
+    overlay0 = "#4d5057";
+    surface2 = "#3a3c3f";
+    surface1 = "#373b41";
+    surface0 = "#282a2e";
+    base = "#1d1f21";
+    mantle = "#161719";
+    crust = "#0f1011";
   };
+in {
+  # Utility function to strip the # from hex colors
+  rawHexValue = color: builtins.substring 1 6 color;
 
-  # Git/delta diff colors
+  inherit colors;
+
+  # Git/delta diff colors (computed from base colors)
   diff = {
-    hunkHeader = "#23273D";
-    minusEmph = "#53394c";
-    minus = "#34293a";
-    plusEmph = "#404f4a";
-    plus = "#2c3239";
-    purple = "#494060";
-    blue = "#384361";
-    cyan = "#384d5d";
-    yellow = "#544f4e";
+    hunkHeader = colorMix colors.base colors.mauve 0.8;
+    minusEmph = colorMix colors.base colors.red 0.6;
+    minus = colorMix colors.base colors.red 0.8;
+    plusEmph = colorMix colors.base colors.green 0.6;
+    plus = colorMix colors.base colors.green 0.8;
+    purple = colorMix colors.base colors.mauve 0.6;
+    blue = colorMix colors.base colors.blue 0.6;
+    cyan = colorMix colors.base colors.teal 0.6;
+    yellow = colorMix colors.base colors.yellow 0.6;
   };
 
   # Editor UI colors
   ui = {
-    findHighlight = "#3e5767";
+    findHighlight = colorMix colors.base colors.sky 0.5;
   };
 }
