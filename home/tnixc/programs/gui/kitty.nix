@@ -1,4 +1,8 @@
-{theme, ...}: let
+{
+  theme,
+  config,
+  ...
+}: let
   c = theme.colors;
 in {
   programs.kitty = {
@@ -27,7 +31,7 @@ in {
       tab_separator = "\"\"";
       bell_on_tab = false;
 
-      tab_title_template = "{fmt.bold}{tab.active_exe.replace('-zsh', 'zsh').replace('starship', 'zsh')}{fmt.nobold} {(lambda wd: wd[:5] + '...' + wd[-21:] if len(wd) > 30 else wd)(tab.active_wd.replace('/Users/tnixc/Developer', '~/ ').replace('/Users/tnixc', '~'))}";
+      tab_title_template = "{fmt.bold}{tab.active_exe.replace('-zsh', 'zsh').replace('starship', 'zsh')}{fmt.nobold} {(lambda wd: wd[:5] + '...' + wd[-21:] if len(wd) > 30 else wd)(tab.active_wd.replace('${config.home.homeDirectory}/Developer', '~/ ').replace('${config.home.homeDirectory}', '~'))}";
 
       window_padding_width = 2;
       window_padding_height = 0;
@@ -37,7 +41,7 @@ in {
       cursor_shape = "underline";
 
       editor = "/opt/homebrew/bin/nvim";
-      shell = "/etc/profiles/per-user/tnixc/bin/fish";
+      shell = "/etc/profiles/per-user/${config.home.username}/bin/fish";
 
       macos_option_as_alt = true;
       macos_colorspace = "displayp3";

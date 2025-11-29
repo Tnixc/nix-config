@@ -8,8 +8,8 @@ in {
     interactiveShellInit = ''
       # Color Palette from theme.nix
       set -l foreground ${strip c.text}
-      set -l selection  2A2A37
-      set -l comment    51516b
+      set -l selection  ${strip c.surface1}
+      set -l comment    ${strip c.overlay0}
       set -l red        ${strip c.red}
       set -l orange     ${strip c.peach}
       set -l yellow     ${strip c.yellow}
@@ -48,18 +48,6 @@ in {
       # Key bindings
       bind \eh backward-word
       bind \el forward-word
-
-      # Initialize fzf and zoxide
-      fzf --fish | source
-      zoxide init fish | source
-
-      # BEGIN opam configuration
-      test -r '/Users/tnixc/.opam/opam-init/init.fish' && source '/Users/tnixc/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
-      # END opam configuration
     '';
-
-    functions = {
-      gc = "git commit -m $argv[1]";
-    };
   };
 }

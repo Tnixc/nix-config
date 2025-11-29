@@ -6,15 +6,6 @@ in {
     EDITOR = "nvim";
     LLVM_PROFILE_FILE = "/dev/null";
     TERM = "xterm-256color";
-
-    # FZF theme configuration (works in all shells)
-    FZF_DEFAULT_OPTS = ''
-      --color=bg+:${c.surface0},spinner:${c.rosewater},hl:${c.red} \
-      --color=fg:${c.text},header:${c.red},info:${c.mauve},pointer:${c.rosewater} \
-      --color=marker:${c.lavender},fg+:${c.text},prompt:${c.mauve},hl+:${c.red} \
-      --color=selected-bg:${c.surface1} \
-      --multi
-    '';
   };
 
   # Shared PATH additions (applies to all shells)
@@ -40,9 +31,7 @@ in {
     gz = "nvim +DiffviewOpen";
     g = "git";
     j = "just";
-
-    # Neovim session cleanup
-    nvs = "rm \"/Users/tnixc/.local/share/nvim/sessions/$(pwd | sed 's|/|%2F|g').vim\"";
+    gc = "git commit -m";
 
     # File listing (eza)
     ls = "eza --icons --group-directories-first";
@@ -58,5 +47,33 @@ in {
     # Misc
     bs = "brew services";
     icat = "kitten icat --align left";
+  };
+
+  # Use home-manager's fzf and zoxide integration
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
+    colors = {
+      "bg+" = c.surface0;
+      spinner = c.rosewater;
+      hl = c.red;
+      fg = c.text;
+      header = c.red;
+      info = c.mauve;
+      pointer = c.rosewater;
+      marker = c.lavender;
+      "fg+" = c.text;
+      prompt = c.mauve;
+      "hl+" = c.red;
+      "selected-bg" = c.surface1;
+    };
+    defaultOptions = ["--multi"];
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+    enableFishIntegration = true;
   };
 }

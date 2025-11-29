@@ -69,7 +69,7 @@
     hostname = "End";
 
     # Import theme and utils once at flake level
-    theme = import ./home/tnixc/theme.nix;
+    theme = import ./lib/theme.nix;
     colorMix = import ./modules/utils/colors-mix.nix;
 
     specialArgs =
