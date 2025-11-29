@@ -10,11 +10,6 @@ return {
             require("plugins.configs.colorscheme")
         end,
     },
-    { "sam4llis/nvim-tundra", opts = {}, lazy = true },
-    { "Everblush/nvim", name = "everblush", opts = {}, lazy = true },
-    { "projekt0n/github-nvim-theme", name = "github-theme", opts = {}, lazy = true },
-    { "tiagovla/tokyodark.nvim", opts = {}, lazy = true },
-    { "rose-pine/neovim", name = "rose-pine", opts = {}, lazy = true },
 
     -- Icons
     {
@@ -33,7 +28,7 @@ return {
             recipe = { "default", { animate = false } },
             fadelevel = 0.2,
             checkinterval = 0,
-            basebg = "#121212",
+            basebg = "#1d1f21",
             blocklist = {
                 default_block = function(win, current)
                     -- current can be nil
@@ -41,17 +36,6 @@ return {
                         return false
                     end
                     return true
-                end,
-            },
-            link = {
-                snacks_explorer = function(win, current)
-                    if not current then
-                        return false
-                    end
-                    -- Link explorer with other windows so main doesn't fade
-                    local dominated_fts = { "snacks_picker_list", "snacks_picker_preview" }
-                    return vim.tbl_contains(dominated_fts, win.buf_opts.filetype)
-                        or vim.tbl_contains(dominated_fts, current.buf_opts.filetype)
                 end,
             },
         },
@@ -144,29 +128,5 @@ return {
         config = function()
             require("plugins.configs.noice")
         end,
-    },
-    {
-        "stevearc/dressing.nvim",
-        event = "VeryLazy",
-        opts = {
-            input = {
-                enabled = true,
-                default_prompt = "> ",
-                win_options = {
-                    winblend = 0,
-                },
-            },
-            select = {
-                enabled = true,
-                backend = { "builtin" },
-                builtin = {
-                    border = "single",
-                    relative = "cursor",
-                    win_options = {
-                        winblend = 0,
-                    },
-                },
-            },
-        },
     },
 }

@@ -1,3 +1,34 @@
+local layout_fn = function()
+    return {
+        reverse = false,
+        layout = {
+            box = "horizontal",
+            backdrop = false,
+            width = 0.9,
+            height = 0.9,
+            border = "none",
+            {
+                box = "vertical",
+                {
+                    win = "input",
+                    height = 1,
+                    border = true,
+                    title = "{title} {live} {flags}",
+                    title_pos = "center",
+                },
+                { win = "list", title = " Results ", title_pos = "center", border = true },
+            },
+            {
+                win = "preview",
+                title = "{preview:Preview}",
+                width = 0.5,
+                border = true,
+                title_pos = "center",
+            },
+        },
+    }
+end
+
 require("snacks").setup({
     dashboard = {
         width = 70,
@@ -67,35 +98,8 @@ require("snacks").setup({
     },
     picker = {
         prompt = " 􀊫  ",
-        ui_select = false,
-        layout = {
-            reverse = false,
-            layout = {
-                box = "horizontal",
-                backdrop = false,
-                width = 0.9,
-                height = 0.9,
-                border = "none",
-                {
-                    box = "vertical",
-                    {
-                        win = "input",
-                        height = 1,
-                        border = true,
-                        title = "{title} {live} {flags}",
-                        title_pos = "center",
-                    },
-                    { win = "list", title = " Results ", title_pos = "center", border = true },
-                },
-                {
-                    win = "preview",
-                    title = "{preview:Preview}",
-                    width = 0.5,
-                    border = true,
-                    title_pos = "center",
-                },
-            },
-        },
+        ui_select = true,
+        layout = layout_fn,
         win = {
             input = {
                 keys = {
@@ -121,12 +125,26 @@ require("snacks").setup({
             },
         },
         sources = {
+            select = {},
             explorer = {
+                finder = "explorer",
                 auto_close = true,
                 layout = {
+                    hidden = { "preview" },
                     layout = {
-                        position = "right",
-                        width = 45,
+                        -- backdrop = false,
+                        width = 100,
+                        height = 0.85,
+                        border = "none",
+                        box = "vertical",
+                        {
+                            win = "input",
+                            height = 1,
+                            border = true,
+                            title = "{title} {live} {flags}",
+                            title_pos = "center",
+                        },
+                        { win = "list", border = "hpad" },
                     },
                 },
             },
@@ -134,7 +152,6 @@ require("snacks").setup({
     },
     grep = {
         finder = "rg",
-        format = "file",
         live = true,
         buffers = true,
         need_search = false,

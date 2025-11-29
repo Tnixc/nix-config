@@ -125,7 +125,7 @@ ins_left({ "progress", color = { fg = colors.flamingo }, padding = { left = 0, r
 ins_left({
     "branch",
     icon = "",
-    color = { fg = colors.lavender, gui = "bold" },
+    color = { fg = colors.green, gui = "bold" },
 })
 
 ins_left({

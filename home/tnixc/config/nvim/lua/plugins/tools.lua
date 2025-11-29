@@ -36,7 +36,7 @@ return {
                         default_animation = { name = "fade", settings = { from_color = "RenderMarkdownH1Bg" } },
                     },
                 },
-                transparency_color = "#121212",
+                transparency_color = "#1d1f21",
                 hijack_ft_disabled = { "snacks_dashboard" },
                 virt_text = {
                     priority = 2048,

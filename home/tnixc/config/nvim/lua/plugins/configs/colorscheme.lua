@@ -1,6 +1,5 @@
 require("catppuccin").setup({
     transparent_background = true,
-    -- transparent_background = false,
     float = {
         transparent = false,
         solid = true,
@@ -52,7 +51,7 @@ require("catppuccin").setup({
             SnacksPickerInput = { bg = colors.surface0 },
             SnacksPickerInputBorder = { fg = colors.surface0, bg = colors.surface0 },
             SnacksPickerList = { bg = colors.base },
-            SnacksPickerListTitle = { bg = colors.sky, fg = colors.crust },
+            SnacksPickerListTitle = { bg = colors.teal, fg = colors.crust },
             SnacksPickerListBorder = { fg = colors.base, bg = colors.base },
             SnacksPickerPreview = { bg = colors.mantle },
             SnacksPickerPreviewBorder = { fg = colors.mantle, bg = colors.mantle },
