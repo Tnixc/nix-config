@@ -91,5 +91,6 @@
 
     # misc
     git-crypt
+    shottr
   ];
 }

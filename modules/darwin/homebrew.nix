@@ -136,7 +136,6 @@
       "iina"
       "obsidian"
       "parsec"
-      "shottr"
       "spotify"
       "steam"
       "zotero@beta"
