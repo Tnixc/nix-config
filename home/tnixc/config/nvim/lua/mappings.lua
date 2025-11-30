@@ -18,6 +18,27 @@ wk.add({
     -- Normal mode mappings
     {
         mode = "n",
+
+        {
+            "f",
+            function()
+                require("flash").jump({ search = { incremental = true } })
+            end,
+        },
+        {
+            "F",
+            function()
+                require("flash").treesitter()
+            end,
+        },
+        {
+            "<c-s>",
+            function()
+                require("flash").toggle()
+            end,
+            desc = "Toggle Flash Search",
+        },
+
         -- Window navigation
         { "<C-h>", "<C-w>h", desc = "Move to left window" },
         { "<C-j>", "<C-w>j", desc = "Move to bottom window" },

@@ -131,4 +131,15 @@ return {
             },
         },
     },
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        opts = {
+            modes = {
+                char = {
+                    enabled = false, -- disable default f/F/t/T
+                },
+            },
+        },
+    },
 }
