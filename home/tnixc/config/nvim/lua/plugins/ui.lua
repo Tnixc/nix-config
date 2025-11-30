@@ -89,9 +89,9 @@ return {
                     },
                     format = function(diag)
                         if diag.source then
-                            return "⠀" .. diag.message .. " — " .. diag.source
+                            return diag.message .. " — " .. diag.source
                         end
-                        return "⠀" .. diag.message
+                        return diag.message
                     end,
                 },
             })

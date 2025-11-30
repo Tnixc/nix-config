@@ -118,14 +118,14 @@ ins_left({
     padding = { left = 1, right = 1 },
 })
 
-ins_left({ "location" })
+ins_left({ "location", color = { fg = colors.text, bg = colors.overlay0 } })
 
-ins_left({ "progress", color = { fg = colors.flamingo }, padding = { left = 0, right = 1 } })
+ins_left({ "progress", color = { fg = colors.flamingo, bg = colors.surface2 }, padding = { left = 1, right = 1 } })
 
 ins_left({
     "branch",
     icon = "",
-    color = { fg = colors.green, gui = "bold" },
+    color = { bg = colors.surface0, fg = colors.green, gui = "bold" },
 })
 
 ins_left({
@@ -166,14 +166,6 @@ ins_left({
 })
 
 ins_right({
-    -- filesize component
-    "filesize",
-    icon = "􀎾 ",
-    cond = conditions.buffer_not_empty,
-    color = { fg = colors.sky },
-})
-
-ins_right({
     "filename",
     icon = "􀈿 ",
     path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path, 3 = absolute path with ~
@@ -184,14 +176,48 @@ ins_right({
 ins_right({
     "diagnostics",
     sources = { "nvim_diagnostic" },
-    symbols = { error = "􀃰 ", warn = "􀃮 ", info = "􁊇 " },
+    symbols = { error = "􀃰 ", warn = "􀼳 ", info = "􁊇 ", hint = "􀤘 " },
     diagnostics_color = {
         color_error = { fg = colors.red },
         color_warn = { fg = colors.peach },
         color_info = { fg = colors.sapphire },
+        color_hint = { fg = colors.teal },
     },
 })
+ins_right({
+    function()
+        -- Check if 'conform' is available
+        local status, conform = pcall(require, "conform")
+        if not status then
+            return "Conform not installed"
+        end
 
+        local lsp_format = require("conform.lsp_format")
+
+        -- Get formatters for the current buffer
+        local formatters = conform.list_formatters_for_buffer()
+        if formatters and #formatters > 0 then
+            local formatterNames = {}
+
+            for _, formatter in ipairs(formatters) do
+                table.insert(formatterNames, formatter)
+            end
+
+            return "􀉇  " .. table.concat(formatterNames, " ")
+        end
+
+        -- Check if there's an LSP formatter
+        local bufnr = vim.api.nvim_get_current_buf()
+        local lsp_clients = lsp_format.get_format_clients({ bufnr = bufnr })
+
+        if not vim.tbl_isempty(lsp_clients) then
+            return "􀉇  LSP Formatter"
+        end
+
+        return ""
+    end,
+    color = { fg = colors.peach, bg = colors.surface0 },
+})
 -- Insert mid section. You can make any number of sections in neovim :)
 -- for lualine it's any number greater then 2
 ins_right({
@@ -239,7 +265,7 @@ ins_right({
         return msg
     end,
     icon = "􀱢 ",
-    color = { fg = colors.mauve, gui = "bold" },
+    color = { fg = colors.mauve, bg = colors.surface2, gui = "bold" },
 })
 
 ins_right({
@@ -248,6 +274,7 @@ ins_right({
     symbols = {
         spinners = "dots",
     },
+    color = { bg = colors.overlay0 },
 })
 
 require("lualine").setup(config)
