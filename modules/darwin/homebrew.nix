@@ -18,7 +18,6 @@
       "zegervdv/zathura"
       "keith/formulae"
       "mmazzarolo/formulae"
-      "supabase/tap"
     ];
 
     # `brew install`
@@ -98,7 +97,6 @@
       "charmbracelet/tap/crush"
       "socsieng/tap/sendkeys"
       "sst/tap/opencode"
-      "supabase/tap/supabase"
       "zegervdv/zathura/zathura"
       "zegervdv/zathura/zathura-pdf-mupdf"
     ];
