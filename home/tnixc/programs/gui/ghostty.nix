@@ -67,6 +67,9 @@ in {
       background-blur-radius = 94;
       alpha-blending = "native";
       window-colorspace = "display-p3";
+      window-padding-x = 12;
+      window-padding-y = "12,6";
+      window-padding-balance = true;
 
       # Window title
       window-title-font-family = "BerkeleyMono Nerd Font";

@@ -166,9 +166,14 @@ ins_left({
 })
 
 ins_right({
-    "filename",
+    function()
+        local filename = vim.fn.expand("%:~:."):gsub("^term://.*fish$", "| TERMINAL 􁆬 ")
+        if #filename > 55 then
+            return "..." .. filename:sub(#filename - 52)
+        end
+        return filename
+    end,
     icon = "􀈿 ",
-    path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path, 3 = absolute path with ~
     cond = conditions.buffer_not_empty,
     color = { fg = colors.sapphire },
 })

@@ -74,7 +74,7 @@ return {
                 c = { "clang_format", stop_after_first = true },
                 cpp = { "clang_format", stop_after_first = true },
                 java = { "google-java-format", stop_after_first = true },
-                ocaml = {"ocamlformat", stop_after_first = true },
+                ocaml = { "ocamlformat", stop_after_first = true },
             },
             formatters = {
                 raco_fmt = {
