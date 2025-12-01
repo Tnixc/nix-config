@@ -47,61 +47,34 @@ return {
         event = { "BufWritePre" },
         cmd = { "ConformInfo" },
         opts = {
-            -- Auto-detect formatters: tries each formatter in order, uses first available
             formatters_by_ft = {
-                -- Use LSP formatting as fallback
                 ["_"] = { "trim_whitespace", "trim_newlines" },
-
-                -- Lua
                 lua = { "stylua", stop_after_first = true },
-
-                -- Nix
                 nix = { "nixfmt", "alejandra", stop_after_first = true },
-
-                -- Racket
                 racket = { "raco_fmt" },
-
-                -- Go
                 go = { "goimports", "gofumpt", "gofmt", stop_after_first = true },
-
-                -- JavaScript/TypeScript (tries prettierd, then prettier, then deno)
                 javascript = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
                 typescript = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
                 javascriptreact = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
                 typescriptreact = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
-
-                -- Web frameworks
                 svelte = { "prettierd", "prettier", stop_after_first = true },
                 astro = { "prettierd", "prettier", stop_after_first = true },
                 vue = { "prettierd", "prettier", stop_after_first = true },
-
-                -- Markup/data
                 markdown = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
                 json = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
                 jsonc = { "prettierd", "prettier", stop_after_first = true },
                 yaml = { "prettierd", "prettier", stop_after_first = true },
-
-                -- Web
                 html = { "prettierd", "prettier", stop_after_first = true },
                 css = { "prettierd", "prettier", stop_after_first = true },
                 scss = { "prettierd", "prettier", stop_after_first = true },
-
-                -- Python
                 python = { "ruff_format", "black", "isort", stop_after_first = true },
-
-                -- Rust
                 rust = { "rustfmt", stop_after_first = true },
-
-                -- Shell
                 sh = { "shfmt", stop_after_first = true },
                 bash = { "shfmt", stop_after_first = true },
-
-                -- C/C++
                 c = { "clang_format", stop_after_first = true },
                 cpp = { "clang_format", stop_after_first = true },
-
-                -- Java
                 java = { "google-java-format", stop_after_first = true },
+                ocaml = {"ocamlformat", stop_after_first = true },
             },
             formatters = {
                 raco_fmt = {
