@@ -6,6 +6,8 @@ in {
     enable = true;
 
     interactiveShellInit = ''
+      eval $(opam env)
+
       # Color Palette from theme.nix
       set -l foreground ${strip c.text}
       set -l selection  ${strip c.surface1}

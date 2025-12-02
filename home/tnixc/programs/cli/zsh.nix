@@ -7,6 +7,8 @@
     syntaxHighlighting.enable = true;
 
     initContent = ''
+      eval $(opam env)
+
       # Completion matching (case insensitive)
       zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
