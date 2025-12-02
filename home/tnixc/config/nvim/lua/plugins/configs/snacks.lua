@@ -128,23 +128,11 @@ require("snacks").setup({
             select = {},
             explorer = {
                 finder = "explorer",
-                auto_close = true,
                 layout = {
-                    hidden = { "preview" },
+                    auto_hide = { "input" },
                     layout = {
-                        -- backdrop = false,
-                        width = 100,
-                        height = 0.85,
-                        border = "none",
-                        box = "vertical",
-                        {
-                            win = "input",
-                            height = 1,
-                            border = true,
-                            title = "{title} {live} {flags}",
-                            title_pos = "center",
-                        },
-                        { win = "list", border = "hpad" },
+                        position = "right",
+                        width = 45,
                     },
                 },
             },
