@@ -32,16 +32,6 @@
     appName = "fsicon";
     bundleId = "dev.tnixc.fsicon";
 
-    fileTypes = [
-      {
-        extension = "custom";
-        description = "Nix File";
-        icon = ./nix.icns;
-        utType = "com.nixos.nix-file";
-        conformsTo = ["public.plain-text" "public.source-code"];
-        handlerRank = "Owner";
-        role = "Viewer";
-      }
-    ];
+    preset = "material";
   };
 }
