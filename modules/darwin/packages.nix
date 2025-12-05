@@ -92,5 +92,6 @@
     # misc
     git-crypt
     shottr
+    topiary
   ];
 }

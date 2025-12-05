@@ -105,7 +105,7 @@
     casks = [
       # productivity
       "alt-tab"
-      "hammerspoon"
+      "karabiner-elements"
       "jordanbaird-ice"
       "kitty"
       "leader-key"
@@ -136,7 +136,7 @@
       "parsec"
       "spotify"
       "steam"
-      "zotero@beta"
+      # "zotero@beta"
 
       # design and writing
       "craft"

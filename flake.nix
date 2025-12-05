@@ -45,6 +45,10 @@
       flake = true;
     };
     darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
+    fs-icon = {
+      url = "path:/Users/tnixc/Developer/fs-icon";
+      flake = true;
+    };
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
@@ -61,6 +65,7 @@
     pwaerospace, # aerospace, sketchybar, borders
     sketchybar-config,
     darwin-custom-icons,
+    fs-icon,
     rust-overlay,
     ...
   }: let
@@ -88,6 +93,7 @@
         ./modules/overlays.nix
 
         darwin-custom-icons.darwinModules.default
+        fs-icon.darwinModules.default
         ./modules/icons
 
         home-manager.darwinModules.home-manager

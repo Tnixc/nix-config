@@ -71,6 +71,18 @@
         "type": "github"
       }
     },
+    "fs-icon": {
+      "locked": {
+        "lastModified": 1764967216,
+        "narHash": "sha256-89cfzxaQfj0UmeifSaFWO7jhKlf/Rej1qEJcC14jNuQ=",
+        "path": "/Users/tnixc/Developer/fs-icon",
+        "type": "path"
+      },
+      "original": {
+        "path": "/Users/tnixc/Developer/fs-icon",
+        "type": "path"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -203,6 +215,7 @@
       "inputs": {
         "darwin": "darwin",
         "darwin-custom-icons": "darwin-custom-icons",
+        "fs-icon": "fs-icon",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-darwin": "nixpkgs-darwin",
