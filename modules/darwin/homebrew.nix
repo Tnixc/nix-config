@@ -22,29 +22,24 @@
 
     # `brew install --cask`
     casks = [
-      "leader-key"
-      "linearmouse"
-      "reminders-menubar"
-      "orion"
+      "racket"
 
+      "orion"
       "parsec"
       "steam"
       "motrix"
-      "racket"
-
-      # design and writing
+      "nordvpn"
+      "texshop"
+      "leader-key"
+      "linearmouse"
+      "reminders-menubar"
       "craft"
       "google-chrome"
 
-      # fonts
-      "font-sf-mono"
-      "font-sf-pro"
       "sf-symbols"
 
-      # utilities
-      "motrix"
-      "nordvpn"
-      "texshop"
+      "font-sf-mono"
+      "font-sf-pro"
     ];
   };
 }

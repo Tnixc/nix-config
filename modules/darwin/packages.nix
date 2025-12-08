@@ -10,133 +10,129 @@
     pwaerospace.packages.aarch64-darwin.aerospace-standalone
     sketchybar-config.packages.aarch64-darwin.sketchybar-standalone
 
-    # dev tools
-    # pueue
-    nix-output-monitor
-    btop
-    bat
-    tldr
-    eza
+    # CLI & Shell
+    fish
+    kitty
     starship
     zoxide
     fzf
-    # television
-    # skim
-    jq
+    direnv
+    btop
+    fastfetch
+    nix-output-monitor
+    bat
+    eza
     ripgrep
     fd
+    tldr
+    jq
+    wget
+    yazi
+    delta
     tokei
     hyperfine
-    wget
-    fastfetch
-    # gum
-    comma
-    fish
-    direnv
-    helix
-    git
-    lazygit
-    delta
-    gh
-    docker
-    # sketchybar-app-font
-    ast-grep
-    # zellij
-    just
     dua
-
-    # languages and runtimes
-    lua
-    elixir
-    python3
-    go
-    gleam
-    stylua
-    (rust-bin.nightly."2025-11-05".default.override {
-      extensions = ["rust-src"];
-    })
-    cargo-binstall
-    pipx
-    uv
-    nrr
-    yarn
-    wasmer
-    wasmtime
-    meson
-    act
-    pnpm
-    ninja
-    micropython
-    rshell
-    conan
-
-    # ani-cli
-    # mangal
-    # aria2
-    yt-dlp
-    ffmpeg
-    # dwt1-shell-color-scripts
     chafa
-
-    # Font Tools
-    # python312Packages.fonttools
-    # fontforge-fonttools
-    # brotli
-    # zopfli
-
-    # misc
-    git-crypt
-    shottr
-    topiary
-
-    xz
-    zlib
-    colima
-    darwin.lsusb
-    switchaudio-osx
-    cmake
-
-    git-lfs
-    gnupg
-    just
-    llvm
-    neovim
-    nmap
-    pdfcpu
-    xcodegen
-    yazi
-    zig
-    opam
-
-    glfw
-    glm
-    glslang
-    libavif
-    libsoundio
-    raylib
-    SDL2
-    spirv-tools
     nowplaying-cli
-    ninja
-    swiftformat
-
     crush
-    opencode
+    pdfcpu
+    comma
+    git
+    git-lfs
+    git-crypt
+    lazygit
+    gh
 
-    alt-tab-macos
-    karabiner-elements
-    ice-bar
-    kitty
-    loopwm
-    vesktop
+    # Code Editors & IDEs
+    helix
+    neovim
     vscode
     code-cursor
     zed-editor
 
-    iina
-    obsidian
-    flashspace
+    # Build Tools & Task Runners
+    cmake
+    meson
+    ninja
+    just
+    act
 
+    # Languages & Package Managers
+    python3
+    lua
+    elixir
+    go
+    gleam
+    micropython
+    (rust-bin.nightly."2025-11-05".default.override {
+      extensions = ["rust-src"];
+    })
+    zig
+    llvm
+    opam
+    cargo-binstall
+    pipx
+    uv
+    nrr
+    pnpm
+    yarn
+    conan
+
+    # WebAssembly
+    wasmer
+    wasmtime
+
+    # Graphics & Multimedia Libraries
+    glfw
+    glm
+    glslang
+    raylib
+    SDL2
+    libavif
+    libsoundio
+    spirv-tools
+
+    # Media Tools
+    ffmpeg
+    yt-dlp
+    iina
+
+    # Code Quality & Formatting
+    swiftformat
+    stylua
+    topiary
+    ast-grep
+
+    # Development Tools - macOS
+    xcodegen
+    switchaudio-osx
+    darwin.lsusb
+
+    # Apps
+    shottr
+    alt-tab-macos
+    karabiner-elements
+    ice-bar
+    flashspace
+    loopwm
+    vesktop
+    obsidian
+
+    # Containerization
+    docker
+    colima
+
+    # Security & Crypto
+    gnupg
+
+    # Compression & Archives
+    xz
+    zlib
+
+    # Network Tools
+    nmap
+
+    # Fonts
     maple-mono.NF
   ];
 }
