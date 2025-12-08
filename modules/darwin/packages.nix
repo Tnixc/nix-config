@@ -11,7 +11,7 @@
     sketchybar-config.packages.aarch64-darwin.sketchybar-standalone
 
     # dev tools
-    pueue
+    # pueue
     nix-output-monitor
     btop
     bat
@@ -20,8 +20,8 @@
     starship
     zoxide
     fzf
-    television
-    skim
+    # television
+    # skim
     jq
     ripgrep
     fd
@@ -29,7 +29,7 @@
     hyperfine
     wget
     fastfetch
-    gum
+    # gum
     comma
     fish
     direnv
@@ -39,9 +39,9 @@
     delta
     gh
     docker
-    sketchybar-app-font
+    # sketchybar-app-font
     ast-grep
-    zellij
+    # zellij
     just
     dua
 
@@ -69,29 +69,74 @@
     micropython
     rshell
     conan
-    gdb
 
-    # media
-    ani-cli
-    mangal
-    aria2
+    # ani-cli
+    # mangal
+    # aria2
     yt-dlp
     ffmpeg
-    dwt1-shell-color-scripts
+    # dwt1-shell-color-scripts
     chafa
 
-    # python
-    python313Packages.mako
-
     # Font Tools
-    python312Packages.fonttools
-    fontforge-fonttools
-    brotli
-    zopfli
+    # python312Packages.fonttools
+    # fontforge-fonttools
+    # brotli
+    # zopfli
 
     # misc
     git-crypt
     shottr
     topiary
+
+    xz
+    zlib
+    colima
+    darwin.lsusb
+    switchaudio-osx
+    cmake
+
+    git-lfs
+    gnupg
+    just
+    llvm
+    neovim
+    nmap
+    pdfcpu
+    xcodegen
+    yazi
+    zig
+    opam
+
+    glfw
+    glm
+    glslang
+    libavif
+    libsoundio
+    raylib
+    SDL2
+    spirv-tools
+    nowplaying-cli
+    ninja
+    swiftformat
+
+    crush
+    opencode
+
+    alt-tab-macos
+    karabiner-elements
+    ice-bar
+    kitty
+    loopwm
+    vesktop
+    vscode
+    code-cursor
+    zed-editor
+
+    iina
+    obsidian
+    flashspace
+
+    maple-mono.NF
   ];
 }
