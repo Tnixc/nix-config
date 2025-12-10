@@ -42,6 +42,8 @@
     git-crypt
     lazygit
     gh
+    coreutils
+    charm-freeze
 
     # Code Editors & IDEs
     helix
@@ -69,7 +71,6 @@
     })
     zig
     llvm
-    opam
     cargo-binstall
     pipx
     uv
@@ -111,9 +112,7 @@
     # Apps
     shottr
     alt-tab-macos
-    karabiner-elements
     ice-bar
-    flashspace
     loopwm
     vesktop
     obsidian

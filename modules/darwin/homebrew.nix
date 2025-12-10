@@ -18,11 +18,17 @@
       "brightness"
 
       "clang-format"
+      "opam"
+      "node"
+      "autoconf"
+      "openjdk"
     ];
 
     # `brew install --cask`
     casks = [
       "racket"
+      "flashspace"
+      "karabiner-elements"
 
       "orion"
       "parsec"

@@ -10,8 +10,32 @@ return {
             require("plugins.configs.colorscheme")
         end,
     },
-
-    -- Icons
+    {
+        "dgox16/oldworld.nvim",
+        lazy = true,
+    },
+    {
+        "everviolet/nvim",
+        name = "evergarden",
+        lazy = true,
+        opts = {
+            theme = {
+                variant = "fall", -- 'winter'|'fall'|'spring'|'summer'
+                accent = "green",
+            },
+            editor = {
+                transparent_background = false,
+                sign = { color = "none" },
+                float = {
+                    color = "mantle",
+                    solid_border = false,
+                },
+                completion = {
+                    color = "surface0",
+                },
+            },
+        },
+    }, -- Icons
     {
         "rachartier/tiny-devicons-auto-colors.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },

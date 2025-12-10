@@ -51,6 +51,7 @@ return {
                 ["_"] = { "trim_whitespace", "trim_newlines" },
                 lua = { "stylua", stop_after_first = true },
                 nix = { "nixfmt", "alejandra", stop_after_first = true },
+                kotlin = { "ktfmt", stop_after_first = true },
                 racket = { "raco_fmt" },
                 go = { "goimports", "gofumpt", "gofmt", stop_after_first = true },
                 javascript = { "prettierd", "prettier", "deno_fmt", stop_after_first = true },
