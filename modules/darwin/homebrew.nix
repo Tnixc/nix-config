@@ -22,6 +22,7 @@
       "node"
       "autoconf"
       "openjdk"
+      "aria2"
     ];
 
     # `brew install --cask`

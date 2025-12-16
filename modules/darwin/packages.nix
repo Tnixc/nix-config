@@ -12,7 +12,7 @@
 
     # CLI & Shell
     fish
-    kitty
+    # kitty
     starship
     zoxide
     fzf
@@ -130,6 +130,7 @@
 
     # Network Tools
     nmap
+    transmission_4
 
     # Fonts
     maple-mono.NF

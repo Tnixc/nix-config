@@ -1,19 +1,20 @@
 {
   // The name of the Zed theme to use for the UI
+  "active_pane_modifiers": {
+    "border_size": 5.0
+  },
   "context_servers": {
     "mcp-server-context7": {
-      "source": "extension",
       "enabled": false,
       "settings": {}
     },
     "mcp-server-exa-search": {
-      "source": "extension",
       "enabled": false,
       "settings": {}
     }
   },
   "icon_theme": "Clean VSCode Icon Theme",
-  "theme": "Vitesse Refined Dark",
+  "theme": "Kanagawa Dragon",
   // The name of a base set of key bindings to use.
   // This setting can take four values, each named after another
   // text editor:
@@ -283,16 +284,7 @@
   // Add files or globs of files that will be excluded by Zed entirely:
   // they will be skipped during FS scan(s), file tree and file search
   // will lack the corresponding file entries.
-  "file_scan_exclusions": [
-    "**/.git",
-    "**/.svn",
-    "**/.hg",
-    "**/CVS",
-    "**/.DS_Store",
-    "**/Thumbs.db",
-    "**/.classpath",
-    "**/.settings"
-  ],
+  "file_scan_exclusions": ["**/.git", "**/.svn", "**/.hg", "**/CVS", "**/.DS_Store", "**/Thumbs.db", "**/.classpath", "**/.settings"],
   // Git gutter behavior configuration.
   "git": {
     // Control whether the git gutter is shown. May take 2 values:
@@ -305,9 +297,7 @@
   "copilot": {
     // The set of glob patterns for which copilot should be disabled
     // in any matching file.
-    "disabled_globs": [
-      ".env"
-    ]
+    "disabled_globs": [".env"]
   },
   // Settings specific to journaling
   "journal": {
@@ -416,12 +406,7 @@
         // Default directories to search for virtual environments, relative
         // to the current working directory. We recommend overriding this
         // in your project's settings, rather than globally.
-        "directories": [
-          ".env",
-          "env",
-          ".venv",
-          "venv"
-        ],
+        "directories": [".env", "env", ".venv", "venv"],
         // Can also be 'csh', 'fish', and `nushell`
         "activate_script": "default"
       }

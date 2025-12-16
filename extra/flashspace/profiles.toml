@@ -1,0 +1,215 @@
+[[profiles]]
+id = '2D907E5A-3ABE-40EB-849B-43C305DD1189'
+name = 'Default'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'ctrl+shift+1'
+display = 'Built-in Retina Display'
+id = '246D4AD9-B018-4696-B66B-B5864E80BBCC'
+name = "\u58F1"
+openAppsOnActivation = false
+shortcut = 'ctrl+1'
+symbolIconName = '1.circle.fill'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'company.thebrowser.Browser'
+iconPath = '/Applications/Arc.app/Contents/Resources/AppIcon.icns'
+name = 'Arc'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'app.zen-browser.zen'
+iconPath = '/Applications/Zen Browser.app/Contents/Resources/firefox.icns'
+name = 'Zen'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'company.thebrowser.dia'
+iconPath = '/Applications/Dia.app/Contents/Resources/AppIcon.icns'
+name = 'Dia'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Safari'
+iconPath = '/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app/Contents/Resources/AppIcon.icns'
+name = 'Safari'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.kagi.kagimacOS'
+iconPath = '/Applications/Orion.app/Contents/Resources/AppIcon.icns'
+name = 'Orion'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'net.imput.helium'
+iconPath = '/Applications/Helium.app/Contents/Resources/app.icns'
+name = 'Helium'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.finder'
+iconPath = '/System/Library/CoreServices/Finder.app/Contents/Resources/Finder.icns'
+name = 'Finder'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'ctrl+shift+2'
+display = 'Built-in Retina Display'
+id = 'DF7F62C1-1E02-421C-B312-1B67DEE3D0F5'
+name = "\u5F10"
+openAppsOnActivation = false
+shortcut = 'ctrl+2'
+symbolIconName = '2.circle.fill'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'net.kovidgoyal.kitty'
+iconPath = '/Applications/kitty.app/Contents/Resources/kitty.icns'
+name = 'kitty'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.dt.Xcode'
+iconPath = '/Applications/Xcode.app/Contents/Resources/Xcode.icns'
+name = 'Xcode'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.mitchellh.ghostty'
+iconPath = '/Applications/Ghostty.app/Contents/Resources/Ghostty.icns'
+name = 'Ghostty'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'ctrl+shift+3'
+display = 'Built-in Retina Display'
+id = 'B53F3807-9A4F-4F27-A64D-9957C8F62702'
+name = "\u53C2"
+openAppsOnActivation = false
+shortcut = 'ctrl+3'
+symbolIconName = '3.circle.fill'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.microsoft.VSCode'
+iconPath = '/Applications/Visual Studio Code.app/Contents/Resources/Code.icns'
+name = 'Code'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.todesktop.230313mzl4w4u92'
+iconPath = '/Applications/Cursor.app/Contents/Resources/icon.icns'
+name = 'Cursor'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'dev.zed.Zed-Preview'
+iconPath = '/Applications/Zed Preview.app/Contents/Resources/Zed Preview.icns'
+name = 'Zed Preview'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'dev.zed.Zed'
+iconPath = '/Applications/Zed.app/Contents/Resources/Zed.icns'
+name = 'Zed'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'md.obsidian'
+iconPath = '/Applications/Obsidian.app/Contents/Resources/icon.icns'
+name = 'Obsidian'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'ctrl+shift+4'
+display = 'Built-in Retina Display'
+id = '5A13D218-FB8C-495B-A826-A53F02E697E2'
+name = "\u8086"
+openAppsOnActivation = false
+shortcut = 'ctrl+4'
+symbolIconName = '4.alt.circle.fill'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.Preview'
+iconPath = '/System/Applications/Preview.app/Contents/Resources/AppIcon.icns'
+name = 'Preview'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'demo.Collect'
+iconPath = '/Applications/Collect.app/Contents/Resources/AppIcon.icns'
+name = 'Collect'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'ctrl+shift+5'
+display = 'Built-in Retina Display'
+id = '2C498EE6-2C70-4043-B7C4-4EB11E5CE512'
+name = "\u4E94"
+openAppsOnActivation = false
+shortcut = 'ctrl+5'
+symbolIconName = '5.circle.fill'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'org.racket-lang.DrRacket'
+iconPath = '/Applications/Racket v8.18/DrRacket.app/Contents/Resources/Starter.icns'
+name = 'DrRacket'
+
+[[profiles.workspaces]]
+apps = []
+assignAppShortcut = 'ctrl+shift+6'
+display = 'GF270M'
+id = '1296884F-A3B5-4A7D-B889-129C0AEB48E3'
+name = "\u516D"
+openAppsOnActivation = false
+shortcut = 'ctrl+6'
+symbolIconName = '6.circle.fill'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'ctrl+shift+7'
+display = 'GF270M'
+id = 'B7E85B77-382F-4491-9435-685BF8BE0E97'
+name = "\u4E03"
+openAppsOnActivation = false
+shortcut = 'ctrl+7'
+symbolIconName = '7.circle.fill'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.iCal'
+iconPath = '/System/Applications/Calendar.app/Contents/Resources/AppIcon.icns'
+name = 'Calendar'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'ctrl+shift+8'
+display = 'GF270M'
+id = 'C12B951D-DBDE-49D2-A22A-96D5E2082692'
+name = "\u516B"
+openAppsOnActivation = false
+shortcut = 'ctrl+8'
+symbolIconName = '8.circle.fill'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.lukilabs.lukiapp'
+iconPath = '/Applications/Craft.app/Contents/Resources/AppIcon.icns'
+name = 'Craft'
+
+[[profiles.workspaces]]
+assignAppShortcut = 'ctrl+shift+9'
+display = 'GF270M'
+id = '4AC016AE-CECF-416B-9B0B-DECC06E7E98E'
+name = "\u4E5D"
+openAppsOnActivation = false
+shortcut = 'ctrl+9'
+symbolIconName = '9.alt.circle.fill'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.apple.MobileSMS'
+iconPath = '/System/Applications/Messages.app/Contents/Resources/AppIcon.icns'
+name = 'Messages'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'com.hnc.Discord'
+iconPath = '/Applications/Discord.app/Contents/Resources/electron.icns'
+name = 'Discord'
+
+[[profiles.workspaces.apps]]
+bundleIdentifier = 'dev.vencord.vesktop'
+iconPath = '/Applications/Nix Apps/Vesktop.app/Contents/Resources/icon.icns'
+name = 'Vesktop'
+
+[[profiles.workspaces]]
+apps = []
+assignAppShortcut = 'ctrl+shift+0'
+display = 'GF270M'
+id = '6FDF29D0-ADD7-411F-8AD0-E474CDDCADD2'
+name = "\u62FE"
+openAppsOnActivation = false
+shortcut = 'ctrl+0'
+symbolIconName = '10.circle.fill'
+
+[[profiles]]
+id = 'F4D8051D-BBE3-4733-9F30-3C55200C6CB3'
+name = 'None'
+workspaces = []
