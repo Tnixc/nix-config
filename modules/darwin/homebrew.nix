@@ -23,6 +23,7 @@
       "autoconf"
       "openjdk"
       "aria2"
+      "R"
     ];
 
     # `brew install --cask`
@@ -42,6 +43,7 @@
       "reminders-menubar"
       "craft"
       "google-chrome"
+      "rstudio"
 
       "sf-symbols"
 

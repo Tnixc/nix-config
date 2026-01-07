@@ -1,7 +1,7 @@
 {...}: {
   # App icons (darwin-custom-icons)
   environment.customIcons = {
-    enable = true;
+    enable = false;
     icons = [
     ];
   };

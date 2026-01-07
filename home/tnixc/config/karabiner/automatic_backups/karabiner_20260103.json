@@ -6,7 +6,6 @@
                 "rules": [
                     {
                         "description": "Tap both Left Shift and Right Shift together to toggle Caps Lock",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
