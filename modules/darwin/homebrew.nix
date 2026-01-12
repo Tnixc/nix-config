@@ -24,6 +24,16 @@
       "openjdk"
       "aria2"
       "R"
+      "gemini-cli"
+
+      "beast"
+      "boost"
+      "fmt"
+      "re2"
+      "nlohmann-json"
+      "yaml-cpp"
+      "cmark-gfm"
+      "tomlplusplus"
     ];
 
     # `brew install --cask`
@@ -31,6 +41,9 @@
       "racket"
       "flashspace"
       "karabiner-elements"
+      "alt-tab"
+      "zed"
+      "loop"
 
       "orion"
       "parsec"

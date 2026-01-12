@@ -1,5 +1,18 @@
 {
   // The name of the Zed theme to use for the UI
+  "ssh_connections": [
+    {
+      "host": "cs",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/u3/e37lau"
+          ]
+        }
+      ]
+    }
+  ],
   "active_pane_modifiers": {
     "border_size": 5.0
   },

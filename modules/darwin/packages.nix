@@ -50,7 +50,6 @@
     neovim
     vscode
     code-cursor
-    zed-editor
 
     # Build Tools & Task Runners
     cmake
@@ -71,6 +70,7 @@
     })
     zig
     llvm
+    clang-tools
     cargo-binstall
     pipx
     uv
@@ -111,9 +111,7 @@
 
     # Apps
     shottr
-    alt-tab-macos
     ice-bar
-    loopwm
     vesktop
     obsidian
 
