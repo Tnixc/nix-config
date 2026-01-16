@@ -128,7 +128,6 @@
 
     # Network Tools
     nmap
-    transmission_4
 
     # Fonts
     maple-mono.NF

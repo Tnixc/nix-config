@@ -6,6 +6,7 @@
     ./packages.nix
     ./preferences
     ./security
+    ./services/transmission.nix
     ./system.nix
   ];
 }
