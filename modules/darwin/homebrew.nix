@@ -38,12 +38,12 @@
 
     # `brew install --cask`
     casks = [
-      "racket"
       "flashspace"
       "karabiner-elements"
       "alt-tab"
       "zed"
       "loop"
+      "tailscale"
 
       "orion"
       "parsec"

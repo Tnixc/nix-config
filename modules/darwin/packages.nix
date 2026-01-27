@@ -34,7 +34,6 @@
     dua
     chafa
     nowplaying-cli
-    crush
     pdfcpu
     comma
     git
@@ -115,7 +114,9 @@
     vesktop
     obsidian
 
+
     # Containerization
+    ollama
     docker
     colima
 
