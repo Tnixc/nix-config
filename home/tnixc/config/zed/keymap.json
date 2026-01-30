@@ -1,695 +1,392 @@
 [
-  // Standard macOS bindings
+  // ============================================================
+  // VIM MODE NORMAL + VISUAL (shared bindings)
+  // ============================================================
   {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
     "bindings": {
-      "up": "menu::SelectPrevious",
-      "pageup": "menu::SelectFirst",
-      "shift-pageup": "menu::SelectFirst",
-      "ctrl-p": "menu::SelectPrevious",
-      "down": "menu::SelectNext",
-      "pagedown": "menu::SelectLast",
-      "shift-pagedown": "menu::SelectFirst",
-      "ctrl-n": "menu::SelectNext",
-      "cmd-up": "menu::SelectFirst",
-      "cmd-down": "menu::SelectLast",
-      "enter": "menu::Confirm",
-      "cmd-enter": "menu::SecondaryConfirm",
-      "escape": "menu::Cancel",
-      "ctrl-c": "menu::Cancel",
-      "cmd-shift-w": "workspace::CloseWindow",
-      "shift-escape": "workspace::ToggleZoom",
-      "cmd-o": "workspace::Open",
-      "cmd-=": "zed::IncreaseBufferFontSize",
-      "cmd-+": "zed::IncreaseBufferFontSize",
-      "cmd--": "zed::DecreaseBufferFontSize",
-      "cmd-0": "zed::ResetBufferFontSize",
-      "cmd-,": "zed::OpenSettings",
-      "cmd-q": "zed::Quit",
-      "cmd-h": "zed::Hide",
-      "alt-cmd-h": "zed::HideOthers",
-      "cmd-m": "zed::Minimize",
-      "ctrl-cmd-f": "zed::ToggleFullScreen"
-    }
+      // Window navigation (mirrors <C-h/j/k/l>)
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+
+      // === LEADER (space) MAPPINGS ===
+
+      // Save file (<leader>w)
+      "space w": "workspace::Save",
+
+      // Quit (<leader>q)
+      "space q": "pane::CloseActiveItem",
+
+      // Quit all (<leader>Q)
+      "space shift-q": "zed::Quit",
+
+      // === FIND GROUP (<leader>f) ===
+      // Picker (<leader>f?)
+      "space f shift-/": "command_palette::Toggle",
+      // Live grep (<leader>fg)
+      "space f g": "workspace::NewSearch",
+      // Find files (<leader>ff)
+      "space f f": "file_finder::Toggle",
+      // Find history/recent (<leader>ft)
+      "space f t": "file_finder::Toggle",
+      // Git files (<leader>fd)
+      "space f d": "file_finder::Toggle",
+      // Open project (<leader>fo)
+      "space f o": "projects::OpenRecent",
+      // Buffers (<leader>f<Tab>)
+      "space f tab": "tab_switcher::Toggle",
+      // Undo history (<leader>fu) - no direct equivalent, use command palette
+      // "space f u": "editor::Undo",
+
+      // === LSP GROUP (<leader>l) ===
+      // Code actions (<leader>lq)
+      "space l q": "editor::ToggleCodeActions",
+      // Document symbols (<leader>ld)
+      "space l d": "outline::Toggle",
+      // References (<leader>li)
+      "space l i": "editor::FindAllReferences",
+      // Workspace symbols (<leader>lh)
+      "space l h": "project_symbols::Toggle",
+      // Rename (<leader>lr)
+      "space l r": "editor::Rename",
+      // Format (<leader>lf)
+      "space l f": "editor::Format",
+
+      // === DIAGNOSTICS GROUP (<leader>x) ===
+      // Diagnostics (<leader>xx)
+      "space x x": "diagnostics::Deploy",
+      // Diagnostics picker (<leader>xt)
+      "space x t": "diagnostics::Deploy",
+      // Buffer diagnostics (<leader>xX)
+      "space x shift-x": "diagnostics::DeployCurrentFile",
+
+      // === GIT GROUP (<leader>j) ===
+      // Git branches (<leader>jb)
+      "space j b": "git::Branch",
+      // Toggle diffview (<leader>jj)
+      "space j j": "git::Diff",
+      // Next hunk (<leader>jo)
+      "space j o": "editor::GoToHunk",
+      // Prev hunk (<leader>ji)
+      "space j i": "editor::GoToPreviousHunk",
+      // Git panel toggle (<leader>jg)
+      "space j g": "git_panel::ToggleFocus",
+
+      // === GO TO GROUP (g) ===
+      // Definition
+      "g d": "editor::GoToDefinition",
+      // Declaration
+      "g shift-d": "editor::GoToDeclaration",
+      // Implementation
+      "g i": "editor::GoToImplementation",
+      // Type definition
+      "g t": "editor::GoToTypeDefinition",
+      // References
+      "g r": "editor::FindAllReferences",
+      // Signature help
+      "g s": "editor::ShowSignatureHelp",
+
+      // === OTHER GROUP (<leader>d) ===
+      // New file (<leader>df)
+      "space d f": "workspace::NewFile",
+      // Render markdown (<leader>dr)
+      "space d r": "markdown::OpenPreview",
+    },
   },
+
+  // ============================================================
+  // VIM MODE NORMAL ONLY
+  // ============================================================
+  {
+    "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // Move line up/down (Alt-j/k)
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+
+      // Dashboard toggle (<leader>a) - closest is welcome screen
+      // "space a": "welcome::Toggle",
+
+      // === MULTICURSOR (space m) ===
+      // Zed doesn't have multicursor-nvim equivalent, but has some multi-cursor support
+      // Add cursor at next match (<leader>mn) - use cmd-d equivalent
+      "space m n": ["editor::SelectNext", { "replace_newest": false }],
+      // Add cursor at all matches (<leader>ma)
+      "space m a": "editor::SelectAllMatches",
+      // Add cursor above (<leader>mk)
+      "space m k": "editor::AddSelectionAbove",
+      // Add cursor below (<leader>mj)
+      "space m j": "editor::AddSelectionBelow",
+    },
+  },
+
+  // ============================================================
+  // VIM MODE VISUAL ONLY
+  // ============================================================
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      // Paste without yanking (p) - use vim::Paste which handles this
+      // Keep selection after indent
+      // These are handled by vim mode by default
+
+      // Multicursor in visual
+      "m": ["editor::SelectNext", { "replace_newest": false }],
+      "shift-m": "editor::SelectAllMatches",
+    },
+  },
+
+  // ============================================================
+  // INSERT MODE
+  // ============================================================
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      // Alt-j/k for line movement even in insert mode
+      "alt-j": "editor::MoveLineDown",
+      "alt-k": "editor::MoveLineUp",
+    },
+  },
+
+  // ============================================================
+  // SURROUND (mini.surround equivalent)
+  // Zed vim mode has built-in surround with ys, ds, cs
+  // Your nvim config uses 's' for add surround - this conflicts with vim substitute
+  // Keeping default ys for surround-add
+  // ============================================================
+
+  // ============================================================
+  // COMMENT TOGGLE (mini.comment equivalent)
+  // ============================================================
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      // Cmd+/ for comment toggle (like your <D-/> in nvim)
+      "cmd-/": "editor::ToggleComments",
+    },
+  },
+
+  // ============================================================
+  // GLOBAL BINDINGS - WORKSPACE LEVEL (works everywhere)
+  // ============================================================
+  {
+    "context": "Workspace",
+    "bindings": {
+      // Toggle terminal (Alt-l in your nvim)
+      "alt-l": "workspace::ToggleBottomDock",
+
+      // Toggle left dock/explorer (alt-g)
+      "alt-g": "workspace::ToggleLeftDock",
+
+      // Toggle right dock (alt-h)
+      "alt-h": "workspace::ToggleRightDock",
+
+      // File finder (alt-t)
+      "alt-t": "file_finder::Toggle",
+
+      // Tab switcher (alt-tab)
+      "alt-tab": "tab_switcher::Toggle",
+
+      // Diagnostics (alt-d)
+      "alt-d": "diagnostics::Deploy",
+
+      // Close buffer (Alt-w)
+      "alt-w": "pane::CloseActiveItem",
+
+      // Reopen closed item (alt-shift-t)
+      "alt-shift-t": "pane::ReopenClosedItem",
+    },
+  },
+
+  // ============================================================
+  // EDITOR-SPECIFIC GLOBAL BINDINGS
+  // ============================================================
   {
     "context": "Editor",
     "bindings": {
-      "escape": "editor::Cancel",
-      "backspace": "editor::Backspace",
-      "shift-backspace": "editor::Backspace",
-      "ctrl-h": "editor::Backspace",
-      "delete": "editor::Delete",
-      "ctrl-d": "editor::Delete",
-      "tab": "editor::Tab",
-      "shift-tab": "editor::Backtab",
-      "ctrl-k": "editor::CutToEndOfLine",
-      "ctrl-t": "editor::Transpose",
-      "cmd-backspace": "editor::DeleteToBeginningOfLine",
-      "cmd-delete": "editor::DeleteToEndOfLine",
-      "alt-backspace": "editor::DeleteToPreviousWordStart",
-      "alt-delete": "editor::DeleteToNextWordEnd",
-      "alt-h": "editor::DeleteToPreviousWordStart",
-      "alt-d": "editor::DeleteToNextWordEnd",
-      "cmd-x": "editor::Cut",
-      "cmd-c": "editor::Copy",
-      "cmd-v": "editor::Paste",
-      "cmd-z": "editor::Undo",
-      "cmd-shift-z": "editor::Redo",
-      "up": "editor::MoveUp",
-      "ctrl-up": "editor::MoveToStartOfParagraph",
-      "pageup": "editor::PageUp",
-      "shift-pageup": "editor::MovePageUp",
-      "home": "editor::MoveToBeginningOfLine",
-      "down": "editor::MoveDown",
-      "ctrl-down": "editor::MoveToEndOfParagraph",
-      "pagedown": "editor::PageDown",
-      "shift-pagedown": "editor::MovePageDown",
-      "end": "editor::MoveToEndOfLine",
-      "left": "editor::MoveLeft",
-      "right": "editor::MoveRight",
-      "ctrl-p": "editor::MoveUp",
-      "ctrl-n": "editor::MoveDown",
-      "ctrl-b": "editor::MoveLeft",
-      "ctrl-f": "editor::MoveRight",
-      "ctrl-l": "editor::NextScreen",
-      "alt-left": "editor::MoveToPreviousWordStart",
-      "alt-b": "editor::MoveToPreviousWordStart",
-      "alt-right": "editor::MoveToNextWordEnd",
-      "cmd-left": "editor::MoveToBeginningOfLine",
-      "ctrl-a": "editor::MoveToBeginningOfLine",
-      "cmd-right": "editor::MoveToEndOfLine",
-      "ctrl-e": "editor::MoveToEndOfLine",
-      "cmd-up": "editor::MoveToBeginning",
-      "cmd-down": "editor::MoveToEnd",
-      "shift-up": "editor::SelectUp",
-      "ctrl-shift-p": "editor::SelectUp",
-      "shift-down": "editor::SelectDown",
-      "ctrl-shift-n": "editor::SelectDown",
-      "shift-left": "editor::SelectLeft",
-      "ctrl-shift-b": "editor::SelectLeft",
-      "shift-right": "editor::SelectRight",
-      "ctrl-shift-f": "editor::SelectRight",
-      "alt-shift-left": "editor::SelectToPreviousWordStart",
-      "alt-shift-b": "editor::SelectToPreviousWordStart",
-      "alt-shift-right": "editor::SelectToNextWordEnd",
-      "alt-shift-f": "editor::SelectToNextWordEnd",
-      "ctrl-shift-up": "editor::SelectToStartOfParagraph",
-      "ctrl-shift-down": "editor::SelectToEndOfParagraph",
-      "cmd-shift-up": "editor::SelectToBeginning",
-      "cmd-shift-down": "editor::SelectToEnd",
-      "cmd-a": "editor::SelectAll",
-      "cmd-l": "editor::SelectLine",
-      "cmd-shift-i": "editor::Format",
-      "cmd-shift-left": [
-        "editor::SelectToBeginningOfLine",
-        {
-          "stop_at_soft_wraps": true
-        }
-      ],
-      "shift-home": [
-        "editor::SelectToBeginningOfLine",
-        {
-          "stop_at_soft_wraps": true
-        }
-      ],
-      "ctrl-shift-a": [
-        "editor::SelectToBeginningOfLine",
-        {
-          "stop_at_soft_wraps": true
-        }
-      ],
-      "cmd-shift-right": [
-        "editor::SelectToEndOfLine",
-        {
-          "stop_at_soft_wraps": true
-        }
-      ],
-      "shift-end": [
-        "editor::SelectToEndOfLine",
-        {
-          "stop_at_soft_wraps": true
-        }
-      ],
-      "ctrl-shift-e": [
-        "editor::SelectToEndOfLine",
-        {
-          "stop_at_soft_wraps": true
-        }
-      ],
-      "ctrl-v": [
-        "editor::MovePageDown",
-        {
-          "center_cursor": true
-        }
-      ],
-      "alt-v": [
-        "editor::MovePageUp",
-        {
-          "center_cursor": true
-        }
-      ],
-      "ctrl-cmd-space": "editor::ShowCharacterPalette"
-    }
+      // Format (alt-a) - only makes sense in editor
+      "alt-a": "editor::Format",
+
+      // Hover info (cmd-shift-k)
+      "cmd-shift-k": "editor::Hover",
+
+      // Accept edit prediction (alt-i)
+      "alt-i": "editor::AcceptEditPrediction",
+    },
   },
+
+  // ============================================================
+  // WINDOW RESIZING
+  // ============================================================
   {
-    "context": "Editor && mode == full",
+    "context": "Workspace",
     "bindings": {
-      "enter": "editor::Newline",
-      "shift-enter": "editor::Newline",
-      "cmd-shift-enter": "editor::NewlineAbove",
-      "cmd-enter": "editor::NewlineBelow",
-      "alt-z": "editor::ToggleSoftWrap",
-      "cmd-f": [
-        "buffer_search::Deploy",
-        {
-          "focus": true
-        }
-      ],
-      "cmd-e": [
-        "buffer_search::Deploy",
-        {
-          "focus": false
-        }
-      ],
-      "alt-\\": "copilot::Suggest",
-      "alt-]": "copilot::NextSuggestion",
-      "alt-[": "copilot::PreviousSuggestion",
-      "cmd->": "assistant::QuoteSelection"
-    }
+      // Window resizing (ctrl+arrows) - Zed doesn't have direct resize actions
+      // Using pane navigation instead or relying on mouse
+    },
   },
+
+  // ============================================================
+  // BUFFER/TAB NAVIGATION BY NUMBER (Alt-1 through Alt-9)
+  // ============================================================
   {
-    "context": "Editor && mode == auto_height",
+    "context": "Pane",
     "bindings": {
-      "ctrl-enter": "editor::Newline",
-      "ctrl-shift-enter": "editor::NewlineBelow"
-    }
+      "alt-1": ["pane::ActivateItem", 0],
+      "alt-2": ["pane::ActivateItem", 1],
+      "alt-3": ["pane::ActivateItem", 2],
+      "alt-4": ["pane::ActivateItem", 3],
+      "alt-5": ["pane::ActivateItem", 4],
+      "alt-6": ["pane::ActivateItem", 5],
+      "alt-7": ["pane::ActivateItem", 6],
+      "alt-8": ["pane::ActivateItem", 7],
+      "alt-9": ["pane::ActivateItem", 8],
+
+      // Cycle buffers (Alt-Tab / Alt-Shift-Tab)
+      "alt-shift-tab": "pane::ActivatePreviousItem",
+    },
   },
+
+  // ============================================================
+  // TAB NAVIGATION (Alt-Shift-1 through Alt-Shift-9)
+  // ============================================================
   {
-    "context": "AssistantPanel",
+    "context": "Workspace",
     "bindings": {
-      "cmd-g": "search::SelectNextMatch",
-      "cmd-shift-g": "search::SelectPreviousMatch"
-    }
+      // Close tab (Alt-Shift-w)
+      "alt-shift-w": "pane::CloseActiveItem",
+    },
   },
+
+  // ============================================================
+  // TERMINAL SPECIFIC
+  // ============================================================
   {
-    "context": "ConversationEditor > Editor",
+    "context": "Terminal",
     "bindings": {
-      "cmd-enter": "assistant::Assist",
-      "cmd-s": "workspace::Save",
-      "cmd->": "assistant::QuoteSelection",
-      "shift-enter": "assistant::Split",
-      "ctrl-r": "assistant::CycleMessageRole"
-    }
+      // Window navigation from terminal
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+    },
   },
+
+  // ============================================================
+  // DOCK PANELS (project panel, git panel, etc.)
+  // ============================================================
+  {
+    "context": "Dock",
+    "bindings": {
+      // Pane navigation from docks
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+    },
+  },
+
+  // ============================================================
+  // PROJECT PANEL (like nvim file explorer keybinds)
+  // ============================================================
+  {
+    "context": "ProjectPanel && !editing",
+    "bindings": {
+      // Open file
+      "enter": "project_panel::Open",
+      // New file
+      "a": "project_panel::NewFile",
+      // New directory
+      "shift-a": "project_panel::NewDirectory",
+      // Rename
+      "r": "project_panel::Rename",
+      // Delete
+      "d": "project_panel::Delete",
+      // Copy
+      "y": "project_panel::Copy",
+      // Cut
+      "x": "project_panel::Cut",
+      // Paste
+      "p": "project_panel::Paste",
+      // Collapse
+      "h": "project_panel::CollapseSelectedEntry",
+      // Expand
+      "l": "project_panel::ExpandSelectedEntry",
+    },
+  },
+
+  // ============================================================
+  // BUFFER SEARCH (like your nvim search bindings)
+  // ============================================================
   {
     "context": "BufferSearchBar",
     "bindings": {
       "escape": "buffer_search::Dismiss",
-      "tab": "buffer_search::FocusEditor",
       "enter": "search::SelectNextMatch",
       "shift-enter": "search::SelectPreviousMatch",
-      "alt-enter": "search::SelectAllMatches"
-    }
+    },
   },
-  {
-    "context": "BufferSearchBar && in_replace",
-    "bindings": {
-      "enter": "search::ReplaceNext",
-      "cmd-enter": "search::ReplaceAll"
-    }
-  },
-  {
-    "context": "BufferSearchBar && !in_replace > Editor",
-    "bindings": {
-      "up": "search::PreviousHistoryQuery",
-      "down": "search::NextHistoryQuery"
-    }
-  },
-  {
-    "context": "ProjectSearchBar",
-    "bindings": {
-      "escape": "project_search::ToggleFocus",
-      "cmd-shift-h": "search::ToggleReplace"
-    }
-  },
-  {
-    "context": "ProjectSearchBar > Editor",
-    "bindings": {
-      "up": "search::PreviousHistoryQuery",
-      "down": "search::NextHistoryQuery"
-    }
-  },
-  {
-    "context": "ProjectSearchBar && in_replace",
-    "bindings": {
-      "enter": "search::ReplaceNext",
-      "cmd-enter": "search::ReplaceAll"
-    }
-  },
-  {
-    "context": "ProjectSearchView",
-    "bindings": {
-      "escape": "project_search::ToggleFocus",
-      "cmd-shift-h": "search::ToggleReplace"
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "cmd-{": "pane::ActivatePreviousItem",
-      "cmd-}": "pane::ActivateNextItem",
-      "alt-cmd-left": "pane::ActivatePreviousItem",
-      "alt-cmd-right": "pane::ActivateNextItem",
-      "cmd-w": "pane::CloseActiveItem",
-      "alt-cmd-t": "pane::CloseInactiveItems",
-      "ctrl-alt-cmd-w": "workspace::CloseInactiveTabsAndPanes",
-      "cmd-k u": "pane::CloseCleanItems",
-      "cmd-k cmd-w": "pane::CloseAllItems",
-      "cmd-f": "project_search::ToggleFocus",
-      "cmd-g": "search::SelectNextMatch",
-      "cmd-shift-g": "search::SelectPreviousMatch",
-      "cmd-shift-h": "search::ToggleReplace",
-      "alt-enter": "search::SelectAllMatches",
-      "alt-cmd-c": "search::ToggleCaseSensitive",
-      "alt-cmd-w": "search::ToggleWholeWord"
-    }
-  },
-  // Bindings from VS Code
+
+  // ============================================================
+  // CMD KEY SHORTCUTS (matching your <D-*> bindings)
+  // ============================================================
   {
     "context": "Editor",
     "bindings": {
-      "cmd-[": "editor::Outdent",
-      "cmd-]": "editor::Indent",
-      "cmd-alt-up": "editor::AddSelectionAbove",
-      "cmd-ctrl-p": "editor::AddSelectionAbove",
-      "cmd-alt-down": "editor::AddSelectionBelow",
-      "cmd-ctrl-n": "editor::AddSelectionBelow",
-      "cmd-d": [
-        "editor::SelectNext",
-        {
-          "replace_newest": false
-        }
-      ],
-      "cmd-shift-l": "editor::SelectAllMatches",
-      "ctrl-cmd-d": [
-        "editor::SelectPrevious",
-        {
-          "replace_newest": false
-        }
-      ],
-      "cmd-k cmd-d": [
-        "editor::SelectNext",
-        {
-          "replace_newest": true
-        }
-      ],
-      "cmd-k ctrl-cmd-d": [
-        "editor::SelectPrevious",
-        {
-          "replace_newest": true
-        }
-      ],
-      "cmd-/": [
-        "editor::ToggleComments",
-        {
-          "advance_downwards": false
-        }
-      ],
-      "alt-up": "editor::SelectLargerSyntaxNode",
-      "alt-down": "editor::SelectSmallerSyntaxNode",
-      "cmd-u": "editor::UndoSelection",
-      "cmd-shift-u": "editor::RedoSelection",
-      "f8": "editor::GoToDiagnostic",
-      "shift-f8": "editor::GoToPreviousDiagnostic",
-      "f2": "editor::Rename",
-      "f12": "editor::GoToDefinition",
-      "alt-f12": "editor::GoToDefinitionSplit",
-      "cmd-f12": "editor::GoToTypeDefinition",
-      "alt-cmd-f12": "editor::GoToTypeDefinitionSplit",
-      "alt-shift-f12": "editor::FindAllReferences",
-      "ctrl-m": "editor::MoveToEnclosingBracket",
-      "alt-cmd-[": "editor::Fold",
-      "alt-cmd-]": "editor::UnfoldLines",
-      "ctrl-space": "editor::ShowCompletions",
-      "cmd-.": "editor::ToggleCodeActions"
-    }
-  },
-  {
-    "context": "Editor && mode == full",
-    "bindings": {
-      "cmd-shift-o": "outline::Toggle",
-      "ctrl-g": "go_to_line::Toggle"
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      "alt-cmd-o": "projects::OpenRecent",
-      "ctrl-~": "workspace::NewTerminal",
+      // Select all (Cmd-a)
+      "cmd-a": "editor::SelectAll",
+      // Save (Cmd-s) - already default
       "cmd-s": "workspace::Save",
-      "cmd-shift-s": "workspace::SaveAs",
-      "cmd-n": "workspace::NewFile",
-      "cmd-shift-n": "workspace::NewWindow",
-      "ctrl-`": "terminal_panel::ToggleFocus",
-      "cmd-b": "workspace::ToggleLeftDock",
-      "cmd-r": "workspace::ToggleRightDock",
-      "cmd-j": "workspace::ToggleBottomDock",
-      "alt-cmd-y": "workspace::CloseAllDocks",
-      "cmd-shift-f": "workspace::NewSearch",
-      "cmd-k cmd-t": "theme_selector::Toggle",
-      "cmd-k cmd-s": "zed::OpenKeymap",
-      "cmd-t": "project_symbols::Toggle",
-      "cmd-p": "file_finder::Toggle",
-      "f1": "command_palette::Toggle",
-      "cmd-shift-m": "diagnostics::Deploy",
-      "cmd-shift-e": "project_panel::ToggleFocus",
-      "cmd-?": "assistant::ToggleFocus",
-      "cmd-alt-s": "workspace::SaveAll",
-      "cmd-k m": "language_selector::Toggle"
-    }
+    },
   },
-  // Bindings from Sublime Text
-  {
-    "context": "Editor",
-    "bindings": {
-      "ctrl-shift-k": "editor::DeleteLine",
-      "ctrl-j": "editor::JoinLines",
-      "ctrl-cmd-up": "editor::MoveLineUp",
-      "ctrl-cmd-down": "editor::MoveLineDown",
-      "ctrl-alt-backspace": "editor::DeleteToPreviousSubwordStart",
-      "ctrl-alt-h": "editor::DeleteToPreviousSubwordStart",
-      "ctrl-alt-delete": "editor::DeleteToNextSubwordEnd",
-      "ctrl-alt-d": "editor::DeleteToNextSubwordEnd",
-      "ctrl-alt-left": "editor::MoveToPreviousSubwordStart",
-      "ctrl-alt-b": "editor::MoveToPreviousSubwordStart",
-      "ctrl-alt-right": "editor::MoveToNextSubwordEnd",
-      "ctrl-alt-f": "editor::MoveToNextSubwordEnd",
-      "ctrl-alt-shift-left": "editor::SelectToPreviousSubwordStart",
-      "ctrl-alt-shift-b": "editor::SelectToPreviousSubwordStart",
-      "ctrl-alt-shift-right": "editor::SelectToNextSubwordEnd",
-      "ctrl-alt-shift-f": "editor::SelectToNextSubwordEnd"
-    }
-  },
-  {
-    "bindings": {
-      "cmd-k cmd-left": "workspace::ActivatePaneLeft",
-      "cmd-k cmd-right": "workspace::ActivatePaneRight",
-      "cmd-k cmd-up": "workspace::ActivatePaneUp",
-      "cmd-k cmd-down": "workspace::ActivatePaneDown",
-      "cmd-k shift-left": "workspace::SwapPaneLeft",
-      "cmd-k shift-right": "workspace::SwapPaneRight",
-      "cmd-k shift-up": "workspace::SwapPaneUp",
-      "cmd-k shift-down": "workspace::SwapPaneDown"
-    }
-  },
-  // Bindings from Atom
+
+  // ============================================================
+  // DISABLE CONFLICTING DEFAULT BINDINGS
+  // ============================================================
   {
     "context": "Pane",
     "bindings": {
-      "cmd-k up": "pane::SplitUp",
-      "cmd-k down": "pane::SplitDown",
-      "cmd-k left": "pane::SplitLeft",
-      "cmd-k right": "pane::SplitRight"
-    }
+      // Disable ctrl-1 through ctrl-9 (your nvim has these as null)
+      "ctrl-1": null,
+      "ctrl-2": null,
+      "ctrl-3": null,
+      "ctrl-4": null,
+      "ctrl-5": null,
+      "ctrl-6": null,
+      "ctrl-7": null,
+      "ctrl-8": null,
+      "ctrl-9": null,
+    },
   },
-  // Bindings that should be unified with bindings for more general actions
+
+  // ============================================================
+  // SURROUND (mini.surround equivalent)
+  // Your nvim uses 's' for add surround in normal mode
+  // ============================================================
   {
-    "context": "Editor && renaming",
+    "context": "vim_mode == normal && !VimWaiting && !menu",
     "bindings": {
-      "enter": "editor::ConfirmRename"
-    }
+      "s": "vim::PushAddSurrounds",
+    },
   },
+  {
+    "context": "vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      // Surround selection in visual mode
+      "s": "vim::PushAddSurrounds",
+    },
+  },
+
+  // ============================================================
+  // COMPLETION MENU NAVIGATION
+  // ============================================================
   {
     "context": "Editor && showing_completions",
     "bindings": {
-      "enter": "editor::ConfirmCompletion",
-      "tab": "editor::ConfirmCompletion"
-    }
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrevious",
+    },
   },
-  {
-    "context": "Editor && showing_code_actions",
-    "bindings": {
-      "enter": "editor::ConfirmCodeAction"
-    }
-  },
-  {
-    "context": "Editor && (showing_code_actions || showing_completions)",
-    "bindings": {
-      "up": "editor::ContextMenuPrevious",
-      "ctrl-p": "editor::ContextMenuPrevious",
-      "down": "editor::ContextMenuNext",
-      "ctrl-n": "editor::ContextMenuNext",
-      "pageup": "editor::ContextMenuFirst",
-      "pagedown": "editor::ContextMenuLast"
-    }
-  },
-  // Custom bindings
-  {
-    "bindings": {
-      "ctrl-alt-cmd-f": "workspace::FollowNextCollaborator",
-      // TODO: Move this to a dock open action
-      "cmd-shift-c": "collab_panel::ToggleFocus",
-      "cmd-alt-i": "zed::DebugElements",
-      "ctrl-:": "editor::ToggleInlayHints"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      "alt-enter": "editor::OpenExcerpts",
-      "cmd-f8": "editor::GoToHunk",
-      "alt-shift-i": "assistant::InlineAssist"
-    }
-  },
-  {
-    "context": "ProjectSearchBar && !in_replace",
-    "bindings": {
-      "cmd-enter": "project_search::SearchInNew"
-    }
-  },
-  {
-    "context": "ProjectPanel",
-    "bindings": {
-      "left": "project_panel::CollapseSelectedEntry",
-      "right": "project_panel::ExpandSelectedEntry",
-      "cmd-n": "project_panel::NewFile",
-      "alt-cmd-n": "project_panel::NewDirectory",
-      "cmd-x": "project_panel::Cut",
-      "cmd-c": "project_panel::Copy",
-      "cmd-v": "project_panel::Paste",
-      "f2": "project_panel::Rename",
-      "enter": "project_panel::Rename",
-      "backspace": "project_panel::Delete",
-      "alt-shift-f": "project_panel::NewSearchInDirectory"
-    }
-  },
-  {
-    "context": "ProjectPanel && not_editing",
-    "bindings": {
-      "space": "project_panel::Open"
-    }
-  },
-  {
-    "context": "CollabPanel && not_editing",
-    "bindings": {
-      "ctrl-backspace": "collab_panel::Remove",
-      "space": "menu::Confirm"
-    }
-  },
-  {
-    "context": "(CollabPanel && editing) > Editor",
-    "bindings": {
-      "space": "collab_panel::InsertSpace"
-    }
-  },
-  {
-    "context": "ChannelModal",
-    "bindings": {
-      "tab": "channel_modal::ToggleMode"
-    }
-  },
-  {
-    "context": "ChannelModal > Picker > Editor",
-    "bindings": {
-      "tab": "channel_modal::ToggleMode"
-    }
-  },
-  {
-    "context": "Terminal",
-    "bindings": {
-      "ctrl-cmd-space": "terminal::ShowCharacterPalette",
-      "cmd-c": "terminal::Copy",
-      "cmd-v": "terminal::Paste",
-      "cmd-k": "terminal::Clear",
-      // Some nice conveniences
-      "cmd-backspace": ["terminal::SendText", "\u0015"],
-      "cmd-right": ["terminal::SendText", "\u0005"],
-      "cmd-left": ["terminal::SendText", "\u0001"],
-      // Terminal.app compatibility
-      "alt-left": ["terminal::SendText", "\u001bb"],
-      "alt-right": ["terminal::SendText", "\u001bf"],
-      // There are conflicting bindings for these keys in the global context.
-      // these bindings override them, remove at your own risk:
-      "up": ["terminal::SendKeystroke", "up"],
-      "pageup": ["terminal::SendKeystroke", "pageup"],
-      "down": ["terminal::SendKeystroke", "down"],
-      "pagedown": ["terminal::SendKeystroke", "pagedown"],
-      "escape": ["terminal::SendKeystroke", "escape"],
-      "enter": ["terminal::SendKeystroke", "enter"],
-      "ctrl-c": ["terminal::SendKeystroke", "ctrl-c"],
-      "cmd-t": "workspace::NewTerminal"
-    }
-  },
-  {
-    "context": "Dock || Workspace || Editor || Pane || Terminal",
-    "bindings": {
-      "ctrl-h": "workspace::ActivatePaneLeft",
-      "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown",
-      "alt-l": "workspace::ToggleBottomDock",
-      "alt-j": "editor::MoveLineDown",
-      "alt-k": "editor::MoveLineUp",
-      "alt-g": "workspace::ToggleLeftDock",
-      "alt-o": "workspace::NewCenterTerminal",
-      "alt-h": "workspace::ToggleRightDock",
-      "alt-t": "file_finder::Toggle",
-      "alt-w": "pane::CloseActiveItem",
-      "alt-shift-t": "pane::ReopenClosedItem",
-      "alt-tab": "tab_switcher::Toggle",
-      "alt-a": "editor::Format",
-      "alt-d": "diagnostics::Deploy",
-      "cmd-shift-k": "editor::Hover",
-      "alt-i": "editor::AcceptEditPrediction"
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "alt-1": [
-        "pane::ActivateItem",
-        0
-      ]
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-1": null
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "alt-2": [
-        "pane::ActivateItem",
-        1
-      ]
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "alt-3": [
-        "pane::ActivateItem",
-        2
-      ]
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "alt-4": [
-        "pane::ActivateItem",
-        3
-      ]
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-5": [
-        "pane::ActivateItem",
-        4
-      ]
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "alt-6": [
-        "pane::ActivateItem",
-        5
-      ]
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "alt-7": [
-        "pane::ActivateItem",
-        6
-      ]
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "alt-8": [
-        "pane::ActivateItem",
-        7
-      ]
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "alt-9": [
-        "pane::ActivateItem",
-        8
-      ]
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-2": null
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-3": null
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-4": null
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-6": null
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-7": null
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-9": null
-    }
-  },
-  {
-    "context": "Pane",
-    "bindings": {
-      "ctrl-8": null
-    }
-  }
 ]
