@@ -257,6 +257,7 @@
     "bindings": {
       // Close tab (Alt-Shift-w)
       "alt-shift-w": "pane::CloseActiveItem",
+      "f1": "command_palette::Toggle",
     },
   },
 

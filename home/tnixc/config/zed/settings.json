@@ -1,33 +1,33 @@
 {
   // The name of the Zed theme to use for the UI
+  "colorize_brackets": true,
+  "show_edit_predictions": false,
   "ssh_connections": [
     {
       "host": "cs",
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/u3/e37lau"
-          ]
-        }
-      ]
-    }
+          "paths": ["/u3/e37lau"],
+        },
+      ],
+    },
   ],
   "active_pane_modifiers": {
-    "border_size": 5.0
+    "border_size": 5.0,
   },
   "context_servers": {
     "mcp-server-context7": {
       "enabled": false,
-      "settings": {}
+      "settings": {},
     },
     "mcp-server-exa-search": {
       "enabled": false,
-      "settings": {}
-    }
+      "settings": {},
+    },
   },
   "icon_theme": "Clean VSCode Icon Theme",
-  "theme": "Oxocarbon Light (IBM Carbon)",
+  "theme": "Monospace dark",
   // The name of a base set of key bindings to use.
   // This setting can take four values, each named after another
   // text editor:
@@ -43,7 +43,7 @@
   // The OpenType features to enable for text in the editor.
   "buffer_font_features": {
     // Disable ligatures:
-    "calt": false
+    "calt": false,
   },
   // The default font size for text in the editor
   "buffer_font_size": 15,
@@ -59,11 +59,11 @@
   //         },
   "buffer_line_height": "comfortable",
   // The name of a font to use for rendering text in the UI
-  "ui_font_family": "Maple Mono NF",
+  "ui_font_family": "Lilex",
   // The OpenType features to enable for text in the UI
   "ui_font_features": {
     // Disable ligatures:
-    "calt": false
+    "calt": false,
   },
   // The default font size for text in the UI
   "ui_font_size": 17,
@@ -112,7 +112,7 @@
   // Settings related to calls in Zed
   "calls": {
     // Join calls with the microphone muted by default
-    "mute_on_join": true
+    "mute_on_join": true,
   },
   // Scrollbar related settings
   "scrollbar": {
@@ -130,7 +130,7 @@
     //    "never"
     "show": "auto",
     // Whether to show git diff indicators in the scrollbar.
-    "git_diff": true
+    "git_diff": true,
   },
   "relative_line_numbers": "enabled",
   // When to populate a new search's query based on the text under the cursor.
@@ -151,10 +151,12 @@
     "show_type_hints": true,
     "show_parameter_hints": true,
     // Corresponds to null/None LSP hint type value.
-    "show_other_hints": true
+    "show_other_hints": true,
   },
   "project_panel": {
     // Default width of the project panel.
+    "bold_folder_labels": false,
+    "auto_fold_dirs": false,
     "default_width": 240,
     // Where to dock project panel. Can be 'left' or 'right'.
     "dock": "right",
@@ -165,7 +167,7 @@
     // Whether to show the git status in the project panel.
     "git_status": true,
     // Amount of indentation for nested items.
-    "indent_size": 20
+    "indent_size": 20,
   },
   "collaboration_panel": {
     // Whether to show the collaboration panel button in the status bar.
@@ -173,7 +175,7 @@
     // Where to dock channels panel. Can be 'left' or 'right'.
     "dock": "left",
     // Default width of the channels panel.
-    "default_width": 240
+    "default_width": 240,
   },
   "chat_panel": {
     // Whether to show the collaboration panel button in the status bar.
@@ -181,7 +183,7 @@
     // Where to dock channels panel. Can be 'left' or 'right'.
     "dock": "right",
     // Default width of the channels panel.
-    "default_width": 240
+    "default_width": 240,
   },
   "notification_panel": {
     // Whether to show the collaboration panel button in the status bar.
@@ -189,15 +191,15 @@
     // Where to dock channels panel. Can be 'left' or 'right'.
     "dock": "right",
     // Default width of the channels panel.
-    "default_width": 380
+    "default_width": 380,
   },
   "agent": {
     "always_allow_tool_actions": true,
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gemini-3-pro-preview"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-latest",
     },
-    "model_parameters": []
+    "model_parameters": [],
   },
   // Whether the screen sharing icon is shown in the os status bar.
   "show_call_status_icon": true,
@@ -216,8 +218,8 @@
   //     "autosave": { "after_delay": {"milliseconds": 500} },
   "autosave": {
     "after_delay": {
-      "milliseconds": 500
-    }
+      "milliseconds": 500,
+    },
   },
   // Settings related to the editor's tabs
   "tabs": {
@@ -226,7 +228,7 @@
     // Position of the close button on the editor tabs.
     "close_position": "right",
     "file_icons": true,
-    "show_diagnostics": "all"
+    "show_diagnostics": "all",
   },
   // Whether or not to remove any trailing whitespace from lines of a buffer
   // before saving it.
@@ -278,7 +280,7 @@
     // Send debug info like crash reports.
     "diagnostics": true,
     // Send anonymized usage data like what languages you're using Zed with.
-    "metrics": true
+    "metrics": true,
   },
   // Automatically update Zed
   "auto_update": true,
@@ -291,8 +293,8 @@
       "update_debounce_ms": 50,
       "padding": 4,
       "min_column": 0,
-      "max_severity": null
-    }
+      "max_severity": null,
+    },
   },
   // Add files or globs of files that will be excluded by Zed entirely:
   // they will be skipped during FS scan(s), file tree and file search
@@ -305,12 +307,12 @@
     //      "git_gutter": "tracked_files"
     // 2. Hide the gutter
     //      "git_gutter": "hide"
-    "git_gutter": "tracked_files"
+    "git_gutter": "tracked_files",
   },
   "copilot": {
     // The set of glob patterns for which copilot should be disabled
     // in any matching file.
-    "disabled_globs": [".env"]
+    "disabled_globs": [".env"],
   },
   // Settings specific to journaling
   "journal": {
@@ -320,7 +322,7 @@
     // May take 2 values:
     // 1. hour12
     // 2. hour24
-    "hour_format": "hour24"
+    "hour_format": "hour24",
   },
   // Settings specific to the terminal
   "terminal": {
@@ -329,7 +331,7 @@
     //      "shell": "system"
     // 2. A program:
     "shell": {
-      "program": "fish"
+      "program": "fish",
     },
     // 3. A program with arguments:
     //     "shell": {
@@ -421,19 +423,19 @@
         // in your project's settings, rather than globally.
         "directories": [".env", "env", ".venv", "venv"],
         // Can also be 'csh', 'fish', and `nushell`
-        "activate_script": "default"
-      }
+        "activate_script": "default",
+      },
     },
     // Set the terminal's font size. If this option is not included,
     // the terminal will default to matching the buffer's font size.
     // "font_size": "15",
     // Set the terminal's font family. If this option is not included,
     // the terminal will default to matching the buffer's font family.
-    "font_family": "BerkeleyMono Nerd Font"
+    "font_family": "BerkeleyMono Nerd Font",
   },
   // Difference settings for semantic_index
   "semantic_index": {
-    "enabled": true
+    "enabled": true,
   },
   // Settings specific to our elixir integration
   "elixir": {
@@ -454,56 +456,54 @@
     //            }
     //          },
     //
-    "lsp": "elixir_ls"
+    "lsp": "elixir_ls",
   },
   // Different settings for specific languages.
   "indent_guides": {
-    "enabled": true
+    "enabled": true,
   },
   "languages": {
     "Python": {
-      "show_edit_predictions": false
+      "show_edit_predictions": false,
     },
     "Rust": {
       "show_edit_predictions": true,
-      "show_copilot_suggestions": true
     },
     "Plain Text": {
-      "soft_wrap": "preferred_line_length"
-    },
-    "Elixir": {
-      "tab_size": 2
+      "soft_wrap": "preferred_line_length",
     },
     "Go": {
       "tab_size": 4,
-      "hard_tabs": true
+      "hard_tabs": true,
     },
     "Markdown": {
-      "soft_wrap": "preferred_line_length"
+      "soft_wrap": "preferred_line_length",
     },
     "JavaScript": {
       "show_edit_predictions": true,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "TypeScript": {
-      "show_copilot_suggestions": true,
-      "tab_size": 2
+      "tab_size": 2,
     },
     "TSX": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "YAML": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "JSON": {
-      "tab_size": 2
-    },
-    "vue": {
-      "tab_size": 2
+      "tab_size": 2,
     },
     "HTML": {
-      "tab_size": 2
-    }
+      "tab_size": 2,
+    },
+    "Swift": {
+      "enable_language_server": true,
+      "language_servers": ["sourcekit-lsp"],
+      "formatter": "language_server",
+      "format_on_save": "on",
+    },
   },
   // Zed's Prettier integration settings.
   // If Prettier is enabled, Zed will use this its Prettier instance for any applicable file, if
@@ -513,7 +513,7 @@
     "trailingComma": "es5",
     "tabWidth": 2,
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
   },
   // LSP Specific settings.
   "lsp": {
@@ -526,6 +526,7 @@
     //         }
     //     }
     // }
+    "sourcekit-lsp": { "binary": { "path": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp" } },
   },
   "vim": {
     // "always": use system clipboard
@@ -533,6 +534,6 @@
     // "on_yank": use system clipboard for yank operations
     "use_system_clipboard": "always",
     // Lets `f` and `t` motions extend across multiple lines
-    "use_multiline_find": true
-  }
+    "use_multiline_find": true,
+  },
 }

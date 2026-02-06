@@ -16,6 +16,8 @@
     brews = [
       "keith/formulae/reminders-cli"
       "brightness"
+      "xcode-build-server"
+      "xcbeautify"
 
       "clang-format"
       "opam"
