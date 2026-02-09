@@ -11,7 +11,7 @@
       + ''
         # Remove default web UI (transmission 4.x uses public_html)
         rm -rf $out/share/transmission/public_html
-        
+
         # Copy custom web UI to public_html
         cp -r ${../../../extra/transmission-web} $out/share/transmission/public_html
       '';
@@ -49,7 +49,7 @@
     lpd-enabled = true;
     pex-enabled = true;
     utp-enabled = true;
-    
+
     start-added-torrents = true;
     trash-original-torrent-files = false;
   });
@@ -75,10 +75,10 @@ in {
   # Create config directory and settings on activation
   system.activationScripts.postActivation.text = lib.mkAfter ''
     echo "Setting up transmission-daemon configuration..."
-    
+
     # Create config directory
     sudo -u ${username} mkdir -p /Users/${username}/.config/transmission-daemon
-    
+
     # Copy settings if they don't exist
     if [ ! -f /Users/${username}/.config/transmission-daemon/settings.json ]; then
       sudo -u ${username} cp ${settingsFile} /Users/${username}/.config/transmission-daemon/settings.json
@@ -86,7 +86,7 @@ in {
     else
       echo "Transmission settings already exist, skipping..."
     fi
-    
+
     # Create download directories
     sudo -u ${username} mkdir -p /Users/${username}/Downloads/.incomplete
   '';

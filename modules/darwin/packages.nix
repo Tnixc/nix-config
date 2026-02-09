@@ -114,7 +114,6 @@
     vesktop
     obsidian
 
-
     # Containerization
     ollama
     docker
