@@ -5,5 +5,6 @@
     ./skhd.nix
     ./yabai.nix
     ./zathura.nix
+    ./paneru.nix
   ];
 }

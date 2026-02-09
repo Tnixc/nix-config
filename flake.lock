@@ -180,6 +180,26 @@
         "type": "github"
       }
     },
+    "paneru": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-darwin"
+        ]
+      },
+      "locked": {
+        "lastModified": 1770467589,
+        "narHash": "sha256-VyKzfnXfnIkyjbg1RQTDaIbMdPQjNBD5dxVL6OZQf2U=",
+        "owner": "karinushka",
+        "repo": "paneru",
+        "rev": "66c94493cc99ee7715b4beb1e5cf455ada60213a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "karinushka",
+        "repo": "paneru",
+        "type": "github"
+      }
+    },
     "promise-lua": {
       "flake": false,
       "locked": {
@@ -219,6 +239,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nixpkgs-darwin": "nixpkgs-darwin",
+        "paneru": "paneru",
         "pwaerospace": "pwaerospace",
         "rust-overlay": "rust-overlay",
         "sketchybar-config": "sketchybar-config"

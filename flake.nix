@@ -46,6 +46,10 @@
       flake = true;
     };
     darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
+    paneru = {
+      url = "github:karinushka/paneru";
+      inputs.nixpkgs.follows = "nixpkgs-darwin";
+    };
     fs-icon = {
       url = "path:/Users/tnixc/Developer/fs-icon";
       flake = true;
