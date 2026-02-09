@@ -46,6 +46,7 @@
       "zed"
       "loop"
       "tailscale"
+      "vesktop"
 
       "orion"
       "parsec"

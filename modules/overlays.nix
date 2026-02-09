@@ -11,5 +11,12 @@
         doCheck = false;
       });
     })
+    # fmt tests fail to compile with newer clang
+    (final: prev: {
+      fmt_9 = prev.fmt_9.overrideAttrs (oldAttrs: {
+        cmakeFlags = (oldAttrs.cmakeFlags or []) ++ ["-DFMT_TEST=OFF"];
+        doCheck = false;
+      });
+    })
   ];
 }

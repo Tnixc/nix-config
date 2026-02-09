@@ -5,17 +5,7 @@
   username,
   ...
 }: let
-  transmissionCustom = pkgs.transmission_4.overrideAttrs (old: {
-    postInstall =
-      (old.postInstall or "")
-      + ''
-        # Remove default web UI (transmission 4.x uses public_html)
-        rm -rf $out/share/transmission/public_html
-
-        # Copy custom web UI to public_html
-        cp -r ${../../../extra/transmission-web} $out/share/transmission/public_html
-      '';
-  });
+  customWebUI = ../../../extra/transmission-web;
 
   settingsFile = pkgs.writeText "settings.json" (builtins.toJSON {
     # Download settings
@@ -54,15 +44,17 @@
     trash-original-torrent-files = false;
   });
 in {
-  environment.systemPackages = [transmissionCustom];
+  environment.systemPackages = [pkgs.transmission_4];
 
   launchd.daemons.transmission = {
     serviceConfig = {
       ProgramArguments = [
-        "${transmissionCustom}/bin/transmission-daemon"
+        "${pkgs.transmission_4}/bin/transmission-daemon"
         "--foreground"
         "--config-dir"
         "/Users/${username}/.config/transmission-daemon"
+        "--web-dir"
+        "${customWebUI}"
       ];
       KeepAlive = false; # Don't auto-restart
       RunAtLoad = false; # Don't start at boot

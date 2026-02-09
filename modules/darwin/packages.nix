@@ -111,7 +111,7 @@
     # Apps
     shottr
     ice-bar
-    vesktop
+    # vesktop  # fails to build on macOS (codesign not available in sandbox)
     obsidian
 
     # Containerization
