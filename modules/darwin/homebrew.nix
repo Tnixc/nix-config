@@ -47,6 +47,7 @@
       "loop"
       "tailscale"
       "vesktop"
+      "claude-code"
 
       "orion"
       "parsec"
