@@ -48,6 +48,7 @@
       "tailscale"
       "vesktop"
       "claude-code"
+      # "hammerspoon"
 
       "orion"
       "parsec"
