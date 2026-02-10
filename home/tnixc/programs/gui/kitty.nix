@@ -22,7 +22,7 @@ in {
       inactive_tab_font_style = "normal";
       active_tab_font_style = "bold";
 
-      tab_bar_edge = "bottom";
+      tab_bar_edge = "top";
       tab_bar_align = "left";
       tab_bar_style = "powerline";
       tab_powerline_style = "slanted";
@@ -33,8 +33,8 @@ in {
 
       tab_title_template = "{fmt.bold}{tab.active_exe.replace('-zsh', 'zsh').replace('starship', 'zsh')}{fmt.nobold} {(lambda wd: wd[:5] + '...' + wd[-21:] if len(wd) > 30 else wd)(tab.active_wd.replace('${config.home.homeDirectory}/Developer', '~/ ').replace('${config.home.homeDirectory}', '~'))}";
 
-      window_padding_width = 2;
-      window_padding_height = 0;
+      window_padding_width = 12;
+      window_padding_height = 12;
 
       hide_window_decorations = "titlebar-only";
 

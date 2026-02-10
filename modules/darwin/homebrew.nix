@@ -48,9 +48,8 @@
       "tailscale"
       "vesktop"
       "claude-code"
-      # "hammerspoon"
+      "hammerspoon"
 
-      "orion"
       "parsec"
       "steam"
       "motrix"
