@@ -50,7 +50,6 @@ in {
 
       allow_remote_control = true;
 
-      # edo theme colors
       foreground = c.text;
       background = c.base;
       selection_foreground = "none";
@@ -133,7 +132,7 @@ in {
       modify_font underline_thickness 100%
       modify_font underline_position 3
       modify_font baseline 0.5
-      modify_font cell_height 152%
+      modify_font cell_height 172%
 
       mouse_map cmd+click open_url
     '';
