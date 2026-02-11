@@ -9,7 +9,7 @@
     # Equivalent to what you would put into `~/.paneru` (See Configuration options below).
     settings = {
       options = {
-        preset_column_widths = [ 0.2 0.5 0.75 1];
+        preset_column_widths = [0.2 0.5 0.75 1];
         continuous_swipe = true;
         swipe_gesture_fingers = 3;
         animation_speed = 30;
