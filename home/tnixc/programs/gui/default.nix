@@ -2,7 +2,7 @@
   imports = [
     ./ghostty.nix
     ./hammerspoon
-    ./kitty.nix
+    ./kitty
     ./skhd.nix
     ./yabai.nix
     ./zathura.nix

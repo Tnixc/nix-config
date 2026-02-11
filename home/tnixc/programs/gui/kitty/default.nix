@@ -5,6 +5,8 @@
 }: let
   c = theme.colors;
 in {
+  xdg.configFile."kitty/tab_bar.py".source = ./tab_bar.py;
+
   programs.kitty = {
     enable = true;
 
@@ -24,14 +26,13 @@ in {
 
       tab_bar_edge = "top";
       tab_bar_align = "left";
-      tab_bar_style = "powerline";
-      tab_powerline_style = "slanted";
+      tab_bar_style = "custom";
       tab_bar_min_tabs = 2;
       tab_activity_symbol = "none";
       tab_separator = "\"\"";
       bell_on_tab = false;
 
-      tab_title_template = "{fmt.bold}{tab.active_exe.replace('-zsh', 'zsh').replace('starship', 'zsh')}{fmt.nobold} {(lambda wd: wd[:5] + '...' + wd[-21:] if len(wd) > 30 else wd)(tab.active_wd.replace('${config.home.homeDirectory}/Developer', '~/ ').replace('${config.home.homeDirectory}', '~'))}";
+      tab_title_template = "{fmt.bold}{tab.active_exe.replace('-zsh', 'zsh').replace('starship', 'zsh')}{fmt.nobold} {(lambda wd: wd[:5] + '...' + wd[-21:] if len(wd) > 30 else wd)(tab.active_wd.replace('${config.home.homeDirectory}/Developer', '~/􀙅 ').replace('${config.home.homeDirectory}', '~'))}";
 
       window_padding_width = 12;
       window_padding_height = 12;
