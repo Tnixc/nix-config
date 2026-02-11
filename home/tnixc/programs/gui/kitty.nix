@@ -40,7 +40,6 @@ in {
 
       cursor_shape = "underline";
 
-      editor = "/opt/homebrew/bin/nvim";
       shell = "/etc/profiles/per-user/${config.home.username}/bin/fish";
 
       macos_option_as_alt = true;
