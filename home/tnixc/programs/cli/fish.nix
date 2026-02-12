@@ -6,6 +6,9 @@ in {
     enable = true;
 
     interactiveShellInit = ''
+
+      fish_vi_key_bindings
+
       eval $(opam env)
 
       # Color Palette from theme.nix
