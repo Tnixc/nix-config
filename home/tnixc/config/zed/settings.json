@@ -20,7 +20,7 @@
     "border_size": 5.0,
   },
   "context_servers": {},
-  "icon_theme": "Soft Charmed Icons",
+  "icon_theme": "Monospace Icon Theme - Dark",
   "theme": "Monospace dark",
   // The name of a base set of key bindings to use.
   // This setting can take four values, each named after another
@@ -285,16 +285,7 @@
   // Add files or globs of files that will be excluded by Zed entirely:
   // they will be skipped during FS scan(s), file tree and file search
   // will lack the corresponding file entries.
-  "file_scan_exclusions": [
-    "**/.git",
-    "**/.svn",
-    "**/.hg",
-    "**/CVS",
-    "**/.DS_Store",
-    "**/Thumbs.db",
-    "**/.classpath",
-    "**/.settings",
-  ],
+  "file_scan_exclusions": ["**/.git", "**/.svn", "**/.hg", "**/CVS", "**/.DS_Store", "**/Thumbs.db", "**/.classpath", "**/.settings"],
   // Git gutter behavior configuration.
   "git": {
     // Control whether the git gutter is shown. May take 2 values:
@@ -429,7 +420,7 @@
   // Different settings for specific languages.
   "languages": {
     "C": {
-      "show_edit_predictions": false
+      "show_edit_predictions": false,
     },
     "Python": {
       "show_edit_predictions": false,

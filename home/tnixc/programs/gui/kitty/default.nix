@@ -34,8 +34,8 @@ in {
 
       tab_title_template = "{fmt.bold}{tab.active_exe.replace('-zsh', 'zsh').replace('starship', 'zsh')}{fmt.nobold} {(lambda wd: wd[:5] + '...' + wd[-21:] if len(wd) > 30 else wd)(tab.active_wd.replace('${config.home.homeDirectory}/Developer', '~/􀙅 ').replace('${config.home.homeDirectory}', '~'))}";
 
-      window_padding_width = 12;
-      window_padding_height = 12;
+      window_padding_width = 4;
+      window_padding_height = 4;
 
       hide_window_decorations = "titlebar-only";
 
@@ -67,11 +67,11 @@ in {
       wayland_titlebar_color = "system";
       macos_titlebar_color = "system";
 
-      active_tab_foreground = c.crust;
-      active_tab_background = c.blue;
-      inactive_tab_foreground = c.text;
-      inactive_tab_background = c.base;
-      tab_bar_background = c.crust;
+      active_tab_foreground = c.text;
+      active_tab_background = c.base;
+      inactive_tab_foreground = c.subtext0;
+      inactive_tab_background = c.crust;
+      tab_bar_background = c.base;
 
       background_opacity = "0.95";
       background_blur = 24;
