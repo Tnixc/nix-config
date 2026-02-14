@@ -50,9 +50,10 @@ in {
       # Disable greeting
       set -g fish_greeting
 
-      # Key bindings
-      bind \eh backward-word
-      bind \el forward-word
+      # Key bindings (must specify -M insert for vi mode)
+      bind -M insert \eh backward-word
+      bind -M insert \el forward-word
+      bind -M insert \e\x7f backward-kill-word
     '';
   };
 }
