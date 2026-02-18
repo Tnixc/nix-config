@@ -8,5 +8,10 @@
     "prefix": "N?",
     "body": ["assert(${1:ptr} != NULL);\n$0"],
     "description": "Assert is not NULL"
+  },
+  "For loop": {
+    "prefix": "F?",
+    "body": ["for (int i = 0; i < ${1:len}; ++i){\n$0}"],
+    "description": "For loop"
   }
 }
