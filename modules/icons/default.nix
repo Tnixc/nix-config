@@ -1,4 +1,4 @@
-{...}: {
+{username, ...}: {
   # App icons (darwin-custom-icons)
   environment.customIcons = {
     enable = true;
@@ -7,6 +7,10 @@
         path = "/Applications/Cloudflare WARP.app";
         icon = ./cf_warp.icns;
       }
+      # {
+      #   path = "/Users/${username}/Applications/Home Manager Apps/kitty.app";
+      #   icon = ./kitty.icns;
+      # }
     ];
   };
 
