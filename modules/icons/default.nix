@@ -1,8 +1,12 @@
 {...}: {
   # App icons (darwin-custom-icons)
   environment.customIcons = {
-    enable = false;
+    enable = true;
     icons = [
+      {
+        path = "/Applications/Cloudflare WARP.app";
+        icon = ./cf_warp.icns;
+      }
     ];
   };
 

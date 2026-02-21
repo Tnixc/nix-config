@@ -31,7 +31,6 @@ in {
 
       # macOS specific
       macos-option-as-alt = true;
-      macos-icon = "holographic";
       macos-titlebar-style = "tabs";
 
       # Colors (edo theme)
