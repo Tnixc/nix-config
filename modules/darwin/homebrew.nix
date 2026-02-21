@@ -45,10 +45,10 @@
       "alt-tab"
       "zed"
       "loop"
-      "tailscale"
       "vesktop"
       "claude-code"
       "hammerspoon"
+      "cloudflare-warp"
 
       "parsec"
       "steam"

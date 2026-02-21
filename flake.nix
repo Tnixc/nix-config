@@ -55,7 +55,6 @@
       flake = true;
     };
     rust-overlay.url = "github:oxalica/rust-overlay";
-    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -73,7 +72,6 @@
     darwin-custom-icons,
     fs-icon,
     rust-overlay,
-    mac-app-util,
     ...
   }: let
     username = "tnixc";
@@ -103,16 +101,12 @@
         fs-icon.darwinModules.default
         ./modules/icons
 
-        mac-app-util.darwinModules.default
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.backupFileExtension = "backup";
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = specialArgs;
-          home-manager.sharedModules = [
-            mac-app-util.homeManagerModules.default
-          ];
           home-manager.users.${username} = import ./home/tnixc;
         }
       ];
