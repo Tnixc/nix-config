@@ -7,6 +7,10 @@
         path = "/Applications/Cloudflare WARP.app";
         icon = ./cf_warp.icns;
       }
+      {
+        path = "/System/Volumes/Data/Applications/AltTab.app";
+        icon = ./alttab.icns;
+      }
       # {
       #   path = "/Users/${username}/Applications/Home Manager Apps/kitty.app";
       #   icon = ./kitty.icns;
