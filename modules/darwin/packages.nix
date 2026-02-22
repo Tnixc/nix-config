@@ -23,6 +23,7 @@
     bat
     eza
     ripgrep
+    sd
     fd
     tldr
     jq
