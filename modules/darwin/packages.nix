@@ -46,7 +46,6 @@
     charm-freeze
 
     # Code Editors & IDEs
-    helix
     neovim
     vscode
     code-cursor
