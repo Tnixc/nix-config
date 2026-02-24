@@ -12,7 +12,7 @@
 
     # CLI & Shell
     fish
-    # kitty
+    kitty
     starship
     zoxide
     fzf
