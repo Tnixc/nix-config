@@ -43,7 +43,7 @@
     lazygit
     gh
     coreutils
-    charm-freeze
+    # charm-freeze
 
     # Code Editors & IDEs
     neovim
@@ -55,14 +55,14 @@
     meson
     ninja
     just
-    act
+    # act
 
     # Languages & Package Managers
     python3
     lua
-    elixir
+    # elixir
     go
-    gleam
+    # gleam
     micropython
     (rust-bin.nightly."2025-11-05".default.override {
       extensions = ["rust-src"];
@@ -76,32 +76,32 @@
     nrr
     pnpm
     yarn
-    conan
+    # conan
 
     # WebAssembly
-    wasmer
-    wasmtime
+    # wasmer
+    # wasmtime
 
     # Graphics & Multimedia Libraries
-    glfw
-    glm
-    glslang
-    raylib
-    SDL2
+    # glfw
+    # glm
+    # glslang
+    # raylib
+    # SDL2
     libavif
     libsoundio
-    spirv-tools
+    # spirv-tools
 
     # Media Tools
     ffmpeg
-    yt-dlp
+    # yt-dlp
     iina
 
     # Code Quality & Formatting
     swiftformat
     stylua
     topiary
-    ast-grep
+    # ast-grep
 
     # Development Tools - macOS
     xcodegen
