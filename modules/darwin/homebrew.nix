@@ -66,6 +66,7 @@
 
       "font-sf-mono"
       "font-sf-pro"
+      "font-maple-mono-nf"
     ];
   };
 }

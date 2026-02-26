@@ -130,6 +130,6 @@
     nmap
 
     # Fonts
-    maple-mono.NF
+    # maple-mono.NF (doesnt work)
   ];
 }
