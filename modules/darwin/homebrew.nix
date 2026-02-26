@@ -18,6 +18,8 @@
       "brightness"
       "xcode-build-server"
       "xcbeautify"
+      "cliclick"
+      "yt-dlp"
 
       "clang-format"
       "opam"
@@ -61,6 +63,7 @@
       "craft"
       "google-chrome"
       "rstudio"
+      "microsoft-teams"
 
       "sf-symbols"
 
