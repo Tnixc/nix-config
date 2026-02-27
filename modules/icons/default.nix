@@ -18,8 +18,6 @@
     ];
   };
 
-
-
   # File extension icons (fs-icon)
   # environment.fileExtensionIcons = {
   #   enable = true;

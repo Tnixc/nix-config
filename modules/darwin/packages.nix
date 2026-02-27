@@ -10,6 +10,8 @@
     pwaerospace.packages.aarch64-darwin.aerospace-standalone
     sketchybar-config.packages.aarch64-darwin.sketchybar-standalone
 
+    typst
+
     # CLI & Shell
     fish
     kitty
