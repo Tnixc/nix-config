@@ -1,5 +1,8 @@
 wm = hs.loadSpoon("PaperWM")
 
+wm.swipe_fingers = 4
+wm.swipe_gain = 2.0
+
 wm:bindHotkeys({
     -- switch to a new focused window in tiled grid
     focus_left = { { "alt", "cmd", "ctrl" }, "h" },
