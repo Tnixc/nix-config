@@ -45,6 +45,8 @@
     lazygit
     gh
     coreutils
+    jujutsu
+    lazyjj
     # charm-freeze
 
     # Code Editors & IDEs
