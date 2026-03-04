@@ -1,12 +1,14 @@
 {
   username,
+  system,
+  configRepoName,
   lib,
   pwaerospace,
   sketchybar-config,
   config,
   ...
 }: let
-  config-dir = "${config.home.homeDirectory}/nix-config/home/tnixc/config";
+  config-dir = "${config.home.homeDirectory}/${configRepoName}/home/${username}/config";
   mkLink = config.lib.file.mkOutOfStoreSymlink;
 in {
   imports = [
@@ -24,7 +26,7 @@ in {
     enable = false;
     config = {
       ProgramArguments = [
-        "${lib.getExe pwaerospace.packages.aarch64-darwin.aerospace-standalone}"
+        "${lib.getExe pwaerospace.packages.${system}.aerospace-standalone}"
       ];
       RunAtLoad = false;
       KeepAlive = false;
@@ -37,7 +39,7 @@ in {
     enable = false;
     config = {
       ProgramArguments = [
-        "${lib.getExe sketchybar-config.packages.aarch64-darwin.sketchybar-standalone}"
+        "${lib.getExe sketchybar-config.packages.${system}.sketchybar-standalone}"
       ];
       RunAtLoad = false;
       KeepAlive = false;

@@ -1,4 +1,4 @@
-{theme, ...}: let
+{theme, gpgKey, ...}: let
   c = theme.colors;
   d = theme.diff;
 in {
@@ -12,6 +12,7 @@ in {
       signing = {
         backend = "gpg";
         sign-all = true;
+        key = gpgKey;
       };
 
       # core.fsmonitor = "watchman";

@@ -1,4 +1,4 @@
-{theme, ...}: let
+{theme, gpgKey, ...}: let
   c = theme.colors;
   d = theme.diff;
 in {
@@ -14,6 +14,7 @@ in {
     settings = {
       user.name = "Tnixc";
       user.email = "tnixxc@gmail.com";
+      user.signingkey = gpgKey;
 
       commit.gpgsign = true;
       core.pager = "delta --dark";

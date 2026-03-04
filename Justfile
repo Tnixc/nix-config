@@ -1,9 +1,9 @@
 deploy:
-    nom build .#darwinConfigurations.End.system
+    nom build ".#darwinConfigurations.$(hostname -s).system"
     sudo ./result/activate
 
 build:
-    nom build .#darwinConfigurations.End.system
+    nom build ".#darwinConfigurations.$(hostname -s).system"
 
 fmt:
     nix fmt .

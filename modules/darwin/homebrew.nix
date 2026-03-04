@@ -56,7 +56,6 @@
       "steam"
       "motrix"
       "nordvpn"
-      "texshop"
       "leader-key"
       "linearmouse"
       "reminders-menubar"

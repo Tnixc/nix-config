@@ -10,12 +10,15 @@ in {
 
   # Shared PATH additions (applies to all shells)
   home.sessionPath = [
+    "$HOME/.nix-profile/bin"
+    "/etc/profiles/per-user/$USER/bin"
+    "/run/current-system/sw/bin"
+    "/nix/var/nix/profiles/default/bin"
     "$HOME/.bun/bin"
     "$HOME/.cargo/bin"
     "$HOME/.local/bin"
     "/opt/homebrew/bin"
     "/usr/local/bin"
-    "/usr/local/texlive/2025/bin/universal-darwin"
   ];
 
   # Shared shell aliases (works for all shells)

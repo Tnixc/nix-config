@@ -53,10 +53,6 @@
       url = "github:karinushka/paneru/testing";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
-    fs-icon = {
-      url = "path:/Users/tnixc/Developer/fs-icon";
-      flake = true;
-    };
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
@@ -73,15 +69,15 @@
     pwaerospace, # aerospace, sketchybar, borders
     sketchybar-config,
     darwin-custom-icons,
-    fs-icon,
     rust-overlay,
     ...
   }: let
     username = "tnixc";
     system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
     hostname = "End";
+    configRepoName = "nix-config";
+    gpgKey = "6AB7F7CC83CEC7A6";
 
-    # Import theme and utils once at flake level
     inherit (inputs.nixpkgs-darwin) lib;
     theme = import ./lib/theme.nix {inherit lib;};
     colorMix = import ./modules/utils/colors-mix.nix;
@@ -89,7 +85,7 @@
     specialArgs =
       inputs
       // {
-        inherit username hostname system theme colorMix;
+        inherit username hostname system theme colorMix configRepoName gpgKey;
       };
   in {
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
@@ -101,7 +97,6 @@
         ./modules/overlays.nix
 
         darwin-custom-icons.darwinModules.default
-        fs-icon.darwinModules.default
         ./modules/icons
 
         home-manager.darwinModules.home-manager

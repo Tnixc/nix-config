@@ -1,5 +1,6 @@
 {
   pkgs,
+  system,
   pwaerospace,
   sketchybar-config,
   ...
@@ -7,8 +8,8 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    pwaerospace.packages.aarch64-darwin.aerospace-standalone
-    sketchybar-config.packages.aarch64-darwin.sketchybar-standalone
+    pwaerospace.packages.${system}.aerospace-standalone
+    sketchybar-config.packages.${system}.sketchybar-standalone
 
     typst
 
@@ -122,9 +123,6 @@
     ollama
     docker
     colima
-
-    # Security & Crypto
-    gnupg
 
     # Compression & Archives
     xz
