@@ -56,12 +56,10 @@
       "steam"
       "motrix"
       "nordvpn"
-      "leader-key"
       "linearmouse"
       "reminders-menubar"
       "craft"
       "google-chrome"
-      "rstudio"
       "microsoft-teams"
 
       "sf-symbols"
