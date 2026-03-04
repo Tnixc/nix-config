@@ -11,10 +11,6 @@
         path = "/System/Volumes/Data/Applications/AltTab.app";
         icon = ./alttab.icns;
       }
-      {
-        path = "/Applications/Nix Apps/kitty.app";
-        icon = ./kitty.png;
-      }
     ];
   };
 }

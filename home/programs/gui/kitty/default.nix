@@ -6,7 +6,7 @@
   c = theme.colors;
 in {
   xdg.configFile."kitty/tab_bar.py".source = ./tab_bar.py;
-  xdg.configFile."kitty/kitty.app.png".source = ../../../../../modules/icons/kitty.png;
+  xdg.configFile."kitty/kitty.app.png".source = ../../../../modules/icons/kitty.png;
 
   xdg.configFile."kitty/kitty.conf".text = ''
     font_family BerkeleyMono Nerd Font

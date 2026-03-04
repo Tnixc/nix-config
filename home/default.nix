@@ -7,8 +7,9 @@
   sketchybar-config,
   config,
   ...
-}: let
-  config-dir = "${config.home.homeDirectory}/${configRepoName}/home/${username}/config";
+}
+: let
+  config-dir = "${config.home.homeDirectory}/${configRepoName}/home/config";
   mkLink = config.lib.file.mkOutOfStoreSymlink;
 in {
   imports = [

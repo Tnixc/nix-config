@@ -211,11 +211,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "path": "./home/tnixc/programs/gui/aerospace",
+        "path": "./home/programs/gui/aerospace",
         "type": "path"
       },
       "original": {
-        "path": "./home/tnixc/programs/gui/aerospace",
+        "path": "./home/programs/gui/aerospace",
         "type": "path"
       },
       "parent": []
@@ -275,11 +275,11 @@
         "sbarlua": "sbarlua"
       },
       "locked": {
-        "path": "./home/tnixc/programs/gui/sketchybar",
+        "path": "./home/programs/gui/sketchybar",
         "type": "path"
       },
       "original": {
-        "path": "./home/tnixc/programs/gui/sketchybar",
+        "path": "./home/programs/gui/sketchybar",
         "type": "path"
       },
       "parent": []

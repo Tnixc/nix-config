@@ -41,11 +41,11 @@
     };
 
     pwaerospace = {
-      url = "path:./home/tnixc/programs/gui/aerospace";
+      url = "path:./home/programs/gui/aerospace";
       flake = true;
     };
     sketchybar-config = {
-      url = "path:./home/tnixc/programs/gui/sketchybar";
+      url = "path:./home/programs/gui/sketchybar";
       flake = true;
     };
     darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
@@ -105,7 +105,7 @@
           home-manager.backupFileExtension = "backup";
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = specialArgs;
-          home-manager.users.${username} = import ./home/tnixc;
+          home-manager.users.${username} = import ./home;
         }
       ];
     };
