@@ -1,4 +1,8 @@
-{theme, gpgKey, ...}: let
+{
+  theme,
+  gpgKey,
+  ...
+}: let
   c = theme.colors;
   d = theme.diff;
 in {

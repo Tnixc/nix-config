@@ -77,6 +77,7 @@ return {
                 java = { "google-java-format", stop_after_first = true },
                 ocaml = { "ocamlformat", stop_after_first = true },
                 r = { "air", stop_after_first = true },
+                zig = { "zls", stop_after_first = true },
             },
             formatters = {
                 raco_fmt = {

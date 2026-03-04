@@ -180,7 +180,9 @@
     "default_width": 380,
   },
   "agent": {
-    "always_allow_tool_actions": true,
+    "tool_permissions": {
+      "default": "allow"
+    },
     "default_model": {
       "provider": "anthropic",
       "model": "claude-sonnet-4-5-latest",
@@ -412,7 +414,7 @@
     // "font_size": "15",
     // Set the terminal's font family. If this option is not included,
     // the terminal will default to matching the buffer's font family.
-    "font_family": "BerkeleyMono Nerd Font",
+    "font_family": "Maple Mono NF",
   },
   "indent_guides": {
     "enabled": true,
