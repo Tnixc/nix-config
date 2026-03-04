@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ./ghostty.nix
+    # ./ghostty.nix
     ./hammerspoon
     ./kitty
     ./skhd.nix

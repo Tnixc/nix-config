@@ -7,7 +7,7 @@
   strip = theme.rawHexValue;
 in {
   programs.ghostty = {
-    enable = true;
+    enable = false;
     package = pkgs.ghostty-bin;
 
     settings = {
