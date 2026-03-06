@@ -98,8 +98,8 @@ in {
     color5 ${c.pink}
     color13 ${c.pink}
 
-    color6 ${c.teal}
-    color14 ${c.teal}
+    color6 ${c.sapphire}
+    color14 ${c.sapphire}
 
     color7 ${c.subtext1}
     color15 ${c.subtext0}

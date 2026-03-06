@@ -1,12 +1,14 @@
+COLORS = require("theme.colors")
+
 require("catppuccin").setup({
-    transparent_background = true,
+    transparent_background = false,
     float = {
         transparent = false,
         solid = true,
     },
-    auto_integrations = true,
+    auto_integrations = false,
     color_overrides = {
-        macchiato = require("theme.colors"),
+        all = COLORS,
     },
     custom_highlights = function(colors)
         return {

@@ -4,7 +4,7 @@
 -- Color table for highlights
 -- stylua: ignore
 
-local colors = require("catppuccin.palettes").get_palette("macchiato")
+local colors = require("theme.colors")
 local mode_color = {
     n = colors.yellow,
     i = colors.green,
