@@ -3,6 +3,7 @@
   system,
   configRepoName,
   lib,
+  theme,
   pwaerospace,
   sketchybar-config,
   config,
@@ -21,6 +22,36 @@ in {
     ".config/nvim" = {source = mkLink "${config-dir}/nvim";};
     ".config/karabiner" = {source = mkLink "${config-dir}/karabiner";};
     ".config/zed" = {source = mkLink "${config-dir}/zed";};
+    "${configRepoName}/home/config/nvim/lua/theme/colors.lua".text = ''
+      return {
+          rosewater = "${theme.colors.rosewater}",
+          flamingo = "${theme.colors.flamingo}",
+          pink = "${theme.colors.pink}",
+          mauve = "${theme.colors.mauve}",
+          red = "${theme.colors.red}",
+          maroon = "${theme.colors.maroon}",
+          peach = "${theme.colors.peach}",
+          yellow = "${theme.colors.yellow}",
+          green = "${theme.colors.green}",
+          teal = "${theme.colors.teal}",
+          sky = "${theme.colors.sky}",
+          sapphire = "${theme.colors.sapphire}",
+          blue = "${theme.colors.blue}",
+          lavender = "${theme.colors.lavender}",
+          text = "${theme.colors.text}",
+          subtext1 = "${theme.colors.subtext1}",
+          subtext0 = "${theme.colors.subtext0}",
+          overlay2 = "${theme.colors.overlay2}",
+          overlay1 = "${theme.colors.overlay1}",
+          overlay0 = "${theme.colors.overlay0}",
+          surface2 = "${theme.colors.surface2}",
+          surface1 = "${theme.colors.surface1}",
+          surface0 = "${theme.colors.surface0}",
+          base = "${theme.colors.base}",
+          mantle = "${theme.colors.mantle}",
+          crust = "${theme.colors.crust}",
+      }
+    '';
   };
 
   launchd.agents."aerospace" = {
