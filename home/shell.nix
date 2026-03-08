@@ -5,7 +5,7 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     LLVM_PROFILE_FILE = "/dev/null";
-    TERM = "xterm-256color";
+    TERM = "xterm-kitty";
   };
 
   # Shared PATH additions (applies to all shells)

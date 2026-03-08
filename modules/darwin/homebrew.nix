@@ -29,6 +29,7 @@
       "aria2"
       "R"
       "gemini-cli"
+      "rtk"
 
       "beast"
       "boost"
