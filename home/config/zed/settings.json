@@ -1,5 +1,9 @@
 {
   // The name of the Zed theme to use for the UI
+  "preview_tabs": {
+    "enable_preview_from_project_panel": false,
+    "enabled": false
+  },
   "edit_predictions": {
     "mode": "subtle",
   },
@@ -11,17 +15,29 @@
       "args": [],
       "projects": [
         {
-          "paths": ["/u3/e37lau"],
+          "paths": [
+            "/u3/e37lau"
+          ]
         },
-      ],
-    },
+        {
+          "paths": [
+            "/u3/e37lau/cs136"
+          ]
+        },
+        {
+          "paths": [
+            "/u3/e37lau/cs136l"
+          ]
+        }
+      ]
+    }
   ],
   "active_pane_modifiers": {
     "border_size": 5.0,
   },
   "context_servers": {},
-  "icon_theme": "Monospace Icon Theme - Dark",
-  "theme": "Everforest Dark Hard (regular)",
+  "icon_theme": "Warm Charmed Icons",
+  "theme": "Evergarden Winter (Hybrid)",
   // The name of a base set of key bindings to use.
   // This setting can take four values, each named after another
   // text editor:
