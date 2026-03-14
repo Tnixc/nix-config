@@ -2,7 +2,7 @@
   // The name of the Zed theme to use for the UI
   "preview_tabs": {
     "enable_preview_from_project_panel": false,
-    "enabled": false
+    "enabled": false,
   },
   "edit_predictions": {
     "mode": "subtle",
@@ -15,22 +15,16 @@
       "args": [],
       "projects": [
         {
-          "paths": [
-            "/u3/e37lau"
-          ]
+          "paths": ["/u3/e37lau"],
         },
         {
-          "paths": [
-            "/u3/e37lau/cs136"
-          ]
+          "paths": ["/u3/e37lau/cs136"],
         },
         {
-          "paths": [
-            "/u3/e37lau/cs136l"
-          ]
-        }
-      ]
-    }
+          "paths": ["/u3/e37lau/cs136l"],
+        },
+      ],
+    },
   ],
   "active_pane_modifiers": {
     "border_size": 5.0,
@@ -197,7 +191,7 @@
   },
   "agent": {
     "tool_permissions": {
-      "default": "allow"
+      "default": "allow",
     },
     "default_model": {
       "provider": "anthropic",

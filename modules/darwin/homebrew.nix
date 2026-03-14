@@ -43,6 +43,11 @@
 
     # `brew install --cask`
     casks = [
+      "thebrowsercompany-dia"
+      "arc"
+      "chatgpt-atlas"
+
+      "anki"
       "flashspace"
       "karabiner-elements"
       "alt-tab"

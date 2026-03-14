@@ -7,5 +7,6 @@
     ./yabai.nix
     ./zathura.nix
     ./paneru.nix
+    ./spicetify.nix
   ];
 }

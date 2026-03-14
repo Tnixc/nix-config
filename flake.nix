@@ -40,6 +40,8 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
 
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
     pwaerospace = {
       url = "path:./home/programs/gui/aerospace";
       flake = true;
@@ -70,6 +72,7 @@
     sketchybar-config,
     darwin-custom-icons,
     rust-overlay,
+    spicetify-nix,
     ...
   }: let
     username = "tnixc";
