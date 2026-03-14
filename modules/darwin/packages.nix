@@ -60,6 +60,7 @@
     meson
     ninja
     just
+    watch
     # act
 
     # Languages & Package Managers
