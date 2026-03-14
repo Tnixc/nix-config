@@ -66,7 +66,9 @@
       "reminders-menubar"
       "craft"
       "google-chrome"
+
       "microsoft-teams"
+      "microsoft-word"
 
       "sf-symbols"
 

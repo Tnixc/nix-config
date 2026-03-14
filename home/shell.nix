@@ -6,6 +6,7 @@ in {
     EDITOR = "nvim";
     LLVM_PROFILE_FILE = "/dev/null";
     TERM = "xterm-kitty";
+    MANPAGER = "nvim +Man!";
   };
 
   # Shared PATH additions (applies to all shells)
