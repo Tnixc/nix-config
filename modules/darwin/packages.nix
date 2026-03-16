@@ -53,7 +53,6 @@
     # Code Editors & IDEs
     neovim
     vscode
-    code-cursor
 
     # Build Tools & Task Runners
     cmake

@@ -47,10 +47,7 @@ in {
       homeConfig = true;
       overwriteAssets = true;
       additionalCss = ''
-        :root {
-            --encore-title-font-stack: "Maple Mono NF", "Test Söhne", "Aktiv Grotesk", system-ui, sans-serif !important;
-            --encore-body-font-stack: "Maple Mono NF", "Test Söhne", "Aktiv Grotesk", system-ui, sans-serif !important;
-        }
+        * { font-family: "Maple Mono NF", "Test Söhne", "Aktiv Grotesk", system-ui, sans-serif !important; }
       '';
     };
 
