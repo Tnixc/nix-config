@@ -130,8 +130,5 @@
 
     # Network Tools
     nmap
-
-    # Fonts
-    # maple-mono.NF (doesnt work)
   ];
 }

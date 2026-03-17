@@ -75,6 +75,7 @@
       "font-sf-mono"
       "font-sf-pro"
       "font-maple-mono-nf"
+      "font-maple-mono-normal-nf-cn"
     ];
   };
 }

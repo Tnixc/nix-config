@@ -47,7 +47,7 @@ in {
       homeConfig = true;
       overwriteAssets = true;
       additionalCss = ''
-        * { font-family: "Maple Mono NF", "Test Söhne", "Aktiv Grotesk", system-ui, sans-serif !important; }
+        * { font-family: "Maple Mono Normal NF CN", "Test Söhne", "Aktiv Grotesk", system-ui, sans-serif !important; }
       '';
     };
 
