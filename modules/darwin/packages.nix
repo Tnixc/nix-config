@@ -81,6 +81,7 @@
     nrr
     pnpm
     yarn
+    nixd
     # conan
 
     # WebAssembly
