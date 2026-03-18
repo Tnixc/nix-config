@@ -222,15 +222,14 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-OwluDLN/9RD2UVF1MPzkR+p0+vZE+agCnMrUM2aR2mA=",
         "path": "./home/programs/gui/aerospace",
         "type": "path"
       },
       "original": {
         "path": "./home/programs/gui/aerospace",
         "type": "path"
-      }
+      },
+      "parent": []
     },
     "root": {
       "inputs": {
@@ -288,15 +287,14 @@
         "sbarlua": "sbarlua"
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-/iFvUHh99JUcpNoI/h+RJt3eHLUOow2gxL08AceGDEk=",
         "path": "./home/programs/gui/sketchybar",
         "type": "path"
       },
       "original": {
         "path": "./home/programs/gui/sketchybar",
         "type": "path"
-      }
+      },
+      "parent": []
     },
     "spicetify-nix": {
       "inputs": {

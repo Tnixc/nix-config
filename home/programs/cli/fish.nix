@@ -6,6 +6,10 @@ in {
     enable = true;
 
     interactiveShellInit = ''
+      function off
+        command $argv &>/dev/null &
+        disown
+      end
 
       fish_vi_key_bindings
 
