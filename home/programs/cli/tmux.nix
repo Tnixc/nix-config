@@ -5,15 +5,30 @@
 }: let
   c = theme.colors;
   # Script to auto-attach to a directory-based session
+  list-cmd = "tmux list-sessions -F '#{session_name}\t#{pane_current_command}\t#{pane_current_path}'";
+  tmux-picker = pkgs.writeShellScriptBin "tmux-session-picker" ''
+    ${list-cmd} \
+      | awk -F'\t' '{printf "%-20s  %-12s  %s\n", $1, $2, $3}' \
+      | fzf --reverse --no-border --prompt='Sessions> ' \
+        --bind='ctrl-/:abort' \
+        --bind="ctrl-x:execute-silent(tmux kill-session -t {1})+reload(${list-cmd} | awk -F'\t' '{printf \"%-20s  %-12s  %s\n\", \$1, \$2, \$3}')" \
+        --header='ctrl-x: kill session' \
+      | awk '{print $1}' \
+      | xargs -I{} tmux switch-client -t '{}'
+  '';
   tmux-dir = pkgs.writeShellScriptBin "t" ''
     dir="''${1:-$(pwd)}"
     dir="$(cd "$dir" && pwd)"
     name="$(basename "$dir" | tr '.' '-')"
     if [ -n "$TMUX" ]; then
+      old="$(tmux display-message -p '#{session_name}')"
       if ! tmux has-session -t "=$name" 2>/dev/null; then
         tmux new-session -ds "$name" -c "$dir"
       fi
       tmux switch-client -t "=$name"
+      if [ "$old" != "$name" ]; then
+        tmux kill-session -t "=$old"
+      fi
     else
       if tmux has-session -t "=$name" 2>/dev/null; then
         exec tmux attach-session -t "=$name"
@@ -23,7 +38,7 @@
     fi
   '';
 in {
-  home.packages = [tmux-dir];
+  home.packages = [tmux-dir tmux-picker];
   programs.tmux = {
     enable = true;
     shell = "${pkgs.fish}/bin/fish";
@@ -65,14 +80,23 @@ in {
       # Layout
       bind = select-layout tiled
 
+      # Session chooser — telescope-style fzf popup (cmd+/ from kitty)
+      bind / display-popup -E -w 60% -h 60% "tmux-session-picker"
+
       # Keep sessions alive with no attached clients
       set -g destroy-unattached off
+      # When a session is destroyed, switch to another instead of detaching
+      set -g detach-on-destroy off
+      # Keep tmux server alive even with no sessions
+      set -g exit-empty off
+      # If all sessions die, create a fresh one so the client doesn't exit
+      set-hook -g session-closed 'if-shell "test $(tmux list-sessions 2>/dev/null | wc -l) -eq 0" "new-session -d -s main"'
 
       # Bells
-      set -g visual-activity on
-      set -g visual-bell on
+      set -g visual-activity off
+      set -g visual-bell off
       set -g visual-silence off
-      setw -g monitor-activity on
+      setw -g monitor-activity off
       set -g bell-action none
 
       # Kitty integration — true color + extended keys (CSI u)
@@ -99,7 +123,7 @@ in {
       set -g status-left ""
       set -g status-left-length 10
       set -g status-right-style "fg=${c.base} bg=${c.green}"
-      set -g status-right " %Y-%m-%d %H:%M "
+      set -g status-right " #S "
       set -g status-right-length 50
       setw -g window-status-current-style "fg=${c.base} bg=${c.mauve}"
       setw -g window-status-current-format " #I #W #F "

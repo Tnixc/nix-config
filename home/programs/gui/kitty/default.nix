@@ -5,7 +5,6 @@
 }: let
   c = theme.colors;
 in {
-  xdg.configFile."kitty/tab_bar.py".source = ./tab_bar.py;
   xdg.configFile."kitty/kitty.app.png".source = ../../../../modules/icons/kitty.png;
 
   xdg.configFile."kitty/kitty.conf".text = ''
@@ -16,19 +15,6 @@ in {
     shell_integration enabled
     scrollback_lines 10000
 
-    inactive_tab_font_style normal
-    active_tab_font_style bold
-
-    tab_bar_edge top
-    tab_bar_align left
-    tab_bar_style custom
-    tab_bar_min_tabs 2
-    tab_activity_symbol none
-    tab_separator ""
-    bell_on_tab no
-
-    tab_title_template {fmt.bold}{tab.active_exe.replace('-zsh', 'zsh').replace('starship', 'zsh')}{fmt.nobold} {(lambda wd: wd[:5] + '...' + wd[-21:] if len(wd) > 30 else wd)(tab.active_wd.replace('${config.home.homeDirectory}/Developer', '~/􀙅 ').replace('${config.home.homeDirectory}', '~'))}
-
     window_padding_width 0
     window_padding_height 0
 
@@ -36,7 +22,7 @@ in {
 
     cursor_shape underline
 
-    shell /etc/profiles/per-user/${config.home.username}/bin/fish
+    shell /etc/profiles/per-user/${config.home.username}/bin/tmux
 
     macos_option_as_alt yes
     macos_colorspace displayp3
@@ -61,12 +47,6 @@ in {
 
     wayland_titlebar_color system
     macos_titlebar_color system
-
-    active_tab_foreground ${c.text}
-    active_tab_background ${c.base}
-    inactive_tab_foreground ${c.subtext0}
-    inactive_tab_background ${c.crust}
-    tab_bar_background ${c.base}
 
     background_opacity 0.95
     background_blur 24
@@ -111,15 +91,31 @@ in {
     modify_font baseline 0.5
     modify_font cell_height 172%
 
-    map cmd+1 goto_tab 1
-    map cmd+2 goto_tab 2
-    map cmd+3 goto_tab 3
-    map cmd+4 goto_tab 4
-    map cmd+5 goto_tab 5
-    map cmd+6 goto_tab 6
-    map cmd+7 goto_tab 7
-    map cmd+8 goto_tab 8
-    map cmd+9 goto_tab 9
+    # Tmux window (tab) management
+    map cmd+t launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux new-window -c "#{pane_current_path}"
+    map cmd+w launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux kill-pane
+    map cmd+1 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :1
+    map cmd+2 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :2
+    map cmd+3 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :3
+    map cmd+4 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :4
+    map cmd+5 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :5
+    map cmd+6 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :6
+    map cmd+7 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :7
+    map cmd+8 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :8
+    map cmd+9 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :9
+    map ctrl+tab launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux next-window
+    map ctrl+shift+tab launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux previous-window
+
+    # Kitty window management
+    map cmd+shift+w close_window
+
+    # Tmux session management
+    map cmd+/ launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux display-popup -E -w "60%" -h "60%" tmux-session-picker
+    map cmd+up launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux switch-client -p
+    map cmd+down launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux switch-client -n
+    map cmd+shift+n launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux new-session -dP
+
+
     map cmd+f launch --type=overlay --stdin-source=@screen_scrollback /bin/sh -c '/run/current-system/sw/bin/fzf --no-sort --no-mouse --exact -i --tac | tr -d "\n" | kitty +kitten clipboard'
     map alt+f launch --stdin-source=@screen_scrollback --stdin-add-formatting --copy-colors --type=tab --title="scrollback search" /opt/homebrew/bin/nvim
 
