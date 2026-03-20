@@ -108,6 +108,7 @@ in {
 
       # Kitty integration — true color + extended keys (CSI u)
       set -ag terminal-overrides ",xterm-kitty:Tc"
+      set -g extended-keys-format csi-u
       set -g extended-keys on
       set -as terminal-features 'xterm-kitty:extkeys'
       set -g allow-passthrough on
