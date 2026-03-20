@@ -29,8 +29,8 @@ in {
 
     tab_title_template {fmt.bold}{tab.active_exe.replace('-zsh', 'zsh').replace('starship', 'zsh')}{fmt.nobold} {(lambda wd: wd[:5] + '...' + wd[-21:] if len(wd) > 30 else wd)(tab.active_wd.replace('${config.home.homeDirectory}/Developer', '~/􀙅 ').replace('${config.home.homeDirectory}', '~'))}
 
-    window_padding_width 4
-    window_padding_height 4
+    window_padding_width 0
+    window_padding_height 0
 
     hide_window_decorations titlebar-only
 

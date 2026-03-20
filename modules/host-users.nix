@@ -1,8 +1,4 @@
-{
-  hostname,
-  username,
-  ...
-}:
+{username, ...}:
 #############################################################
 #
 #  Host & Users configuration

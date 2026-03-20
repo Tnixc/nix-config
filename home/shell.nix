@@ -11,6 +11,7 @@ in {
 
   # Shared PATH additions (applies to all shells)
   home.sessionPath = [
+    "$HOME/.vite-plus/bin"
     "$HOME/.nix-profile/bin"
     "/etc/profiles/per-user/$USER/bin"
     "/run/current-system/sw/bin"

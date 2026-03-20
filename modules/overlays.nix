@@ -1,8 +1,4 @@
-{
-  pkgs,
-  rust-overlay,
-  ...
-}: {
+{rust-overlay, ...}: {
   nixpkgs.overlays = [
     rust-overlay.overlays.default
     # fish

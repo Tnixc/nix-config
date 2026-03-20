@@ -6,7 +6,7 @@ with lib; let
     r = substring 0 2 hex';
     g = substring 2 2 hex';
     b = substring 4 2 hex';
-    parseHex = s: (builtins.fromTOML "a = 0x${s}").a;
+    parseHex = s: (fromTOML "a = 0x${s}").a;
   in {
     r = parseHex r;
     g = parseHex g;

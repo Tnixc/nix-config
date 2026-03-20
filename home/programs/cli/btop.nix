@@ -1,8 +1,4 @@
-{
-  config,
-  theme,
-  ...
-}: let
+{theme, ...}: let
   c = theme.colors;
 in {
   programs.btop = {

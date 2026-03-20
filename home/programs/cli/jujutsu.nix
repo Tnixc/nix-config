@@ -1,10 +1,4 @@
-{
-  theme,
-  gpgKey,
-  ...
-}: let
-  c = theme.colors;
-  d = theme.diff;
+{gpgKey, ...}: let
 in {
   programs.jujutsu = {
     enable = true;

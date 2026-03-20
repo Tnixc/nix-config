@@ -82,6 +82,7 @@
     pnpm
     yarn
     nixd
+    tmux
     # conan
 
     # WebAssembly
