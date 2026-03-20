@@ -27,8 +27,8 @@
       customMessageText = "";
       customMessageLabel = "lavender";
       toolPendingBg = "mantle";
-      toolSuccessBg = "#1e2e28";
-      toolErrorBg = "#2e1e28";
+      toolSuccessBg = "#263036";
+      toolErrorBg = "#121719";
       toolTitle = "blue";
       toolOutput = "overlay2";
 
@@ -69,7 +69,7 @@
     export = {
       pageBg = "crust";
       cardBg = "base";
-      infoBg = "#3c3728";
+      infoBg = "#263036";
     };
   };
 }
