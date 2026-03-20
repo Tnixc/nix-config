@@ -57,6 +57,9 @@ in {
     historyLimit = 10000;
     keyMode = "vi";
     extraConfig = ''
+      # Renumber windows so cmd+1-9 stays positional
+      set -g renumber-windows on
+
       # Windows
       bind t new-window -c "#{pane_current_path}"
       bind q detach-client

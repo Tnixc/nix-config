@@ -104,6 +104,13 @@
     # yt-dlp
     iina
 
+    # Previously bun globals, now in nixpkgs
+    biome
+    claude-code
+    gemini-cli
+    opencode
+    assemblyscript
+
     # Code Quality & Formatting
     swiftformat
     stylua
