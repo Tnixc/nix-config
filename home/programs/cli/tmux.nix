@@ -9,7 +9,14 @@
   tmux-picker = pkgs.writeShellScriptBin "tmux-session-picker" ''
     ${list-cmd} \
       | awk -F'\t' '{printf "%-20s  %-12s  %s\n", $1, $2, $3}' \
-      | fzf --reverse --no-border --prompt='Sessions> ' \
+      | fzf --reverse --no-border \
+        --prompt=' ' \
+        --color='bg+:${c.surface0},fg+:${c.text},hl:${c.yellow},hl+:${c.yellow},pointer:${c.mauve},prompt:${c.green},info:${c.overlay1},border:${c.surface1},label:${c.mauve},header:${c.overlay1},spinner:${c.green},marker:${c.green},query:${c.text},gutter:-1' \
+        --border=rounded \
+        --border-label=' Sessions ' --border-label-pos=2 \
+        --preview-label=' Preview ' --preview-label-pos=2 \
+        --preview='tmux capture-pane -ep -t {1} 2>/dev/null || echo "No preview available"' \
+        --preview-window='right,60%,border-rounded' \
         --bind='ctrl-/:abort' \
         --bind="ctrl-x:execute-silent(tmux kill-session -t {1})+reload(${list-cmd} | awk -F'\t' '{printf \"%-20s  %-12s  %s\n\", \$1, \$2, \$3}')" \
         --header='ctrl-x: kill session' \
@@ -81,7 +88,7 @@ in {
       bind = select-layout tiled
 
       # Session chooser — telescope-style fzf popup (cmd+/ from kitty)
-      bind / display-popup -E -w 60% -h 60% "tmux-session-picker"
+      bind / display-popup -E -w 90% -h 90% "tmux-session-picker"
 
       # Keep sessions alive with no attached clients
       set -g destroy-unattached off
