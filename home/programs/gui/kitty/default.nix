@@ -5,8 +5,6 @@
 }: let
   c = theme.colors;
 in {
-  xdg.configFile."kitty/kitty.app.png".source = ../../../../modules/icons/kitty.png;
-
   xdg.configFile."kitty/kitty.conf".text = ''
     font_family BerkeleyMono Nerd Font
     font_size 14
@@ -115,10 +113,6 @@ in {
     map cmd+down launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux switch-client -n
     map cmd+shift+n launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux new-session -dP
 
-
     map cmd+f launch --type=overlay --stdin-source=@screen_scrollback /bin/sh -c '/run/current-system/sw/bin/fzf --no-sort --no-mouse --exact -i --tac | tr -d "\n" | kitty +kitten clipboard'
-    map alt+f launch --stdin-source=@screen_scrollback --stdin-add-formatting --copy-colors --type=tab --title="scrollback search" /opt/homebrew/bin/nvim
-
-    mouse_map cmd+click open_url
   '';
 }

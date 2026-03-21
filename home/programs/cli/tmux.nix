@@ -56,6 +56,9 @@ in {
     escapeTime = 0;
     historyLimit = 10000;
     keyMode = "vi";
+    plugins = with pkgs.tmuxPlugins; [
+      better-mouse-mode
+    ];
     extraConfig = ''
       # Renumber windows so cmd+1-9 stays positional
       set -g renumber-windows on
@@ -136,6 +139,8 @@ in {
       set -g status-right-style "fg=${c.base} bg=${c.green}"
       set -g status-right " #S "
       set -g status-right-length 50
+      set -g @scroll-speed-num-lines-per-scroll "1"
+      set -g status-position top
       setw -g window-status-current-style "fg=${c.base} bg=${c.mauve}"
       setw -g window-status-current-format " #I #W #F "
       setw -g window-status-style "fg=${c.overlay1} bg=${c.surface0}"
