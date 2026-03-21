@@ -1,21 +1,19 @@
-{config, ...}: let
+{...}: let
   # Bun global packages that aren't available in nixpkgs.
   # Packages available in nixpkgs should go in modules/darwin/packages.nix instead.
   bunGlobals = {
-    "@mariozechner/pi-coding-agent" = "^0.61.0";
+    "@mariozechner/pi-coding-agent" = "^0.61.1";
     "@sourcegraph/amp" = "0.0.1772734393-g2a936a";
     "@github/copilot" = "^0.0.365";
     "@github/copilot-language-server" = "^1.397.0";
     "agent-browser" = "^0.21.0";
-    "aicommit2" = "^2.1.5";
     "glyphhanger" = "^5.0.0";
     "icon-gen" = "^5.0.0";
     "mac-appify" = "^2019.4.13";
-    "osgrep" = "^0.3.8";
     "ts-node" = "^10.9.2";
   };
 
-  # Generate install commands: bun install -g pkg@version
+  # install commands: bun install -g pkg@version
   installCmds = builtins.concatStringsSep "\n" (
     builtins.attrValues (
       builtins.mapAttrs (name: version: ''echo "  ${name}@${version}" && "$BUN" install -g "${name}@${version}" 2>&1'') bunGlobals

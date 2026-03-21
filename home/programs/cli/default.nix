@@ -11,6 +11,7 @@
     ./helix.nix
     ./lazygit.nix
     ./pi.nix
+    ./pi-packages.nix
     ./starship.nix
     ./tmux.nix
     ./zsh.nix
