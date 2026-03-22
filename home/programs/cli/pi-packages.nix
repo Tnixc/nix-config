@@ -6,8 +6,10 @@
     "npm:tau-mirror"
     "npm:pi-rewind"
     "npm:pi-tool-display"
-    "https://github.com/nicobailon/pi-powerline-footer"
-    "https://github.com/nicobailon/pi-web-access"
+    "npm:pi-web-access"
+    "npm:pi-plan-mode"
+    "npm:@tintinweb/pi-tasks"
+    "npm:pi-usage-bars"
   ];
 
   installCmds = builtins.concatStringsSep "\n" (
