@@ -108,7 +108,7 @@ in {
     map cmd+shift+w close_window
 
     # Tmux session management
-    map cmd+/ launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux display-popup -E -w "80%" -h "80%" tmux-session-picker
+    map ctrl+/ launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux display-popup -E -w "80%" -h "80%" tmux-session-picker
     map cmd+up launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux switch-client -p
     map cmd+down launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux switch-client -n
     map cmd+shift+n launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux new-session -dP
