@@ -1,5 +1,5 @@
 wm = hs.loadSpoon("PaperWM")
-
+wm.window_ratios = { 1 / 3, 1 / 2, 2 / 3, 4 / 5 }
 wm.swipe_fingers = 4
 wm.swipe_gain = 2.0
 
