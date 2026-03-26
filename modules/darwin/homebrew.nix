@@ -56,14 +56,12 @@
       "vesktop"
       "claude-code"
       "hammerspoon"
-      "cloudflare-warp"
 
       "parsec"
       "steam"
       "motrix"
       "nordvpn"
       "linearmouse"
-      "reminders-menubar"
       "craft"
       "google-chrome"
 
