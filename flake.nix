@@ -13,7 +13,7 @@
     substituters = [
       # Query the mirror of USTC first, and then the official cache.
       "https://nix-community.cachix.org"
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      # "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
     ];
 

@@ -93,9 +93,6 @@ in {
       # Layout
       bind = select-layout tiled
 
-      # Session chooser — telescope-style fzf popup (cmd+/ from kitty)
-      bind / display-popup -E -w 90% -h 90% "tmux-session-picker"
-
       # Keep sessions alive with no attached clients
       set -g destroy-unattached off
       # When a session is destroyed, switch to another instead of detaching

@@ -71,9 +71,9 @@ return {
             require("mini.comment").setup({
                 mappings = {
                     comment = "",
-                    comment_line = "<D-/>",
-                    comment_visual = "<D-/>",
-                    textobject = "<D-/>",
+                    comment_line = "<M-/>",
+                    comment_visual = "<M-/>",
+                    textobject = "<M-/>",
                 },
             })
             require("mini.pairs").setup({ view = { style = "sign" } })
