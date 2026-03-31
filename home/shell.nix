@@ -52,6 +52,9 @@ in {
     # Misc
     bs = "brew services";
     icat = "kitten icat --align left";
+
+    pcp = "pbcopy";
+    ppy = "pbpaste";
   };
 
   # Use home-manager's fzf and zoxide integration

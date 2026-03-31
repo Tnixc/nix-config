@@ -3,7 +3,6 @@
   # npm packages use npm's global root; git packages clone to ~/.pi/agent/git/.
   # All get registered in ~/.pi/agent/settings.json automatically.
   piPackages = [
-    "npm:tau-mirror"
     "npm:pi-rewind"
     "npm:pi-tool-display"
     "npm:pi-web-access"

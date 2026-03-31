@@ -22,6 +22,8 @@
       "yt-dlp"
 
       "clang-format"
+      "gdb"
+      "gcc"
       "opam"
       "node"
       "autoconf"
