@@ -5,20 +5,20 @@ in {
   programs.bat = {
     enable = true;
     config = {
-      theme = "edo";
+      theme = "custom";
     };
   };
 
-  # Generate the edo theme dynamically from theme.nix
-  xdg.configFile."bat/themes/edo.tmTheme".text = ''
+  # Generate the custom theme dynamically from theme.nix
+  xdg.configFile."bat/themes/custom.tmTheme".text = ''
     <?xml version="1.0" encoding="UTF-8"?>
     <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
     <plist version="1.0">
       <dict>
         <key>name</key>
-        <string>edo</string>
+        <string>custom</string>
         <key>semanticClass</key>
-        <string>theme.dark.edo</string>
+        <string>theme.dark.custom</string>
         <key>uuid</key>
         <string>627ce890-fabb-4d39-9819-7be71f4bdca7</string>
         <key>author</key>

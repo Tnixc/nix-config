@@ -33,7 +33,7 @@ in {
       macos-option-as-alt = true;
       macos-titlebar-style = "tabs";
 
-      # Colors (edo theme)
+      # Colors (custom theme)
       foreground = strip c.text;
       background = strip c.base;
       selection-foreground = strip c.text;

@@ -28,7 +28,7 @@ in {
 
       delta = {
         line-numbers = true;
-        syntax-theme = "edo";
+        syntax-theme = "custom";
         blame-palette = [
           c.base
           c.mantle

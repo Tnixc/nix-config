@@ -4,7 +4,7 @@ in {
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "edo";
+      color_theme = "custom";
       theme_background = true;
       truecolor = true;
       force_tty = false;
@@ -75,7 +75,7 @@ in {
     };
   };
 
-  xdg.configFile."btop/themes/edo.theme".text = ''
+  xdg.configFile."btop/themes/custom.theme".text = ''
     # Main background, empty for terminal default, need to be empty if you want transparent background
     theme[main_bg]="${c.base}"
 
