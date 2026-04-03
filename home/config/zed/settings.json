@@ -30,8 +30,16 @@
     "border_size": 5.0,
   },
   "context_servers": {},
-  "icon_theme": "Warm Charmed Icons",
-  "theme": "Evergarden Winter (Hybrid)",
+  "icon_theme": {
+    "mode": "light",
+    "light": "Warm Charmed Icons",
+    "dark": "Warm Charmed Icons"
+  },
+  "theme": {
+    "mode": "light",
+    "light": "Vercel Light",
+    "dark": "Evergarden Winter (Hybrid)"
+  },
   // The name of a base set of key bindings to use.
   // This setting can take four values, each named after another
   // text editor:

@@ -2,7 +2,7 @@
   # Bun global packages that aren't available in nixpkgs.
   # Packages available in nixpkgs should go in modules/darwin/packages.nix instead.
   bunGlobals = {
-    "@mariozechner/pi-coding-agent" = "0.64.0";
+    "@mariozechner/pi-coding-agent" = "0.65.0";
     "@sourcegraph/amp" = "0.0.1772734393-g2a936a";
     "@github/copilot" = "^0.0.365";
     "@github/copilot-language-server" = "^1.397.0";
