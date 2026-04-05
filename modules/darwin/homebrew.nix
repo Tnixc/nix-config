@@ -45,28 +45,23 @@
 
     # `brew install --cask`
     casks = [
-      "thebrowsercompany-dia"
-      "arc"
-      "chatgpt-atlas"
+      "claude-code"
+      "claude"
 
-      "anki"
-      "flashspace"
       "karabiner-elements"
       "alt-tab"
-      "zed"
-      "loop"
-      "vesktop"
-      "claude-code"
       "hammerspoon"
 
+      "anki"
+      "zed"
+      "vesktop"
       "parsec"
       "steam"
       "motrix"
-      "nordvpn"
       "linearmouse"
       "craft"
+      "nordvpn"
       "google-chrome"
-
       "microsoft-teams"
       "microsoft-word"
 
@@ -76,6 +71,9 @@
       "font-sf-pro"
       "font-maple-mono-nf"
       "font-maple-mono-normal-nf-cn"
+
+      # "flashspace"
+      # "loop"
     ];
   };
 }

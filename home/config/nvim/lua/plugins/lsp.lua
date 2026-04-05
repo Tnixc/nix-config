@@ -93,7 +93,7 @@ return {
     {
         "saghen/blink.cmp",
         version = "*",
-        build = "nix run .#build-plugin",
+        build = "nix run .#build-plugin --accept-flake-config",
         event = "InsertEnter",
         dependencies = { "rafamadriz/friendly-snippets", "fang2hou/blink-copilot" },
         opts = {
