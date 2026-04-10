@@ -15,28 +15,49 @@
       "args": [],
       "projects": [
         {
-          "paths": ["/u3/e37lau"],
+          "paths": [
+            "/home/tnixc"
+          ]
         },
         {
-          "paths": ["/u3/e37lau/cs136"],
+          "paths": [
+            "/u3/e37lau"
+          ]
         },
         {
-          "paths": ["/u3/e37lau/cs136l"],
+          "paths": [
+            "/u3/e37lau/cs136"
+          ]
         },
-      ],
+        {
+          "paths": [
+            "/u3/e37lau/cs136l"
+          ]
+        }
+      ]
     },
+    {
+      "host": "aether",
+      "args": [],
+      "projects": []
+    },
+    {
+      "host": "aether",
+      "args": [],
+      "projects": []
+    }
   ],
   "active_pane_modifiers": {
     "border_size": 5.0,
   },
   "context_servers": {},
   "icon_theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Warm Charmed Icons",
     "dark": "Warm Charmed Icons"
   },
   "theme": {
-    "mode": "light",
+    "mode": "dark",
     "light": "Vercel Light",
     "dark": "Evergarden Winter (Hybrid)"
   },

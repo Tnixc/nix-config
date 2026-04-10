@@ -11,16 +11,17 @@ in {
 
   # Shared PATH additions (applies to all shells)
   home.sessionPath = [
-    "$HOME/.vite-plus/bin"
-    "$HOME/.nix-profile/bin"
-    "/etc/profiles/per-user/$USER/bin"
     "/run/current-system/sw/bin"
     "/nix/var/nix/profiles/default/bin"
+    "/opt/homebrew/bin"
+    "/usr/local/bin"
+    "/etc/profiles/per-user/$USER/bin"
+    "$HOME/.vite-plus/bin"
+    "$HOME/.nix-profile/bin"
     "$HOME/.bun/bin"
     "$HOME/.cargo/bin"
     "$HOME/.local/bin"
-    "/opt/homebrew/bin"
-    "/usr/local/bin"
+    "$HOME/.craft/bin"
   ];
 
   # Shared shell aliases (works for all shells)

@@ -47,6 +47,7 @@
     casks = [
       "claude-code"
       "claude"
+      "codex"
 
       "karabiner-elements"
       "alt-tab"
