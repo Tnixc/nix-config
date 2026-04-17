@@ -20,6 +20,7 @@
       "xcbeautify"
       "cliclick"
       "yt-dlp"
+      "bjarneo/cliamp/cliamp"
 
       "clang-format"
       "gdb"
@@ -57,7 +58,6 @@
       "zed"
       "vesktop"
       "parsec"
-      "steam"
       "motrix"
       "linearmouse"
       "craft"

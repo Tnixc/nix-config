@@ -48,6 +48,7 @@
     coreutils
     jujutsu
     lazyjj
+    mosh
     # charm-freeze
 
     # Code Editors & IDEs

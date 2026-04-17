@@ -1,5 +1,6 @@
 {
   // The name of the Zed theme to use for the UI
+  "disable_ai": false,
   "preview_tabs": {
     "enable_preview_from_project_panel": false,
     "enabled": false,
@@ -223,8 +224,9 @@
       "default": "allow",
     },
     "default_model": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-5-latest",
+      "enable_thinking": true,
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
     },
     "model_parameters": [],
   },
