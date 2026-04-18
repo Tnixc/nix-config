@@ -6,7 +6,7 @@
     "enabled": false,
   },
   "edit_predictions": {
-    "mode": "subtle",
+    "mode": "eager",
   },
   "colorize_brackets": true,
   "show_edit_predictions": true,
