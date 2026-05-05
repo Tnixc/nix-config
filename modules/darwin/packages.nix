@@ -103,6 +103,7 @@
     ffmpeg
     # yt-dlp
     iina
+    motrix-next
 
     # Previously bun globals, now in nixpkgs
     biome

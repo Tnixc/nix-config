@@ -58,7 +58,6 @@
       "zed"
       "vesktop"
       "parsec"
-      "motrix"
       "linearmouse"
       "craft"
       "nordvpn"

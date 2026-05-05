@@ -1,5 +1,11 @@
 {
   // The name of the Zed theme to use for the UI
+  "outline_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
   "disable_ai": false,
   "preview_tabs": {
     "enable_preview_from_project_panel": false,
@@ -207,7 +213,7 @@
     // Whether to show the collaboration panel button in the status bar.
     "button": false,
     // Where to dock channels panel. Can be 'left' or 'right'.
-    "dock": "left",
+    "dock": "right",
     // Default width of the channels panel.
     "default_width": 240,
   },
@@ -220,6 +226,7 @@
     "default_width": 380,
   },
   "agent": {
+    "dock": "left",
     "tool_permissions": {
       "default": "allow",
     },
