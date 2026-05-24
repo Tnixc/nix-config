@@ -1,5 +1,6 @@
 {
   // The name of the Zed theme to use for the UI
+  "cli_default_open_behavior": "new_window",
   "outline_panel": {
     "dock": "right"
   },

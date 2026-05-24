@@ -47,7 +47,6 @@
 
     # `brew install --cask`
     casks = [
-      "claude-code"
       "claude"
       "codex"
 

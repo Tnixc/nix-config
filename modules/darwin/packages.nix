@@ -107,7 +107,6 @@
 
     # Previously bun globals, now in nixpkgs
     biome
-    claude-code
     gemini-cli
     opencode
     assemblyscript
