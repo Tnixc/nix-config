@@ -2,11 +2,11 @@
   c = theme.colors;
 in {
   programs.zathura = {
-    enable = true;
+    enable = false;
 
     options = {
       selection-clipboard = "clipboard";
-      guioptions = "none";
+      euioptions = "none";
       scroll-step = 1;
       scroll-hstep = 1;
       zoom-step = 1;

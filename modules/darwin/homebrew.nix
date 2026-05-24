@@ -33,6 +33,7 @@
       "R"
       "gemini-cli"
       "rtk"
+      "lisette"
 
       "beast"
       "boost"
@@ -71,6 +72,7 @@
       "font-sf-pro"
       "font-maple-mono-nf"
       "font-maple-mono-normal-nf-cn"
+      "prismlauncher"
 
       # "flashspace"
       # "loop"
