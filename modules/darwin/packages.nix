@@ -76,7 +76,6 @@
     llvm
     clang-tools
     cargo-binstall
-    pipx
     uv
     nrr
     pnpm

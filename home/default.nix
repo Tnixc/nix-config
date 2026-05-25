@@ -1,11 +1,7 @@
 {
   username,
-  system,
   configRepoName,
-  lib,
   theme,
-  pwaerospace,
-  sketchybar-config,
   config,
   ...
 }
@@ -21,6 +17,7 @@ in {
   home.file = {
     ".config/nvim" = {source = mkLink "${config-dir}/nvim";};
     ".config/karabiner" = {source = mkLink "${config-dir}/karabiner";};
+    ".config/Code/User/settings.json" = {source = mkLink "${config-dir}/Code/User/settings.json";};
     ".config/zed" = {source = mkLink "${config-dir}/zed";};
     "${configRepoName}/home/config/nvim/lua/theme/colors.lua".text = ''
       return {
@@ -54,32 +51,6 @@ in {
     '';
   };
 
-  launchd.agents."aerospace" = {
-    enable = false;
-    config = {
-      ProgramArguments = [
-        "${lib.getExe pwaerospace.packages.${system}.aerospace-standalone}"
-      ];
-      RunAtLoad = false;
-      KeepAlive = false;
-      StandardOutPath = "/tmp/aerospace.log";
-      StandardErrorPath = "/tmp/aerospace.error.log";
-    };
-  };
-
-  launchd.agents."sketchybar" = {
-    enable = false;
-    config = {
-      ProgramArguments = [
-        "${lib.getExe sketchybar-config.packages.${system}.sketchybar-standalone}"
-      ];
-      RunAtLoad = false;
-      KeepAlive = false;
-      StandardOutPath = "/tmp/sketchybar.log";
-      StandardErrorPath = "/tmp/sketchybar.error.log";
-    };
-  };
-
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home = {
@@ -98,5 +69,6 @@ in {
   };
 
   # Let Home Manager install and manage itself.
+  home.enableNixpkgsReleaseCheck = false;
   programs.home-manager.enable = true;
 }
