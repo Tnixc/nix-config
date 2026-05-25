@@ -536,6 +536,12 @@
     //         }
     //     }
     // }
+    "clangd": {
+      "binary": {
+        "path": "/run/current-system/sw/bin/clangd",
+        // "arguments": ["--query-driver=/usr/bin/c++"]
+      }
+    },
     "sourcekit-lsp": {
       "binary": {
         "path": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp",
