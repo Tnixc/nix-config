@@ -232,9 +232,10 @@
       "default": "allow",
     },
     "default_model": {
+      "effort": "xhigh",
       "enable_thinking": true,
-      "provider": "google",
-      "model": "gemini-3.1-pro-preview",
+      "provider": "zed.dev",
+      "model": "gpt-5.4",
     },
     "model_parameters": [],
   },
