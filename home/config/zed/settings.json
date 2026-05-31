@@ -53,6 +53,17 @@
       "host": "aether",
       "args": [],
       "projects": []
+    },
+    {
+      "host": "lunar",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/Users/enoch"
+          ]
+        }
+      ]
     }
   ],
   "active_pane_modifiers": {

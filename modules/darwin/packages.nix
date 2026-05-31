@@ -69,8 +69,9 @@
     go
     # gleam
     micropython
-    # rust-bin.selectLatestNightlyWith (toolchain: toolchain.default)
-    rust-bin.nightly.latest.default
+    (rust-bin.nightly.latest.default.override {
+      extensions = ["rust-src"];
+    })
     zig
     llvm
     clang-tools
