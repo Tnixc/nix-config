@@ -14,67 +14,73 @@
 
     # `brew install`
     brews = [
-      "keith/formulae/reminders-cli"
+      # CLI & tooling
+      "aria2"
+      "autoconf"
+      "bjarneo/cliamp/cliamp"
       "brightness"
+      "cliclick"
+      "keith/formulae/reminders-cli"
+      "lisette"
+      "node"
+      "opam"
+      "openjdk"
+      "rtk"
       "xcode-build-server"
       "xcbeautify"
-      "cliclick"
       "yt-dlp"
-      "bjarneo/cliamp/cliamp"
 
+      # Compilers & formatters
       "clang-format"
-      "gdb"
       "gcc"
-      "opam"
-      "node"
-      "autoconf"
-      "openjdk"
-      "aria2"
-      "R"
-      "gemini-cli"
-      "rtk"
-      "lisette"
+      "gdb"
 
+      # Libraries
       "beast"
       "boost"
-      "fmt"
-      "re2"
-      "nlohmann-json"
-      "yaml-cpp"
       "cmark-gfm"
+      "fmt"
+      "nlohmann-json"
+      "re2"
       "tomlplusplus"
+      "yaml-cpp"
+
+      # Language runtimes
+      "R"
     ];
 
     # `brew install --cask`
     casks = [
+      # Development
       "claude"
       "codex"
+      "zed"
 
-      "karabiner-elements"
+      # System utilities
       "alt-tab"
       "hammerspoon"
-
-      "anki"
-      "zed"
-      "vesktop"
-      "parsec"
+      "karabiner-elements"
       "linearmouse"
+
+      # Apps
+      "anki"
       "craft"
-      "nordvpn"
       "google-chrome"
       "microsoft-teams"
       "microsoft-word"
+      "nordvpn"
+      "parsec"
+      "prismlauncher"
+      "vesktop"
 
+      # Design assets
       "sf-symbols"
 
-      "font-sf-mono"
-      "font-sf-pro"
+      # Fonts
       "font-maple-mono-nf"
       "font-maple-mono-normal-nf-cn"
-      "prismlauncher"
-
-      # "flashspace"
-      # "loop"
+      "font-sf-mono"
+      "font-sf-pro"
     ];
   };
 }

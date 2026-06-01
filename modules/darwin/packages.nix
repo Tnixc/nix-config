@@ -13,41 +13,43 @@
     typst
 
     # CLI & Shell
-    fish
-    kitty
-    starship
-    zoxide
-    fzf
-    direnv
-    btop
-    fastfetch
-    nix-output-monitor
     bat
-    eza
-    ripgrep
-    sd
-    fd
-    tldr
-    jq
-    wget
-    yazi
-    delta
-    tokei
-    hyperfine
-    dua
+    btop
     chafa
-    nowplaying-cli
-    pdfcpu
     comma
-    git
-    git-lfs
-    git-crypt
-    lazygit
-    gh
     coreutils
+    claude-code
+    delta
+    direnv
+    dua
+    eza
+    fastfetch
+    fd
+    fish
+    fzf
+    gh
+    git
+    git-crypt
+    git-lfs
+    hyperfine
+    jq
     jujutsu
+    kitty
+    lazygit
     lazyjj
     mosh
+    nix-output-monitor
+    nowplaying-cli
+    pdfcpu
+    ripgrep
+    sd
+    starship
+    tldr
+    tmux
+    tokei
+    wget
+    yazi
+    zoxide
     # charm-freeze
 
     # Code Editors & IDEs
@@ -56,32 +58,31 @@
 
     # Build Tools & Task Runners
     cmake
+    just
     meson
     ninja
-    just
     watch
     # act
 
     # Languages & Package Managers
-    python3
-    lua
-    # elixir
+    cargo-binstall
+    clang-tools
     go
-    # gleam
+    llvm
+    lua
     micropython
+    nixd
+    nrr
+    pnpm
+    python3
     (rust-bin.nightly.latest.default.override {
       extensions = ["rust-src"];
     })
-    zig
-    llvm
-    clang-tools
-    cargo-binstall
     uv
-    nrr
-    pnpm
     yarn
-    nixd
-    tmux
+    zig
+    # elixir
+    # gleam
     # conan
 
     # WebAssembly
@@ -100,37 +101,36 @@
 
     # Media Tools
     ffmpeg
-    # yt-dlp
     iina
     motrix-next
+    # yt-dlp
 
     # Previously bun globals, now in nixpkgs
-    biome
-    gemini-cli
-    opencode
     assemblyscript
+    biome
+    opencode
 
     # Code Quality & Formatting
-    swiftformat
     stylua
+    swiftformat
     topiary
     # ast-grep
 
     # Development Tools - macOS
-    xcodegen
-    switchaudio-osx
     darwin.lsusb
+    switchaudio-osx
+    xcodegen
 
     # Apps
-    shottr
     ice-bar
-    # vesktop  # fails to build on macOS (codesign not available in sandbox)
     obsidian
+    shottr
+    # vesktop  # fails to build on macOS (codesign not available in sandbox)
 
     # Containerization
-    ollama
-    docker
     colima
+    docker
+    ollama
 
     # Compression & Archives
     xz
