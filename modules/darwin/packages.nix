@@ -43,6 +43,7 @@
     pdfcpu
     ripgrep
     sd
+    pm2
     starship
     tldr
     tmux

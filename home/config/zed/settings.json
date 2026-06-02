@@ -1,5 +1,14 @@
 {
   // The name of the Zed theme to use for the UI
+  "language_models": {
+    "opencode": {
+      "show_zen_models": false,
+      "show_go_models": false
+    },
+    "openai_compatible": {
+      
+    }
+  },
   "cli_default_open_behavior": "new_window",
   "outline_panel": {
     "dock": "right"
@@ -13,6 +22,12 @@
     "enabled": false,
   },
   "edit_predictions": {
+    "provider": "zed",
+    "open_ai_compatible_api": {
+      "model": "kimik26thinking",
+      "max_output_tokens": 64,
+      "api_url": "http://localhost:3000"
+    },
     "mode": "eager",
   },
   "colorize_brackets": true,
@@ -76,9 +91,9 @@
     "dark": "Warm Charmed Icons"
   },
   "theme": {
-    "mode": "light",
-    "light": "Pierre Light",
-    "dark": "Evergarden Winter (Hybrid)"
+    "mode": "dark",
+    "light": "Vercel Light",
+    "dark": "Pierre Dark"
   },
   // The name of a base set of key bindings to use.
   // This setting can take four values, each named after another
@@ -238,15 +253,21 @@
     "default_width": 380,
   },
   "agent": {
+    "favorite_models": [
+      {
+        "provider": "local",
+        "model": "kimik26thinking",
+        "enable_thinking": false
+      }
+    ],
     "dock": "left",
     "tool_permissions": {
       "default": "allow",
     },
     "default_model": {
-      "effort": "high",
-      "enable_thinking": true,
-      "provider": "zed.dev",
-      "model": "gpt-5.4",
+      "enable_thinking": false,
+      "provider": "opencode",
+      "model": "free/minimax-m2.5-free",
     },
     "model_parameters": [],
   },
