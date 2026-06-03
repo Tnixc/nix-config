@@ -15,6 +15,7 @@ in {
     font_size 14
 
     url_style straight
+    allow_remote_control yes
     shell_integration enabled
     scrollback_lines 10000
 
@@ -133,9 +134,5 @@ in {
 
     # Clipboard helper
     map cmd+f launch --type=overlay --stdin-source=@screen_scrollback /bin/sh -c '/run/current-system/sw/bin/fzf --no-sort --no-mouse --exact -i --tac | tr -d "\n" | kitty +kitten clipboard'
-
-    # Search (interactive overlay with markers)
-    map cmd+shift+f kitten search.py
-    map cmd+shift+a kitten search.py --all-windows
   '';
 }
