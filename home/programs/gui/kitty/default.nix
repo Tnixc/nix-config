@@ -5,6 +5,9 @@
 }: let
   c = theme.colors;
 in {
+  xdg.configFile."kitty/tab_bar.py".source = ./tab_bar.py;
+  xdg.configFile."kitty/theme_colors.json".text = builtins.toJSON theme.colors;
+
   xdg.configFile."kitty/kitty.conf".text = ''
     font_family BerkeleyMono Nerd Font
     font_size 14
@@ -18,6 +21,21 @@ in {
 
     hide_window_decorations titlebar-only
 
+    # Tab bar (custom, see tab_bar.py)
+    tab_bar_edge top
+    tab_bar_style custom
+    tab_bar_align left
+    tab_bar_min_tabs 1
+
+    # Tab colors (used by draw_title in tab_bar.py)
+    tab_bar_background ${c.base}
+    active_tab_foreground ${c.crust}
+    active_tab_background ${c.rosewater}
+    active_tab_font_style bold
+    inactive_tab_foreground ${c.subtext0}
+    inactive_tab_background ${c.base}
+    inactive_tab_font_style normal
+
     cursor_shape underline
 
     shell /etc/profiles/per-user/${config.home.username}/bin/fish
@@ -26,6 +44,7 @@ in {
     macos_colorspace displayp3
 
     paste_actions quote-urls-at-prompt,confirm-if-large
+    copy_on_select yes
 
     foreground ${c.text}
     background ${c.base}
@@ -88,7 +107,7 @@ in {
     modify_font cell_height 172%
 
     # Tab management
-    map cmd+t new_tab
+    map cmd+t new_tab_with_cwd
     map cmd+w close_tab
     map cmd+1 goto_tab 1
     map cmd+2 goto_tab 2
@@ -108,7 +127,7 @@ in {
     # Tab navigation
     map cmd+up previous_tab
     map cmd+down next_tab
-    map cmd+shift+n new_tab
+    map cmd+shift+n new_tab_with_cwd
 
     # Clipboard helper
     map cmd+f launch --type=overlay --stdin-source=@screen_scrollback /bin/sh -c '/run/current-system/sw/bin/fzf --no-sort --no-mouse --exact -i --tac | tr -d "\n" | kitty +kitten clipboard'

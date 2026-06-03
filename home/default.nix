@@ -15,6 +15,9 @@ in {
   ];
 
   home.file = {
+    # Silence the "Last login: ..." banner printed by /usr/bin/login.
+    ".hushlogin".text = "";
+
     ".config/nvim" = {source = mkLink "${config-dir}/nvim";};
     ".config/karabiner" = {source = mkLink "${config-dir}/karabiner";};
     ".config/Code/User/settings.json" = {source = mkLink "${config-dir}/Code/User/settings.json";};

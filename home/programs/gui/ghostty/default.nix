@@ -10,25 +10,40 @@ in {
     font-family = BerkeleyMono Nerd Font
     font-size = 14
 
+    # disable_ligatures always
+    font-feature = -liga
+    font-feature = -calt
+    font-feature = -dlig
+
+    # modify_font underline_position 3
+    adjust-underline-position = 3
+    # modify_font cell_height 172%
+    adjust-cell-height = 72%
+
     # Shell
     command = /etc/profiles/per-user/${config.home.username}/bin/fish
+    shell-integration = fish
+
+    # Scrollback (kitty: scrollback_lines 10000; ghostty limit is bytes)
+    scrollback-limit = 10000000
+
+    # URLs
+    link-url = true
+
+    # Clipboard (kitty: paste_actions confirm-if-large)
+    clipboard-paste-protection = true
 
     # Window
-    background-opacity = 0.95
-    background-blur-radius = 24
     window-padding-x = 0
     window-padding-y = 0
     macos-titlebar-style = tabs
     macos-option-as-alt = true
+    window-colorspace = display-p3
+    background-opacity = 0.95
+    background-blur = 24
 
     # Cursor
-    cursor-style = bar
-
-    # Scrollback
-    scrollback-limit = 10000
-
-    # Shell integration
-    shell-integration = fish
+    cursor-style = underline
 
     # Theme colors
     background = ${c.base}
@@ -36,8 +51,6 @@ in {
     selection-background = ${c.surface2}
     cursor-color = ${c.rosewater}
     cursor-text = ${c.crust}
-
-    url-color = ${c.rosewater}
 
     palette = 0=${c.surface1}
     palette = 8=${c.surface2}
@@ -63,25 +76,27 @@ in {
     palette = 7=${c.subtext1}
     palette = 15=${c.subtext0}
 
-    # Keybindings
-    key = super+t=new_tab
-    key = super+w=close_tab
-    key = super+1=goto_tab:1
-    key = super+2=goto_tab:2
-    key = super+3=goto_tab:3
-    key = super+4=goto_tab:4
-    key = super+5=goto_tab:5
-    key = super+6=goto_tab:6
-    key = super+7=goto_tab:7
-    key = super+8=goto_tab:8
-    key = super+9=goto_tab:9
-    key = ctrl+tab=next_tab
-    key = ctrl+shift+tab=previous_tab
+    # Tab management
+    keybind = super+t=new_tab
+    keybind = super+w=close_tab
+    keybind = super+one=goto_tab:1
+    keybind = super+two=goto_tab:2
+    keybind = super+three=goto_tab:3
+    keybind = super+four=goto_tab:4
+    keybind = super+five=goto_tab:5
+    keybind = super+six=goto_tab:6
+    keybind = super+seven=goto_tab:7
+    keybind = super+eight=goto_tab:8
+    keybind = super+nine=goto_tab:9
+    keybind = ctrl+tab=next_tab
+    keybind = ctrl+shift+tab=previous_tab
 
-    key = super+shift+w=close_tab
+    # Window management
+    keybind = super+shift+w=close_surface
 
-    key = super+up=previous_tab
-    key = super+down=next_tab
-    key = super+shift+n=new_tab
+    # Tab navigation
+    keybind = super+up=previous_tab
+    keybind = super+down=next_tab
+    keybind = super+shift+n=new_tab
   '';
 }
