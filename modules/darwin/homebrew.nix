@@ -6,6 +6,10 @@
       autoUpdate = true;
       # 'zap': uninstalls all formulae(and related files) not listed here.
       cleanup = "zap";
+      # Homebrew now refuses `brew bundle --cleanup` non-interactively unless one
+      # of --force/--force-cleanup/$HOMEBREW_ASK is set. nix-darwin doesn't emit
+      # one itself, so force the cleanup here.
+      extraFlags = ["--force-cleanup"];
     };
 
     taps = [
@@ -63,6 +67,7 @@
       "linearmouse"
 
       # Apps
+      # "ghostty"
       "anki"
       "craft"
       "google-chrome"

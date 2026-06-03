@@ -20,14 +20,12 @@ in {
 
     cursor_shape underline
 
-    shell /etc/profiles/per-user/${config.home.username}/bin/tmux
+    shell /etc/profiles/per-user/${config.home.username}/bin/fish
 
     macos_option_as_alt yes
     macos_colorspace displayp3
 
     paste_actions quote-urls-at-prompt,confirm-if-large
-
-    allow_remote_control yes
 
     foreground ${c.text}
     background ${c.base}
@@ -89,30 +87,30 @@ in {
     modify_font baseline 0.5
     modify_font cell_height 172%
 
-    # Tmux window (tab) management
-    map cmd+t launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux new-window -c "#{pane_current_path}"
-    map cmd+w launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux kill-pane
-    map cmd+1 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :1
-    map cmd+2 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :2
-    map cmd+3 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :3
-    map cmd+4 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :4
-    map cmd+5 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :5
-    map cmd+6 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :6
-    map cmd+7 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :7
-    map cmd+8 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :8
-    map cmd+9 launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux select-window -t :9
-    map ctrl+tab launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux next-window
-    map ctrl+shift+tab launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux previous-window
+    # Tab management
+    map cmd+t new_tab
+    map cmd+w close_tab
+    map cmd+1 goto_tab 1
+    map cmd+2 goto_tab 2
+    map cmd+3 goto_tab 3
+    map cmd+4 goto_tab 4
+    map cmd+5 goto_tab 5
+    map cmd+6 goto_tab 6
+    map cmd+7 goto_tab 7
+    map cmd+8 goto_tab 8
+    map cmd+9 goto_tab 9
+    map ctrl+tab next_tab
+    map ctrl+shift+tab previous_tab
 
-    # Kitty window management
+    # Window management
     map cmd+shift+w close_window
 
-    # Tmux session management
-    map ctrl+/ launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux display-popup -E -w "80%" -h "80%" tmux-session-picker
-    map cmd+up launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux switch-client -p
-    map cmd+down launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux switch-client -n
-    map cmd+shift+n launch --type=background /etc/profiles/per-user/${config.home.username}/bin/tmux new-session -dP
+    # Tab navigation
+    map cmd+up previous_tab
+    map cmd+down next_tab
+    map cmd+shift+n new_tab
 
+    # Clipboard helper
     map cmd+f launch --type=overlay --stdin-source=@screen_scrollback /bin/sh -c '/run/current-system/sw/bin/fzf --no-sort --no-mouse --exact -i --tac | tr -d "\n" | kitty +kitten clipboard'
   '';
 }

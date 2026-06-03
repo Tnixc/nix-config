@@ -5,7 +5,7 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     LLVM_PROFILE_FILE = "/dev/null";
-    TERM = "xterm-kitty";
+    TERM = "xterm-256color";
     MANPAGER = "nvim +Man!";
   };
 

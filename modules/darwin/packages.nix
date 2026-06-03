@@ -48,6 +48,7 @@
     tldr
     tmux
     tokei
+    tree-sitter
     wget
     yazi
     zoxide
