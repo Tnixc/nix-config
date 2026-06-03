@@ -66,11 +66,7 @@
     nixpkgs,
     home-manager,
     darwin,
-    pwaerospace, # aerospace, sketchybar, borders
-    sketchybar-config,
     darwin-custom-icons,
-    rust-overlay,
-    spicetify-nix,
     ...
   }: let
     username = "tnixc";

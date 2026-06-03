@@ -6,6 +6,8 @@
   c = theme.colors;
 in {
   xdg.configFile."kitty/tab_bar.py".source = ./tab_bar.py;
+  xdg.configFile."kitty/search.py".source = ./search.py;
+  xdg.configFile."kitty/scroll_mark.py".source = ./scroll_mark.py;
   xdg.configFile."kitty/theme_colors.json".text = builtins.toJSON theme.colors;
 
   xdg.configFile."kitty/kitty.conf".text = ''
@@ -131,5 +133,9 @@ in {
 
     # Clipboard helper
     map cmd+f launch --type=overlay --stdin-source=@screen_scrollback /bin/sh -c '/run/current-system/sw/bin/fzf --no-sort --no-mouse --exact -i --tac | tr -d "\n" | kitty +kitten clipboard'
+
+    # Search (interactive overlay with markers)
+    map cmd+shift+f kitten search.py
+    map cmd+shift+a kitten search.py --all-windows
   '';
 }
