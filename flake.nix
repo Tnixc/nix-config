@@ -51,10 +51,6 @@
       flake = true;
     };
     darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
-    paneru = {
-      url = "github:karinushka/paneru/testing";
-      inputs.nixpkgs.follows = "nixpkgs-darwin";
-    };
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
@@ -69,15 +65,12 @@
     darwin-custom-icons,
     ...
   }: let
-    username = "tnixc";
-    system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
-    hostname = "End";
-    configRepoName = "nix-config";
-    gpgKey = "6AB7F7CC83CEC7A6";
+    hostConfig = import ./config/host.nix;
+    inherit (hostConfig) hostname username system gpgKey configRepoName;
 
     inherit (inputs.nixpkgs-darwin) lib;
     theme = import ./lib/theme.nix {inherit lib;};
-    colorMix = import ./modules/utils/colors-mix.nix;
+    colorMix = import ./lib/color-mix.nix;
 
     specialArgs =
       inputs

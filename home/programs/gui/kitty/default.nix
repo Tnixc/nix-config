@@ -6,8 +6,6 @@
   c = theme.colors;
 in {
   xdg.configFile."kitty/tab_bar.py".source = ./tab_bar.py;
-  xdg.configFile."kitty/search.py".source = ./search.py;
-  xdg.configFile."kitty/scroll_mark.py".source = ./scroll_mark.py;
   xdg.configFile."kitty/theme_colors.json".text = builtins.toJSON theme.colors;
 
   xdg.configFile."kitty/kitty.conf".text = ''

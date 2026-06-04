@@ -1,5 +1,5 @@
 {lib}: let
-  colorMix = (import ../modules/utils/colors-mix.nix {inherit lib;}).mixColors;
+  colorMix = (import ./color-mix.nix {inherit lib;}).mixColors;
 
   # Edo color palette
   colors = {
