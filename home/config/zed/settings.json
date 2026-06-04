@@ -1,5 +1,10 @@
 {
   // The name of the Zed theme to use for the UI
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
+  },
   "language_models": {
     "opencode": {
       "show_zen_models": false,

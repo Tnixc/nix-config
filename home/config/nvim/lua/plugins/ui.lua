@@ -140,7 +140,11 @@ return {
     },
 
     -- Rainbow delimiters
-    { "hiphish/rainbow-delimiters.nvim", event = "BufReadPost" },
+    {
+        "hiphish/rainbow-delimiters.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        event = "BufReadPost",
+    },
 
     -- Modern UI components
     {
