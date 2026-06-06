@@ -56,7 +56,6 @@
     # `brew install --cask`
     casks = [
       # Development
-      "claude"
       "codex"
       "zed"
 

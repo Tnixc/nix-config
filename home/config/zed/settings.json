@@ -96,8 +96,8 @@
     "dark": "Warm Charmed Icons"
   },
   "theme": {
-    "mode": "dark",
-    "light": "Vercel Light",
+    "mode": "light",
+    "light": "Pierre Light",
     "dark": "Pierre Dark"
   },
   // The name of a base set of key bindings to use.
