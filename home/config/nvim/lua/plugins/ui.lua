@@ -9,30 +9,6 @@ return {
         config = function()
             require("plugins.configs.colorscheme")
         end,
-    },
-    {
-        "dgox16/oldworld.nvim",
-        lazy = true,
-    },
-    {
-        "everviolet/nvim",
-        name = "evergarden",
-        opts = {
-            theme = {
-                variant = "winter", -- 'winter'|'fall'|'spring'|'summer'
-                accent = "skye",
-            },
-            editor = {
-                transparent_background = false,
-                float = {
-                    color = "mantle",
-                    solid_border = true,
-                },
-                completion = {
-                    color = "surface1",
-                },
-            },
-        },
     }, -- Icons
     {
         "rachartier/tiny-devicons-auto-colors.nvim",

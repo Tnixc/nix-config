@@ -42,14 +42,6 @@
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
-    pwaerospace = {
-      url = "path:./home/programs/gui/aerospace";
-      flake = true;
-    };
-    sketchybar-config = {
-      url = "path:./home/programs/gui/sketchybar";
-      flake = true;
-    };
     darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
     rust-overlay.url = "github:oxalica/rust-overlay";
   };

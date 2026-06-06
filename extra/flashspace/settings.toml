@@ -31,8 +31,8 @@ restartAppOnWakeUp = false
 restoreHiddenAppsOnSwitch = true
 runScriptAfterWorkspaceChange = ''
 runScriptOnLaunch = ''
-runScriptOnProfileChange = 'sketchybar --reload'
-runScriptOnWorkspaceChange = 'sketchybar --trigger flashspace_workspace_change WORKSPACE="$WORKSPACE" DISPLAY="$DISPLAY"'
+runScriptOnProfileChange = ''
+runScriptOnWorkspaceChange = ''
 showFloatingNotifications = true
 showMenuBarIcon = false
 showMenuBarTitle = true

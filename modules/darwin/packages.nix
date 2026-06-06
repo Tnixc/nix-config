@@ -1,15 +1,10 @@
 {
   pkgs,
   system,
-  pwaerospace,
-  sketchybar-config,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    pwaerospace.packages.${system}.aerospace-standalone
-    sketchybar-config.packages.${system}.sketchybar-standalone
-
     typst
 
     # CLI & Shell

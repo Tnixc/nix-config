@@ -1,5 +1,4 @@
-{gpgKey, ...}: let
-in {
+{gpgKey, ...}: {
   programs.jujutsu = {
     enable = true;
     settings = {
@@ -13,7 +12,6 @@ in {
         key = gpgKey;
       };
 
-      # core.fsmonitor = "watchman";
       fsmonitor.backend = "watchman";
       snapshot.max-new-file-size = "10MiB";
     };

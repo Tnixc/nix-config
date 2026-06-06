@@ -77,10 +77,6 @@ vim.lsp.enable("racket_langserver") -- Manually enable since not managed by Maso
 vim.lsp.enable("nixd")
 
 vim.diagnostic.config({
-    -- vim.fn.sign_define("DiagnosticSignError", { text = "􀃰", texthl = "DiagnosticSignError" })
-    -- vim.fn.sign_define("DiagnosticSignWarn", { text = "􀃮", texthl = "DiagnosticSignWarn" })
-    -- vim.fn.sign_define("DiagnosticSignInfo", { text = "􁊇", texthl = "DiagnosticSignInfo" })
-    -- vim.fn.sign_define("DiagnosticSignHint", { text = "􁇖", texthl = "DiagnosticSignHint" })
     signs = {
         text = {
             [vim.diagnostic.severity.ERROR] = "􀃰 ",
