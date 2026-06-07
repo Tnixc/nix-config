@@ -2,8 +2,8 @@
   paperwm = pkgs.fetchFromGitHub {
     owner = "mogenson";
     repo = "PaperWM.spoon";
-    rev = "e9e78a68fce3d88e5ab67dbc636c23c591a7202c";
-    hash = "sha256-FFLrvbF71vjCrLnsEl+6M5kuuirhPIjpk5XAqE2LgVA=";
+    rev = "3a6d076c5169d693e6271d5af5038036bd591bbd";
+    hash = "sha256-H9A7nwt0NkyPqN+iOZ9BU24dkAvvfZxucVSPhNx9WPA=";
   };
   swipe = pkgs.fetchFromGitHub {
     owner = "mogenson";

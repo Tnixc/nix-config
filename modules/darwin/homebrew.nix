@@ -60,7 +60,6 @@
       "zed"
 
       # System utilities
-      "alt-tab"
       "hammerspoon"
       "karabiner-elements"
       "linearmouse"
