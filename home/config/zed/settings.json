@@ -1,5 +1,6 @@
 {
   // The name of the Zed theme to use for the UI
+  "diff_view_style": "unified",
   "agent_servers": {
     "opencode": {
       "type": "registry"

@@ -75,6 +75,7 @@
       "parsec"
       "prismlauncher"
       "vesktop"
+      "Sanyam-G/switch/switch"
 
       # Design assets
       "sf-symbols"

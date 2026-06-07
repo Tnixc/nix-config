@@ -1,3 +1,5 @@
+require("hs.ipc")
+
 wm = hs.loadSpoon("PaperWM")
 wm.window_ratios = { 1 / 3, 1 / 2, 2 / 3, 4 / 5 }
 wm.swipe_fingers = 4
@@ -143,3 +145,8 @@ wm:start()
 -- hs.window.filter
 -- 	.copy(wm.window_filter)
 -- 	:subscribe(hs.window.filter.windowFocused, wm.actions.actions().center_window)
+
+PaperLine = hs.loadSpoon("PaperLine")
+PaperLine:start()
+
+

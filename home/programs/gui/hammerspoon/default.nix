@@ -11,6 +11,12 @@
     rev = "c56520507d98e663ae0e1228e41cac690557d4aa";
     hash = "sha256-G0kuCrG6lz4R+LdAqNWiMXneF09pLI+xKCiagryBb5k=";
   };
+  paperline = pkgs.fetchFromGitHub {
+    owner = "tnixc";
+    repo = "PaperLine.spoon";
+    rev = "aee74834c575c00c6cceb24c22828d7b0a7ae98c";
+    hash = "sha256-WsNQQtrsiqDETQAhbBAA+eblEv7SUuum8cnlJT2iLLM=";
+  };
 in {
   home.file = {
     ".hammerspoon/Spoons/PaperWM.spoon" = {
@@ -19,6 +25,10 @@ in {
     };
     ".hammerspoon/Spoons/Swipe.spoon" = {
       source = swipe;
+      recursive = true;
+    };
+    ".hammerspoon/Spoons/PaperLine.spoon" = {
+      source = paperline;
       recursive = true;
     };
     ".hammerspoon/init.lua".source = ./init.lua;

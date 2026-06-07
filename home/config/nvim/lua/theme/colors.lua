@@ -1,1 +1,1 @@
-/nix/store/21mcxknf03w1pp2059s8ryzcxf72hj7z-home-manager-files/nix-config/home/config/nvim/lua/theme/colors.lua
+/nix/store/y832wgaf9q1q9y61y3d8lj6f0miaqyrz-home-manager-files/nix-config/home/config/nvim/lua/theme/colors.lua
