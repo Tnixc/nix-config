@@ -14,8 +14,8 @@
   paperline = pkgs.fetchFromGitHub {
     owner = "tnixc";
     repo = "PaperLine.spoon";
-    rev = "aee74834c575c00c6cceb24c22828d7b0a7ae98c";
-    hash = "sha256-WsNQQtrsiqDETQAhbBAA+eblEv7SUuum8cnlJT2iLLM=";
+    rev = "5263b7c263047cf0717be1e6ae6a9aba53df79e8";
+    hash = "sha256-HILPJzOPIWAj3e/RUCPhitglBVbldfzjxczkQRWRLaE=";
   };
 in {
   home.file = {
@@ -31,6 +31,8 @@ in {
       source = paperline;
       recursive = true;
     };
-    ".hammerspoon/init.lua".source = ./init.lua;
+    ".hammerspoon/init.lua" = {
+      source = ./init.lua;
+    };
   };
 }

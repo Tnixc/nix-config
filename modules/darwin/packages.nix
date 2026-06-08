@@ -45,7 +45,6 @@
     tokei
     tree-sitter
     wget
-    yazi
     zoxide
     # charm-freeze
 

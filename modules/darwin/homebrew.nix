@@ -33,6 +33,7 @@
       "xcode-build-server"
       "xcbeautify"
       "yt-dlp"
+      "elio"
 
       # Compilers & formatters
       "clang-format"

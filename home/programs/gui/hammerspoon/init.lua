@@ -147,12 +147,7 @@ wm:start()
 -- 	:subscribe(hs.window.filter.windowFocused, wm.actions.actions().center_window)
 
 PaperLine = hs.loadSpoon("PaperLine")
--- per-monitor overrides; matched against screen UUID, then name, then id.
--- Run this in the Hammerspoon console to list your screens:
---   hs.fnutils.map(hs.screen.allScreens(), function(s) return { s:name(), s:getUUID() } end)
 PaperLine.per_screen = {
-    GF270M = { x_offset = 1280 },
+    ["GF270M"] = { x_offset = 1280, icon_size = 22, height = 24, y_offset = 2 },
 }
 PaperLine:start()
-
-
