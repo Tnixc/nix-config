@@ -1,5 +1,5 @@
 {
-  hostname = "End";
+  hostname = "Diamond";
   username = "tnixc";
   system = "aarch64-darwin";
   gpgKey = "6AB7F7CC83CEC7A6";
