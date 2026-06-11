@@ -40,8 +40,6 @@
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
 
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-
     darwin-custom-icons.url = "github:ryanccn/nix-darwin-custom-icons";
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
