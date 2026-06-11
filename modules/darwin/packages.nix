@@ -33,6 +33,7 @@
     lazygit
     lazyjj
     mosh
+    nh
     nix-output-monitor
     nowplaying-cli
     pdfcpu

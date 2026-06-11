@@ -1,9 +1,10 @@
+host := `hostname -s`
+
 deploy:
-    nom build ".#darwinConfigurations.$(hostname -s).system"
-    sudo ./result/activate
+    nh darwin switch . -H {{host}}
 
 build:
-    nom build ".#darwinConfigurations.$(hostname -s).system"
+    nh darwin build . -H {{host}}
 
 fmt:
     nix fmt .
