@@ -147,7 +147,6 @@ wm:start()
 -- 	:subscribe(hs.window.filter.windowFocused, wm.actions.actions().center_window)
 
 PaperLine = hs.loadSpoon("PaperLine")
-PaperLine.per_screen = {
-    ["GF270M"] = { x_offset = 1280, icon_size = 22, height = 24, y_offset = 2 },
-}
+PaperLine.icon_padding = 1
+
 PaperLine:start()
