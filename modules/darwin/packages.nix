@@ -47,6 +47,7 @@
     tree-sitter
     wget
     zoxide
+    gemini-cli
     # charm-freeze
 
     # Code Editors & IDEs
