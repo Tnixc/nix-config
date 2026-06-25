@@ -7,6 +7,27 @@ in {
     LLVM_PROFILE_FILE = "/dev/null";
     TERM = "xterm-256color";
     MANPAGER = "nvim +Man!";
+
+    # gum theming (applies to all shells)
+    # confirm
+    GUM_CONFIRM_PROMPT_FOREGROUND = c.text;
+    GUM_CONFIRM_SELECTED_FOREGROUND = c.base;
+    GUM_CONFIRM_SELECTED_BACKGROUND = c.mauve;
+    GUM_CONFIRM_UNSELECTED_FOREGROUND = c.text;
+    GUM_CONFIRM_UNSELECTED_BACKGROUND = c.surface0;
+    # input
+    GUM_INPUT_PROMPT_FOREGROUND = c.mauve;
+    GUM_INPUT_CURSOR_FOREGROUND = c.rosewater;
+    # choose
+    GUM_CHOOSE_CURSOR_FOREGROUND = c.rosewater;
+    GUM_CHOOSE_SELECTED_FOREGROUND = c.mauve;
+    GUM_CHOOSE_ITEM_FOREGROUND = c.text;
+    # filter
+    GUM_FILTER_INDICATOR_FOREGROUND = c.mauve;
+    GUM_FILTER_MATCH_FOREGROUND = c.red;
+    GUM_FILTER_PROMPT_FOREGROUND = c.mauve;
+    # spin
+    GUM_SPIN_SPINNER_FOREGROUND = c.rosewater;
   };
 
   # Shared PATH additions (applies to all shells)
