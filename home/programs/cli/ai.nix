@@ -10,7 +10,7 @@
       | ${pkgs.jq}/bin/jq -r .choices[0].message.content
   '';
 
-  agc = pkgs.writeShellScriptBin "agc" ''
+  aic = pkgs.writeShellScriptBin "aic" ''
     set -euo pipefail
 
     auto=0
@@ -24,7 +24,8 @@
       exit 1
     fi
 
-    msg="$(${ai}/bin/ai "Here's a git diff: $diff, write a commit message. Use conventional commits. Do not include anything else in your response")"
+    msg="$(${pkgs.gum}/bin/gum spin --show-output --spinner dot --title "Generating commit message..." -- \
+      ${ai}/bin/ai "Here's a git diff: $diff, write a commit message. Use conventional commits. Do not include anything else in your response")"
 
     if [ -z "$msg" ]; then
       echo "Failed to generate a commit message." >&2
@@ -45,5 +46,5 @@
     fi
   '';
 in {
-  home.packages = [ai agc pkgs.gum];
+  home.packages = [ai aic pkgs.gum];
 }
