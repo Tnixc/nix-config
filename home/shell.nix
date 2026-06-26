@@ -4,9 +4,10 @@ in {
   # Shared environment variables for all shells
   home.sessionVariables = {
     EDITOR = "nvim";
+    PAGER = "page";
     LLVM_PROFILE_FILE = "/dev/null";
     TERM = "xterm-256color";
-    MANPAGER = "nvim +Man!";
+    MANPAGER = "page -t man";
 
     # gum theming (applies to all shells)
     # confirm
