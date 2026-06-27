@@ -27,10 +27,10 @@ in {
       source = swipe;
       recursive = true;
     };
-   ".hammerspoon/Spoons/PaperLine.spoon" = {
-     source = paperline;
-     recursive = true;
-   };
+    ".hammerspoon/Spoons/PaperLine.spoon" = {
+      source = paperline;
+      recursive = true;
+    };
     ".hammerspoon/init.lua" = {
       source = ./init.lua;
     };

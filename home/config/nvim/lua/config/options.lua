@@ -45,7 +45,11 @@ vim.opt.iskeyword:append("-") -- treats words with `-` as single words
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
 vim.opt.linebreak = true
 
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+-- NOTE: `terminal` is intentionally omitted. With `localoptions`, mksession writes
+-- `setlocal buftype=terminal` for terminal buffers, which fails on restore with
+-- E474 (buftype=terminal can't be set via setlocal). nvim-as-pager (`page`) opens
+-- terminal buffers, so this would otherwise corrupt the session for that cwd.
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,localoptions"
 
 -- Set leader keys
 vim.g.mapleader = " "

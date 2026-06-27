@@ -99,22 +99,30 @@ return {
     {
         "rmagatti/auto-session",
         lazy = false,
-        opts = {
-            bypass_save_filetypes = { "snacks_dashboard", "" },
-            post_restore_cmds = {
-                function()
-                    -- Show dashboard if restored to a blank buffer
-                    vim.schedule(function()
-                        local buf = vim.api.nvim_get_current_buf()
-                        local bufname = vim.api.nvim_buf_get_name(buf)
-                        local bufft = vim.bo[buf].filetype
-                        if bufname == "" and bufft == "" then
-                            Snacks.dashboard()
-                        end
-                    end)
-                end,
-            },
-        },
+        opts = function()
+            -- `vim.g.page_pager` is set via `--cmd` from NVIM_PAGE_ARGS when nvim is
+            -- spawned by the `page` pager. Don't restore/save sessions there: it would
+            -- load the whole project for every man/page invocation and clobber the
+            -- real session with the pager's terminal buffer.
+            local in_pager = vim.g.page_pager == true
+            return {
+                enabled = not in_pager,
+                bypass_save_filetypes = { "snacks_dashboard", "" },
+                post_restore_cmds = {
+                    function()
+                        -- Show dashboard if restored to a blank buffer
+                        vim.schedule(function()
+                            local buf = vim.api.nvim_get_current_buf()
+                            local bufname = vim.api.nvim_buf_get_name(buf)
+                            local bufft = vim.bo[buf].filetype
+                            if bufname == "" and bufft == "" then
+                                Snacks.dashboard()
+                            end
+                        end)
+                    end,
+                },
+            }
+        end,
     },
 
     -- Copilot
