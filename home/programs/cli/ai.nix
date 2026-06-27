@@ -24,7 +24,7 @@
       exit 1
     fi
 
-    msg="$(${pkgs.gum}/bin/gum spin --show-output --spinner dot --title "Generating commit message..." -- \
+    msg="$(${pkgs.gum}/bin/gum spin --show-output --spinner line --title "Generating commit message..." -- \
       ${ai}/bin/ai "Here's a git diff: $diff, write a commit message. Use conventional commits. Do not include anything else in your response")"
 
     if [ -z "$msg" ]; then
