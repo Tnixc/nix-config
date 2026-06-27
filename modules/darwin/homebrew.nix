@@ -76,8 +76,8 @@
       "nordvpn"
       "parsec"
       "prismlauncher"
-      "vesktop"
       "Sanyam-G/switch/switch"
+      "equibop"
 
       # Design assets
       "sf-symbols"
