@@ -53,6 +53,9 @@
 
       # Language runtimes
       "R"
+      "kotlin"
+      "gradle"
+      "maven"
     ];
 
     # `brew install --cask`
